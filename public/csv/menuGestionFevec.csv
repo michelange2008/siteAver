@@ -1,0 +1,5 @@
+href;bouton;icone;titre;texte
+fevec.normalise;Normaliser;normalise.svg;Normaliser la BDD;Procédures pour enlever les clients ni conventionnés ni contractuels. Elimination des troupeaux inutiles (chiens & chevaux). Etc.
+fevec.import;Mettre à jour;import.svg;Mettre à jour;Met à jour la base de données éleveurs et troupeaux à partir de la bdd FEVEC
+fevec.verifieTroupeaux;Vérifier;troupeaux.svg;Vérifier troupeaux;Vérifie que la base de donnée locale est à jour par rapport à la bdd FEVEC
+fevec.liste;Afficher;eleveurs_fevec.svg;Liste Eleveurs;Affiche l'ensemble des éleveurs conventionnés présents dans la base de donnée du logiciel FEVEC
