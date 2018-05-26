@@ -30,7 +30,6 @@ class UserController extends Controller
     {
       $users = $this->usersRepository->getEleveur();
       
-      
       return view('aver/listeUsers')->with([
         'users' => $users,
         'titre' => 'Eleveurs Aver',
