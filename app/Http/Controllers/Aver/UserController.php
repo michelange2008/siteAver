@@ -29,7 +29,8 @@ class UserController extends Controller
     public function index()
     {
       $users = $this->usersRepository->getEleveur();
-
+      
+      
       return view('aver/listeUsers')->with([
         'users' => $users,
         'titre' => 'Eleveurs Aver',
@@ -40,6 +41,7 @@ class UserController extends Controller
     {
       $users = $this->usersRepository->getAdmin();
 
+      
       return view('aver/listeUsers')->with([
         'users' => $users->all(),
         'titre' => 'Admin',
