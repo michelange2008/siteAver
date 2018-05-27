@@ -9,7 +9,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Aver') }}</title>
-
     <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -29,6 +28,9 @@
       integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
       crossorigin="anonymous">
     <script src="https://use.fontawesome.com/f8a7076b4b.js"></script>
+
+    <script type="text/javascript" src="..\js\tablesorter\jquery.tablesorter.js"></script> 
+
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <link href="{{ asset('css/perso.css') }}" rel="stylesheet">
 

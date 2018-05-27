@@ -15,4 +15,17 @@ $(function(){
       $('#mdp2').attr('class', 'form-control bgborder border-success');
     }
   })
+  
+  $('#listeEleveurs').tablesorter({ sortList: [[0,0]]});
+  
+  var nom_eleveur;
+  $('.nom_eleveur').each(function()
+  {
+    var troupeau_id = '.'+$(this).attr('id');
+    if($(this).html() === nom_eleveur) {
+        $(this).toggleClass('invisible');
+        $(troupeau_id).toggleClass('invisible');
+    }
+    nom_eleveur = $(this).html();
+  }) 
 })

@@ -28,10 +28,11 @@ class UserController extends Controller
 
     public function index()
     {
-      $users = $this->usersRepository->getEleveur();
-      
+//      $users = $this->usersRepository->getEleveur();
+      $troupeaux = $this->troupeauxRepository->getListeTroupeaux();
       return view('aver/listeUsers')->with([
-        'users' => $users,
+//        'users' => $users,
+        'troupeaux' => $troupeaux,
         'titre' => 'Eleveurs Aver',
       ]);
     }

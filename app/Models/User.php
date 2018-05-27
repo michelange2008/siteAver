@@ -34,4 +34,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Activite::class);
     }
+    
+    public function troupeau()
+    {
+        return $this->hasMany(Troupeau::class);
+    }
 }

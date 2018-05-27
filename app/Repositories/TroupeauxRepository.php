@@ -18,6 +18,11 @@ class TroupeauxRepository
   {
     $this->troupeau = $troupeau;
   }
+  
+  public function getListeTroupeaux()
+  {
+      return Troupeau::all();
+  }
 
   public function getTroupeaux()
   {
