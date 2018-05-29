@@ -18,6 +18,12 @@ class EspecesRepository{
     return $listeEspeces;
   }
 
+  public function getEspecesUtiles()
+  {
+    $listeEspeces = Especes::where('utile', 1)->get();
+    return $listeEspeces;
+  }
+
   public function getNomEspeces()
   {
     $listeEspeces = Especes::all();

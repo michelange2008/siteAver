@@ -61,19 +61,52 @@ label {
   color: Orange;
 }
 
+.OA_bg{
+    background: Orange;
+}
+
 .VA{
   color: Red;
+}
+
+.VA_bg {
+    background: Red;
 }
 
 .OL {
   color: blue;
 }
+
+.OL_bg {
+    background: blue;
+}
+
 .CP {
   color: Green;
 }
+
+.CP_bg {
+    background: Green;
+}
+
 .VL {
   color: SteelBlue;
 }
+
+.VL_bg {
+    background: SteelBlue;
+}
+
+.PC {
+    color: Pink;
+}
+
+.PC_bg{
+    background: Pink;
+}
 .invisible {
     display: hidden ;
+}
+.non_affiche{
+    display: none;
 }

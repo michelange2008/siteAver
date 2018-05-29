@@ -7,40 +7,38 @@
 <div class="container">
   @if(isset($titre)) <h4>{{$titre}}</h4>@endif
   @if($titre != 'Admin')
-  <nav class="nav navbar">
-    <nav class="nav-item">{!! link_to_route('user.create', 'Créer un nouvel éleveur','' ,['class' => 'btn btn-sm btn-secondary text-white']) !!}</nav>
-    <nav class="nav-item">{!! link_to_route('majNbTroupeau', 'MàJ nombre de troupeaux', '',['class' => 'btn btn-sm btn-warning text-white']) !!}</nav>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un éleveur" aria-label="Search">
-      <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-    </form>
+  <nav class="nav navbar justify-content-around">
+      <nav class="nav-item"><button id="tous" class="btn btn-sm btn-secondary text-white" > Tous </button></nav>
+      @foreach($especes as $espece)
+          <nav class="nav-item"><button id="{{$espece->abbreviation}}" class="btn btn-sm btn-secondary text-white espece {{$espece->abbreviation}}_bg" > {{$espece->nom }} </button></nav>
+      @endforeach
   </nav>
   @endif()
   <table id="listeEleveurs" class="table table-hover table-sm tablesorter">
     <thead>
       <tr class="bg-success">
-          <th scope="col"> <i class="fa fa-sort" ></i> Nom</th>
-        <th scope="col"> <i class="fa fa-sort" ></i> Email</th>
-        <th scope="col"> <i class="fa fa-sort" ></i> @if($titre == 'Admin') CRO @else() EDE @endif()</th>
+          <th scope="col">  Nom</th>
+        <th scope="col">  Email</th>
+        <th scope="col">  @if($titre == 'Admin') CRO @else() EDE @endif()</th>
         @if($titre != 'Admin')
-        <th scope="col" class="text-left"> <i class="fa fa-sort" ></i> Troupeaux</th>
+        <th scope="col" class="text-left">  Troupeaux</th>
         @endif()
-        <th scope="col" class="text-center"> <i class="fa fa-sort" ></i> Type d'activité</th>
-        <th scope="col" class="text-center"> <i class="fa fa-sort" ></i> V.S.</th>
+        <th scope="col" class="text-center">  Type d'activité</th>
+        <th scope="col" class="text-center">  V.S.</th>
         <th scope="col" class="text-center">Actions</th>
       </tr>
     </thead>
     <tbody>
       @foreach($troupeaux as $troupeau)
-      <tr id="{{ $troupeau->user->id }}" class="ligne_eleveur">
-          <th id="{{ $troupeau->id }}" scope="row" class="align-middle nom_eleveur">{{ $troupeau->user->name }}</th>
-        <td class="{{ $troupeau->id }} align-middle">
+      <tr id="{{ $troupeau->user->id }}" class="ligne_eleveur" name="{{$troupeau->especes->abbreviation}}" ">
+          <th id="{{ $troupeau->id }}_{{ $troupeau->user->id }}" scope="row" class="align-middle nom_eleveur {{ $troupeau->id }}_{{ $troupeau->user->id }}">{{ $troupeau->user->name }}</th>
+        <td class="{{ $troupeau->id }}_{{ $troupeau->user->id }} align-middle">
             @if(substr($troupeau->user->email, -2) != "af") 
                {{ $troupeau->user->email }}
             @else -
             @endif
         </td>
-        <td id="{{ $troupeau->id}}" class="{{ $troupeau->id }} align-middle">{{ ($troupeau->user->ede == 0)? '-' : $troupeau->user->ede }}</td>
+        <td id="{{ $troupeau->id}}" class="{{ $troupeau->id }}_{{ $troupeau->user->id }} align-middle">{{ ($troupeau->user->ede == 0)? '-' : $troupeau->user->ede }}</td>
         @if($titre != 'Admin')
         <td class="align-middle text-left {{ $troupeau->especes->abbreviation }}">{{ $troupeau->especes->nom }}</td>
         @endif()

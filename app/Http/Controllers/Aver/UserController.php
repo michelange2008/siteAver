@@ -8,6 +8,8 @@ use App\Repositories\UsersRepository;
 
 use App\Repositories\TroupeauxRepository;
 
+use App\Repositories\EspecesRepository;
+
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -19,20 +21,22 @@ class UserController extends Controller
      */
      protected $usersRepository;
      protected $troupeauxRepository;
+     protected $especesRepository;
 
-    public function __construct(UsersRepository $usersRepository, TroupeauxRepository $troupeauxRepository)
+    public function __construct(UsersRepository $usersRepository, TroupeauxRepository $troupeauxRepository, EspecesRepository $especesRepository)
     {
       $this->usersRepository = $usersRepository;
       $this->troupeauxRepository = $troupeauxRepository;
+      $this->especesRepository = $especesRepository;
     }
 
     public function index()
     {
-//      $users = $this->usersRepository->getEleveur();
       $troupeaux = $this->troupeauxRepository->getListeTroupeaux();
+      $especes = $this->especesRepository->getEspecesUtiles();
       return view('aver/listeUsers')->with([
-//        'users' => $users,
         'troupeaux' => $troupeaux,
+          'especes' => $especes,
         'titre' => 'Eleveurs Aver',
       ]);
     }
