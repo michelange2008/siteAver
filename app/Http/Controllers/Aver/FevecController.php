@@ -5,14 +5,6 @@ namespace App\Http\Controllers\Aver;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-//use App\Models\Fev_clients;
-//use App\Models\Fev_troupeaux;
-//use App\Models\Fev_typetroupeaux;
-//use App\Models\Fev_racedominante;
-//use App\Models\Fev_eleveurs_n;
-//use App\Models\Fev_troupeaux_n;
-//use App\Models\Activite;
-//use App\Models\Especes;
 use App\Repositories\FevecRepository;
 use App\Repositories\UsersRepository;
 use App\Repositories\TroupeauxRepository;

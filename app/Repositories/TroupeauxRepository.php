@@ -39,8 +39,6 @@ class TroupeauxRepository
   {
     $troupeau->especes_id = $inputs['especes_id'];
     $troupeau->races_id = $inputs['races_id'];
-//    $troupeau->productions_id = $inputs['productions'];
-//    $troupeau->effectif = $inputs['effectif'];
     $troupeau->uiv = $inputs['uiv'];
     $troupeau->user_id = $inputs['user_id']; // Auth::user()->id;
     $troupeau->save();
@@ -50,8 +48,6 @@ class TroupeauxRepository
   {
     $troupeau->especes_id = $inputs['especes_id'];
     $troupeau->races_id = $inputs['races_id'];
-//    $troupeau->productions_id = $inputs['productions'];
-//    $troupeau->effectif = $inputs['effectif'];
     $troupeau->uiv = $inputs['uiv'];
     $troupeau->user_id = $inputs['user_id']; // Auth::user()->id;
     $troupeau->id = $inputs['id'];

@@ -136,13 +136,6 @@ class UserController extends Controller
         return redirect('aver/user')->withOk("Cet éleveur a bien été supprimé");
     }
 
-    public function majNbTroupeau()
-    {
-      $nombreTroupeaux = $this->troupeauxRepository->getNombreTroupeauParUser();
-      $this->usersRepository->inscritNombreTroupeauParUser($nombreTroupeaux);
-      return redirect('aver/user');
-    }
-    
     public function supprimerEleveur($id)
     {
       $this->usersRepository->supprimerEleveur($id);

@@ -62,4 +62,14 @@ class FevecSousmenuRepository
         
         return $listeMenu;
     }
+    
+    public static function vetsan()
+    {
+      $listeMenu = new SousmenuFactory('Eleveurs dont nous sommes (ou non) vétérinaires sanitaires:');
+      $retour = new SousmenuItem('fevec.index', 'Retour', 'gris');
+      $listeMenu->addSousmenuItem($retour);
+
+      return $listeMenu;
+        
+    }
 }

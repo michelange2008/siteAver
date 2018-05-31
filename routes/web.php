@@ -31,9 +31,13 @@ Route::resource('aver/troupeau', 'Aver\TroupeauxController');
 
 Route::resource('aver/user', 'Aver\UserController');
 
-Route::get('/aver/majNbTroupeau', ['uses' => 'Aver\UserController@majNbTroupeau', 'as' => 'majNbTroupeau']);
-
 Route::get('/aver/admin', ['uses' => 'Aver\UserController@admin', 'as' => 'user.admin']);
+
+Route::get('/aver/user/visite/vetsan', ['uses' => 'Aver\VisiteController@changerVetsan', 'as' => 'visite.vetsan' ]);
+
+Route::post('/aver/user/visite/modifvetsan', ['uses' => 'Aver\VisiteController@modifVetsan', 'as' => 'visite.modifvetsan']);
+
+Route::get('/aver/user/visite/prophylo', ['uses' => 'Aver\VisiteController@changerProphylo', 'as' => 'visite.prophylo' ]);
 
 /* ROUTES CONCERNANT LA GESTION DES ELEVEURS FEVEC: NORMALISATION, IMPORT ET MISE A JOUR */
 

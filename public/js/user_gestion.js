@@ -86,9 +86,5 @@ $(function(){
       $('.ligne_eleveur').each(function(){
           $(this).removeClass('non_affiche');
        })
-
    })
-  
-          
-          
 })

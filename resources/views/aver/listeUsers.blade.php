@@ -44,13 +44,13 @@
         @endif()
         <td class="align-middle text-center" >{{ $troupeau->user->activite->nom }}</td>
         <td class="align-middle text-center" >
-            @if($troupeau->user->vetsan === null)
-                <button class="btn btn-sm btn-outline-danger">à def.</button></td>
-            @elseif($troupeau->user->vetsan)
-                <button class="btn btn-sm btn-outline-success"> oui </button></td>
-            @else
-                <button class="btn btn-sm btn-outline-grey"> non </button></td>
-            @endif
+            <button class="btn 
+                  @if($troupeau->user->vetsan) btn-success
+                  @elseif($troupeau->user->vetsan === null) btn-warning
+                  @else btn-danger
+                  @endif"
+                  ></button>
+   
         <td>{!! link_to_route('troupeau.show', 'Afficher', [$troupeau->id], ['class' => 'btn btn-outline-success btn-sm']) !!}</td>
           {!! Form::close() !!}
       </tr>

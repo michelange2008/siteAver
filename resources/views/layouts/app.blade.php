@@ -32,12 +32,6 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/b-1.5.1/b-flash-1.5.1/fh-3.1.3/r-2.2.1/rg-1.0.2/datatables.min.js"></script>
     <script src="https://use.fontawesome.com/f8a7076b4b.js"></script>
     
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
-    <script type="text/javascript" src="..\js\tablesorter\jquery.tablesorter.js"></script> 
-
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <link href="{{ asset('css/perso.css') }}" rel="stylesheet">
 
 </head>
