@@ -31,6 +31,16 @@ class ListeCard
         return $this->listeCard;
     }
     
+    public function addCardAvecBouton($titre, $icone, $texte, $routeBouton, $texteBouton, $couleurBouton, $bulleBouton)
+    {
+        $card = new CardFactory($titre, $icone, $texte);
+        $card->addBouton($routeBouton, $texteBouton, $couleurBouton, $bulleBouton);
+        $this->listeCard[] = $card;
+        
+        return $this->listeCard;
+        
+    }
+    
     public function listeCard()
     {
         return $this->listeCard;

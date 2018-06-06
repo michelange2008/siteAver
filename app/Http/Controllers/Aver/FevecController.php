@@ -10,12 +10,11 @@ use App\Repositories\UsersRepository;
 use App\Repositories\TroupeauxRepository;
 use App\Repositories\FevecSousmenuRepository;
 use App\Repositories\Fevec\ParamGestion;
-use App\Repositories\Fevec\MajVetSan;
-//use App\User;
-//use App\Troupeau;
-use App\Outils\ArrangeCsv;
-//use App\Outils\Graphiques;
+use App\Outils\MajDateMajFevec;
 
+use App\Outils\ArrangeCsv;
+
+    
 class FevecController extends Controller
 {
 
@@ -34,7 +33,10 @@ class FevecController extends Controller
     public function index()
     {
       $stats = $this->fevecRepository->calculStatEleveursTroupeaux();
-      return view('fevec\accueil', ['stats' => $stats ]);
+      return view('fevec\accueil', [
+          'stats' => $stats,
+          'dernMaJ' => MajDateMajFevec::dernMaJEnMois(),
+           ]);
     }
 
     public function gestion()
@@ -53,6 +55,8 @@ class FevecController extends Controller
         $resultImport = $this->fevecRepository->importFevec();
         $this->userRepository->supprimerListeEleveur($resultImport['listeIdASupprimer']);
         $this->verifieTroupeaux();
+        // Inscrit la date de mise à jour
+        MajDateMajFevec::dateMaJ();
         return redirect()->route('fevec.index');
     }
 
@@ -123,9 +127,4 @@ class FevecController extends Controller
         return redirect()->route('fevec.gestion')->with('status', 'Les paramètres ont été mis à jour');
     }
     
-    public function majVetSan()
-    {
-        MajVetSan::majVetsan();
-    }
-
 }

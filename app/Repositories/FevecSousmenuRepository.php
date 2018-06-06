@@ -15,8 +15,6 @@ class FevecSousmenuRepository
     $listeMenu->addSousmenuItem($toutMaJ);
     $param = new SousmenuItem('fevec.param', 'Paramètres', 'orange', "Permet de choisir quels types d'éleveurs et d'espèces on veut garder");
     $listeMenu->addSousmenuItem($param);
-    $majVetsan = new SousmenuItem('fevec.majVetsan', 'Vet. san.', 'bleu', "Met que l'on est vétérinaire sanitaire des éleveurs en convention");
-    $listeMenu->addSousmenuItem($majVetsan);
     $retour = new SousmenuItem('fevec.index', 'Retour à l\'accueil', 'gris');
     $listeMenu->addSousmenuItem($retour);
 
@@ -66,10 +64,37 @@ class FevecSousmenuRepository
     public static function vetsan()
     {
       $listeMenu = new SousmenuFactory('Eleveurs dont nous sommes (ou non) vétérinaires sanitaires:');
+      $majVetsan = new SousmenuItem('visite.majVetsan', 'Vet. san.', 'bleu', "Met que l'on est vétérinaire sanitaire des éleveurs en convention");
+      $listeMenu->addSousmenuItem($majVetsan);
       $retour = new SousmenuItem('fevec.index', 'Retour', 'gris');
       $listeMenu->addSousmenuItem($retour);
 
       return $listeMenu;
         
     }
+    
+    public static function prophylo()
+    {
+      $listeMenu = new SousmenuFactory('Gestion des prophylaxies');
+      $majProphylo = new SousmenuItem('visite.changerProphylo', 'Prophylo', 'bleu', "Met à jour les prophylaxies");
+      $listeMenu->addSousmenuItem($majProphylo);
+      $retour = new SousmenuItem('fevec.index', 'Retour', 'gris');
+      $listeMenu->addSousmenuItem($retour);
+
+      return $listeMenu;
+        
+    }
+
+    public static function prophyloBv()
+    {
+      $listeMenu = new SousmenuFactory('Gestion des prophylaxies des bovins');
+      $majProphylo = new SousmenuItem('visite.changerProphylo', 'Prophylo', 'bleu', "Met à jour les prophylaxies");
+      $listeMenu->addSousmenuItem($majProphylo);
+      $retour = new SousmenuItem('fevec.index', 'Retour', 'gris');
+      $listeMenu->addSousmenuItem($retour);
+
+      return $listeMenu;
+        
+    }
+
 }

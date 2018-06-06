@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Fevec;
+namespace App\Traits;
 /*
  * Attribue la valeur vrai au champ 'vetsan' (est vétérinaire sanitaire' 
  * à tous les éleveurs en convention
@@ -13,9 +13,9 @@ use App\Models\User;
  *
  * @author michel
  */
-class MajVetSan
+trait MajVetSan
 {
-    public static function majVetsan()
+    public function majVetsan()
     {
         $users = User::where('admin', 0)->get(); // recherche tous les utilisateurs non admin
         

@@ -32,12 +32,24 @@ Route::resource('aver/troupeau', 'Aver\TroupeauxController');
 Route::resource('aver/user', 'Aver\UserController');
 
 Route::get('/aver/admin', ['uses' => 'Aver\UserController@admin', 'as' => 'user.admin']);
-
-Route::get('/aver/user/visite/vetsan', ['uses' => 'Aver\VisiteController@changerVetsan', 'as' => 'visite.vetsan' ]);
-
+// AFFICHE LA PAGE AVEC LE FORMULAIRE PERMETTANT DE MODIFIER VET SAN OU NON
+Route::get('/aver/user/visite/vetsan', ['uses' => 'Aver\VisiteController@changerVetsan', 'as' => 'visite.changerVetsan' ]);
+// MET LA VALEUR VRAI POUR VET SAN A TOUS LES ELEVEURS DE L AVER
 Route::post('/aver/user/visite/modifvetsan', ['uses' => 'Aver\VisiteController@modifVetsan', 'as' => 'visite.modifvetsan']);
+// MET A JOUR LA COLONNE VETSAN DE LA TABLE USER APRES MODIFICATION VET SAN
+Route::get('aver/fevec/majVetsan', ['uses' => 'Aver\VisiteController@majVetsan', 'as' => 'visite.majVetsan']);
+// AFFICHE LE FORMULAIRE GENERAL POUR MODIFIER LA PROPHYLAXIE
+Route::get('/aver/user/visite/prophylo/changer/tous', ['uses' => 'Aver\VisiteController@changerProphylo', 'as' => 'visite.changerProphylo' ]);
 
-Route::get('/aver/user/visite/prophylo', ['uses' => 'Aver\VisiteController@changerProphylo', 'as' => 'visite.prophylo' ]);
+Route::get('/aver/user/visite/prophylo/changer/bovins', ['uses' => 'Aver\VisiteController@changerProphyloBv', 'as' => 'visite.changerProphyloBv' ]);
+
+Route::post('/aver/user/visite/prophylo/changer/modifbovins', ['uses' => 'Aver\VisiteController@modifProphyloBv', 'as' => 'visite.modifProphyloBv' ]);
+
+Route::get('/aver/user/visite/prophylo/changer/petitsrum', ['uses' => 'Aver\VisiteController@changerProphyloPr', 'as' => 'visite.changerProphyloPr' ]);
+
+Route::get('/aver/user/visite/prophylo/changer/autres', ['uses' => 'Aver\VisiteController@changerProphyloAutres', 'as' => 'visite.changerProphyloAutres' ]);
+
+Route::get('/aver/user/visite/majProphylo', ['uses' => 'Aver\VisiteController@majProphylo', 'as' => 'visite.majProphylo' ]);
 
 /* ROUTES CONCERNANT LA GESTION DES ELEVEURS FEVEC: NORMALISATION, IMPORT ET MISE A JOUR */
 
@@ -59,7 +71,6 @@ Route::get('aver/fevec/parametreImport', ['uses' => 'Aver\FevecController@paramI
 
 Route::post('aver/fevec/majParam', ['uses' => 'Aver\FevecController@majParam', 'as' => 'fevec.majParam']);
 
-Route::get('aver/fevec/majVetsan', ['uses' => 'Aver\FevecController@majVetsan', 'as' => 'fevec.majVetsan']);
 
 
 Route::get('/aver/supprimerEleveur/{id}', ['uses' => 'Aver\UserController@supprimerEleveur', 'as' => 'user.supprimerEleveur']);

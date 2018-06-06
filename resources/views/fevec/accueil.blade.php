@@ -5,7 +5,13 @@
 @section('content')
 
 <div class="container-fluid">
-  <h3 class="alert alert-success">Tableau de bord</h3>
+    <h3 class="alert alert-success">Tableau de bord</h3>
+      @if($dernMaJ > 3)
+          <h4 class="alert alert-warning">attention dernière mise à jour il y a {{$dernMaJ}} mois</h4>
+      @elseif($dernMaJ > 6)
+         <h4 class="alert alert-danger">attention dernière mise à jour il y a {{$dernMaJ}} mois</h4>
+      @endif()
+  </h3>
   <div class="container d-flex flex-row justify-content-between">
 @foreach($stats as $key => $stat)
   @if($key = "graph")

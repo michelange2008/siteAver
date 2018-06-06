@@ -8,10 +8,9 @@
 
 @section('content')
 {{ Form::open(['route' => 'visite.modifvetsan'])}}
-{{ Form::token() }}
-<div class="container-fluid d-flex align-content-center"> {{ Form::submit('mettre à jour', ['class' => 'btn btn-success']) }} </div>
 
-<div class="container-fluid d-flex flex-row justify-content-between">
+<div class="container-fluid d-flex justify-content-end"> {{ Form::submit('mettre à jour', ['class' => 'btn btn-success']) }} </div>
+<div class="container-fluid d-flex flex-row justify-content-between espace">
     
     @foreach($listeItem->listeCard() as $item)
     <div class="card" style="width: 25rem">
@@ -19,23 +18,15 @@
         <div class="card-body">
             <h4 class=" alert-success card-title">{{ $item->titre()}}</h4>
             <table class="tab-content container-fluid">
-                <thead>
-                    <tr>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Activité</th>
-                        <th scope="col">Vét. san.</th>
-                    </tr>
-                </thead>
                 <tbody>
                     
                     @foreach($users as $user)
                     
                     @if($user->vetsan === $item->texte())
                     <tr>
-                        <td>{{ $user->name}}</td>
-                        <td>{{ strtolower($user->activite->abbreviation)}}</td>
+                        <td class="{{$user->activite->abbreviation}}" >{{ $user->name}}</td>
                         <td class="text-center">
-                           {{ Form::checkbox('oui', 'oui', $user->vetsan )}}
+                           {{ Form::checkbox('cb_'.$user->id, $user->id, $user->vetsan )}}
                         </td>
                     </tr>
                     @endif

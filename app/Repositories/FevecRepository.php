@@ -11,6 +11,7 @@ use App\Models\Fev_troupeaux;
 use App\Models\Fev_eleveurs_n;
 use App\Models\Fev_troupeaux_n;
 use App\Models\Fev_TypeActivite;
+use App\Models\Fev_typetroupeaux;
 use App\Models\Activite;
 use App\Models\Especes;
 use App\Factories\Graphiques;
@@ -389,7 +390,7 @@ class FevecRepository
   }
   public function statEleveurs()
   {
-
+    $stats = [][];
     // $stats['nombre d\'éleveurs'] = User::count();
     $convSuiv = Graphiques::creeGraph('donut', "types d'éleveurs", StatFactory::convSuiv());
     $nbTpDiff = Graphiques::creeGraph('donut', "espèces (nombre de troupeaux)", StatFactory::nbTpDiff());

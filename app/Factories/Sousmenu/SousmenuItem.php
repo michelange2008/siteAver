@@ -6,14 +6,14 @@ class SousmenuItem extends SousmenuObjet
 {
 
     protected $route;
-    protected $bouton;
+    protected $texte;
     protected $couleur;
     protected $bulle;
 
-    public function __construct($route, $bouton, $couleur, $bulle='')
+    public function __construct($route, $texte, $couleur, $bulle='')
     {
       $this->route = $route;
-      $this->bouton = $bouton;
+      $this->texte = $texte;
       $this->couleur = $this->setCouleur($couleur);
       $this->bulle = $bulle;
     }
@@ -35,9 +35,9 @@ class SousmenuItem extends SousmenuObjet
     {
       return $this->route;
     }
-    public function bouton()
+    public function texte()
     {
-      return $this->bouton;
+      return $this->texte;
     }
     public function couleur()
     {

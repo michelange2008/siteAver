@@ -12,7 +12,7 @@
            {!! Form::submit('Enregistrer les modifications', ['class' => 'btn btn-menu btn-success']) !!}
         </div>
         <div class="container d-flex flex-row justify-content-around">
-        {{ csrf_field() }}
+
         @foreach($params as $param)
             <div class="card" style="width: 25rem">
                 <img class="card-img-top" src="{{ URL::asset('medias')}}/icones/{{ $param->icone() }}" alt="type">

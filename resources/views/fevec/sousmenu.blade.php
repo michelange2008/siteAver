@@ -4,7 +4,7 @@
   @foreach($menu->listeSousmenu() as $sousmenuItem)
     <a href="{{URL::route($sousmenuItem->route()) }}">
         <button class="btn {{ $sousmenuItem->couleur() }}  btn-menu" title="{{ $sousmenuItem->bulle() }}">
-         {{$sousmenuItem->bouton()}}
+         {{$sousmenuItem->texte()}}
       </button>
     </a>
     @endforeach

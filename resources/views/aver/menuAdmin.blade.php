@@ -15,9 +15,9 @@
           </a>
            <div class="dropdown-menu bg-dark text-light" aria-labelledBy = "navbarDropdown">
 
-            <a class="dropdown-item text-muted" href="{{ URL::route('visite.vetsan') }}">Vét. San.</a>
+            <a class="dropdown-item text-muted" href="{{ URL::route('visite.changerVetsan') }}">Vét. San.</a>
 
-            <a class="dropdown-item text-muted" href="{{ URL::route('visite.prophylo') }}">Prophylaxie</a>
+            <a class="dropdown-item text-muted" href="{{ URL::route('visite.changerProphylo') }}">Prophylaxie</a>
 
            </div>
       </li>

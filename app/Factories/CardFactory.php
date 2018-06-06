@@ -11,6 +11,8 @@ namespace App\Factories;
  *
  * @author michel
  */
+use App\Factories\Sousmenu\SousmenuItem;
+
 class CardFactory
 {
     protected $titre;
@@ -19,15 +21,17 @@ class CardFactory
     protected $bouton;
 
 
-    public function __construct($titre, $icone, $texte = '')
+    public function __construct($titre, $icone, $texte = '', $bouton = null)
     {
         $this->titre = $titre;
         $this->icone = $icone;
         $this->texte = $texte;
+        $this->bouton = $bouton;
     }
     
-    public function addBouton($bouton)
+    public function addBouton($routeBouton, $texteBouton, $couleurBouton, $bulleBouton)
     {
+        $bouton = new SousmenuItem($routeBouton, $texteBouton, $couleurBouton, $bulleBouton);
         $this->bouton = $bouton;
     }
     

@@ -104,6 +104,15 @@ label {
 .PC_bg{
     background: Pink;
 }
+
+.CONV {
+    color: blue;
+} 
+
+.SUIV {
+    color: green;
+}
+
 .invisible {
     display: hidden ;
 }
