@@ -1,3 +1,6 @@
+@import url("couleurs_especes.css");
+@import url('boutons_perso.css');
+
 body {
   font-family: "Raleway", sans-serif;
   font-size: 14px;
@@ -31,14 +34,6 @@ label {
 	margin-top: 5px;
 }
 
-.btn {
-  margin-top: 5px;
-}
-.btn-menu {
-  margin-bottom: 20px;
-  line-height: 2;
-}
-
 .navbar-serree {
   margin-bottom: 2px;
 }
@@ -57,53 +52,6 @@ label {
   padding-top: 5px;
 }
 
-.OA{
-  color: Orange;
-}
-
-.OA_bg{
-    background: Orange;
-}
-
-.VA{
-  color: Red;
-}
-
-.VA_bg {
-    background: Red;
-}
-
-.OL {
-  color: blue;
-}
-
-.OL_bg {
-    background: blue;
-}
-
-.CP {
-  color: Green;
-}
-
-.CP_bg {
-    background: Green;
-}
-
-.VL {
-  color: SteelBlue;
-}
-
-.VL_bg {
-    background: SteelBlue;
-}
-
-.PC {
-    color: Pink;
-}
-
-.PC_bg{
-    background: Pink;
-}
 
 .CONV {
     color: blue;

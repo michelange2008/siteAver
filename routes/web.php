@@ -38,20 +38,21 @@ Route::get('/aver/user/visite/vetsan', ['uses' => 'Aver\VisiteController@changer
 Route::post('/aver/user/visite/modifvetsan', ['uses' => 'Aver\VisiteController@modifVetsan', 'as' => 'visite.modifvetsan']);
 // MET A JOUR LA COLONNE VETSAN DE LA TABLE USER APRES MODIFICATION VET SAN
 Route::get('aver/fevec/majVetsan', ['uses' => 'Aver\VisiteController@majVetsan', 'as' => 'visite.majVetsan']);
-// AFFICHE LE FORMULAIRE GENERAL POUR MODIFIER LA PROPHYLAXIE
-Route::get('/aver/user/visite/prophylo/changer/tous', ['uses' => 'Aver\VisiteController@changerProphylo', 'as' => 'visite.changerProphylo' ]);
 
-Route::get('/aver/user/visite/prophylo/changer/bovins', ['uses' => 'Aver\VisiteController@changerProphyloBv', 'as' => 'visite.changerProphyloBv' ]);
+//###################### PROPHYLAXIES ##########################################################################
 
-Route::post('/aver/user/visite/prophylo/changer/modifbovins', ['uses' => 'Aver\VisiteController@modifProphyloBv', 'as' => 'visite.modifProphyloBv' ]);
+    // AFFICHE LE FORMULAIRE GENERAL POUR MODIFIER LA PROPHYLAXIE
+    Route::get('/aver/user/prophylo/sommaire', ['uses' => 'Aver\ProphyloController@index', 'as' => 'prophylo.index' ]);
 
-Route::get('/aver/user/visite/prophylo/changer/petitsrum', ['uses' => 'Aver\VisiteController@changerProphyloPr', 'as' => 'visite.changerProphyloPr' ]);
+    Route::get('/aver/user/prophylo/changer/{espece}', ['uses' => 'Aver\ProphyloController@changerProphylo', 'as' => 'prophylo.changer' ]);
 
-Route::get('/aver/user/visite/prophylo/changer/autres', ['uses' => 'Aver\VisiteController@changerProphyloAutres', 'as' => 'visite.changerProphyloAutres' ]);
+    Route::post('/aver/user/prophylo/changer/', ['uses' => 'Aver\ProphyloController@modifProphylo', 'as' => 'prophylo.modif' ]);
 
-Route::get('/aver/user/visite/majProphylo', ['uses' => 'Aver\VisiteController@majProphylo', 'as' => 'visite.majProphylo' ]);
+    Route::get('/aver/user/prophylo/majProphyloBovines', ['uses' => 'Aver\ProphyloController@majProphyloBovines', 'as' => 'prophylo.majProphyloBovines' ]);
 
-/* ROUTES CONCERNANT LA GESTION DES ELEVEURS FEVEC: NORMALISATION, IMPORT ET MISE A JOUR */
+//################################################################################################################
+    
+    /* ROUTES CONCERNANT LA GESTION DES ELEVEURS FEVEC: NORMALISATION, IMPORT ET MISE A JOUR */
 
 Route::get('aver/fevec/accueil', ['uses' => 'Aver\FevecController@index', 'as' => 'fevec.index']);
 

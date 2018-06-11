@@ -25,15 +25,13 @@ class RempliAnneesProphylo
         for($i = 2012; $i < 2060; $i++ )
         {
             $debut = Carbon::createFromDate($i, 10, 01, 'Europe/Paris');
-          
             $campagne = $this->creerUneCampagne($debut);
+            $date = Carbon::createFromDate($i, 10, 01, 'Europe/Paris');
             $anneeprophyle = new Anneeprophylo();
             
-            $anneeprophyle->debut = $debut;
+            $anneeprophyle->debut = $date;
             $anneeprophyle->campagne = $campagne;
-            echo "$campagne<br>";
             $anneeprophyle->save();
-            
         }
         
     }

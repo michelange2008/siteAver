@@ -1,39 +1,42 @@
 <?php
-
+/* 
+ * Fabrication des boutons pour les menus
+ * L'interface SousmenuObjet est prévue en cas de création d'autres classes du même type que celle-ci
+ * la variable parametre est facultative et correspond aux routes ayant une partie variable
+ * de type site/user/{parametre}
+ * 
+ * Fonctionne avec la classe SousmenuFactory destinée à faire une liste de SousmenuItem
+ */
 namespace App\Factories\Sousmenu;
+
+use App\Factories\Sousmenu\SousmenuCouleurs;
 
 class SousmenuItem extends SousmenuObjet
 {
 
     protected $route;
+    protected $parametre;
     protected $texte;
     protected $couleur;
     protected $bulle;
 
-    public function __construct($route, $texte, $couleur, $bulle='')
+    public function __construct($route, $texte, $couleur, $bulle='', $parametre = null)
     {
       $this->route = $route;
+      $this->parametre = $parametre;
       $this->texte = $texte;
-      $this->couleur = $this->setCouleur($couleur);
+      $this->couleur = $couleur;
+      $this->couleur = $this->couleur;
       $this->bulle = $bulle;
-    }
-
-    private function setCouleur($couleur)
-    {
-      if($couleur == "vert") $class = 'btn-success';
-      elseif($couleur ==  "orange") $class = 'btn-warning';
-      elseif($couleur ==  "rouge") $class = 'btn-danger';
-      elseif($couleur == 'gris') $class = 'btn-secondary';
-      elseif($couleur == 'bleu') $class = 'btn-primary';
-      elseif($couleur == 'clair') $class = 'btn-light';
-      elseif($couleur == 'noir') $class = 'btn-dark';
-      else $class = 'btn-success';
-      return $class;
     }
 
     public function route()
     {
       return $this->route;
+    }
+    public function parametre()
+    {
+        return $this->parametre;
     }
     public function texte()
     {

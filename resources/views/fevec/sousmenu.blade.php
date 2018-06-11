@@ -2,8 +2,8 @@
   <h3 class="alert alert-success"><?php echo $menu->titreSousmenu() ?></h3>
   <div>
   @foreach($menu->listeSousmenu() as $sousmenuItem)
-    <a href="{{URL::route($sousmenuItem->route()) }}">
-        <button class="btn {{ $sousmenuItem->couleur() }}  btn-menu" title="{{ $sousmenuItem->bulle() }}">
+    <a href="{{route($sousmenuItem->route(), [$sousmenuItem->parametre()]) }}">
+        <button class="btn btn-carre {{ $sousmenuItem->couleur() }}  btn-menu" title="{{ $sousmenuItem->bulle() }}">
          {{$sousmenuItem->texte()}}
       </button>
     </a>

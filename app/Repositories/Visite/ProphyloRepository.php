@@ -12,27 +12,90 @@ namespace App\Repositories\Visite;
  * @author michel
  */
 use App\Factories\ListeCard;
-use App\Models\Anneeprophylo;
 use App\Models\Troupeau;
+use App\Models\Anneeprophylo_troupeau;
+use App\Factories\Sousmenu\SousmenuCouleurs;
+use App\Constantes\ConstAnimaux;
 
 class ProphyloRepository
 {
     public function itemProphylo()
     {
+        $route = 'prophylo.changer';
+        $texte = 'Modifier La situation des éleveurs vis-à-vis de la prophylaxie';
+        $listCard = [
+            [
+                'id' => 1,
+                'titre' => ConstAnimaux::BV_long,
+                'icone' => 'tete_bovin.svg',
+                'texte' => $texte,
+                'couleur' => SousmenuCouleurs::NAVY,
+                'parametre' => ConstAnimaux::BV,
+            ],
+            [
+                'id' => 2,
+                'titre' => ConstAnimaux::PR_long,
+                'icone' => 'tete_ovin_caprin.svg',
+                'texte' => $texte,
+                'couleur' => SousmenuCouleurs::GOLD,
+                'parametre' => ConstAnimaux::PR,
+            ],
+            [
+                'id' => 3,
+                'titre' => ConstAnimaux::BC_long,
+                'icone' => 'tete_Porc_volaille.svg',
+                'texte' => $texte,                
+                'couleur' => SousmenuCouleurs::ROSE,
+                'parametre' => ConstAnimaux::BC,
+            ]
+        ];
         $listeItem = new ListeCard();
-        $listeItem->addCardAvecBouton('bovins', 'tete_bovin.svg', 'V', 'visite.changerProphyloBv', 'bovins', 'vert', 'changer les prophylaxies des éleveurs bovins');
         
-        $listeItem->addCardAvecBouton('petits ruminants', 'tete_ovin_caprin.svg', 'O', 'visite.changerProphyloPr', 'petits ruminants', 'bleu', 'changer les prophylaxies des petits ruminants');
-        $listeItem->addCardAvecBouton('autres', 'tete_porc_volaille.svg', 'A', 'visite.changerProphyloAutres', 'autres', 'rouge', 'changer les prophylaxies des autres especes');
+        foreach($listCard as $card)
+        {
+            $listeItem->addCard($card['id'], $card['titre'], $card['icone'], $card['texte']);
+            $listeItem->addBouton($card['id'], $route, $card['titre'], $card['couleur'], $card['texte']);
+            $listeItem->addOption($card['id'], $card['parametre']);
+        };
         
         return $listeItem;
     }
     
-    public function ajouteProphylo($anneeprophylos_id, $troupeaux_id)
+    public function ajouteProphylo($datas)
     {
-        $troupeau = Troupeau::find($troupeaux_id);
-        $annee = Anneeprophylo::find($anneeprophylos_id);
-        $troupeau->anneeprophylos()->update($annee);
-        return $troupeau;
+        $nbAjout = 0;
+        foreach ($datas as $data)
+        {
+            $anneeprophylos_id = explode("_", $data)[0];
+            $troupeaux_id = explode("_", $data)[1];
+            
+            $ligne = Anneeprophylo_troupeau::where('anneeprophylo_id', $anneeprophylos_id)
+                                        ->where('troupeau_id', $troupeaux_id)
+                                        ->get();
+            if(count($ligne) === 0) 
+            {
+                $troupeau = Troupeau::find($troupeaux_id);
+                $troupeau->anneeprophylos()->attach($anneeprophylos_id);
+                $nbAjout++;
+            }
+        }
+        return $nbAjout;
+    }
+    
+    public function enleveProphylo($datas)
+    {
+        $nbSuppr = 0;
+        $anneeprophylo_troupeau = Anneeprophylo_troupeau::all();
+        foreach ($anneeprophylo_troupeau as $ligne)
+        {
+            $synthese = $ligne->anneeprophylo_id."_".$ligne->troupeau_id;
+            if(!in_array($synthese, $datas))
+            {
+                $troupeau = Troupeau::find($ligne->troupeau_id);
+                $troupeau->anneeprophylos()->detach($ligne->anneeprophylo_id);
+                $nbSuppr++;
+            }
+        }
+        return $nbSuppr;
     }
 }

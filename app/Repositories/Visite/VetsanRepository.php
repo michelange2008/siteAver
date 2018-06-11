@@ -21,9 +21,9 @@ class VetsanRepository
     public function itemVetsan() // FOURNIT L OBJET POUR AFFICHER LES CARD DANS LA PAGE VETSAN
     {
         $listeItem =  new ListeCard();
-        $listeItem->addCard('oui', 'yes.svg', 1);
-        $listeItem->addCard('non', 'no.svg', 0);
-        $listeItem->addCard('à définir', 'ask.svg', null);
+        $listeItem->addCard(1,'oui', 'yes.svg', 1);
+        $listeItem->addCard(2,'non', 'no.svg', 0);
+        $listeItem->addCard(3, 'à définir', 'ask.svg', null);
         
         return $listeItem;
     }

@@ -16,7 +16,7 @@
         <div class="card-body">
             <h5 class=" alert-success card-title">{{ $item->titre()}}</h5>
             <p class="card-text">{{ $item->texte()}}</p>
-            <a class="btn {{ $item->bouton()->couleur()}}" href="{{route($item->bouton()->route())}}" title='{{ $item->bouton()->bulle()}}'>{{ $item->bouton()->texte()}}</a>
+            <a class="btn btn-carre {{ $item->bouton()->couleur()}}" href="{{route($item->bouton()->route(), [$item->option()])}}" title='{{ $item->bouton()->bulle()}}'>{{ $item->bouton()->texte()}}</a>
     </div>
 
     </div>

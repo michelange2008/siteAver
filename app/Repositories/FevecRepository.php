@@ -390,7 +390,7 @@ class FevecRepository
   }
   public function statEleveurs()
   {
-    $stats = [][];
+    //$stats = [][];
     // $stats['nombre d\'éleveurs'] = User::count();
     $convSuiv = Graphiques::creeGraph('donut', "types d'éleveurs", StatFactory::convSuiv());
     $nbTpDiff = Graphiques::creeGraph('donut', "espèces (nombre de troupeaux)", StatFactory::nbTpDiff());

@@ -19,20 +19,26 @@ class CardFactory
     protected $icone;
     protected $texte;
     protected $bouton;
+    protected $option;
 
 
-    public function __construct($titre, $icone, $texte = '', $bouton = null)
+    public function __construct($titre, $icone, $texte = '', $bouton = null, $option = null)
     {
         $this->titre = $titre;
         $this->icone = $icone;
         $this->texte = $texte;
         $this->bouton = $bouton;
+        $this->option = $option;
     }
     
     public function addBouton($routeBouton, $texteBouton, $couleurBouton, $bulleBouton)
     {
         $bouton = new SousmenuItem($routeBouton, $texteBouton, $couleurBouton, $bulleBouton);
         $this->bouton = $bouton;
+    }
+    public function addOption($option)
+    {
+        $this->option = $option;
     }
     
     public function titre()
@@ -53,5 +59,10 @@ class CardFactory
     public function bouton()
     {
         return $this->bouton;
+    }
+    
+    public function option()
+    {
+        return $this->option;
     }
 }

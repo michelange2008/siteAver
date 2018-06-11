@@ -12,14 +12,18 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Repositories/Visite/ProphyloRepository.php</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Repositories/FevecSousmenuRepository.php</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Models/Troupeau.php</file>
             <file>file:/C:/Users/michel/Documents/www/siteAver/app/Repositories/UsersRepository.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Repositories/TroupeauxRepository.php</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Repositories/Visite/VetsanRepository.php</file>
             <file>file:/C:/Users/michel/Documents/www/siteAver/resources/views/aver/listeUsers.blade.php</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/resources/views/visite/prophylo/changerProphyloBv.blade.php</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Http/Controllers/Aver/VisiteController.php</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/resources/views/visite/prophylo/changerProphylo.blade.php</file>
             <file>file:/C:/Users/michel/Documents/www/siteAver/routes/web.php</file>
             <file>file:/C:/Users/michel/Documents/www/siteAver/public/css/perso.css</file>
             <file>file:/C:/Users/michel/Documents/www/siteAver/app/Http/Controllers/Aver/UserController.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/public/js/user_gestion.js</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/resources/views/layouts/app.blade.php</file>
         </group>
     </open-files>
 </project-private>

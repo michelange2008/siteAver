@@ -20,6 +20,5 @@ trait CreeCampagne
     public function creerUneCampagne(Carbon $debut)
     {
         return $debut->year.' - '.$debut->addYear()->year;
-     
     }
 }

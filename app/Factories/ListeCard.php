@@ -23,22 +23,25 @@ class ListeCard
     }
 
 
-    public function addCard($titre, $icone, $texte)
+    public function addCard($cardId, $titre, $icone, $texte)
     {
         $card = new CardFactory($titre, $icone, $texte);
-        $this->listeCard[] = $card;
+        $this->listeCard[$cardId] = $card;
         
         return $this->listeCard;
     }
     
-    public function addCardAvecBouton($titre, $icone, $texte, $routeBouton, $texteBouton, $couleurBouton, $bulleBouton)
+    public function addBouton($cardId, $routeBouton, $texteBouton, $couleurBouton, $bulleBouton)
     {
-        $card = new CardFactory($titre, $icone, $texte);
-        $card->addBouton($routeBouton, $texteBouton, $couleurBouton, $bulleBouton);
-        $this->listeCard[] = $card;
+        $this->listeCard[$cardId]->addBouton($routeBouton, $texteBouton, $couleurBouton, $bulleBouton);
         
         return $this->listeCard;
         
+    }
+    
+    public function addOption($cardId, $option)
+    {
+        $this->listeCard[$cardId]->addOption($option);
     }
     
     public function listeCard()
