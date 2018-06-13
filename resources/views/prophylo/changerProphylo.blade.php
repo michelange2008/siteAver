@@ -15,8 +15,20 @@
 @endif()
 <div class="container-fluid d-flex flex-row justify-content-between espace">
     {{ Form::open(['route' => 'prophylo.modif'])}}
-        {{ Form::submit('Mettre à jour', ['class' => 'btn btn-success'])}}
-        <div id='bascule' class="btn btn-outline-info btn-carre" title="permet de modifier les prophylaxies des années précédentes">Modifier tout le tableau</div>
+        {{ Form::hidden('groupe', $groupe) }} 
+        <div class="d-flex flex-row justify-content-between">
+            <div class="d-flex flex-row justify-content-start">
+                <div id='bascule' class="btn btn-outline-info btn-carre" title="permet de modifier les prophylaxies des années précédentes">Modifier tout le tableau</div>
+                <!-- Si affichage des bovins on affcihe un bouton pour remplir automatiquement la dernière colonne -->
+                @if($groupe === $BV)
+                <p> _____ </p>
+                <a id="remplitVA" href="{{route('prophylo.remplit')}}" class="btn btn-outline-navy btn-carre">
+                    Remplir l'année en court
+                </a> 
+            @endif()
+            </div>
+            {{ Form::submit('Mettre à jour', ['id' => 'maj', 'class' => 'btn btn-secondary btn-carre', 'disabled' => 'disabled'])}}
+        </div>
     <table id="listeEleveurs" class="table table-striped table-hover tablesorter">
         <thead >
             <tr class="bg-success">

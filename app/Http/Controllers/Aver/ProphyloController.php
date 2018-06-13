@@ -8,9 +8,11 @@ use App\Http\Controllers\Controller;
 use App\Repositories\Visite\ProphyloRepository;
 use App\Repositories\FevecSousmenuRepository;
 use App\Outils\RempliAnneesProphylo;
+use App\Constantes\ConstAnimaux;
 
 use App\Models\Troupeau;
 use App\Models\Anneeprophylo;
+use App\Models\Anneeprophylo_troupeau;
 
 class ProphyloController extends Controller
 {
@@ -45,17 +47,20 @@ class ProphyloController extends Controller
             'troupeaux' => $troupeaux,
             'annees' => $annees,
             'groupe' => $groupe,
+            'BV' => ConstAnimaux::BV,
         ]);
     }
     
     public function modifProphylo(Request $request)
     {
         $datas = $request->all();
+
         array_shift($datas);
-        
+        $groupe = array_shift($datas);
+
         $nbAjout = $this->prophyloRepository->ajouteProphylo($datas);
 
-        $nbSuppr = $this->prophyloRepository->enleveProphylo($datas);
+        $nbSuppr = $this->prophyloRepository->enleveProphylo($datas, $groupe);
         
         if($nbAjout == 0 && $nbSuppr == 0)
         {
@@ -75,6 +80,7 @@ class ProphyloController extends Controller
         }
     }
     
+    // remplit toutes les cases des prophylo de vaches allaitantes
     public function majProphyloBovines()
     {
         $troupeaux = Troupeau::all();
@@ -90,14 +96,30 @@ class ProphyloController extends Controller
             }
         }
     }
+    
+    // Remplit les cases prophuylo en bovins allaitants pour l'année en cours
+    public function remplitVAencours()
+    {
+        $annee = $this->anneeActuelle();
+        $objet_annee = Anneeprophylo::where('debut', $annee)->first();
+        $troupeauxVA = Troupeau::all();
+        foreach($troupeauxVA as $troupeauVA)
+        {
+            if($troupeauVA->especes->abbreviation === ConstAnimaux::VA)
+            {
+                $troupeauVA->anneeprophylos()->detach($objet_annee);
+                $troupeauVA->anneeprophylos()->attach($objet_annee);
+                
+                
+            }
+        }
+        return redirect()->back();
+    }
 
-
+    // Avait juste pour fonction de remplir la table des années pour la gestion de la prophylaxie
     public function remplitAnnesProphylo()
     {
         $rempli = new RempliAnneesProphylo();
         $rempli->remplitTable();
     }
-    
-    
-
 }

@@ -42,13 +42,15 @@ Route::get('aver/fevec/majVetsan', ['uses' => 'Aver\VisiteController@majVetsan',
 //###################### PROPHYLAXIES ##########################################################################
 
     // AFFICHE LE FORMULAIRE GENERAL POUR MODIFIER LA PROPHYLAXIE
-    Route::get('/aver/user/prophylo/sommaire', ['uses' => 'Aver\ProphyloController@index', 'as' => 'prophylo.index' ]);
+    Route::get('/aver/prophylo/sommaire', ['uses' => 'Aver\ProphyloController@index', 'as' => 'prophylo.index' ]);
 
-    Route::get('/aver/user/prophylo/changer/{espece}', ['uses' => 'Aver\ProphyloController@changerProphylo', 'as' => 'prophylo.changer' ]);
+    Route::get('/aver/prophylo/changer/{espece}', ['uses' => 'Aver\ProphyloController@changerProphylo', 'as' => 'prophylo.changer' ]);
 
-    Route::post('/aver/user/prophylo/changer/', ['uses' => 'Aver\ProphyloController@modifProphylo', 'as' => 'prophylo.modif' ]);
+    Route::post('/aver/prophylo/changer/', ['uses' => 'Aver\ProphyloController@modifProphylo', 'as' => 'prophylo.modif' ]);
+    
+    Route::get('aver/prophylo/remplitAnneeEnCours', ['uses' => 'Aver\ProphyloController@remplitVAencours', 'as' => 'prophylo.remplit']);
 
-    Route::get('/aver/user/prophylo/majProphyloBovines', ['uses' => 'Aver\ProphyloController@majProphyloBovines', 'as' => 'prophylo.majProphyloBovines' ]);
+    Route::get('/aver/prophylo/majProphyloBovines', ['uses' => 'Aver\ProphyloController@majProphyloBovines', 'as' => 'prophylo.majProphyloBovines' ]);
 
 //################################################################################################################
     

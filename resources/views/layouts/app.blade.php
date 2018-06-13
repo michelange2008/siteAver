@@ -33,6 +33,9 @@
     <script src="https://use.fontawesome.com/f8a7076b4b.js"></script>
     
     <link href="{{ asset('css/perso.css') }}" rel="stylesheet">
+    <!-- jquery-confirm -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>   
 
 </head>
 <body>

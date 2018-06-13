@@ -56,8 +56,8 @@ class ProphyloRepository
             $listeItem->addCard($card['id'], $card['titre'], $card['icone'], $card['texte']);
             $listeItem->addBouton($card['id'], $route, $card['titre'], $card['couleur'], $card['texte']);
             $listeItem->addOption($card['id'], $card['parametre']);
-        };
-        
+        }
+
         return $listeItem;
     }
     
@@ -82,16 +82,19 @@ class ProphyloRepository
         return $nbAjout;
     }
     
-    public function enleveProphylo($datas)
+    public function enleveProphylo($datas, $groupe)
     {
         $nbSuppr = 0;
         $anneeprophylo_troupeau = Anneeprophylo_troupeau::all();
         foreach ($anneeprophylo_troupeau as $ligne)
         {
             $synthese = $ligne->anneeprophylo_id."_".$ligne->troupeau_id;
-            if(!in_array($synthese, $datas))
+            $troupeau = Troupeau::find($ligne->troupeau_id);
+             /*si le troupeau est dans le groupe à modifier 
+              * et qu'il n'est pas dans le tableau renvoyé il faut le supprimer
+              */
+            if($troupeau->especes->groupe === $groupe && !in_array($synthese, $datas))
             {
-                $troupeau = Troupeau::find($ligne->troupeau_id);
                 $troupeau->anneeprophylos()->detach($ligne->anneeprophylo_id);
                 $nbSuppr++;
             }

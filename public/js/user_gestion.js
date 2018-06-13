@@ -88,16 +88,22 @@ $(function(){
        })
    })
    
+   // Par défaut au démarrage les anciennes prophylos ne sont pas modifiables
    $(function(){
+       modification = false;
        desactiveCase();
    })
-   
+   // Permet de basculer les anciennes prophylo de madifiable à pas modifiable et vice versa
    $('#bascule').on("click", function(){
-       if($(this).attr('name') === 'desactive') activeCase();
-       else desactiveCase();
-
+       if($(this).attr('name') === 'desactive'){
+           activeCase();
+       }
+       else{
+           desactiveCase();
+       }
    });
-   
+
+    // Rend les prophylos non modifiables
    function desactiveCase(){
        $('.colonne').each(function(){
            var classe = $(this).attr('class');
@@ -110,13 +116,48 @@ $(function(){
        $('#bascule').attr('name', 'desactive');
        $('#bascule').addClass('btn-outline-info');
    }
-   
+   //Rend les prophylos  
     function activeCase(){
        $('.colonne').each(function(){
                $(this).children('input').removeAttr('disabled');
-       })
+       });
        $('#bascule').addClass('btn-outline-danger');
        $('#bascule').removeAttr('name', 'desactive');
        $('#bascule').removeClass('btn-outline-info');
    }
+
+    // Si on clique sur une case à cocher le bouton de maj s'active
+    $(':checkbox').on('click', function(){
+           $('#maj').removeAttr('disabled').removeClass('btn-secondary').addClass('btn-success');
+           modification = true;
+    });
+    // si on clique sur enregistrer ça passe modification à false
+    $('#maj').on('click', function(){
+        modification = false;
+    });
+    // si on clique sur un des boutons du menu, ça vérifie si on a modifier les cases à cocher
+    $('.btn-menu').on('click', function(e){
+        var nom = $(this).parent().attr('href');
+        e.preventDefault();
+        if(modification){
+            $.confirm({
+                title: 'Attention !',
+                content: 'Voulez-vous enregistrer les modifications ?',
+                type: 'green',
+                icon: 'fa fa-warning',
+                theme: 'supervan',
+                autoClose: 'enregistrer|4000',
+                buttons: {
+                    enregistrer: function () {
+                        window.location = nom;
+                    },
+                    annuler: function () {
+                    }
+                }
+            })
+        } else {
+            window.location = nom;
+        }
+    })
+       
 })

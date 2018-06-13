@@ -89,7 +89,7 @@ class FevecSousmenuRepository
 
     public static function prophyloChanger()
     {
-      $listeMenu = new SousmenuFactory('Gestion des prophylaxies des bovins');
+      $listeMenu = new SousmenuFactory('Gestion des prophylaxies');
       $route = 'prophylo.changer';
       $listeItem = [
           [
