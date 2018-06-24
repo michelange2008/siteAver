@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Aver;
+namespace App\Http\Controllers\Visites;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Repositories\Visite\ProphyloRepository;
-use App\Repositories\FevecSousmenuRepository;
+use App\Repositories\Visites\ProphyloRepository;
+use App\Repositories\Visites\VisitesSousMenuRepository;
 use App\Outils\RempliAnneesProphylo;
 use App\Constantes\ConstAnimaux;
 
 use App\Models\Troupeau;
 use App\Models\Anneeprophylo;
-use App\Models\Anneeprophylo_troupeau;
 
 class ProphyloController extends Controller
 {
@@ -27,22 +26,22 @@ class ProphyloController extends Controller
     
     public function index() // RENVOIE LA PAGE AVEC LE FORMULAIRE POUR CHANGER LA PROPHYLAXIE
     {
-        $menu = FevecSousmenuRepository::prophyloSommaire();
+        $menu = VisitesSousMenuRepository::prophyloSommaire();
         $listeItem = $this->prophyloRepository->itemProphylo();
         $troupeaux = Troupeau::all();
-        return view('prophylo\sommaireProphylo', [
+        return view('visites\sommaireProphylo', [
             'menu' => $menu,
             'listeItem' => $listeItem,
-            'troupeaux' => $troupeaux
+            'troupeaux' => $troupeaux,
         ]);
     }
     
     public function changerProphylo($groupe) // RENVOIE LA PAGE AVEC LE FORMULAIRE POUR CHANGER LA PROPHYLAXIE
     {
-        $menu = FevecSousmenuRepository::prophyloChanger();
+        $menu = VisitesSousMenuRepository::prophyloChanger();
         $troupeaux = Troupeau::all();
-        $annees = $this->cinqDernieresAnnees();
-        return view('prophylo\changerProphylo', [
+        $annees = $this->xDernieresAnnees(5);
+        return view('visites\changerProphylo', [
             'menu' => $menu,
             'troupeaux' => $troupeaux,
             'annees' => $annees,

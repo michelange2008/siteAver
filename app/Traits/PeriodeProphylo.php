@@ -16,16 +16,19 @@ use Carbon\Carbon;
 trait PeriodeProphylo
 {
     /*
-     * Fournit les 5 dernières années de prophylaxie
+     * Fournit les $nb-annees dernières années de prophylaxie
      */
-    public function cinqDernieresAnnees()
+
+    
+    public function xDernieresAnnees($nb_annees)
     {
         $apres = $this->anneeActuelle()->addYear(1); //Carbon::now()->addYear(0);
-        $avant = Carbon::now()->addYears(-5);
+        $avant = Carbon::now()->addYears(-$nb_annees);
         $annees = Anneeprophylo::where('debut', '>', $avant)->where('debut', '<', $apres)->get();
-        return $annees;
+        return $annees;        
     }
-    
+
+
     /* 
      * Renvoie la date de début de la prophylaxie (par rapport à la date actuelle et au 30 juin de l'année)
      */

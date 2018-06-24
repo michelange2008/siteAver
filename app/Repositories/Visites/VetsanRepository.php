@@ -2,10 +2,10 @@
 
 /*
  * Classe pour la gestion des éleveurs : vet san,
- * rapport avec VisiteController
+ * rapport avec VetsanController
  */
 
-namespace App\Repositories\Visite;
+namespace App\Repositories\Visites;
 
 /**
  * Description of VisiteRepository

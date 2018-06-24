@@ -61,9 +61,13 @@ Route::get('/aver/visites/accueil', ['uses' => 'Visites\VisitesController@index'
 
     Route::get('aver/visites/bsa', ['uses' => 'Visites\BsaController@index', 'as' => 'bsa.index']);
 
+    Route::post('aver/visites/bsa/changer', ['uses' => 'Visites\BsaController@modif', 'as' => 'bsa.modif']);
+
 //################################# VSO #############################################################
 
     Route::get('aver/visites/vso', ['uses' => 'Visites\VsoController@index', 'as' => 'vso.index']);
+
+    Route::post('aver/visites/vso/changer', ['uses' => 'Visites\VsoController@modif', 'as' => 'vso.modif']);
 
 //################################# FEVEC #############################################################
     

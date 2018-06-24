@@ -7,9 +7,19 @@
 @endsection
 
 @section('content')
-{{ Form::open(['route' => 'visite.modifvetsan'])}}
 
-<div class="container-fluid d-flex justify-content-end"> {{ Form::submit('mettre à jour', ['class' => 'btn btn-success']) }} </div>
+@if(\Session::has('message'))
+<div class="alert alert-success">{{\Session::get('message')}}</div>
+@endif()
+@if(\Session::has('rien'))
+<div class="alert alert-warning">{{\Session::get('rien')}}</div>
+@endif()
+
+{{ Form::open(['route' => 'vetsan.modifier'])}}
+
+<div class="container-fluid d-flex justify-content-end">
+        {{ Form::submit('mettre à jour', ['id' => 'maj', 'class' => 'btn btn-secondary btn-carre', 'disabled' => 'disabled']) }}
+</div>
 <div class="container-fluid d-flex flex-row justify-content-between espace">
     
     @foreach($listeItem->listeCard() as $item)

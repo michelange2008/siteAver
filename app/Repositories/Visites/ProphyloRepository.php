@@ -4,7 +4,7 @@
  * fournit les méthodes nécessaires pour la gestion des prophylaxies
  */
 
-namespace App\Repositories\Visite;
+namespace App\Repositories\Visites;
 
 /**
  * Description of ProphyloRepository

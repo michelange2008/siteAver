@@ -18,14 +18,16 @@ trait MajVetSan
     public function majVetsan()
     {
         $users = User::where('admin', 0)->get(); // recherche tous les utilisateurs non admin
-        
+        $nbModif = 0;
         foreach ($users as $user)
         {
             if($user->vetsan == null && $user->activite->abbreviation == 'CONV') // Si vetsan est null et que l'éleveur est en convention
             {
                 $user->vetsan = true; // on passe vetsan à vrai
                 $user->save();
+                $nbModif++;
             }
         }
+        return $nbModif;
     }
 }

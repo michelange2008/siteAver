@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Aver;
+namespace App\Http\Controllers\Fevec;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Repositories\FevecRepository;
+use App\Repositories\Fevec\FevecRepository;
 use App\Repositories\UsersRepository;
 use App\Repositories\TroupeauxRepository;
-use App\Repositories\FevecSousmenuRepository;
+use App\Repositories\Fevec\FevecSousmenuRepository;
 use App\Repositories\Fevec\ParamGestion;
 use App\Outils\MajDateMajFevec;
 

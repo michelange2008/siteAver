@@ -94,7 +94,7 @@ $(function(){
        desactiveCase();
    })
    // Permet de basculer les anciennes prophylo de madifiable à pas modifiable et vice versa
-   $('#bascule').on("click", function(){
+    $('#bascule').on("click", function(){
        if($(this).attr('name') === 'desactive'){
            activeCase();
        }
@@ -105,10 +105,9 @@ $(function(){
 
     // Rend les prophylos non modifiables
    function desactiveCase(){
+       var num_dern_col = $('#titres').children().length;
        $('.colonne').each(function(){
-           var classe = $(this).attr('class');
-           var col = classe.substring(41, 42);
-           if(col != 5) {
+           if($(this).attr('class') !==  $(this).parent().children().last().attr('class')) {
                $(this).children('input').attr('disabled', 'true');
            }
        })
@@ -157,6 +156,23 @@ $(function(){
             })
         } else {
             window.location = nom;
+        }
+    })
+    
+    // Affichage par groupe dans VSO
+    $('.icone_espece').on('click', function(){
+        var groupe = $(this).attr('id');
+        if(groupe !== 'TS')
+        {
+            $('tbody').children().each(function(){
+                $(this).removeClass('non_affiche');
+                if($(this).attr('name') !== groupe)
+                {
+                    $(this).addClass('non_affiche');
+                }
+            })
+        }else{
+            $('tbody').children().removeClass('non_affiche');
         }
     })
        

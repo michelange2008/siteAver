@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Aver;
+namespace App\Http\Controllers\Visites;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Repositories\UsersRepository;
-use App\Repositories\FevecSousmenuRepository;
-use App\Repositories\Visite\VetsanRepository;
+use App\Repositories\Visites\VisitesSousMenuRepository;
+use App\Repositories\Visites\VetsanRepository;
 
-class VisiteController extends Controller
+class VetsanController extends Controller
 {
     use \App\Traits\MajVetSan;
     
@@ -26,11 +26,11 @@ class VisiteController extends Controller
     
     public function changerVetsan()
     {
-        $menu = FevecSousmenuRepository::vetsan();
+        $menu = VisitesSousMenuRepository::vetsan();
         $listeItem = $this->vetsanRepository->itemVetsan(); // AFFICHAGE DES CARDS
         $users = $this->usersRepository->getEleveur(); // LISTE DES ELEVEURS
         
-        return view('visite\vetsan', [
+        return view('visites\vetsan', [
             'menu' => $menu,
             'listeItem' => $listeItem,
             'users' => $users, 
@@ -47,11 +47,16 @@ class VisiteController extends Controller
     }
     
     
-    public function majVetSan() // ATTRIBUE VRAI POUR VET SAN AUX ELEVEURS EN CONVENTION
+    public function conventionVetSan() // ATTRIBUE VRAI POUR VET SAN AUX ELEVEURS EN CONVENTION
     {
-        $this->majVetsan();
+        $nbAjout = $this->majVetsan();
         
-        return redirect()->back();
+        if($nbAjout == 0)
+        {
+            return redirect()->back()->with('rien', "Il n'y a eu aucun ajout" );
+        }else{
+            return redirect()->back()->with('message', "il y a eu ".$nbAjout." ajout(s)" );
+        }
     }
 
 }

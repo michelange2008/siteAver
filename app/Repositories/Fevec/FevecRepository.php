@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repositories\Fevec;
 
 use App\Models\User;
 use App\Models\Troupeau;

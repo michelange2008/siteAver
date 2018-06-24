@@ -30,7 +30,7 @@
     </thead>
     <tbody>
       @foreach($troupeaux as $troupeau)
-      <tr id="{{ $troupeau->user->id }}" class="ligne_eleveur" name="{{$troupeau->especes->abbreviation}}" ">
+      <tr id="{{ $troupeau->user->id }}" class="ligne_eleveur" name="{{$troupeau->especes->abbreviation}}">
           <th id="{{ $troupeau->id }}_{{ $troupeau->user->id }}" scope="row" class="align-middle nom_eleveur {{ $troupeau->id }}_{{ $troupeau->user->id }}">{{ $troupeau->user->name }}</th>
         <td class="{{ $troupeau->id }}_{{ $troupeau->user->id }} align-middle">
             @if(substr($troupeau->user->email, -2) != "af") 

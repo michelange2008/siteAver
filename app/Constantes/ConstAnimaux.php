@@ -16,6 +16,8 @@ namespace App\Constantes;
 
 class ConstAnimaux
 {
+    Const TS = 'TS';
+    Const TS_long = "toutes espèces";
     Const BV = 'BV';
     Const BV_long = "bovins";
     Const PR = 'PR';

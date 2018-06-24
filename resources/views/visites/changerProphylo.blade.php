@@ -31,7 +31,7 @@
         </div>
     <table id="listeEleveurs" class="table table-striped table-hover tablesorter">
         <thead >
-            <tr class="bg-success">
+            <tr id="titres" class="bg-success">
                 <th>Eleveur</th>
                 <th>Troupeau</th>
                 @foreach($annees as $annee)
