@@ -40,4 +40,9 @@ class Troupeau extends Model
     {
         return $this->belongsToMany(Anneevso::class);
     }
+    
+    public function bsa()
+    {
+        return $this->belongsTo(Bsa::class);
+    }
 }

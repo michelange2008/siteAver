@@ -15,5 +15,8 @@ namespace App\Repositories\Visites;
  */
 class BsaRepository
 {
-    //put your code here
+    public function listeBsa()
+    {
+        
+    }
 }

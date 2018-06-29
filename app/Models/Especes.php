@@ -20,4 +20,9 @@ class Especes extends ParamModels
     {
       return $this->hasMany(Races::class);
     }
+    
+    public function ps()
+    {
+        return $this->hasMany(Ps::class);
+    }
 }
