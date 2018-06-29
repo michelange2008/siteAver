@@ -88,12 +88,12 @@ $(function(){
        })
    })
    
-   // Par défaut au démarrage les anciennes prophylos ne sont pas modifiables
+   // Par défaut au démarrage les anciennes prophylos et vso ne sont pas modifiables
    $(function(){
        modification = false;
        desactiveCase();
    })
-   // Permet de basculer les anciennes prophylo de madifiable à pas modifiable et vice versa
+   // Permet de basculer les anciennes prophylo et vso de madifiable à pas modifiable et vice versa
     $('#bascule').on("click", function(){
        if($(this).attr('name') === 'desactive'){
            activeCase();
@@ -103,7 +103,7 @@ $(function(){
        }
    });
 
-    // Rend les prophylos non modifiables
+    // Rend les prophylos et vso non modifiables
    function desactiveCase(){
        var num_dern_col = $('#titres').children().length;
        $('.colonne').each(function(){
@@ -114,6 +114,7 @@ $(function(){
        $('#bascule').removeClass('btn-outline-danger');
        $('#bascule').attr('name', 'desactive');
        $('#bascule').addClass('btn-outline-info');
+       $('#estInactive').children().attr('value', 0);
    }
    //Rend les prophylos  
     function activeCase(){
@@ -123,6 +124,7 @@ $(function(){
        $('#bascule').addClass('btn-outline-danger');
        $('#bascule').removeAttr('name', 'desactive');
        $('#bascule').removeClass('btn-outline-info');
+       $('#estInactive').children().attr('value', 1);
    }
 
     // Si on clique sur une case à cocher le bouton de maj s'active
@@ -135,27 +137,20 @@ $(function(){
         modification = false;
     });
     // si on clique sur un des boutons du menu, ça vérifie si on a modifier les cases à cocher
-    $('.btn-menu').on('click', function(e){
-        var nom = $(this).parent().attr('href');
+    $('.btn-alert').on('click', function(e){
+        var lien = $(this).attr('href');
         e.preventDefault();
         if(modification){
-            $.confirm({
+            $.alert({
                 title: 'Attention !',
-                content: 'Voulez-vous enregistrer les modifications ?',
+                content: "Il faut d'abord enregistrer les modifications ?",
                 type: 'green',
                 icon: 'fa fa-warning',
                 theme: 'supervan',
                 autoClose: 'enregistrer|4000',
-                buttons: {
-                    enregistrer: function () {
-                        window.location = nom;
-                    },
-                    annuler: function () {
-                    }
-                }
-            })
+            });
         } else {
-            window.location = nom;
+            if(typeof(lien) !== 'undefined') window.location = lien;
         }
     })
     

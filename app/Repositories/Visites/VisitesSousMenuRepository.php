@@ -109,7 +109,7 @@ class VisitesSousMenuRepository
     public static function vsoAccueil()
     {
         $listeMenu = new SousmenuFactory('Gestion des visites obligatoires');
-        $retour = new SousmenuItem('fevec.index', 'Retour', SousmenuCouleurs::GRIS);
+        $retour = new SousmenuItem('visites.accueil', 'Retour', SousmenuCouleurs::GRIS);
         $listeMenu->addSousmenuItem($retour);
 
         return $listeMenu;

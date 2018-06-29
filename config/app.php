@@ -177,8 +177,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         'Collective\Html\HtmlServiceProvider',
-        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class
+        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
 //        Barryvdh\Debugbar\ServiceProvider::class,
+        Lavary\Menu\ServiceProvider::class,
     ],
 
     /*
@@ -231,6 +232,7 @@ return [
         'Html' => 'Collective\Html\HtmlFacade',
         'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
 //        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Menu' => Lavary\Menu\Facade::class,
     ],
 
 ];

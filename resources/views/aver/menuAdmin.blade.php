@@ -14,7 +14,7 @@
              role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Gestion des visites
           </a>
-           <div class="dropdown-menu bg-dark text-light" aria-labelledBy = "navbarDropdown">
+           <ul class="dropdown-menu bg-dark text-light" aria-labelledBy = "navbarDropdown">
 
             <a class="dropdown-item text-muted" href="{{ URL::route('visites.accueil') }}">Sommaire</a>
                
@@ -26,7 +26,7 @@
 
             <a class="dropdown-item text-muted" href="{{ URL::route('vso.index') }}">Visite obligatoire</a>
 
-           </div>
+           </ul>
       </li>
 
       <li class="nav-item"><a href="{{ URL::route('user.admin')}}" class = 'nav-link']>Admin</a></li>

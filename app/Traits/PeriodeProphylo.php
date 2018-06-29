@@ -54,4 +54,11 @@ trait PeriodeProphylo
         
         return $debut;
     }
+    
+    public function anneeNmoinsUn()
+    {
+        return $this->anneeActuelle()->subYear();
+        
+        
+    }
 }

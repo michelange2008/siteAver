@@ -22,10 +22,20 @@
     </div>
     <div class="container-fluid d-flex flex-row">
         {{ Form::open(['route' => 'vso.modif'])}}
+        <div id="estInactive">
+            {{ Form::hidden('cache')}}
+        </div>
             <div class="d-flex flex-row justify-content-between">
                 <div class="d-flex flex-row justify-content-start">
-                    <div id='bascule' class="btn btn-outline-info btn-carre" title="permet de modifier les prophylaxies des années précédentes">Modifier tout le tableau</div>
-                    <!-- Si affichage des bovins on affcihe un bouton pour remplir automatiquement la dernière colonne -->
+                    <div id='bascule' class="btn btn-outline-info btn-carre btn-alert" title="permet de modifier les vso des années précédentes">Modifier tout le tableau</div>
+                    <p>__</p>
+                    <div id='remplitBv' title="remplit toutes les lignes de troupeaux bovins pour l'année en cours">
+                        <a class="btn btn-navy btn-carre btn-alert"  href="{{ URL::route('vso.bv') }}">bovins</a>
+                    </div>
+                    <p>__</p>
+                    <div id='remplitPr' title="remplit les lignes de troupeaux de petits rumimants pour l'année en cours">
+                        <a class="btn btn-gold btn-carre btn-alert"  href="{{ URL::route('vso.pr') }}">petits rum</a>
+                    </div>
                 </div>
                 {{ Form::submit('Mettre à jour', ['id' => 'maj', 'class' => 'btn btn-secondary btn-carre', 'disabled' => 'disabled'])}}
             </div>

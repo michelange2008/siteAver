@@ -69,6 +69,10 @@ Route::get('/aver/visites/accueil', ['uses' => 'Visites\VisitesController@index'
 
     Route::post('aver/visites/vso/changer', ['uses' => 'Visites\VsoController@modif', 'as' => 'vso.modif']);
 
+    Route::get('aver/visites/vso/remplitBv', ['uses' => 'Visites\VsoController@remplitBv', 'as' => 'vso.bv']);
+
+    Route::get('aver/visites/vso/remplitPr', ['uses' => 'Visites\VsoController@remplitPr', 'as' => 'vso.pr']);
+
 //################################# FEVEC #############################################################
     
     /* ROUTES CONCERNANT LA GESTION DES ELEVEURS FEVEC: NORMALISATION, IMPORT ET MISE A JOUR */
