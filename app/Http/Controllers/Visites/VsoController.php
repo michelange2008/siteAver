@@ -8,13 +8,13 @@ use App\Repositories\Visites\VisitesSousMenuRepository;
 use App\Repositories\Visites\VsoRepository;
 
 use App\Models\Troupeau;
-use App\Models\User;
 
 
 class VsoController extends Controller
 {
     use \App\Traits\PeriodeProphylo;
     use \App\Traits\UserVetsan;
+    use \App\Traits\CardGroupeEspeces;
     
     protected $vsoRepository;
     
@@ -27,12 +27,12 @@ class VsoController extends Controller
         $menu = VisitesSousMenuRepository::vsoAccueil();
         $troupeaux = Troupeau::whereIn('user_id', $this->userVetsan())->get();
         $annees = $this->xDernieresAnnees(2);
-        $card_especes = $this->vsoRepository->cardEspeces();
+        $cardGroupesEspece = $this->listCardGroupeEspece();
         return view('visites\vso', [
             "menu" => $menu,
             "troupeaux" => $troupeaux,
             "annees" => $annees,
-            "listeItem" => $card_especes,
+            'cardGroupesEspece' => $cardGroupesEspece,
         ]);
     }
     

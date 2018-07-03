@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Lavary\Menu\Menu;
 
-class GenerateMenus
+class GenerateMenus_1
 {
     /**
      * Handle an incoming request.
