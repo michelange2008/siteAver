@@ -29,7 +29,7 @@ class ProphyloController extends Controller
         $menu = VisitesSousMenuRepository::prophyloSommaire();
         $listeItem = $this->prophyloRepository->itemProphylo();
         $troupeaux = Troupeau::all();
-        return view('visites\sommaireProphylo', [
+        return view('visites/sommaireProphylo', [
             'menu' => $menu,
             'listeItem' => $listeItem,
             'troupeaux' => $troupeaux,
