@@ -23,7 +23,7 @@ class BsaController extends Controller
         $troupeaux = $this->bsaRepository->listeBsa();
         $menu = VisitesSousMenuRepository::bsaAccueil();
         $cardGroupesEspece = $this->listCardGroupeEspece();
-        return view('visites\bsa', [
+        return view('visites/bsa', [
             "menu" => $menu,
             'troupeaux' => $troupeaux,
             'cardGroupesEspece' => $cardGroupesEspece,

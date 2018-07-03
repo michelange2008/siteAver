@@ -41,7 +41,7 @@ class ProphyloController extends Controller
         $menu = VisitesSousMenuRepository::prophyloChanger();
         $troupeaux = Troupeau::all();
         $annees = $this->xDernieresAnnees(5);
-        return view('visites\changerProphylo', [
+        return view('visites/changerProphylo', [
             'menu' => $menu,
             'troupeaux' => $troupeaux,
             'annees' => $annees,
