@@ -14,12 +14,7 @@
 <div class="alert alert-warning">{{\Session::get('rien')}}</div>
 @endif()
 <div class="container-fluid d-flex flex-row">
-    <div class="d-flex flex-column">
-        <h5 class="alert alert-success text-center">Sélectionner une espèce <span class="fa fa-angle-double-down"></span></h5>
-        @foreach($listeItem as $item)
-            <img id="{{$item['parametre']}}" class="icone_espece espace curseur icone" src="{{ URL::asset('medias')}}/icones/{{$item['icone']}}"" title="{{ $item['texte']}}" alt="{{ $item['parametre'] }}">
-        @endforeach
-    </div>
+    @includeIf('visites.choixGroupeEspece', ['cardGroupesEspece', $cardGroupesEspece])
     <div class="container-fluid d-flex flex-row">
         {{ Form::open(['route' => 'vso.modif'])}}
         <div id="estInactive">

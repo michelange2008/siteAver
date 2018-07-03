@@ -25,34 +25,6 @@ class VsoRepository
     use \App\Traits\PeriodeProphylo;
     use \App\Traits\TabIdEspeces;
     
-    public function cardEspeces()
-    {
-        $listeItem = [
-            [
-                'icone' => 'tete_tous.svg',
-                'parametre' => ConstAnimaux::TS,
-                'texte' => "Affiche toutes les espèces"
-            ],
-            [
-                'icone' => 'tete_bovin.svg',
-                'parametre' => ConstAnimaux::BV,
-                'texte' => "N'affiche que les bovins"
-            ],
-            [
-                'icone' => 'tete_ovin_caprin.svg',
-                'parametre' => ConstAnimaux::PR,
-                'texte' => "N'affiche que les petits ruminants"
-            ],
-            [
-                'icone' => 'tete_Porc_volaille.svg',
-                'parametre' => ConstAnimaux::BC,
-                'texte' => "N'affiche que les porcs et les volailles"
-            ]
-        ];
-
-        return $listeItem;
-    }
-    
     public function maj($request)
     {
         $datas = $request->all();
