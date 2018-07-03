@@ -28,7 +28,7 @@ class VsoController extends Controller
         $troupeaux = Troupeau::whereIn('user_id', $this->userVetsan())->get();
         $annees = $this->xDernieresAnnees(2);
         $cardGroupesEspece = $this->listCardGroupeEspece();
-        return view('visites\vso', [
+        return view('visites/vso', [
             "menu" => $menu,
             "troupeaux" => $troupeaux,
             "annees" => $annees,

@@ -33,7 +33,7 @@ class FevecController extends Controller
     public function index()
     {
       $stats = $this->fevecRepository->calculStatEleveursTroupeaux();
-      return view('fevec\accueil', [
+      return view('fevec/accueil', [
           'stats' => $stats,
           'dernMaJ' => MajDateMajFevec::dernMaJEnMois(),
            ]);
@@ -43,7 +43,7 @@ class FevecController extends Controller
     {
       $tableSommaire = ArrangeCsv::organise('menuGestionFevec');
       $listeMenu = FevecSousmenuRepository::sousmenuGestion();
-      return view('fevec\sommaireFevec', [
+      return view('fevec/sommaireFevec', [
         'tableSommaire' => $tableSommaire,
         'menu' => $listeMenu
       ]);
@@ -64,7 +64,7 @@ class FevecController extends Controller
     {
       $this->fevecRepository->fevecNormalise();
       $listeMenu = FevecSousmenuRepository::sousmenuNormalise();
-      return view('fevec\etatNormalise', [
+      return view('fevec/etatNormalise', [
         'menu' => $listeMenu,
       ]);
     }
@@ -77,12 +77,12 @@ class FevecController extends Controller
       {
         $listeMenu = FevecSousmenuRepository::rienASupprimer();
 
-        return view('fevec\rienASupprimer', [
+        return view('fevec/rienASupprimer', [
           'nbUsersAjoutes' => $importFevec['nbUsersAjoutes'],
           'menu' => $listeMenu,
         ]);
       } else {
-        return view('fevec\listeASupprimer', [
+        return view('fevec/listeASupprimer', [
           'liste' => $importFevec['listeASupprimer'],
           'listeId' => $importFevec['listeIdASupprimer'],
           'nbUsersAjoutes' => $importFevec['nbUsersAjoutes'],
@@ -104,7 +104,7 @@ class FevecController extends Controller
     public function listeFevecAver()
     {
       $listeFevecAver = $this->fevecRepository->listeFevecAvec();
-      return view('fevec\listeEleveursFevec', [
+      return view('fevec/listeEleveursFevec', [
         'listeEleveurs' => $listeFevecAver['eleveurs'],
         'listeTroupeaux' => $listeFevecAver['troupeaux'],
         'detail_troupeau' => $listeFevecAver['detail'],
@@ -115,7 +115,7 @@ class FevecController extends Controller
     {
         $params = ParamGestion::creeListeParam();
         $listeMenu = FevecSousmenuRepository::paramImport();
-        return view('fevec\paramImport', [
+        return view('fevec/paramImport', [
             'params' => $params,
             'menu' => $listeMenu
         ]);

@@ -29,7 +29,7 @@ class ProphyloController extends Controller
         $menu = VisitesSousMenuRepository::prophyloSommaire();
         $listeItem = $this->prophyloRepository->itemProphylo();
         $troupeaux = Troupeau::all();
-        return view('visites\sommaireProphylo', [
+        return view('visites/sommaireProphylo', [
             'menu' => $menu,
             'listeItem' => $listeItem,
             'troupeaux' => $troupeaux,
@@ -41,7 +41,7 @@ class ProphyloController extends Controller
         $menu = VisitesSousMenuRepository::prophyloChanger();
         $troupeaux = Troupeau::all();
         $annees = $this->xDernieresAnnees(5);
-        return view('visites\changerProphylo', [
+        return view('visites/changerProphylo', [
             'menu' => $menu,
             'troupeaux' => $troupeaux,
             'annees' => $annees,

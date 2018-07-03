@@ -30,7 +30,7 @@ class VetsanController extends Controller
         $listeItem = $this->vetsanRepository->itemVetsan(); // AFFICHAGE DES CARDS
         $users = $this->usersRepository->getEleveur(); // LISTE DES ELEVEURS
         
-        return view('visites\vetsan', [
+        return view('visites/vetsan', [
             'menu' => $menu,
             'listeItem' => $listeItem,
             'users' => $users, 
