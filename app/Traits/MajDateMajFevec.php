@@ -14,7 +14,7 @@ namespace App\Outils;
 use App\Models\DateMaJFevec;
 use Carbon\Carbon;
 
-class MajDateMajFevec
+trait MajDateMajFevec
 {
     
     public static function dateMaJ()

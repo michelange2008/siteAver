@@ -23,7 +23,7 @@ class VisitesSousMenuRepository
     public static function visitesAccueil()
     {
         $listeMenu = new SousmenuFactory('Gestion des visites, prophylaxies, bilans sanitaires, etc.');
-        $retour = new SousmenuItem('fevec.index', 'Retour', SousmenuCouleurs::GRIS);
+        $retour = new SousmenuItem('aver.accueil', "Retour à l'accueil", SousmenuCouleurs::GRIS);
         $listeMenu->addSousmenuItem($retour);
 
         return $listeMenu;

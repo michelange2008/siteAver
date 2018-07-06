@@ -17,7 +17,7 @@ Route::get('/phyto', 'MainController@phytotherapie');
 
 Route::get('/plantes_libres', 'MainController@plantes_libres');
 
-Route::get('/aver', 'HomeController@index');
+Route::get('/aver', ['uses' => 'Aver\AverController@index', 'as' => 'aver.accueil']);
 
 Route::get('/antikor', 'Antikor\AntikorController@index');
 
@@ -25,7 +25,7 @@ Route::get('/forum', 'MainController@forum');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'Aver\AverController@index')->name('home');
 
 Route::resource('aver/troupeau', 'Aver\TroupeauxController');
 
@@ -33,67 +33,67 @@ Route::resource('aver/user', 'Aver\UserController');
 
 Route::get('/aver/admin', ['uses' => 'Aver\UserController@admin', 'as' => 'user.admin']);
 
-Route::get('/aver/visites/accueil', ['uses' => 'Visites\VisitesController@index', 'as' => 'visites.accueil']);
+Route::get('/aver/visites/accueil', ['uses' => 'Aver\Visites\VisitesController@index', 'as' => 'visites.accueil']);
 
 //############################ Vétérinaire sanitaire ########################################################
 
     // AFFICHE LA PAGE AVEC LE FORMULAIRE PERMETTANT DE MODIFIER VET SAN OU NON
-    Route::get('/aver/visites/vetsan/changer', ['uses' => 'Visites\VetsanController@changerVetsan', 'as' => 'vetsan.changer' ]);
+    Route::get('/aver/visites/vetsan/changer', ['uses' => 'Aver\Visites\VetsanController@changerVetsan', 'as' => 'vetsan.changer' ]);
     // MET LA VALEUR VRAI POUR VET SAN A TOUS LES ELEVEURS DE L AVER
-    Route::post('/aver/visites/vetsan/modifier', ['uses' => 'Visites\VetsanController@modifVetsan', 'as' => 'vetsan.modifier']);
+    Route::post('/aver/visites/vetsan/modifier', ['uses' => 'Aver\Visites\VetsanController@modifVetsan', 'as' => 'vetsan.modifier']);
     // MET A JOUR LA COLONNE VETSAN DE LA TABLE USER APRES MODIFICATION VET SAN
-    Route::get('aver/visites/vetsan/majVetsan', ['uses' => 'Visites\VetsanController@conventionVetsan', 'as' => 'vetsan.majVetsan']);
+    Route::get('aver/visites/vetsan/majVetsan', ['uses' => 'Aver\Visites\VetsanController@conventionVetsan', 'as' => 'vetsan.majVetsan']);
 
 //###################### PROPHYLAXIES ##########################################################################
 
     // AFFICHE LE FORMULAIRE GENERAL POUR MODIFIER LA PROPHYLAXIE
-    Route::get('/aver/visites/prophylo/sommaire', ['uses' => 'Visites\ProphyloController@index', 'as' => 'prophylo.index' ]);
+    Route::get('/aver/visites/prophylo/sommaire', ['uses' => 'Aver\Visites\ProphyloController@index', 'as' => 'prophylo.index' ]);
 
-    Route::get('/aver/visites/prophylo/changer/{espece}', ['uses' => 'Visites\ProphyloController@changerProphylo', 'as' => 'prophylo.changer' ]);
+    Route::get('/aver/visites/prophylo/changer/{espece}', ['uses' => 'Aver\Visites\ProphyloController@changerProphylo', 'as' => 'prophylo.changer' ]);
 
-    Route::post('/aver/visites/prophylo/changer/', ['uses' => 'Visites\ProphyloController@modifProphylo', 'as' => 'prophylo.modif' ]);
+    Route::post('/aver/visites/prophylo/changer/', ['uses' => 'Aver\Visites\ProphyloController@modifProphylo', 'as' => 'prophylo.modif' ]);
     
-    Route::get('aver/prophylo/remplitAnneeEnCours', ['uses' => 'Visites\ProphyloController@remplitVAencours', 'as' => 'prophylo.remplit']);
+    Route::get('aver/prophylo/remplitAnneeEnCours', ['uses' => 'Aver\Visites\ProphyloController@remplitVAencours', 'as' => 'prophylo.remplit']);
 
-    Route::get('/aver/visites/prophylo/majProphyloBovines', ['uses' => 'Visites\ProphyloController@majProphyloBovines', 'as' => 'prophylo.majProphyloBovines' ]);
+    Route::get('/aver/visites/prophylo/majProphyloBovines', ['uses' => 'Aver\Visites\ProphyloController@majProphyloBovines', 'as' => 'prophylo.majProphyloBovines' ]);
 
 //################################# BSA #############################################################
 
-    Route::get('aver/visites/bsa', ['uses' => 'Visites\BsaController@index', 'as' => 'bsa.index']);
+    Route::get('aver/visites/bsa', ['uses' => 'Aver\Visites\BsaController@index', 'as' => 'bsa.index']);
 
-    Route::post('aver/visites/bsa/changer', ['uses' => 'Visites\BsaController@modif', 'as' => 'bsa.modif']);
+    Route::post('aver/visites/bsa/changer', ['uses' => 'Aver\Visites\BsaController@modif', 'as' => 'bsa.modif']);
 
 //################################# VSO #############################################################
 
-    Route::get('aver/visites/vso', ['uses' => 'Visites\VsoController@index', 'as' => 'vso.index']);
+    Route::get('aver/visites/vso', ['uses' => 'Aver\Visites\VsoController@index', 'as' => 'vso.index']);
 
-    Route::post('aver/visites/vso/changer', ['uses' => 'Visites\VsoController@modif', 'as' => 'vso.modif']);
+    Route::post('aver/visites/vso/changer', ['uses' => 'Aver\Visites\VsoController@modif', 'as' => 'vso.modif']);
 
-    Route::get('aver/visites/vso/remplitBv', ['uses' => 'Visites\VsoController@remplitBv', 'as' => 'vso.bv']);
+    Route::get('aver/visites/vso/remplitBv', ['uses' => 'Aver\Visites\VsoController@remplitBv', 'as' => 'vso.bv']);
 
-    Route::get('aver/visites/vso/remplitPr', ['uses' => 'Visites\VsoController@remplitPr', 'as' => 'vso.pr']);
+    Route::get('aver/visites/vso/remplitPr', ['uses' => 'Aver\Visites\VsoController@remplitPr', 'as' => 'vso.pr']);
 
 //################################# FEVEC #############################################################
     
     /* ROUTES CONCERNANT LA GESTION DES ELEVEURS FEVEC: NORMALISATION, IMPORT ET MISE A JOUR */
 
-Route::get('aver/fevec/accueil', ['uses' => 'Fevec\FevecController@index', 'as' => 'fevec.index']);
+Route::get('aver/fevec/accueil', ['uses' => 'Aver\Admin @index', 'as' => 'fevec.index']);
 
-Route::get('aver/fevec/gestion/maj', ['uses' => 'Fevec\FevecController@toutMettreAJour', 'as' => 'fevec.maj']);
+Route::get('aver/fevec/gestion/maj', ['uses' => 'Aver\Admin\Fevec\FevecController@toutMettreAJour', 'as' => 'fevec.maj']);
 
-Route::get('aver/fevec/gestion', ['uses' => 'Fevec\FevecController@gestion', 'as' => 'fevec.gestion']);
+Route::get('aver/fevec/gestion', ['uses' => 'Aver\Admin\Fevec\FevecController@gestion', 'as' => 'fevec.gestion']);
 
-Route::get('aver/fevec/gestion/normalise', ['uses' => 'Fevec\FevecController@normalise', 'as' => 'fevec.normalise']);
+Route::get('aver/fevec/gestion/normalise', ['uses' => 'Aver\Admin\Fevec\FevecController@normalise', 'as' => 'fevec.normalise']);
 
-Route::get('aver/fevec/gestion/importFevec', ['uses' => 'Fevec\FevecController@importFevec', 'as' => 'fevec.import']);
+Route::get('aver/fevec/gestion/importFevec', ['uses' => 'Aver\Admin\Fevec\FevecController@importFevec', 'as' => 'fevec.import']);
 
-Route::get('aver/fevec/gestion/verifieTroupeaux', ['uses' => 'Fevec\FevecController@verifieTroupeaux', 'as'=> 'fevec.verifieTroupeaux']);
+Route::get('aver/fevec/gestion/verifieTroupeaux', ['uses' => 'Aver\Admin\Fevec\FevecController@verifieTroupeaux', 'as'=> 'fevec.verifieTroupeaux']);
 
-Route::get('aver/fevec/listeFevecAver', ['uses' => 'Fevec\FevecController@listeFevecAver', 'as' => 'fevec.liste']);
+Route::get('aver/fevec/listeFevecAver', ['uses' => 'Aver\Admin\Fevec\FevecController@listeFevecAver', 'as' => 'fevec.liste']);
 
-Route::get('aver/fevec/parametreImport', ['uses' => 'Fevec\FevecController@paramImport', 'as' => 'fevec.param']);
+Route::get('aver/fevec/parametreImport', ['uses' => 'Aver\Admin\Fevec\FevecController@paramImport', 'as' => 'fevec.param']);
 
-Route::post('aver/fevec/majParam', ['uses' => 'Fevec\FevecController@majParam', 'as' => 'fevec.majParam']);
+Route::post('aver/fevec/majParam', ['uses' => 'Aver\Admin\Fevec\FevecController@majParam', 'as' => 'fevec.majParam']);
 
 
 

@@ -74,5 +74,10 @@ label {
     display: hidden ;
 }
 .non_affiche{
-    display: none;
+    display: none !important;
+    
+}
+.ailleurs{
+	position: absolute;
+	left: -10000px;
 }

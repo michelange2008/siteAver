@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Visites;
+namespace App\Http\Controllers\Aver\Visites;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

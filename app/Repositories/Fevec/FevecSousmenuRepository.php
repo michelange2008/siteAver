@@ -16,7 +16,7 @@ class FevecSousmenuRepository
     $listeMenu->addSousmenuItem($toutMaJ);
     $param = new SousmenuItem('fevec.param', 'Paramètres', SousmenuCouleurs::ORANGE, "Permet de choisir quels types d'éleveurs et d'espèces on veut garder");
     $listeMenu->addSousmenuItem($param);
-    $retour = new SousmenuItem('fevec.index', 'Retour à l\'accueil', SousmenuCouleurs::GRIS);
+    $retour = new SousmenuItem('aver.accueil', 'Retour à l\'accueil', SousmenuCouleurs::GRIS);
     $listeMenu->addSousmenuItem($retour);
 
     return $listeMenu;
