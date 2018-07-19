@@ -58,7 +58,13 @@ trait PeriodeProphylo
     public function anneeNmoinsUn()
     {
         return $this->anneeActuelle()->subYear();
-        
-        
+    }
+    
+    public function campagne()
+    {
+        $debut = $this->anneeActuelle();
+        $fin = $this->anneeActuelle()->addYear(1);
+        $campagne = $debut->year." - ".$fin->year;
+        return $campagne;
     }
 }

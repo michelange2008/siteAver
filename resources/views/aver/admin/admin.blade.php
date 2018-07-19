@@ -4,7 +4,8 @@
 
 @extends('aver.admin.dashboard', ['stats' => $stats])
 
-@section('content')
-
-
-@endsection
+@extends('aver.admin.listeEleveurs', [
+	'listeEleveurs' => $listeEleveurs,
+	'annee' => $annee,
+	'boutons' => $boutons,
+	]);

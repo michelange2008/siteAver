@@ -12,7 +12,7 @@ class Bsa extends Model
     
     public function troupeau()
     {
-        return $this->hasMany(Troupeau::class);
+        return $this->belongsTo(Troupeau::class);
     }
 }
 

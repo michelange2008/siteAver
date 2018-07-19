@@ -12,7 +12,7 @@ class Troupeau extends Model
    * @var array
    */
   protected $fillable = [
-      'id', 'user_id', 'races_id', 'especes_id', 'uiv',
+      'id', 'user_id', 'races_id', 'especes_id', 'uiv', 'bsaimportant',
   ];
     protected $table = 'troupeaux';
 
@@ -43,6 +43,6 @@ class Troupeau extends Model
     
     public function bsa()
     {
-        return $this->belongsTo(Bsa::class);
+        return $this->hasMany(Bsa::class);
     }
 }

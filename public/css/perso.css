@@ -12,6 +12,12 @@ img{
 .gras {
   font-weight: bold;
 }
+.italique {
+	font-style: italic;
+}
+.plus-petit {
+	font-size: 80%;
+}
 .curseur {
     cursor: pointer;
 }
