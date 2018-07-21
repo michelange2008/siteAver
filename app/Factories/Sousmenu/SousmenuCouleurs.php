@@ -26,6 +26,7 @@ class SousmenuCouleurs
     CONST NAVY_O = 'btn-outline-navy';
     CONST GOLD = 'btn-gold';
     CONST GOLD_O = 'btn-outline-gold';
+    CONST BRIQUE = 'btn-brique';
     
     
     public static function couleur()

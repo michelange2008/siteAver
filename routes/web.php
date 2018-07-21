@@ -17,7 +17,7 @@ Route::get('/phyto', 'MainController@phytotherapie');
 
 Route::get('/plantes_libres', 'MainController@plantes_libres');
 
-Route::get('/aver', ['uses' => 'Aver\AverController@index', 'as' => 'aver.accueil']);
+Route::get('/aver', ['uses' => 'Aver\AverController@index', 'as' => 'aver.accueil'])->middleware('delaiBSA');
 
 Route::get('/antikor', 'Antikor\AntikorController@index');
 

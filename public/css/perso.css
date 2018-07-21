@@ -18,8 +18,18 @@ img{
 .plus-petit {
 	font-size: 80%;
 }
+.maigre {
+  font-weight: lighter;
+}
 .curseur {
     cursor: pointer;
+}
+.lien:hover {
+  background: darkgrey;
+}
+.lien:hover a {
+  text-decoration: none;
+  color: white;
 }
 .icone {
     opacity: 0.7;
@@ -70,7 +80,7 @@ label {
 
 .CONV {
     color: blue;
-} 
+}
 
 .SUIV {
     color: green;
@@ -81,9 +91,14 @@ label {
 }
 .non_affiche{
     display: none !important;
-    
+
 }
 .ailleurs{
 	position: absolute;
 	left: -10000px;
+}
+.tri{
+  background: url('../medias/icones/ask.svg') no-repeat;
+  background-size: contain;
+  width: 45px;
 }

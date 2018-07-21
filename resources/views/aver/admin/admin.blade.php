@@ -6,6 +6,7 @@
 
 @extends('aver.admin.listeEleveurs', [
 	'listeEleveurs' => $listeEleveurs,
+	'listeBSA' => $listeBSA,
 	'annee' => $annee,
 	'boutons' => $boutons,
 	]);

@@ -8,7 +8,7 @@ class Bsa extends Model
 {
     protected $table = "bsa";
     
-    protected $fillable = ['id', 'troupeau_id', 'date_bsa'];
+    protected $fillable = ['id', 'troupeau_id', 'date_bsa', 'delaiBSA', 'date_anniv'];
     
     public function troupeau()
     {
