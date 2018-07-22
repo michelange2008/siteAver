@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// ROUTES INITIALES ######################################################################################
 
 Route::get('/', 'MainController@index');
 
@@ -23,6 +24,8 @@ Route::get('/antikor', 'Antikor\AntikorController@index');
 
 Route::get('/forum', 'MainController@forum');
 
+// ROUTES AVER ##############################################################################################
+
 Auth::routes();
 
 Route::get('/home', 'Aver\AverController@index')->name('home');
@@ -34,6 +37,8 @@ Route::resource('aver/user', 'Aver\UserController');
 Route::get('/aver/admin', ['uses' => 'Aver\UserController@admin', 'as' => 'user.admin']);
 
 Route::get('/aver/visites/accueil', ['uses' => 'Aver\Visites\VisitesController@index', 'as' => 'visites.accueil']);
+
+Route::get('/aver/detail_troupeau/{id?}' , ['uses' => 'Aver\Troupeaux\TroupeauAffichageController@index', 'as' => 'troupeau.accueil']);
 
 //############################ Vétérinaire sanitaire ########################################################
 

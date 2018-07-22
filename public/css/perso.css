@@ -1,5 +1,6 @@
 @import url("couleurs_especes.css");
 @import url('boutons_perso.css');
+@import url('fiche_troupeau.css');
 
 body {
   font-family: "Raleway", sans-serif;
@@ -77,13 +78,18 @@ label {
   padding-top: 5px;
 }
 
-
+.espace-bas{
+  padding-bottom: 10px;
+}
 .CONV {
     color: blue;
 }
 
 .SUIV {
     color: green;
+}
+.SANI {
+  color: orange;
 }
 
 .invisible {
@@ -96,9 +102,4 @@ label {
 .ailleurs{
 	position: absolute;
 	left: -10000px;
-}
-.tri{
-  background: url('../medias/icones/ask.svg') no-repeat;
-  background-size: contain;
-  width: 45px;
 }

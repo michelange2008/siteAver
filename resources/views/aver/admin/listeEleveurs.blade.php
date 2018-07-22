@@ -28,7 +28,13 @@
             <tbody>
                 @foreach($listeEleveurs as $troupeau)
                 <tr class="ligne_eleveur" name = '{{$troupeau->especes->groupe}}'>
-                    <td class="lien">{!! link_to_route('troupeau.show', $troupeau->user->name, [$troupeau->id], ['class' => $troupeau->user->activite->abbreviation, 'title' => "afficher la situation de ".$troupeau->user->name]) !!}</td>
+                    <td class="lien">{!! link_to_route('troupeau.accueil', 
+                      $troupeau->user->name, [$troupeau->id],
+                      [
+                        'class' => $troupeau->user->activite->abbreviation,
+                        'title' => "afficher la situation de ".$troupeau->user->name
+                        ]) !!}
+                    </td>
                     <td class="{{$troupeau->especes->abbreviation}}">{{$troupeau->especes->nom}}</td>
                     <td class="text-center {{$troupeau->user->activite->abbreviation}} ">{{strtolower($troupeau->user->activite->abbreviation)}}</td>
 
