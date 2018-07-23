@@ -63,7 +63,7 @@ $(function(){
         { responsivePriority: 1, targets: 0 },
         { responsivePriority: 2, targets: -1 },
         { responsivePriority: 3, targets: 2},
-  
+
             ]
     });
 
@@ -78,14 +78,15 @@ $(function(){
           if($(this).attr('name') !== espece) $(this).toggleClass('non_affiche');
       })
   })
-          
+
   // Affiche tous les éleveurs
   $('#tous').on("click", function(){
+      $('#avertissement').addClass('non_affiche');
       $('.ligne_eleveur').each(function(){
           $(this).removeClass('non_affiche');
        })
    })
-   
+
    // Par défaut au démarrage les anciennes prophylos et vso ne sont pas modifiables
    $(function(){
        modification = false;
@@ -114,7 +115,7 @@ $(function(){
        $('#bascule').addClass('btn-outline-info');
        $('#estInactive').children().attr('value', 0);
    }
-   //Rend les prophylos  
+   //Rend les prophylos
     function activeCase(){
        $('.colonne').each(function(){
                $(this).children('input').removeAttr('disabled');
@@ -151,7 +152,7 @@ $(function(){
             if(typeof(lien) !== 'undefined') window.location = lien;
         }
     })
-    
+
     // Affichage par groupe dans VSO
     $('.icone_espece').on('click', function(){
         var groupe = $(this).attr('id');
@@ -168,5 +169,76 @@ $(function(){
             $('tbody').children().removeClass('non_affiche');
         }
     })
-       
+// PAGE LISTE ELEVEURS ///////////////////////////////////////////////
+      // Affiche les éleveurs dont on n'est pas vet San
+      $('#eleveurs_non_vét_san').on('click', function(){
+        $('#avertissement').removeClass('non_affiche');
+        $('.vetsan').each(function(){
+          $(this).parent().removeClass('non_affiche');
+          if($(this).attr('name') == 1){
+            $(this).parent().toggleClass('non_affiche');
+          }
+        })
+      })
+      // Affiche les éleveurs dont on doit faire la prophylo
+      $('#prophylo').on('click', function(){
+        $('#avertissement').removeClass('non_affiche');
+        $('.prophylo').each(function(){
+          $(this).parent().removeClass('non_affiche');
+          if($(this).children().attr('name')!= 1){
+            $(this).parent().toggleClass('non_affiche');
+          }
+        })
+      })
+      //  Affiche les vso à faire
+      $('#vso').on('click', function(){
+          $('#avertissement').removeClass('non_affiche');
+          $('.vso').each(function(){
+            $(this).parent().removeClass('non_affiche');
+            if($(this).children().attr('name')!= 1){
+              $(this).parent().toggleClass('non_affiche');
+            }
+          })
+      })
+      //  Affiche les BSA importants à faire
+      $('#bsa_important').on('click', function(){
+        console.log('toto');
+          $('#avertissement').removeClass('non_affiche');
+          $('.bsaimportant').each(function(){
+            $(this).parent().removeClass('non_affiche');
+            if($(this).attr('name')!= 1){
+              $(this).parent().toggleClass('non_affiche');
+            }
+          })
+      })
+      //  Affiche les BSA non faits
+      $('#bsa_non_faits').on('click', function(){
+          $('#avertissement').removeClass('non_affiche');
+          $('.bsa-date').each(function(){
+            $(this).parent().removeClass('non_affiche');
+            if(!$(this).hasClass('bsa-absent')){
+              $(this).parent().toggleClass('non_affiche');
+            }
+          })
+      })
+      //  Affiche les BSA en retard
+      $('#bsa_en_retard').on('click', function(){
+          $('#avertissement').removeClass('non_affiche');
+          $('.bsa-date').each(function(){
+            $(this).parent().removeClass('non_affiche');
+            if(!$(this).hasClass('bsa-retard')){
+              $(this).parent().toggleClass('non_affiche');
+            }
+          })
+      })
+      //  Affiche les BSA faits
+      $('#bsa_faits').on('click', function(){
+          $('#avertissement').removeClass('non_affiche');
+          $('.bsa-date').each(function(){
+            $(this).parent().removeClass('non_affiche');
+            if(!$(this).hasClass('bsa-ok')){
+              $(this).parent().toggleClass('non_affiche');
+            }
+          })
+      })
 })

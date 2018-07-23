@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@extends('aver.menuAdmin')
+@extends('aver.admin.menuAdmin')
 
 @section('content')
 <br>
@@ -23,8 +23,8 @@
         @if($titre != 'Admin')
         <th scope="col" class="text-left">  Troupeaux</th>
         @endif()
-        <th scope="col" class="text-center">  Type d'activité</th>
-        <th scope="col" class="text-center">  V.S.</th>
+        <th scope="col" class="text-center">  Activité</th>
+        <th scope="col" class="text-center">  Vet.San.</th>
         <th scope="col" class="text-center">Actions</th>
       </tr>
     </thead>

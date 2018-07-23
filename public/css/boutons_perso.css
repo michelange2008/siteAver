@@ -1,6 +1,6 @@
 /*
 Personnalisation des boutons
-/* 
+/*
     Created on : 11 juin 2018, 06:12:31
     Author     : michel
 */
@@ -40,6 +40,14 @@ Personnalisation des boutons
     border: solid 1px black;
     background: white;
     color: goldenrod;
+}
+.btn-brique {
+    border: solid 1px DarkRed;
+    background: DarkRed;
+    color: white;
+}
+.btn-brique:hover {
+    filter: brightness(80%);
 }
 .btn-carre {
     border-radius: 0;

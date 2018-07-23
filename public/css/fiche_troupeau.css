@@ -1,0 +1,49 @@
+.ligne-entete {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.barre-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.barre-item > img {
+  margin-left: 2%;
+}
+.img-petite {
+  height: 50%;
+}
+.img-normale {
+  height: 100%;
+}
+
+.icone-OA {
+  background: url('../medias/icones/OA.svg') no-repeat;
+  background-size: contain;
+}
+.icone-OL {
+  background: url('../medias/icones/OL.svg') no-repeat;
+  background-size: contain;
+}
+.icone-VA {
+  background: url('../medias/icones/VA.svg') no-repeat;
+  background-size: contain;
+}
+.icone-VL {
+  background: url('../medias/icones/VL.svg') no-repeat;
+  background-size: contain;
+}
+.icone-CP {
+  background: url('../medias/icones/CP.svg') no-repeat;
+  background-size: contain;
+}
+.icone-PC {
+  background: url('../medias/icones/PC.svg') no-repeat;
+  background-size: contain;
+}
+.icone-VO {
+  background: url('../medias/icones/VO.svg') no-repeat;
+  background-size: contain;
+}

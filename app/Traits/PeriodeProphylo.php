@@ -27,7 +27,10 @@ trait PeriodeProphylo
         $annees = Anneeprophylo::where('debut', '>', $avant)->where('debut', '<', $apres)->get();
         return $annees;        
     }
-
+    public function dateActuelle()
+    {
+        return Carbon::now();
+    }
 
     /* 
      * Renvoie la date de début de la prophylaxie (par rapport à la date actuelle et au 30 juin de l'année)
@@ -35,7 +38,6 @@ trait PeriodeProphylo
     public function anneeActuelle()
     {
         $dateActuelle = Carbon::now();
-//        $dateActuelle = Carbon::parse('2018-09-20');
         
         $annee = $dateActuelle->year;         // Crée le 30 juin de l'année en cours
         $limite = Carbon::parse($annee."-06-30");
@@ -58,7 +60,14 @@ trait PeriodeProphylo
     public function anneeNmoinsUn()
     {
         return $this->anneeActuelle()->subYear();
-        
-        
     }
+    
+    public function campagne()
+    {
+        $debut = $this->anneeActuelle();
+        $fin = $this->anneeActuelle()->addYear(1);
+        $campagne = $debut->year." - ".$fin->year;
+        return $campagne;
+    }
+    
 }

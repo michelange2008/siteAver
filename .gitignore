@@ -16,5 +16,10 @@ storage/*.key
 Homestead.yaml
 Homestead.json
 
+# Michel a ajouté
+.buildpath
+.project
+.settings/
+
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/

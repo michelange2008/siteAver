@@ -1,5 +1,6 @@
 @import url("couleurs_especes.css");
 @import url('boutons_perso.css');
+@import url('fiche_troupeau.css');
 
 body {
   font-family: "Raleway", sans-serif;
@@ -12,8 +13,24 @@ img{
 .gras {
   font-weight: bold;
 }
+.italique {
+	font-style: italic;
+}
+.plus-petit {
+	font-size: 80%;
+}
+.maigre {
+  font-weight: lighter;
+}
 .curseur {
     cursor: pointer;
+}
+.lien:hover {
+  background: darkgrey;
+}
+.lien:hover a {
+  text-decoration: none;
+  color: white;
 }
 .icone {
     opacity: 0.7;
@@ -61,18 +78,28 @@ label {
   padding-top: 5px;
 }
 
-
+.espace-bas{
+  padding-bottom: 10px;
+}
 .CONV {
     color: blue;
-} 
+}
 
 .SUIV {
     color: green;
+}
+.SANI {
+  color: orange;
 }
 
 .invisible {
     display: hidden ;
 }
 .non_affiche{
-    display: none;
+    display: none !important;
+
+}
+.ailleurs{
+	position: absolute;
+	left: -10000px;
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Fevec;
+namespace App\Http\Controllers\Aver\Admin\Fevec;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@extends('aver.menuAdmin')
+@extends('aver.admin.menuAdmin')
 
 @section('sousmenu')
 @includeIf('fevec.sousmenu', ['menu' => $menu])
