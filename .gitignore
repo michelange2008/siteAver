@@ -20,6 +20,8 @@ Homestead.json
 .buildpath
 .project
 .settings/
+nbproject/private/
+public/old.htaccess
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
