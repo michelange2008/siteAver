@@ -12,6 +12,12 @@
 .barre-item > img {
   margin-left: 2%;
 }
+.img-petite {
+  height: 50%;
+}
+.img-normale {
+  height: 100%;
+}
 
 .icone-OA {
   background: url('../medias/icones/OA.svg') no-repeat;

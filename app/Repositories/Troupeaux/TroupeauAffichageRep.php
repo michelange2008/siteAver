@@ -9,6 +9,8 @@ use App\Factories\Blasons\Prophylo;
 use App\Factories\Blasons\Vso;
 use App\Factories\Blasons\Bsaimportant;
 
+use App\Models\Troupeau;
+
 class TroupeauAffichageRep
 {
 
@@ -23,5 +25,16 @@ class TroupeauAffichageRep
         $this->listeBlasons->addBlason(new Bsaimportant($id_troupeau));
         
         return $this->listeBlasons;
+    }
+    
+    public function hasPlusTroupeau($id_troupeau)
+    {
+        $troupeau = Troupeau::find($id_troupeau);
+        $eleveur = $troupeau->user->id;
+        if(Troupeau::where('user_id', $eleveur)->count() >1)
+        {
+            $troupeauxAutres = Troupeau::where('user_id', $eleveur)->where('id','<>', $id_troupeau)->get();
+            return $troupeauxAutres;
+        }
     }
 }

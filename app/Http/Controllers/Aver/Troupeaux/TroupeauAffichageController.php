@@ -24,10 +24,11 @@ class TroupeauAffichageController extends Controller
         $troupeau = Troupeau::find($id);
         $campagne = $this->campagne();
         $listeBlasons = $this->troupeauAffichageRep->listeBlasons($id);
-        
+        $autreTroupeaux = $this->troupeauAffichageRep->hasPlusTroupeau($id);
         return view('aver/troupeaux/troupeauAffiche')->with([
             'listeBlasons' => $listeBlasons,
             'troupeau' => $troupeau,
+            'autreTroupeaux' => $autreTroupeaux,
             'campagne' => $campagne,
         ]);
     }

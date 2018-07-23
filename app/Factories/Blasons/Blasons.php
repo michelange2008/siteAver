@@ -37,7 +37,7 @@ class Blasons
     }
 
     /**
-     * @return \phpDocumentor\Reflection\Types\Boolean
+     * @return mixed
      */
     public function getCondition()
     {
