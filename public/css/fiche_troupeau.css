@@ -18,7 +18,9 @@
 .img-normale {
   height: 100%;
 }
-
+a:hover img {
+  filter: brightness(80%);
+}
 .icone-OA {
   background: url('../medias/icones/OA.svg') no-repeat;
   background-size: contain;

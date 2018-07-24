@@ -38,7 +38,9 @@ Route::get('/aver/admin', ['uses' => 'Aver\UserController@admin', 'as' => 'user.
 
 Route::get('/aver/visites/accueil', ['uses' => 'Aver\Visites\VisitesController@index', 'as' => 'visites.accueil']);
 
-Route::get('/aver/detail_troupeau/{id?}' , ['uses' => 'Aver\Troupeaux\TroupeauAffichageController@index', 'as' => 'troupeau.accueil']);
+Route::get('/aver/troupeau/detail/{id?}' , ['uses' => 'Aver\Troupeaux\TroupeauAffichageController@index', 'as' => 'troupeau.accueil']);
+
+Route::get('/aver/troupeau/paramadmin/{id?}', ['uses' => 'Aver\Troupeaux\TroupeauAffichageController@paramAdmin', 'as' => 'troupeau.paramAdmin' ]);
 
 //############################ Vétérinaire sanitaire ########################################################
 

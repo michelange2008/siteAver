@@ -1,6 +1,6 @@
-@import url("couleurs_especes.css");
 @import url('boutons_perso.css');
 @import url('fiche_troupeau.css');
+@import url("couleurs_especes.css");
 
 body {
   font-family: "Raleway", sans-serif;
