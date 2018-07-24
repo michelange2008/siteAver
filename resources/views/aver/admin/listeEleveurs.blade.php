@@ -28,7 +28,7 @@
             <tbody>
                 @foreach($listeEleveurs as $troupeau)
                 <tr class="ligne_eleveur" name = '{{$troupeau->especes->groupe}}'>
-                    <td class="lien">{!! link_to_route('troupeau.accueil', 
+                    <td class="lien">{!! link_to_route('troupeau.accueil',
                       $troupeau->user->name, [$troupeau->id],
                       [
                         'class' => $troupeau->user->activite->abbreviation,
