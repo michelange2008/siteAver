@@ -11,5 +11,5 @@
 ])
 
 @section('content')
-
+{{ link_to_route('troupeau.analyses', "Analyses", [$troupeau->id]) }}
 @endsection()

@@ -28,6 +28,8 @@ Route::get('/forum', 'MainController@forum');
 
 Auth::routes();
 
+Route::get('aver/troupeau/analyses/{id?}', ['uses' => 'Aver\Fichiers\Analyses\AnalysesController@index', 'as' => 'troupeau.analyses']);
+
 Route::get('/home', 'Aver\AverController@index')->name('home');
 
 Route::resource('aver/troupeau', 'Aver\TroupeauxController');
