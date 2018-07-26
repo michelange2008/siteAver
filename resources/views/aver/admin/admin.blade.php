@@ -9,4 +9,4 @@
 	'listeBSA' => $listeBSA,
 	'annee' => $annee,
 	'boutons' => $boutons,
-	]);
+	])

@@ -1,8 +1,12 @@
 @section('dashboard')
   <div class="container-fluid bg bg-secondary d-flex justify-content-between espace-lg espace-bas">
     <div id="img-especes" class="barre-item d-flex flex-row align-items-end">
-      <a href="{{route('home')}}">
-        <img src="{{URL::asset('medias')}}/icones/retour.svg" alt="retour" title="revenir à la liste des éleveurs" />
+      @if(!$change)
+      <a href="{{route('home')}}" title="revenir à la fiche éleveur">
+      @else()
+      <a href="{{route('troupeau.accueil', $troupeau->id)}}" title="revenir à la liste des éleveurs">
+      @endif()
+        <img src="{{URL::asset('medias')}}/icones/retour.svg" alt="retour"  />
       </a>
       <img src="{{URL::asset('medias')}}/icones/{{$troupeau->especes->abbreviation}}.svg"  alt="{{$troupeau->especes->nom}}" />
       @if($autreTroupeaux !== null)

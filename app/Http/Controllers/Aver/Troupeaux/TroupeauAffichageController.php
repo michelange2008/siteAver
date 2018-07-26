@@ -9,6 +9,7 @@ use App\Repositories\Troupeaux\TroupeauAffichageRep;
 use App\Traits\PeriodeProphylo;
 use Illuminate\Support\Facades\Auth;
 
+
 class TroupeauAffichageController extends Controller
 {
     use PeriodeProphylo;
@@ -22,9 +23,9 @@ class TroupeauAffichageController extends Controller
     
     public function index($id)
     {
-        $admin = (Auth::user()->admin) ? 1 :0;
+//         dump(Auth::user());
+        if(Auth::check()) $admin = (Auth::user()->admin) ? 1 :0;
         $troupeau = Troupeau::find($id);
-        $campagne = $this->campagne();
         $listeBlasons = $this->troupeauAffichageRep->listeBlasons($id);
         $autreTroupeaux = $this->troupeauAffichageRep->hasPlusTroupeau($id);
         return view('aver/troupeaux/troupeauAffiche')->with([
@@ -32,7 +33,8 @@ class TroupeauAffichageController extends Controller
             'listeBlasons' => $listeBlasons,
             'troupeau' => $troupeau,
             'autreTroupeaux' => $autreTroupeaux,
-            'campagne' => $campagne,
+            'campagne' => $this->campagne(),
+            'change' => false,
         ]);
     }
     
@@ -40,16 +42,24 @@ class TroupeauAffichageController extends Controller
     {
         $admin = (Auth::user()->admin) ? 1 :0;
         $troupeau = Troupeau::find($id);
-        $campagne = $this->campagne();
         $listeBlasons = $this->troupeauAffichageRep->listeBlasons($id);
         $autreTroupeaux = null;
-        
+        $troupeauCampagne = $this->troupeauCampagne($id);
+        dump($troupeauCampagne);
         return view('aver/troupeaux/paramAdmin')->with([
             'admin' => $admin,
             'listeBlasons' => $listeBlasons,
             'troupeau' => $troupeau,
             'autreTroupeaux' => $autreTroupeaux,
-            'campagne' => $campagne,
+            'troupeauCampagne' => $this->troupeauCampagne($id),
+            'campagne' => $this->campagne(),
+            'change' => true,
         ]);
+        
+    }
+    public function paramAdminModif(Request $request){
+        $this->troupeauAffichageRep->modifParam(array_slice($request->all(), 1));
+        
+        return redirect()->back();
     }
 }
