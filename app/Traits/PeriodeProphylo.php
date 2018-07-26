@@ -11,6 +11,8 @@ namespace App\Traits;
  * @author michel
  */
 use App\Models\Anneeprophylo;
+use App\Factories\TroupeauCampagne;
+use App\Models\Troupeau;
 use Carbon\Carbon;
 
 trait PeriodeProphylo
@@ -20,18 +22,6 @@ trait PeriodeProphylo
      */
 
     
-    public function xDernieresAnnees($nb_annees)
-    {
-        $apres = $this->anneeActuelle()->addYear(1); //Carbon::now()->addYear(0);
-        $avant = Carbon::now()->addYears(-$nb_annees);
-        $annees = Anneeprophylo::where('debut', '>', $avant)->where('debut', '<', $apres)->get();
-        return $annees;        
-    }
-    public function dateActuelle()
-    {
-        return Carbon::now();
-    }
-
     /* 
      * Renvoie la date de début de la prophylaxie (par rapport à la date actuelle et au 30 juin de l'année)
      */
@@ -57,6 +47,18 @@ trait PeriodeProphylo
         return $debut;
     }
     
+    public function xDernieresAnnees($nb_annees)
+    {
+        $apres = $this->anneeActuelle()->addYear(1); //Carbon::now()->addYear(0);
+        $avant = Carbon::now()->addYears(-$nb_annees);
+        $annees = Anneeprophylo::where('debut', '>', $avant)->where('debut', '<', $apres)->get();
+        return $annees;
+    }
+    public function dateActuelle()
+    {
+        return Carbon::now();
+    }
+    
     public function anneeNmoinsUn()
     {
         return $this->anneeActuelle()->subYear();
@@ -68,6 +70,31 @@ trait PeriodeProphylo
         $fin = $this->anneeActuelle()->addYear(1);
         $campagne = $debut->year." - ".$fin->year;
         return $campagne;
+    }
+    
+    public function troupeauCampagne($id)
+    {
+        $troupeauCampagne = new TroupeauCampagne();
+        $troupeau = Troupeau::find( $id);
+        foreach($troupeau->anneeprophylos as $prophylo)
+        {
+            if($prophylo->campagne === $this->campagne())
+            {
+                $troupeauCampagne->setProphylo(true);
+            }
+        }
+        foreach ($troupeau->anneevso as $vso)
+        {
+            if($vso->campagne === $this->campagne())
+            {
+                $troupeauCampagne->setVso(true);
+            }
+        }
+        if($troupeau->bsa->sortByDesc('date_bsa')->first() !== null)
+        {
+            $troupeauCampagne->setDernierBsa($troupeau->bsa->sortByDesc('date_bsa')->first()->date_bsa);
+        }
+        return $troupeauCampagne;
     }
     
 }

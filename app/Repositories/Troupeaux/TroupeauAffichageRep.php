@@ -10,6 +10,8 @@ use App\Factories\Blasons\Vso;
 use App\Factories\Blasons\Bsaimportant;
 
 use App\Models\Troupeau;
+use App\Models\User;
+use App\Factories\TroupeauCampagne;
 
 class TroupeauAffichageRep
 {
@@ -36,5 +38,23 @@ class TroupeauAffichageRep
             $troupeauxAutres = Troupeau::where('user_id', $eleveur)->where('id','<>', $id_troupeau)->get();
             return $troupeauxAutres;
         }
+    }
+    
+    public function modifParam($param)
+    {
+        $troupeauCampagne = new TroupeauCampagne();
+        $troupeau = Troupeau::find($param['id_troupeau']);
+        $user = User::find($troupeau->user_id);
+        if(isset($param['vetsan']))
+        {
+            $vetsan = $param['vetsan'];
+        }
+        $prophylo = $param['prophylo'];
+        $vso = $param['vso'];
+        $bsaimportant = $param['bsaimportant'];
+        
+        $user->vetsan = $vetsan;
+        $user->save();
+        
     }
 }
