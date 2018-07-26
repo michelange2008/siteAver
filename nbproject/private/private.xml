@@ -12,17 +12,13 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Http/Controllers/Visites/VsoController.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Http/Controllers/Visites/BsaController.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/resources/views/visites/vso.blade.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Repositories/Visites/BsaRepository.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/resources/views/visites/bsa.blade.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/resources/views/fevec/paramImport.blade.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Http/Controllers/Visites/ProphyloController.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/resources/views/visites/vetsan.blade.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Repositories/Visites/VsoRepository.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/resources/views/visites/changerProphylo.blade.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/public/js/user_gestion.js</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Http/Controllers/Aver/Fichiers/Analyses/AnalysesController.php</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Http/Controllers/Aver/Admin/AdminAverController.php</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Traits/AnalyseMetadatas.php</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/resources/views/aver/troupeaux/troupeauAffiche.blade.php</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/resources/views/aver/fichiers/analyses/analyses.blade.php</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/routes/web.php</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Factories/FichierAnalyse.php</file>
         </group>
     </open-files>
 </project-private>

@@ -12,7 +12,6 @@ class AnalysesController extends Controller
     
     public function index($id)
     {
-
         $listeAnalyses = $this->analyseMetadatas();
         dd($listeAnalyses);
         return view('aver.fichiers.analyses.analyses',[

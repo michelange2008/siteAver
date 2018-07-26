@@ -33,4 +33,6 @@ trait AnalyseMetadatas
         }
         return $listeAnalyses;
     }
+    
+    
 }
