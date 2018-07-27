@@ -1,6 +1,7 @@
 <?php
 namespace app\Repositories\Visites;
 
+use App\Factories\CompteurModif;
 use App\Traits\PeriodeProphylo;
 use App\Models\Troupeau;
 use App\Models\Anneeprophylo;
@@ -16,15 +17,13 @@ class ModifProphyloVso
     
     protected $anneeProphylo_id;
     protected $troupeau_id;
-    protected $nbAjout;
-    protected $nbSuppr;
+    protected $compteur;
 
-    public function __construct($anneeProphylo_id, $troupeau_id, $nbAjout = 0, $nbSuppr = 0)
+    public function __construct($anneeProphylo_id, $troupeau_id)
     {
         $this->anneeProphylo_id = $anneeProphylo_id;
         $this->troupeau_id = $troupeau_id;
-        $this->nbAjout = $nbAjout;
-        $this->nbSuppr = $nbSuppr;
+        $this->compteur = new CompteurModif();
         
     }
     /*
@@ -32,19 +31,19 @@ class ModifProphyloVso
      */
     public function modifProphylo($prophylo)
     {
-        $ligne = Anneeprophylo_troupeau::where('anneeprophylo_id', $anneeprophylos_id)
-            ->where('troupeau_id', $troupeaux_id)
+        $ligne = Anneeprophylo_troupeau::where('anneeprophylo_id', $this->anneeProphylo_id)
+            ->where('troupeau_id', $this->troupeau_id)
             ->get();
+        $troupeau = Troupeau::find($this->troupeau_id);
         if($prophylo && count($ligne) === 0)
         {
-            $troupeau = Troupeau::find($troupeaux_id);
-            $troupeau->anneeprophylos()->attach($anneeprophylos_id);
-            $this->nbAjout++;
+            $troupeau->anneeprophylos()->attach($this->anneeProphylo_id);
+            $this->compteur->incrementAjout();
         }
         elseif(!$prophylo && count($ligne) > 0)
         {
-            $troupeau->anneeprophylos()->detach($ligne->anneeprophylo_id);
-            $this->nbSuppr++;
+            $troupeau->anneeprophylos()->detach($ligne->first->anneeprophylo_id->id);
+            $this->compteur->incrementSuppr();
             
         }
         return $this->compteur;

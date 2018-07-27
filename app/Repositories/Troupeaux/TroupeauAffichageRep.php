@@ -47,7 +47,8 @@ class TroupeauAffichageRep
     {
         $troupeau = Troupeau::find($param['id_troupeau']);
         $user = User::find($troupeau->user_id);
-        $anneeProphylo = Anneeprophylo::where('campagne', $this->campagne())->get();
+        $anneeProphylo = Anneeprophylo::where('campagne', $this->campagne())->get()->first();
+;
         $vetsan = (isset($param['vetsan'])) ? 1 : 0;
         $prophylo = (isset($param['prophylo'])) ? 1 : 0;
         $vso = (isset($param['vso'])) ? 1 : 0;
