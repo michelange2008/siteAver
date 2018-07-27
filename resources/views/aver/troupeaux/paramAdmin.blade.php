@@ -16,22 +16,34 @@
   <div class="container-fluid bg-success espace">
     <h4>Modification des paramètres de cet éleveur</h4>
   </div>
-  <div class="container-fluid bg-light">
-    {{Form::label('vetsan', 'Nous sommes vétérinaires sanitaires: ')}}
-    {{Form::checkbox('vetsan', 1 , $troupeau->user->vetsan)}}
+  <div class="container form bg-light">
+    <div class="form-group">
+      <div class="form-check">
+        {{Form::checkbox('vetsan', 1 , $troupeau->user->vetsan, ['class' => 'form-check-input'])}}
+        {{Form::label('vetsan', 'Nous sommes vétérinaires sanitaires', ['class' => 'form-check-label'])}}
+      </div>
 
-    {{Form::label('prophylo', 'Il y a des prophylaxies en '.$campagne.' : ')}}
-    {{Form::checkbox('prophylo', 1 , $troupeauCampagne->prophylo())}}
+      <div class="form-check">
+    {{Form::checkbox('prophylo', 1 , $troupeauCampagne->prophylo(), ['class' => 'form-check-input'])}}
+    {{Form::label('prophylo', 'Il y a des prophylaxies en '.$campagne, ['class' => 'form-check-label'])}}
+      </div>
 
-    {{Form::label('vso', 'La VSO est à faire en '.$campagne.' : ')}}
-    {{Form::checkbox('vso', 1 , $troupeauCampagne->vso())}}
+      <div class="form-check">
+    {{Form::checkbox('vso', 1 , $troupeauCampagne->vso(), ['class' => 'form-check-input'])}}
+    {{Form::label('vso', 'La VSO est à faire en '.$campagne, ['class' => 'form-check-label'])}}
+      </div>
 
-    {{Form::label('bsaimportant', 'Il faut faire le BSA impérativement: ')}}
-    {{Form::checkbox('bsaimportant', 1 , $troupeau->bsaimportant)}}
+      <div class="form-check">
+        {{Form::checkbox('bsaimportant', 1 , $troupeau->bsaimportant, ['class' => 'form-check-input'])}}
+        {{Form::label('bsaimportant', 'Il faut faire le BSA impérativement', ['class' => 'form-check-label'])}}
+      </div>
 
-    {{Form::submit('Enregistrer')}}
-    {{Form::reset('Annuler')}}
+      <div class="form-check">
+        {{Form::submit('Enregistrer', ['class' => 'btn btn-primary'])}}
+        {{Form::reset('Annuler', ['class' => 'btn btn-warning'])}}
+      </div>
 
+  </div>
 
   </div>
 

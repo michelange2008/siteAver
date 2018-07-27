@@ -63,7 +63,9 @@ trait PeriodeProphylo
     {
         return $this->anneeActuelle()->subYear();
     }
-    
+    /*
+     * renvoie la campagne actuelle sous forme de string de type "2018 - 2019"
+     */
     public function campagne()
     {
         $debut = $this->anneeActuelle();
@@ -71,7 +73,9 @@ trait PeriodeProphylo
         $campagne = $debut->year." - ".$fin->year;
         return $campagne;
     }
-    
+    /*
+     * Renvoi un objet troupeauCampagne, cad les données d'un troupeau pour la campagne actuelle (prophylo, vso, date dernier bsa)
+     */
     public function troupeauCampagne($id)
     {
         $troupeauCampagne = new TroupeauCampagne();
