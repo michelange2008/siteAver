@@ -4,7 +4,7 @@
  * Classe pour faire des cards à afficher avec titre et icone;
  */
 
-namespace App\Factories;
+namespace App\Factories\Card;
 
 /**
  * Description of CardFactory

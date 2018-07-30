@@ -4,14 +4,14 @@
  * Classe permettant de créer une suite de Card et de la renvoyer
  */
 
-namespace App\Factories;
+namespace App\Factories\Card;
 
 /**
  * Description of ListeCard
  *
  * @author michel
  */
-use App\Factories\CardFactory;
+use App\Factories\Card\CardFactory;
 
 class ListeCard
 {

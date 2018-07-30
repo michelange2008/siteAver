@@ -11,7 +11,8 @@ namespace App\Repositories\Visites;
  *
  * @author michel
  */
-use App\Factories\ListeCard;
+
+use App\Factories\Card\ListeCard;
 use App\Models\Troupeau;
 use App\Models\Anneeprophylo_troupeau;
 use App\Factories\Sousmenu\SousmenuCouleurs;

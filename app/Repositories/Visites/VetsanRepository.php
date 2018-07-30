@@ -12,7 +12,7 @@ namespace App\Repositories\Visites;
  *
  * @author michel
  */
-use App\Factories\ListeCard;
+use App\Factories\Card\ListeCard;
 use App\Models\User;
 
 class VetsanRepository

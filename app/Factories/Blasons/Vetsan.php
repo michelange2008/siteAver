@@ -8,15 +8,16 @@ class Vetsan extends Blasons
 {
     public function __construct($id_troupeau)
     {
+        $troupeau = Troupeau::find($id_troupeau);
+        
         $this->identite = "vetsan";
         $this->icone_vrai = "vetsan_carre.svg";
         $this->icone_faux ="vetsan_no_carre.svg";
         $this->alt_vrai = "vetsan";
         $this->alt_faux = "non vetsan";
-        $this->titre_vrai = "Nous sommes vétérinaires sanitaires de cet éleveur";
-        $this->titre_faux = "Nous ne sommes pas vétérinaires sanitaires de cet éleveur";
+        $this->titre_vrai = "Antikor est vétérinaire sanitaire de ".$troupeau->user->name;
+        $this->titre_faux = "Antikor n'est pas vétérinaires sanitaires de ".$troupeau->user->name;
 
-        $troupeau = Troupeau::find($id_troupeau);
         $this->setCondition(boolval($troupeau->user->vetsan));
     }
     

@@ -14,6 +14,9 @@ use App\Models\User;
 use App\Models\Anneeprophylo;
 use App\Traits\PeriodeProphylo;
 use App\Repositories\Visites\ModifProphyloVso;
+use App\Factories\Card\CardListe;
+use App\Factories\Card\CardAnalyses;
+use App\Factories\Card\CardOrdonnances;
 
 class TroupeauAffichageRep
 {
@@ -31,6 +34,14 @@ class TroupeauAffichageRep
 
         return $this->listeBlasons;
     }
+    
+    public function listeCards($id_troupeau)
+    {
+        $listeCards = new CardListe();
+        $listeCards->addCard(new CardAnalyses($id_troupeau));
+        $listeCards->addCard(new CardOrdonnances($id_troupeau));
+        return $listeCards;
+    }
 
     public function hasPlusTroupeau($id_troupeau)
     {
@@ -47,11 +58,16 @@ class TroupeauAffichageRep
     {
         $troupeau = Troupeau::find($param['id_troupeau']);
         $user = User::find($troupeau->user_id);
-        $anneeProphylo = Anneeprophylo::where('campagne', $this->campagne())->get()->first();
-;
+        $campagne = Anneeprophylo::where('campagne', $this->campagne())->get()->first();
         $vetsan = (isset($param['vetsan'])) ? 1 : 0;
-        $prophylo = (isset($param['prophylo'])) ? 1 : 0;
-        $vso = (isset($param['vso'])) ? 1 : 0;
+        if($vetsan === 0)
+        {
+            $prophylo = 0;
+            $vso = 0;
+        }else{
+            $prophylo = (isset($param['prophylo'])) ? 1 : 0;
+            $vso = (isset($param['vso'])) ? 1 : 0;
+        }
         $bsaimportant = (isset($param['bsaimportant'])) ? 1 : 0;
 
         $user->vetsan = $vetsan;
@@ -59,8 +75,10 @@ class TroupeauAffichageRep
 
         $troupeau->bsaimportant = $bsaimportant;
         $troupeau->save();
-
-        $modifProphyloVso = new ModifProphyloVso($anneeProphylo->id, $troupeau->id);
+        
+        $modifProphyloVso = new ModifProphyloVso($campagne->id, $troupeau->id);
         $modifProphyloVso->modifProphylo($prophylo);
+        $modifProphyloVso->modifVso($vso);
+        
     }
 }

@@ -13,8 +13,7 @@ namespace App\Repositories\Visites;
  *
  * @author michel
  */
-use App\Factories\ListeCard;
-use App\Factories\CardFactory;
+use App\Factories\Card\ListeCard;
 use App\Factories\Sousmenu\SousmenuCouleurs;
 
 class VisitesRepository

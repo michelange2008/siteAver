@@ -17,11 +17,11 @@ class Vso extends Blasons
         $this->icone_faux= 'vso_no_carre.svg';
         $this->alt_vrai = 'vso';
         $this->alt_faux = 'pas de vso';
-        $this->titre_vrai = 'VSO à faire cette année';
-        $this->titre_faux = 'Pas de VSO à faire';
+        $this->titre_vrai = 'Visite Sanitaire Obligatoire à faire en '.$this->campagne();
+        $this->titre_faux = 'Pas de Visite Sanitaire Obligatoire en '.$this->campagne();
         
         $vsos= $troupeau->anneevso->sortByDesc('debut');
-        if(isset($vsos->values()[0]) && $vsos->values()[0]->campagne == $this->campagne())
+        if($vsos->first() !== null && $vsos->first()->campagne == $this->campagne())
         {
             $this->setCondition(true);
         }else{

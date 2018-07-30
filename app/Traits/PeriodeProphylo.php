@@ -1,7 +1,8 @@
 <?php
 
 /*
- * Crée la liste des 5 dernières années de prophylaxie
+ * Crée la liste des 5 dernières années de prophylaxie et plein d'autres méthodes correspondant aux prophylaxies, vso, etc.
+ * en lien avec les dates et campagnes.
  */
 
 namespace App\Traits;

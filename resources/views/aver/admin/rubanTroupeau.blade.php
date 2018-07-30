@@ -1,8 +1,9 @@
 @section('dashboard')
   <div class="container-fluid bg bg-secondary d-flex justify-content-between espace-lg espace-bas">
-    <div id="img-especes" class="barre-item d-flex flex-row align-items-end">
+    <div id="img-especes" class="barre-item d-flex flex-row align-items-end" title="troupeau {{$troupeau->especes->nom}}">
       @if(!$change)
-      <a href="{{route('home')}}" title="revenir à la fiche éleveur">
+      <!-- $change définit si on est en mode affichage ou modification -->
+      <a href="{{route('home')}}" title="revenir à la liste des éleveurs">
       @else()
       <a href="{{route('troupeau.accueil', $troupeau->id)}}" title="revenir à la liste des éleveurs">
       @endif()
@@ -10,6 +11,7 @@
       </a>
       <img src="{{URL::asset('medias')}}/icones/{{$troupeau->especes->abbreviation}}.svg"  alt="{{$troupeau->especes->nom}}" />
       @if($autreTroupeaux !== null)
+      <!-- Prévoit le cas où l'éleveur à plusieurs troupeaux -->
         @foreach($autreTroupeaux as $autreTroupeau)
         <a  class="img-petite" href="{{route('troupeau.accueil', ['id' => $autreTroupeau->id])}}" title="Afficher le troupeau {{strtolower($autreTroupeau->especes->nom)}}">
           <img class="img-normale" src="{{URL::asset('medias')}}/icones/{{$autreTroupeau->especes->abbreviation}}.svg"  alt="{{$autreTroupeau->especes->nom}}" />

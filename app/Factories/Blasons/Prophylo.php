@@ -19,11 +19,11 @@ class Prophylo extends Blasons
         $this->icone_faux = 'prophylo_no_carre.svg';
         $this->alt_vrai = 'prophylo';
         $this->alt_faux = 'non prophylo';
-        $this->titre_vrai = 'Prophylo à faire pour cette campagne';
-        $this->titre_faux = 'Pas de prophylo à faire cette année';
+        $this->titre_vrai = 'Prophylaxies à faire en '.$this->campagne();
+        $this->titre_faux = 'Pas de prophylaxies à faire en '.$this->campagne();
         
         $prophylos= $troupeau->anneeprophylos->sortByDesc('debut');
-        if(isset($prophylos[0]) && $prophylos[0]->campagne == $this->campagne()){
+        if($prophylos->first() !== null && $prophylos->first()->campagne == $this->campagne()){
             $this->setCondition(true);
         }else{
             $this->setCondition(false);
