@@ -28,7 +28,13 @@ class TroupeauAffichageController extends Controller
     
     public function index($id)
     {
-        if(Auth::check()) $admin = (Auth::user()->admin) ? 1 :0;
+        if(Auth::check()){
+            $admin = (Auth::user()->admin) ? 1 :0;
+        }
+        else
+        {
+            return redirect()->guest(route('login'));
+        }
         $troupeau = Troupeau::find($id);
         $troupeau->user->ede = $this->formatEde($troupeau->user->ede);
         $listeBlasons = $this->troupeauAffichageRep->listeBlasons($id);

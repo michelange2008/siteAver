@@ -5,8 +5,10 @@
 
       <li class="nav-item"><a href="{{ URL::route('aver.accueil')}}" class = 'nav-link'>Accueil</a></li>
 
+      <li class="nav-item"><a href = "{{URL::route('admin.analyses')}}"class="nav-link">Analyses</a></li>
+
       <li class="nav-item"><a href="{{ URL::route('user.index')}}" class = 'nav-link'>Liste Eleveurs</a></li>
-      
+
       <li class="nav-item"><a href="{{ URL::route('fevec.gestion')}}" class = 'nav-link'>Gestion Fevec</a></li>
 
       <li class="nav-item dropdown">
@@ -17,7 +19,7 @@
            <ul class="dropdown-menu bg-dark text-light" aria-labelledBy = "navbarDropdown">
 
             <a class="dropdown-item text-muted" href="{{ URL::route('visites.accueil') }}">Sommaire</a>
-               
+
             <a class="dropdown-item text-muted" href="{{ URL::route('vetsan.changer') }}">Vét. San.</a>
 
             <a class="dropdown-item text-muted" href="{{ URL::route('prophylo.index') }}">Prophylaxie</a>

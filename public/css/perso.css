@@ -10,6 +10,14 @@ img{
   max-width: 100%;
 }
 
+.image-h{
+  max-height: 100%;
+}
+
+.sous-ruban {
+  height: 50px;
+}
+
 .gras {
   font-weight: bold;
 }

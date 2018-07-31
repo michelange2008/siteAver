@@ -17,10 +17,14 @@ use App\Repositories\Visites\ModifProphyloVso;
 use App\Factories\Card\CardListe;
 use App\Factories\Card\CardAnalyses;
 use App\Factories\Card\CardOrdonnances;
+use App\Factories\Card\CardFactures;
+use App\Factories\Card\CardBsa;
+use App\Factories\Analyses\AnalyseMetadatas;
 
 class TroupeauAffichageRep
 {
   use PeriodeProphylo;
+  use AnalyseMetadatas;
 
     public function listeBlasons($id_troupeau)
     {
@@ -37,9 +41,14 @@ class TroupeauAffichageRep
     
     public function listeCards($id_troupeau)
     {
+        $nbAnalyses = $this->nbAnalysesSelonId($id_troupeau);
+        $cardAnalyses = new CardAnalyses($id_troupeau);
+        $cardAnalyses->setOption($nbAnalyses);
         $listeCards = new CardListe();
-        $listeCards->addCard(new CardAnalyses($id_troupeau));
+        $listeCards->addCard($cardAnalyses);
         $listeCards->addCard(new CardOrdonnances($id_troupeau));
+        $listeCards->addCard(new CardBsa($id_troupeau));
+        $listeCards->addCard(new CardFactures($id_troupeau));
         return $listeCards;
     }
 
