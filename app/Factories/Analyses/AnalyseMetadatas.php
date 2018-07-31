@@ -14,7 +14,9 @@ namespace App\Factories\Analyses;
  */
 use App\Factories\Analyses\FichierAnalyse;
 use App\Models\Troupeau;
+use App\Models\Analyse;
 use App\Traits\ChercheEdeAvecNom;
+use App\Models\User;
 
 trait AnalyseMetadatas
 {
@@ -107,4 +109,31 @@ trait AnalyseMetadatas
         return $this->analysesSelonId($id_troupeau)->count();
     }
     
+    public function remplitBdd($listeAnalyses)
+    {
+        foreach($listeAnalyses as $ana)
+        {
+            if($ana->statut())
+            {
+                $analyse = Analyse::where('lien', $ana->link())->first();
+                if($analyse == null)
+                {
+                    $user = User::where('ede', $ana->ede())->first();
+                    if($user !== null)
+                    {
+                        $id = $user->id;
+                        Analyse::updateOrCreate([
+                            'id_user' => $id,
+                            'type_analyse' => $ana->type_analyse(),
+                            'id_analyse' => $ana->id_analyse(),
+                            'date_analyse' => $ana->date(),
+                            'lien' => $ana->link(),
+                            'statut' => $ana->statut(),
+                        ]);
+                    }
+                }
+            }
+            
+        }
+    }
 }

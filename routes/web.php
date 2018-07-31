@@ -45,7 +45,7 @@ Route::get('/aver/troupeau/paramadmin/{id?}', ['uses' => 'Aver\Troupeaux\Troupea
 
 Route::post('aver/troupeau/paramadmin/modif',  ['uses' => 'Aver\Troupeaux\TroupeauAffichageController@paramAdminModif', 'as' => 'troupeau.paramAdmin.modif' ]);
 
-Route::get('aver/troupeau/analyses/{id?}', ['uses' => 'Aver\Fichiers\Analyses\AnalysesController@parEleveur', 'as' => 'troupeau.analyses']);
+Route::get('aver/troupeau/analyses/{id_user?}/{id_troupeau?}', ['uses' => 'Aver\Fichiers\Analyses\AnalysesController@parEleveur', 'as' => 'troupeau.analyses']);
 
 Route::get('aver/troupeau/ordonnances/{id?}', ['uses' => 'Aver\Fichiers\Ordonnances\OrdonnancesController@index', 'as' => 'troupeau.ordonnances']);
 
@@ -54,6 +54,8 @@ Route::get('aver/troupeau/factures/{id?}', ['uses' => 'Aver\Fichiers\Factures\Fa
 Route::get('aver/troupeau/bsa/{id?}', ['uses' => 'Aver\Fichiers\Bsa\BsaController@index', 'as' => 'troupeau.bsa']);
 
 Route:: get('aver/analyses', ['uses' => 'Aver\Fichiers\Analyses\AnalysesController@index', 'as' => 'admin.analyses']);
+
+Route:: get('aver/analyses/majAnalyses', ['uses' => 'Aver\Fichiers\Analyses\AnalysesController@majAnalyses', 'as' => 'admin.analyses.majAnalyses']);
 
 //############################ Vétérinaire sanitaire ########################################################
 

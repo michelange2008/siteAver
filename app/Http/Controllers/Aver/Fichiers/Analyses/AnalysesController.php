@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Troupeau;
 use App\Http\Controllers\Controller;
 use App\Factories\Analyses\AnalyseMetadatas;
+use App\Models\Analyse;
 use App\Factories\Analyses\FichierAnalyse;
 use Illuminate\Http\Response;
+
 
 class AnalysesController extends Controller
 {
@@ -15,19 +17,19 @@ class AnalysesController extends Controller
     
     public function index()
     {
-        $listeAnalyses = $this->analyseMetadatas();
+        
+        $listeAnalyses = Analyse::all();
         return view('aver.admin.analysesToutes', [
             'listeAnalyses' => $listeAnalyses,
         ]);
     }
     
-    public function parEleveur($id)
+    public function parEleveur($user_id, $troupeau_id)
     {
-        $troupeau = Troupeau::find($id);
-        $listeAnalyses = $this->analysesSelonId($id);
-        return view('aver.fichiers.analyses.analyses',[
+        $listeAnalyses = Analyse::where('user_id', $user_id)->get();
+           return view('aver.fichiers.analyses.analyses',[
             'listeAnalyses' => $listeAnalyses,
-            'troupeau' => $troupeau,
+            'troupeau' => Troupeau::find($troupeau_id),
             
         ]);
     }
@@ -35,5 +37,12 @@ class AnalysesController extends Controller
     public function telechargement($id, $fichier)
     {
         return Response()->download($fichier);
+    }
+    
+    public function majAnalyses()
+    {
+        $listeAnalyses = $this->analyseMetadatas();
+        $this->remplitBdd($listeAnalyses);
+        return redirect()->back();
     }
 }

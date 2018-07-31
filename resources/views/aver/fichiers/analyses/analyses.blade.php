@@ -26,12 +26,18 @@
       <tbody>
         @foreach($listeAnalyses as $analyse)
         <tr>
-          <td>{{$analyse->nom_eleveur()}}</td>
-          <td>{{$analyse->date()}}</td>
-          <td>{{$analyse->type_analyse()}}</td>
-          <td>{{$analyse->id_analyse()}}</td>
+          <td>{{$analyse->user->name}}</td>
+          <td class="text-center">
+            @if($analyse->date_analyse->year == 0)
+              -
+            @else()
+              {{$analyse->date_analyse->toDateString()}}
+            @endif()
+          </td>
+          <td>{{$analyse->type_analyse}}</td>
+          <td>{{$analyse->id_analyse}}</td>
           <td>
-            <a href="{{URL::asset('pdf/analyses').'/'.$analyse->link()}}">fichier</a>
+            <a href="{{URL::asset('pdf/analyses').'/'.$analyse->lien}}">fichier</a>
           </td>
         </tr>
         @endforeach()
