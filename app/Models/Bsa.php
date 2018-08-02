@@ -14,6 +14,10 @@ class Bsa extends Model
     {
         return $this->belongsTo(Troupeau::class);
     }
+    public function pss()
+    {
+        return $this->belongsToMany(Ps::class);
+    }
 }
 
 

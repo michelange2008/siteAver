@@ -23,6 +23,6 @@ class Especes extends ParamModels
     
     public function ps()
     {
-        return $this->hasMany(Ps::class);
+        return $this->belongsToMany(Ps::class);
     }
 }

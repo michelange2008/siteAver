@@ -96,6 +96,10 @@ Route:: post('aver/analyses/important', ['uses' => 'Aver\Fichiers\Analyses\Analy
     Route::get('aver/visites/vso/remplitBv', ['uses' => 'Aver\Visites\VsoController@remplitBv', 'as' => 'vso.bv']);
 
     Route::get('aver/visites/vso/remplitPr', ['uses' => 'Aver\Visites\VsoController@remplitPr', 'as' => 'vso.pr']);
+    
+//################################### PS ##################################################################
+
+    Route::get('aver/visites/ps', ['uses' => 'Aver\Visites\PsController@index', 'as' => 'ps.index']);
 
 //################################# FEVEC #############################################################
     

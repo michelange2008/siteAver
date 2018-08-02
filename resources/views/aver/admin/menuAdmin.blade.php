@@ -26,6 +26,8 @@
 
             <a class="dropdown-item text-muted" href="{{ URL::route('bsa.index') }}">Bilan annuel</a>
 
+            <a class="dropdown-item text-muted" href="{{ URL::route('ps.index') }}">Protocoles de soin</a>
+
             <a class="dropdown-item text-muted" href="{{ URL::route('vso.index') }}">Visite obligatoire</a>
 
            </ul>

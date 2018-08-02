@@ -8,10 +8,14 @@ class Ps extends Model
 {
     protected $table = 'ps';
     
-    protected $fillable = ['id', 'nom', 'fichier', 'especes_id'];
+    protected $fillable = ['id', 'nom', 'fichier'];
     
-    public function espece()
+    public function especes()
     {
-        return $this->belongsTo(Especes::class);
+        return $this->belongsToMany(Especes::class);
+    }
+    public function bsas()
+    {
+        return $this->belongsToMany(Bsa::class);
     }
 }
