@@ -10,40 +10,32 @@
     </a>
     <h1>Analyses</h1>
 </div>
+<br />
+<div class="container-fluid d-flex flex-row justify-content-between">
 
-<div class="container-fluid">
-  <div>
-    <table id="listeAnalyses" class="table table-striped table-hover tablesorter">
-      <thead>
-        <tr>
-          <th>Nom de l'éleveur</th>
-          <th>Date</th>
-          <th>Type d'analyse</th>
-          <th>n° d'analyse</th>
-          <th>Fichier</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach($listeAnalyses as $analyse)
-        <tr>
-          <td>{{$analyse->user->name}}</td>
-          <td class="text-center">
-            @if($analyse->date_analyse->year == 0)
-              -
-            @else()
-              {{$analyse->date_analyse->toDateString()}}
-            @endif()
-          </td>
-          <td>{{$analyse->type_analyse}}</td>
-          <td>{{$analyse->id_analyse}}</td>
-          <td>
-            <a href="{{URL::asset('pdf/analyses').'/'.$analyse->lien}}">fichier</a>
-          </td>
-        </tr>
-        @endforeach()
-      </tbody>
-    </table
-  </div>
+  @foreach($listeAnalyses as $analyse)
+    <div class="card" style="width : 15rem">
+      <img class="card-img-top" src="{{URL::asset('medias')}}/icones/{{$analyse->codeanalyse->icone}}"/>
+      <div class="card-body d-flex flex-column justify-content-between">
+        <h5 class = "card-title">{{ucfirst($analyse->codeanalyse->intitule)}}</h5>
+        <p class = "card-text">
+          @if($analyse->date_analyse->year == 0)
+            -
+          @else()
+            {{$analyse->date_analyse->toDateString()}}
+          @endif()
+        </p>
+        <p class="car-text">
+          {{$analyse->id_analyse}}
+        </p>
+        @if($analyse->important)
+          <a href="{{URL::asset('pdf/analyses').'/'.$analyse->lien}}" class = "btn btn-danger">Voir l'analyse</a>
+        @else()
+          <a href="{{URL::asset('pdf/analyses').'/'.$analyse->lien}}" class = "btn btn-success">Voir l'analyse</a>
+        @endif()
+      </div>
+    </div>
+  @endforeach()
 
 </div>
 @endsection()

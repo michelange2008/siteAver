@@ -49,3 +49,17 @@ a:hover img {
   background: url('../medias/icones/VO.svg') no-repeat;
   background-size: contain;
 }
+
+.petite_icone {
+    height: 20px;
+}
+.important {
+  background: url('../medias/icones/important.svg') no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.pasImportant {
+  background: url('../medias/icones/pasImportant.svg') no-repeat;
+  background-size: contain;
+  background-position: center;
+}

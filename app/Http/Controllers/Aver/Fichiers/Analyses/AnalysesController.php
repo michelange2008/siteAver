@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers\Aver\Fichiers\Analyses;
 
+/*
+ * Controller qui gère tout les redirections concernant les analyses: liste de toutes les analyses
+ * liste des analyses d'un éleveur, téléchargement du pdf, mise à jour de la base de données.
+ */
+
 use Illuminate\Http\Request;
 use App\Models\Troupeau;
 use App\Http\Controllers\Controller;
@@ -17,7 +22,6 @@ class AnalysesController extends Controller
     
     public function index()
     {
-        
         $listeAnalyses = Analyse::all();
         return view('aver.admin.analysesToutes', [
             'listeAnalyses' => $listeAnalyses,
@@ -43,6 +47,26 @@ class AnalysesController extends Controller
     {
         $listeAnalyses = $this->analyseMetadatas();
         $this->remplitBdd($listeAnalyses);
+        return redirect()->back();
+    }
+    public function changeImportant(Request $request)
+    {
+        $listeImportant = array_slice($request->all(),1);
+        $listeAnalyses= Analyse::all();
+        foreach($listeAnalyses as $analyse)
+        {
+            $id_checkbox = "cb_".$analyse->id;
+            if(array_key_exists($id_checkbox, $listeImportant))
+            {
+                $analyse->important = true;
+            }
+            else
+            {
+                $analyse->important = false;
+            }
+            $analyse->save();
+        }
+        
         return redirect()->back();
     }
 }

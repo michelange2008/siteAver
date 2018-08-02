@@ -1,18 +1,15 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace App\Factories\Analyses;
 
 /**
- *
+ * classe qui constuit un objet de type fichierAnalyse à partir de la lecture du répertoire pdf/analyses.
+ * Il permet de remplir la base de donnée Analyse avec ces éléments
+ * Il fournit les analyses d'un user donné
+ * Il compte les analses d'un user donné
+ * 
  * @author michel
  */
-use App\Factories\Analyses\FichierAnalyse;
 use App\Models\Troupeau;
 use App\Models\Analyse;
 use App\Traits\ChercheEdeAvecNom;
@@ -123,12 +120,12 @@ trait AnalyseMetadatas
                     {
                         $id = $user->id;
                         Analyse::updateOrCreate([
-                            'id_user' => $id,
-                            'type_analyse' => $ana->type_analyse(),
+                            'user_id' => $id,
+                            'codeanalyse_id' => $ana->type_analyse(),
                             'id_analyse' => $ana->id_analyse(),
                             'date_analyse' => $ana->date(),
                             'lien' => $ana->link(),
-                            'statut' => $ana->statut(),
+                            'important' => false,
                         ]);
                     }
                 }

@@ -11,13 +11,18 @@ class Analyse extends Model
       'created_at',
       'updated_at',
     ];
-    
+
     protected $guarded = [];
-    
+
     protected $table = 'analyses';
-    
+
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function codeanalyse()
+    {
+      return $this->belongsTo(Codeanalyse::class);
     }
 }

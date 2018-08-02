@@ -34,4 +34,15 @@ $(function(){
 
             ]
     });
+
+   $('.bouton').on('click', function(){
+      var id = $(this).attr('id').split("_")[1];
+      var cb = '#cb_'+id;
+      var sb = '#sb_'+id;
+      $(sb).toggleClass('important');
+      $(sb).toggleClass('pasImportant');
+      if($(cb).attr('checked') != 'checked') $(cb).attr('checked', 'checked');
+      else $(cb).removeAttr('checked');
+      $("#changeImportant").submit();
+   });
 })

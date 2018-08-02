@@ -8,17 +8,16 @@
 
 namespace App\Factories\Analyses;
 
-use App\Factories\Analyses\CodeAnalyses;
 use Carbon\Carbon;
+use App\Models\Codeanalyse;
 /**
- * Classe qui présente les différents éléments des métadatas d'un fichier d'analyse en pdf
+ * Classe qui présente les différents éléments des métadatas extraits du nom d'un fichier d'analyse en pdf
  *
  * @author michel
  */
 class FichierAnalyse
 {
-    use CodeAnalyses;
-    
+
     protected $nom_eleveur;
     protected $type_analyse;
     protected $ede;
@@ -71,7 +70,12 @@ class FichierAnalyse
     }
     public function chercheCodeAnalyse($id_analyse)
     {
-        return $this->litCode($id_analyse);
+        $codeanalyse = Codeanalyse::where('code', $id_analyse)->first();
+        if($codeanalyse != null){
+            return $codeanalyse->id;
+        }else{
+            return 102;
+        }
     }
     public function formatDate($date)
     {

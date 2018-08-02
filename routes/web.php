@@ -57,6 +57,8 @@ Route:: get('aver/analyses', ['uses' => 'Aver\Fichiers\Analyses\AnalysesControll
 
 Route:: get('aver/analyses/majAnalyses', ['uses' => 'Aver\Fichiers\Analyses\AnalysesController@majAnalyses', 'as' => 'admin.analyses.majAnalyses']);
 
+Route:: post('aver/analyses/important', ['uses' => 'Aver\Fichiers\Analyses\AnalysesController@changeImportant', 'as' => 'admin.analyses.changeImportant' ]);
+
 //############################ Vétérinaire sanitaire ########################################################
 
     // AFFICHE LA PAGE AVEC LE FORMULAIRE PERMETTANT DE MODIFIER VET SAN OU NON
