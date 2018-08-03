@@ -21,5 +21,15 @@ trait EspecesPresentes
         
         return $listeEspeces;
     }
+    
+    public function nomEspecesPresentes()
+    {
+        $listeNom = collect();
+        foreach($this->listeEspecesPresentes() as $espece)
+        {
+            $listeNom->push($espece->nom);
+        }
+        return $listeNom;
+    }
 }
 

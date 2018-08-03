@@ -101,7 +101,15 @@ Route:: post('aver/analyses/important', ['uses' => 'Aver\Fichiers\Analyses\Analy
 
     Route::get('aver/visites/ps', ['uses' => 'Aver\Visites\PsController@index', 'as' => 'ps.index']);
 
-//################################# FEVEC #############################################################
+    Route::get('aver/visites/ps/delete/{ps_id}', ['uses' => 'Aver\Visites\PsController@destroy', 'as' => 'ps.destroy']);
+    
+    Route::post('aver/visites/ps/modif', ['uses' => 'Aver\Visites\PsController@modif', 'as' => 'ps.modif']);
+    
+    Route::get('aver/visites/ps/create', ['uses' => 'Aver\Visites\PsController@create', 'as' => 'ps.create']);
+    
+    Route::post('aver/visites/ps/store', ['uses' => 'Aver\Visites\PsController@store', 'as' => 'ps.store']);
+    
+    //################################# FEVEC #############################################################
     
     /* ROUTES CONCERNANT LA GESTION DES ELEVEURS FEVEC: NORMALISATION, IMPORT ET MISE A JOUR */
 
