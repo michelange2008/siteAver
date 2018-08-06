@@ -113,7 +113,7 @@ Route:: post('aver/analyses/important', ['uses' => 'Aver\Fichiers\Analyses\Analy
     
     /* ROUTES CONCERNANT LA GESTION DES ELEVEURS FEVEC: NORMALISATION, IMPORT ET MISE A JOUR */
 
-Route::get('aver/fevec/accueil', ['uses' => 'Aver\Admin @index', 'as' => 'fevec.index']);
+Route::get('aver/fevec/accueil', ['uses' => 'Aver\Admin\Fevec\FevecController@index', 'as' => 'fevec.index']);
 
 Route::get('aver/fevec/gestion/maj', ['uses' => 'Aver\Admin\Fevec\FevecController@toutMettreAJour', 'as' => 'fevec.maj']);
 
@@ -131,9 +131,14 @@ Route::get('aver/fevec/parametreImport', ['uses' => 'Aver\Admin\Fevec\FevecContr
 
 Route::post('aver/fevec/majParam', ['uses' => 'Aver\Admin\Fevec\FevecController@majParam', 'as' => 'fevec.majParam']);
 
+Route::get('aver/fevec/vide', ['uses' => 'Aver\Admin\Fevec\FevecController@videTables', 'as' => 'fevec.videTables']);
 
 
 Route::get('/aver/supprimerEleveur/{id}', ['uses' => 'Aver\UserController@supprimerEleveur', 'as' => 'user.supprimerEleveur']);
 
 Route::get('/aver/toutSupprimer/{listeId}', ['uses' => 'Aver\UserController@toutSupprimer', 'as' => 'user.toutSupprimer']);
+
+//############################################## GESTION DE L'ANCIENNE TABLE DE DONNEES BSA ############################################
+
+Route::get('aver/intermede', ['uses' => 'Aver\Admin\Intermede\IntermedeController@index', 'as' => 'intermede.index']);
 

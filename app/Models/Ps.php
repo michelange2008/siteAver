@@ -18,4 +18,9 @@ class Ps extends Model
     {
         return $this->belongsToMany(Bsa::class);
     }
+    
+    public function protos()
+    {
+        return $this->belongsToMany(Proto::class);
+    }
 }

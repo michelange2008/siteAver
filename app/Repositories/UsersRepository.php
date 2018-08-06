@@ -90,6 +90,7 @@ class UsersRepository
   }
   public function proposeSupprimerEleveur($listeEleveursFevec)
   {
+    $idEleveursFevec = array();
     foreach ($listeEleveursFevec as $eleveurFevec) {
       $idEleveursFevec[] = $eleveurFevec->id;
     }

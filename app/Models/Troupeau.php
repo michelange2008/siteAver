@@ -41,8 +41,12 @@ class Troupeau extends Model
         return $this->belongsToMany(Anneevso::class);
     }
     
-    public function bsa()
+    public function bsas()
     {
         return $this->hasMany(Bsa::class);
+    }
+    public function troupeauanciens()
+    {
+        return $this->belongsToMany(Troupeauancien::class);
     }
 }

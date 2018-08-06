@@ -17,6 +17,7 @@ use App\Models\Especes;
 use App\Factories\Graphiques;
 use App\Factories\StatFactory;
 use App\Traits\RemplaceCaract;
+use App\Traits\ValideEde;
 
 const CONVENTION = 1;
 const CONTRAT = 5;
@@ -24,6 +25,7 @@ const CONTRAT = 5;
 class FevecRepository
 {
   use RemplaceCaract;
+  use ValideEde;
   
   protected $clientFevec;
   protected $troupeauFevec;
@@ -129,6 +131,7 @@ class FevecRepository
     public function modifierEstconventionne($troupeauxFevec) // Attribue les indices 1 ou 5 aux éleveurs (convention ou suivi)
     {
       $clientsFevec = $this->getTousClientsReduits();
+      $clientsFevecReduit = array();
 
       foreach($clientsFevec as $clientFevec)
       {
@@ -153,12 +156,14 @@ class FevecRepository
           $inputs['id'] = $clientFevec->CodeClient;
           $inputs['name'] = $clientFevec->NomClient;
           $inputs['email'] = ($clientFevec->email == null) ? $inputs['name']."@nomail.af" : $clientFevec->email;
-          $inputs['ede'] = ($clientFevec->NumeroEDE == null ) ? '00000000' : $clientFevec->NumeroEDE;
+          $inputs['ede'] = $this->valideEde($clientFevec->NumeroEDE);
           $inputs['activite'] = $clientFevec->Estconventionné;
 
           Fev_eleveurs_n::firstOrCreate($inputs);
         }
       }
+      
+      
     public function videTableEleveurs()
     {
       $tableEleveurs = Fev_eleveurs_n::all();
@@ -168,6 +173,7 @@ class FevecRepository
     }
     public function elimineTroupeauxSansClient($troupeauxFevec) //Enlève les troupeaux qui n'ont pas de clients dans la table intermédiaire
     {
+      $troupeauxFevecAvecClient = array();
       foreach($troupeauxFevec as $troupeauFevec)
       {
         $eleveur = Fev_eleveurs_n::where('id', $troupeauFevec->CodeClient)->first();

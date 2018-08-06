@@ -65,7 +65,9 @@
 							<i class="fa fa-check-square" style="color:orange"></i>
 						@endif()
 					</td>
-            <?php $listeBSA = $troupeau->bsa->sortByDesc('date_bsa'); ?>
+            <?php
+            
+            if($troupeau->bsas !== null) $listeBSA = $troupeau->bsas->sortByDesc('date_bsa'); ?>
               @if($listeBSA->max('date_bsa') != null)
                 <?php
                   $dateBSA = new DateTime($listeBSA->max('date_bsa'));

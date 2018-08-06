@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Aver\Admin\Fevec;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 use App\Repositories\Fevec\FevecRepository;
 use App\Repositories\UsersRepository;
@@ -13,15 +14,17 @@ use App\Repositories\Fevec\ParamGestion;
 use App\Outils\MajDateMajFevec;
 
 use App\Outils\ArrangeCsv;
-
+use App\Traits\RenommeBddAver;
+use App\Factories\GestionFevec\ListeGestionFevec;
     
 class FevecController extends Controller
 {
-
+    use RenommeBddAver;
 
   protected $fevecRepository;
   protected $userRepository;
   protected $troupeauxRepository;
+  
 
     public function __construct(FevecRepository $fevecRepository ,UsersRepository $userRepository, TroupeauxRepository $troupeauxRepository)
     {
@@ -41,8 +44,9 @@ class FevecController extends Controller
 
     public function gestion()
     {
-      $tableSommaire = ArrangeCsv::organise('menuGestionFevec');
+//       $tableSommaire = ArrangeCsv::organise('menuGestionFevec');
       $listeMenu = FevecSousmenuRepository::sousmenuGestion();
+      $tableSommaire = new ListeGestionFevec();
       return view('fevec/sommaireFevec', [
         'tableSommaire' => $tableSommaire,
         'menu' => $listeMenu
@@ -126,5 +130,21 @@ class FevecController extends Controller
         ParamGestion::ecritParam($request->all());
         return redirect()->route('fevec.gestion')->with('status', 'Les paramètres ont été mis à jour');
     }
+    
+    public function videTables() 
+    {
+        DB::table('fev_clients')->truncate();
+        DB::table('fev_racedominante')->truncate();
+        DB::table('fev_troupeaux')->truncate();
+        DB::table('fev_typeactivite')->truncate();
+        DB::table('fev_typetroupeaux')->truncate();
+        
+        $this->renommeBddAver("essai.sql");
+        $this->litBddAver('aver_mdb_modifie.sql');
+
+        return redirect()->back();
+    }
+    
+    
     
 }

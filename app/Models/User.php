@@ -43,4 +43,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Analyse::class);
     }
+    public function eleveurs()
+    {
+        return $this->belongsToMany(Eleveur::class);
+    }
 }
