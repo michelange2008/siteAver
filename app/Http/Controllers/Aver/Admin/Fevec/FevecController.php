@@ -13,7 +13,6 @@ use App\Repositories\Fevec\FevecSousmenuRepository;
 use App\Repositories\Fevec\ParamGestion;
 use App\Outils\MajDateMajFevec;
 
-use App\Outils\ArrangeCsv;
 use App\Traits\RenommeBddAver;
 use App\Factories\GestionFevec\ListeGestionFevec;
     
@@ -44,7 +43,6 @@ class FevecController extends Controller
 
     public function gestion()
     {
-//       $tableSommaire = ArrangeCsv::organise('menuGestionFevec');
       $listeMenu = FevecSousmenuRepository::sousmenuGestion();
       $tableSommaire = new ListeGestionFevec();
       return view('fevec/sommaireFevec', [
