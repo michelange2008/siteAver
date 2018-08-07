@@ -124,5 +124,10 @@ class PsRep
         return $listeEspecesPs;
         
     }
+    
+    public function rentreDansBdd()
+    {
+        
+    }
 }
 

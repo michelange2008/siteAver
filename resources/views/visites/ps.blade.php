@@ -37,8 +37,8 @@
     <tbody>
     @foreach($listePs as $ps)
     <tr>
-      <td {{$ps->fichier}}>
-        {{$ps->nom}} <span class="plus-petit italique">({{$ps->fichier}})</span>
+      <td class="lien">
+        <a class = "text-dark" href="{{route('ps.affiche', ['id' => $ps->id])}}" >{{$ps->nom}} <span class="plus-petit italique">({{$ps->fichier}})</span></a>
       </td>
       @foreach($listeEspeces as $espece)
       <td style="text-align : center">

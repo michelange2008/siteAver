@@ -109,6 +109,8 @@ Route:: post('aver/analyses/important', ['uses' => 'Aver\Fichiers\Analyses\Analy
     
     Route::post('aver/visites/ps/store', ['uses' => 'Aver\Visites\PsController@store', 'as' => 'ps.store']);
     
+    Route::get('aver/visites/ps/affiche/{id?}', ['uses' => 'Aver\Visites\PsController@affichePs', 'as' => 'ps.affiche']);
+    
     //################################# FEVEC #############################################################
     
     /* ROUTES CONCERNANT LA GESTION DES ELEVEURS FEVEC: NORMALISATION, IMPORT ET MISE A JOUR */

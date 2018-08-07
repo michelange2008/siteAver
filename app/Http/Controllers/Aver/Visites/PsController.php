@@ -9,6 +9,7 @@ use App\Models\Ps;
 use App\Models\Troupeau;
 use App\Traits\EspecesPresentes;
 use App\Repositories\Visites\PsRep;
+use App\Models\PsDetail;
 // use Validator;
     
 class PsController extends Controller
@@ -60,5 +61,21 @@ class PsController extends Controller
         $this->psRep->destroy($id);
         
         return redirect()->back()->with('message', 'ce protocole de soin a bien été supprimé');
+    }
+    public function affichePs($id)
+    {
+        $ps = Ps::find($id);
+        $psDetail = PsDetail::where('ps_id', $id)->first();
+        return view('visites.psAffiche', [
+            'ps' => $ps,
+            'psDetail' => $psDetail,
+        ]);
+    }
+    
+    public function entreDansBdd()
+    {
+        $this->psRep->rentreDansBdd();
+        
+        
     }
 }
