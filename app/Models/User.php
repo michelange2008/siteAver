@@ -17,9 +17,7 @@ class User extends Authenticatable
      */
     protected $table = 'users';
     
-    protected $fillable = [
-        'id', 'name', 'email', 'ede', 'password', 'activite_id'
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -46,5 +44,9 @@ class User extends Authenticatable
     public function eleveurs()
     {
         return $this->belongsToMany(Eleveur::class);
+    }
+    public function veto()
+    {
+        return $this->hasOne(Veto::class);
     }
 }

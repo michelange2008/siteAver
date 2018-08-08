@@ -26,9 +26,10 @@ class ProtocoleDeSoins
                 <p>Apport de colostrum suffisant à la naissance</p>
                 <p>Alimentation lactée correcte: température, quantité, concentration en poudre,</p>
                 <p>Logement des veaux adaptés: cases à veaux, box individuels les premiers jours, etc.</p>
-                <p>Si besoin: vaccination des vaches (rotavec, trivacton, etc.) ou des veaux à la naissance.";"Etat critique du veau : déshydratation importante, veau qui ne se lève plus, état de choc,</p>",
-
-                "<p>Echec du traitement.</p>
+                <p>Si besoin: vaccination des vaches (rotavec, trivacton, etc.) ou des veaux à la naissance.",
+                
+                "<p>Etat critique du veau : déshydratation importante, veau qui ne se lève plus, état de choc,</p>,
+                <p>Echec du traitement.</p>
                 <p>Fréquence anormales de diarrhées.</p>
                 <p>Présence de signes cliniques inconnus.</p>",
             ],

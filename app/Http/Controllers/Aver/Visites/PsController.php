@@ -9,7 +9,11 @@ use App\Models\Ps;
 use App\Models\Troupeau;
 use App\Traits\EspecesPresentes;
 use App\Repositories\Visites\PsRep;
-use App\Models\PsDetail;
+use App\Models\Veto;
+
+use App\Factories\PsConstruitPdf;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 // use Validator;
     
 class PsController extends Controller
@@ -65,17 +69,14 @@ class PsController extends Controller
     public function affichePs($id)
     {
         $ps = Ps::find($id);
-        $psDetail = PsDetail::where('ps_id', $id)->first();
-        return view('visites.psAffiche', [
-            'ps' => $ps,
-            'psDetail' => $psDetail,
-        ]);
-    }
-    
-    public function entreDansBdd()
-    {
-        $this->psRep->rentreDansBdd();
-        
-        
+        $date = "2018-07-07";
+        $veto = Veto::find(Auth::user()->id);
+        $user = User::find(1398);
+        $construitPdf = new PsConstruitPdf();
+        $construitPdf->Header();
+        $construitPdf->creePdf($ps, $user, $date, $veto);
+//         return view('visites.psAffiche', [
+
+//         ]);
     }
 }

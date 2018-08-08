@@ -38,7 +38,7 @@ class FevecRepository
   }
   public function getTousClientsReduits() // Garde seulement les colonnes interessantes
   {
-    return Fev_clients::select('CodeClient', 'NomClient', 'email', 'NumeroEDE', 'Estconventionné')->get();
+      return Fev_clients::select('CodeClient', 'NomClient', 'email', 'NumeroEDE', 'AdresseRue', 'CodePostal', 'Ville', 'Estconventionné')->get();
   }
 
   public function getTroupeauInteret() // sans les chiens, les chevaux de monte ou de boucherie ou la faune sauvage...
@@ -157,6 +157,9 @@ class FevecRepository
           $inputs['name'] = $clientFevec->NomClient;
           $inputs['email'] = ($clientFevec->email == null) ? $inputs['name']."@nomail.af" : $clientFevec->email;
           $inputs['ede'] = $this->valideEde($clientFevec->NumeroEDE);
+          $inputs['adresse'] = $clientFevec->AdresseRue;
+          $inputs['cp'] = $clientFevec->CodePostal;
+          $inputs['commune'] = $clientFevec->Ville;
           $inputs['activite'] = $clientFevec->Estconventionné;
 
           Fev_eleveurs_n::firstOrCreate($inputs);
@@ -242,6 +245,9 @@ class FevecRepository
       $inputs['id'] = $eleveurFevec->id;
       $inputs['name'] = $eleveurFevec->name;
       $inputs['ede'] = $eleveurFevec->ede;
+      $inputs['adresse'] = $eleveurFevec->adresse;
+      $inputs['cp'] = $eleveurFevec->cp;
+      $inputs['commune'] = $eleveurFevec->commune;
       $inputs['email'] = $eleveurFevec->email;
       $inputs['activite_id'] = $eleveurFevec->activite;
       $inputs['password'] = bcrypt($eleveurFevec->ede);

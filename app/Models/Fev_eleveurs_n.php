@@ -13,10 +13,8 @@ class Fev_eleveurs_n extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'id', 'name', 'email', 'ede', 'activite',
-    ];
-
+    protected $guarded = [];
+    
     public function fev_troupeaux_n()
     {
       $this->hasMany(Fev_troupeaux_n::class);

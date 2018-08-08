@@ -137,7 +137,7 @@ class FevecController extends Controller
         DB::table('fev_typeactivite')->truncate();
         DB::table('fev_typetroupeaux')->truncate();
         
-        $this->renommeBddAver("essai.sql");
+        $this->renommeBddAver("aver_import.sql");
         $this->litBddAver('aver_mdb_modifie.sql');
 
         return redirect()->back();
