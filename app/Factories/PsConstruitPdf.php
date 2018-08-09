@@ -4,13 +4,14 @@ namespace App\Factories;
 use PDF;
 use App\Models\Ps;
 use App\Models\User;
+// use App\Factories\fpdi\fpdi;
+require ('tcpdf/tcpdf.php');
+require ('fpdi/fpdi.php');
 
-// require ('../pdf/tcpdf/tcpdf.php');
-// require ('fpdi.php');
 
-
-class PsConstruitPdf 
+class PsConstruitPdf
 {
+	
 
 	//Suppression de l'en-tête
 	public function Header(){
@@ -20,15 +21,15 @@ class PsConstruitPdf
 	public function creePdf(Ps $ps, User $user, $date, $veto) {
 // 	    function creePdf($ps, $nom_eleveur, $adresse, $cp, $commune, $date, $signature) {
 	        // Origine du modèle
+		$this->setSourceFile("/medias/pdf/ps/".$ps->fichier);
 	    PDF::setTitle('coucou');
 	    PDF::AddPage();
 	    PDF::Write(0, 'Hello World');
-	    PDF::Output('hello_world.pdf');
-// 		$this->setSourceFile($ps->fichier);
 // 		//AJout d'une page
 // 		$this->AddPage(1);
 // 		// Définition du modèle
 // 		$this->_tplIdx = $this->importPage(1);
+		// PDF::importPage(1);
 // 		// Ajout du modèle à la page
 // 		$size = $this->useTemplate($this->_tplIdx, 0, 0, 210);
 // 		//Définition des marges
@@ -50,6 +51,7 @@ class PsConstruitPdf
 // 		$this->Write(5, "Eleveur(-euse)", '', 0, L, false, 0, false, false, 0);
 // 		$this->SetXY(100, 270);
 // 		$this->Write(5, "Vétérinaire", '', 0, C, false, 0, false, false, 0);
+	    PDF::Output('hello_world.pdf');
 // 		$this->Output($ps,'I', true);
 	}
 }

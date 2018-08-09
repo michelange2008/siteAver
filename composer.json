@@ -12,7 +12,9 @@
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "~5.0",
         "lavary/laravel-menu": "^1.7",
-		"elibyy/tcpdf-laravel": "5.6.*"
+		    "elibyy/tcpdf-laravel": "5.6.*",
+        "setasign/fpdi-fpdf": "^2.0",
+        "setasign/fpdi-tcpdf": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

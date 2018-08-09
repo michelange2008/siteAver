@@ -11,7 +11,7 @@ use App\Traits\EspecesPresentes;
 use App\Repositories\Visites\PsRep;
 use App\Models\Veto;
 
-use App\Factories\PsConstruitPdf;
+use App\Factories\PdfFactory\PsConstruitPdf;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 // use Validator;
@@ -70,7 +70,7 @@ class PsController extends Controller
     {
         $ps = Ps::find($id);
         $date = "2018-07-07";
-        $veto = Veto::find(Auth::user()->id);
+        $veto = Veto::where('user_id', Auth::user()->id)->first();
         $user = User::find(1398);
         $construitPdf = new PsConstruitPdf();
         $construitPdf->Header();
