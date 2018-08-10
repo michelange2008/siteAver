@@ -69,7 +69,6 @@ use App\Factories\PdfFactory\tcpdf\TCPDF;
             foreach ($this->_tpls as $tplIdx => $tpl) {
                 $out .= sprintf('%s%d %d 0 R', $this->tplPrefix, $tplIdx, $tpl['n']);
             }
-
             return $out;
         }
 

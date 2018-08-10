@@ -14,6 +14,7 @@ use App\Models\Veto;
 use App\Factories\PdfFactory\PsConstruitPdf;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Bsa;
 // use Validator;
     
 class PsController extends Controller
@@ -66,12 +67,13 @@ class PsController extends Controller
         
         return redirect()->back()->with('message', 'ce protocole de soin a bien été supprimé');
     }
-    public function affichePs($id)
+    public function affichePs($user_id, $bsa_id, $ps_id)
     {
-        $ps = Ps::find($id);
-        $date = "2018-07-07";
+        $ps = Ps::find($ps_id);
+        $bsa = Bsa::find($bsa_id);
+        $date = $bsa->bsa_date;
         $veto = Veto::find(Auth::user()->id);
-        $user = User::find(1398);
+        $user = User::find($user_id);
         $construitPdf = new PsConstruitPdf();
         $construitPdf->Header();
         $construitPdf->creePdf($ps, $user, $date, $veto);

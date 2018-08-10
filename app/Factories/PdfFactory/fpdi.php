@@ -11,9 +11,9 @@ namespace app\Factories\PdfFactory;
 use App\Factories\PdfFactory\FPDF_TPL;
 use App\Factories\PdfFactory\fpdi_pdf_parser;
 
-//if (!class_exists('FPDF_TPL')) {
-//    require_once('fpdf_tpl.php');
-//}
+if (!class_exists('FPDF_TPL')) {
+    require_once('fpdf_tpl.php');
+}
 
 /**
  * Class FPDI
@@ -486,7 +486,7 @@ class FPDI extends FPDF_TPL
             $this->n = $currentN; // TCPDF: reset to current "n"
 
             $buffer = ($this->compress) ? gzcompress($tpl['buffer']) : $tpl['buffer'];
-            if (!is_subclass_of($this, 'TCPDF')) {
+            if (is_subclass_of($this, 'TCPDF') || is_subclass_of($this, self::class)) {
                 $buffer = $this->_getrawstream($buffer);
                 $this->_out('/Length ' . strlen($buffer) . ' >>');
                 $this->_out("stream\n" . $buffer . "\nendstream");

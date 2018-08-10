@@ -42,6 +42,7 @@ class TroupeauAffichageRep
     public function listeCards($id_troupeau)
     {
         $nbAnalyses = $this->nbAnalysesSelonId($id_troupeau);
+        
         $cardAnalyses = new CardAnalyses($id_troupeau);
         $cardAnalyses->setOption($nbAnalyses);
         $listeCards = new CardListe();

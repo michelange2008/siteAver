@@ -10,9 +10,9 @@ namespace App\Factories\PdfFactory;
  */
 use App\Factories\PdfFactory\fpdi_bridge;
 
-//if (!class_exists('fpdi_bridge')) {
-//    require_once('fpdi_bridge.php');
-//}
+if (!class_exists('fpdi_bridge')) {
+    require_once('fpdi_bridge.php');
+}
 
 /**
  * Class FPDF_TPL

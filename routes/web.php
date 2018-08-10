@@ -39,6 +39,8 @@ Route::get('/aver/admin', ['uses' => 'Aver\UserController@admin', 'as' => 'user.
 
 Route::get('/aver/visites/accueil', ['uses' => 'Aver\Visites\VisitesController@index', 'as' => 'visites.accueil']);
 
+//########################################## AFFICHAGE TROUPEAU PAR TROUPEAU ############################################
+
 Route::get('/aver/troupeau/detail/{id?}' , ['uses' => 'Aver\Troupeaux\TroupeauAffichageController@index', 'as' => 'troupeau.accueil']);
 
 Route::get('/aver/troupeau/paramadmin/{id?}', ['uses' => 'Aver\Troupeaux\TroupeauAffichageController@paramAdmin', 'as' => 'troupeau.paramAdmin' ]);
@@ -51,7 +53,7 @@ Route::get('aver/troupeau/ordonnances/{id?}', ['uses' => 'Aver\Fichiers\Ordonnan
 
 Route::get('aver/troupeau/factures/{id?}', ['uses' => 'Aver\Fichiers\Factures\FacturesController@index', 'as' => 'troupeau.factures']);
 
-Route::get('aver/troupeau/bsa/{id?}', ['uses' => 'Aver\Fichiers\Bsa\BsaController@index', 'as' => 'troupeau.bsa']);
+Route::get('aver/troupeau/bsa/{id_user}/{id_troupeau}', ['uses' => 'Aver\Fichiers\Bsa\BsaController@index', 'as' => 'troupeau.bsa']);
 
 Route:: get('aver/analyses', ['uses' => 'Aver\Fichiers\Analyses\AnalysesController@index', 'as' => 'admin.analyses']);
 
@@ -109,7 +111,7 @@ Route:: post('aver/analyses/important', ['uses' => 'Aver\Fichiers\Analyses\Analy
     
     Route::post('aver/visites/ps/store', ['uses' => 'Aver\Visites\PsController@store', 'as' => 'ps.store']);
     
-    Route::get('aver/visites/ps/affiche/{id?}', ['uses' => 'Aver\Visites\PsController@affichePs', 'as' => 'ps.affiche']);
+    Route::get('aver/visites/ps/affiche/{user_id}/{bsa_id}/{ps_id}', ['uses' => 'Aver\Visites\PsController@affichePs', 'as' => 'ps.affiche']);
     
     //################################# FEVEC #############################################################
     
