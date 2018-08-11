@@ -26,13 +26,7 @@
           {{$card->texte()}}
         </p>
         <p class="card-text italique">
-          <?php
-            if(in_array(mb_substr($card->titre(), 0, 1), ["a", "e", "i", "o", "u", "y"])){
-              echo "Nombre d'".$card->titre()." : ".$card->option();
-            }else{
-              echo "Nombre de ".$card->titre()." : ".$card->option();
-            }
-          ?>
+            {{$card->option()}} {{$card->titre()}}
         </p>
         @if($card->option() == 0)
           <div class = 'btn btnsecondary'> </div>

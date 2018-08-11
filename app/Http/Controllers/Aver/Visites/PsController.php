@@ -14,22 +14,23 @@ use App\Models\Veto;
 use App\Factories\PdfFactory\PsConstruitPdf;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Bsa;
 // use Validator;
-    
+
 class PsController extends Controller
 {
     use EspecesPresentes;
-    
+
     protected $psRep;
-    
+
     public function __construct(PsRep $psRep)
     {
         $this->psRep = $psRep;
     }
-    
+
     public function index()
     {
-        $listePs = Ps::all(); 
+        $listePs = Ps::all();
 
         return view('visites.ps', [
             'menu' => "",
@@ -37,41 +38,42 @@ class PsController extends Controller
             'listeEspeces' => $this->listeEspecesPresentes(),
         ]);
     }
-    
+
     public  function modif(Request $request)
     {
         $this->psRep->enregistre($request);
- 
+
         return redirect()->back()->with('message', 'les modifications ont été enregistrées');
     }
-    
+
     public function create()
     {
         return view('visites.psAjout', [
             'listeEspeces' => $this->listeEspecesPresentes(),
         ]);
     }
-    
-    public function store(Request $request) 
+
+    public function store(Request $request)
     {
         $this->psRep->store($request);
-        
+
         return redirect()->route('ps.index');
     }
 
-    
+
     public function destroy($id)
     {
         $this->psRep->destroy($id);
-        
+
         return redirect()->back()->with('message', 'ce protocole de soin a bien été supprimé');
     }
-    public function affichePs($id)
+    public function affichePs($user_id, $bsa_id, $ps_id)
     {
-        $ps = Ps::find($id);
-        $date = "2018-07-07";
-        $veto = Veto::where('user_id', Auth::user()->id)->first();
-        $user = User::find(1398);
+        $ps = Ps::find($ps_id);
+        $bsa = Bsa::find($bsa_id);
+        $date = $bsa->bsa_date;
+        $veto = Veto::find(Auth::user()->id);
+        $user = User::find($user_id);
         $construitPdf = new PsConstruitPdf();
         $construitPdf->Header();
         $construitPdf->creePdf($ps, $user, $date, $veto);
