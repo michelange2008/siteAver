@@ -38,7 +38,7 @@
     @foreach($listePs as $ps)
     <tr>
       <td class="lien">
-        <a class = "text-dark" href="{{route('ps.affiche', ['id' => $ps->id])}}" >{{$ps->nom}} <span class="plus-petit italique">({{$ps->fichier}})</span></a>
+        <a class = "text-dark" href="{{route('ps.affiche', $ps->id)}}" ><img class="moyenne-icone " src ="{{URL::asset(config('icones_ps.path')).'/'.$ps->icone}}" /> {{$ps->nom}} <span class="plus-petit italique">({{$ps->fichier}})</span></a>
       </td>
       @foreach($listeEspeces as $espece)
       <td style="text-align : center">

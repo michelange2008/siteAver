@@ -49,7 +49,7 @@ img{
 .pdf_download {
   background: url('../medias/icones/PDF_telecharge.svg') no-repeat;
   background-size: contain;
-
+  width: 25px;
   height: 25px;
 }
 .delete {
@@ -60,6 +60,14 @@ img{
   display: inline-block;
 }
 
+.bordure {
+  border-bottom:1px solid darkgrey;
+  padding-bottom: 2px;
+  padding-top: 2px;
+}
+.bordure:last-of-type {
+  border: none;
+}
 
 .card-cadre {
   border: solid 1px darkgray;

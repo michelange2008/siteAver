@@ -15,6 +15,7 @@ use App\Factories\PdfFactory\PsConstruitPdf;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Bsa;
+use Carbon\Carbon;
 // use Validator;
 
 class PsController extends Controller
@@ -67,18 +68,27 @@ class PsController extends Controller
 
         return redirect()->back()->with('message', 'ce protocole de soin a bien été supprimé');
     }
-    public function affichePs($user_id, $bsa_id, $ps_id)
+    public function affichePs($ps_id)
+    {
+        $ps = Ps::find($ps_id);
+        
+        
+        return view('visites.psListeEleveurs', [
+            'ps' => $ps,
+        ]);
+    }
+    
+    public function affichePsUnEleveur($user_id, $bsa_id, $ps_id)
     {
         $ps = Ps::find($ps_id);
         $bsa = Bsa::find($bsa_id);
-        $date = $bsa->bsa_date;
+        $date = $bsa->date_bsa;
+        $dateTab = explode("-", $date);
+        $dateEntiere = Carbon::createFromDate($dateTab[0], $dateTab[1], $dateTab[2]);
         $veto = Veto::find(Auth::user()->id);
         $user = User::find($user_id);
         $construitPdf = new PsConstruitPdf();
         $construitPdf->Header();
-        $construitPdf->creePdf($ps, $user, $date, $veto);
-//         return view('visites.psAffiche', [
-
-//         ]);
+        $construitPdf->creePdf($ps, $user, $dateEntiere, $veto);
     }
 }

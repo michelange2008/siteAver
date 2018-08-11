@@ -53,6 +53,9 @@ a:hover img {
 .petite_icone {
     height: 20px;
 }
+.moyenne-icone {
+  height: 50px;
+}
 .important {
   background: url('../medias/icones/important.svg') no-repeat;
   background-size: contain;

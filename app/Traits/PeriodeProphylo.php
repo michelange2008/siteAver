@@ -22,19 +22,19 @@ trait PeriodeProphylo
      * Fournit les $nb-annees dernières années de prophylaxie
      */
 
-    
-    /* 
+
+    /*
      * Renvoie la date de début de la prophylaxie (par rapport à la date actuelle et au 30 juin de l'année)
      */
     public function anneeActuelle()
     {
         $dateActuelle = Carbon::now();
-        
+
         $annee = $dateActuelle->year;         // Crée le 30 juin de l'année en cours
         $limite = Carbon::parse($annee."-06-30");
-        
+
         $diff = $limite->diffInDays($dateActuelle, false);         // Compare les deux dates
-        
+
         if($diff > 0)
         {
             $anneeDebut = $annee;
@@ -44,10 +44,10 @@ trait PeriodeProphylo
             $anneeDebut = $annee - 1;
         }
         $debut = Carbon::parse($anneeDebut.'-10-01');
-        
+
         return $debut;
     }
-    
+
     public function xDernieresAnnees($nb_annees)
     {
         $apres = $this->anneeActuelle()->addYear(1); //Carbon::now()->addYear(0);
@@ -59,7 +59,7 @@ trait PeriodeProphylo
     {
         return Carbon::now();
     }
-    
+
     public function anneeNmoinsUn()
     {
         return $this->anneeActuelle()->subYear();
@@ -95,11 +95,11 @@ trait PeriodeProphylo
                 $troupeauCampagne->setVso(true);
             }
         }
-        if($troupeau->bsa->sortByDesc('date_bsa')->first() !== null)
+        if($troupeau->bsa !== null)
         {
             $troupeauCampagne->setDernierBsa($troupeau->bsa->sortByDesc('date_bsa')->first()->date_bsa);
         }
         return $troupeauCampagne;
     }
-    
+
 }

@@ -5,6 +5,7 @@ use App\Factories\PdfFactory\FPDI;
 
 use App\Models\Ps;
 use App\Models\User;
+use Carbon\Carbon;
 
 // require ('../pdf/tcpdf/tcpdf.php');
 // require ('fpdi.php');
@@ -41,7 +42,7 @@ class PsConstruitPdf extends FPDI
  		$cpCommune = $user->cp." ".$user->commune;
  		$this->Write(5, $cpCommune, '', 0, 'R', false, 0, false, false, 0);
  		$this->SetXY(20, 180);
- 		$this->Write(5, "Date: ".$date);
+ 		$this->Write(5, "Date: ".$date->format(' j/m/Y'));
  		$this->SetXY(20, 185);
  		$this->Write(5, "Signatures:  ");
 

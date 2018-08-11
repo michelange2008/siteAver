@@ -1,5 +1,5 @@
 <?php
-namespace app\Factories\PdfFactory;
+namespace App\Factories\PdfFactory;
 /**
  * This file is part of FPDI
  *
@@ -572,11 +572,14 @@ class FPDI extends FPDF_TPL
                 $this->_straightOut('<<');
 
                 reset ($value[1]);
-
-                while (list($k, $v) = each($value[1])) {
-                    $this->_straightOut($k . ' ');
-                    $this->_writeValue($v);
+                foreach ($value[1] as $k => $v) {
+                  $this->_straightOut($k . ' ');
+                  $this->_writeValue($v);
                 }
+                // while (list($k, $v) = each($value[1])) {
+                //     $this->_straightOut($k . ' ');
+                //     $this->_writeValue($v);
+                // }
 
                 $this->_straightOut('>>');
                 break;

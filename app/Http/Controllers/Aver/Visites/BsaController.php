@@ -36,4 +36,9 @@ class BsaController extends Controller
         
         return redirect()->back()->with('message', 'Il y a eu '.$modif['ajouts']. ' ajout(s) et '.$modif['suppressions'].' suppression(s).');
     }
+    
+    public function saisie()
+    {
+        return view('visites.bsaSaisie');
+    }
 }
