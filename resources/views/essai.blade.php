@@ -7,8 +7,9 @@
 {{Form::open(['route' => 'ajax'])}}
 
 <div id = "ajax">
-  {{Form::text('bonjour', 'mon nom est michel')}}
+  {{Form::checkbox('cb')}}
 </div>
+
 {{Form::submit('ok')}}
 
 {{Form::close()}}
@@ -18,6 +19,3 @@
 </div>
 @endsection()
 
-<script>
-
-</script>

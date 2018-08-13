@@ -2,9 +2,12 @@ $(function(){
   // $(".bsa-date").on('change', function(){
   //   var date_bsa = $(this).children().val();
   //   var troupeau_id = $(this).attr('id');
-   var token = $('input[name=_token]').val();
-  $('#ajax').on('click', function(e){
+
+    $('#ajax').on('change', function(e){
     e.preventDefault();
+    
+    var cb = $(this).children().val();
+    
     $.ajaxSetup({
         headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -16,15 +19,15 @@ $(function(){
         url: '../aver/essai/ajax',
         data: {
 
-          'nom' : 'michel'
+          'cb' : cb
         },
 
         dataType: 'JSON',
 
-        success: function (data) {
+        success: function (temp) {
 
        $('#reponse').empty();
-       $('#reponse').append('mon nom est ' + data.nom);
+       $('#reponse').append('mon nom est ' + temp.cb);
 
           },
           error: function (e) {

@@ -15,9 +15,19 @@ class EssaiController extends Controller
 
     public function ajax(Request $request)
     {
-      $retour = json_encode(["nom" => "toto"]);
+        
+        $datas = collect($request->all())->slice(1);
 
-
-      return $retour;
+        if($datas->count() < 2 )
+        {
+            $datas['cb'] = 0;
+        }
+        else
+        {
+            $datas['cb'] = 1;
+        }
+      $temp = json_encode($request->all());
+      
+      return $temp;
     }
 }
