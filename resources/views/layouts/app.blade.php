@@ -81,6 +81,7 @@
     <script src="{{ asset('js/user_gestion.js')}}"></script>
     <script src="{{ asset('js/analyses.js')}}"></script>
     <script src="{{ asset('js/psbsa.js')}}"></script>
+    <script src="{{ asset('js/saisieBsaPs.js')}}"></script>
     <script src="{{ asset('js/bootstrap/bootstrap.js') }}"></script>
     <script src="{{ asset('js/splitAffichage.js')}}"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/b-1.5.1/b-flash-1.5.1/fh-3.1.3/r-2.2.1/rg-1.0.2/datatables.min.js"></script>

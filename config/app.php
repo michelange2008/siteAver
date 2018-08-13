@@ -178,7 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         'Collective\Html\HtmlServiceProvider',
         Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
-//        Barryvdh\Debugbar\ServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
         Lavary\Menu\ServiceProvider::class,
         Elibyy\TCPDF\ServiceProvider::class,
     ],
@@ -232,7 +232,7 @@ return [
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
         'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
-//        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Menu' => Lavary\Menu\Facade::class,
         'PDF' => Elibyy\TCPDF\Facades\TCPDF::class
     ],

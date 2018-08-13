@@ -93,6 +93,12 @@ Route::group(['middleware' => ['auth']], function () {
     
         Route::get('aver/visites/bsa/saisie', ['uses' => 'Aver\Visites\BsaController@saisie', 'as' => 'bsa.saisie']);
         
+        Route::post('aver/visites/bsa/store', ['uses' => 'Aver\Visites\BsaController@store', 'as' => 'bsa.store']);
+        
+        Route::get('aver/visites/bsa/ps/{troupeau_id}', ['uses' => 'Aver\Visites\BsaController@ps', 'as' => 'bsa.ps']);
+        
+        Route::get('aver/visites/bsa/remarque/{troupeau_id}', ['uses' => 'Aver\Visites\BsaController@remarque', 'as' => 'bsa.remarque']);
+        
         //################################# VSO #############################################################
     
         Route::get('aver/visites/vso', ['uses' => 'Aver\Visites\VsoController@index', 'as' => 'vso.index']);
@@ -152,4 +158,9 @@ Route::group(['middleware' => ['auth']], function () {
     //############################################## GESTION DE L'ANCIENNE TABLE DE DONNEES BSA ############################################
     
     Route::get('aver/intermede', ['uses' => 'Aver\Admin\Intermede\IntermedeController@index', 'as' => 'intermede.index']);
+    
+    Route::get('aver/essai', ['uses' =>'Aver\Admin\EssaiController@index', 'as' => 'essai']);
+    
+    Route::post('aver/essai/ajax', ['uses' =>'Aver\Admin\EssaiController@ajax', 'as' => 'ajax']);
+    
 });

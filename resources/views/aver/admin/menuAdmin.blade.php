@@ -1,6 +1,10 @@
 @section('menu')
 <nav class="navbar navbar-nav navbar-dark bg-dark navbar-expand-lg sticky-top">
-  <div class="container-fluid">
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar navbar-nav">
 
       <li class="nav-item"><a href="{{ URL::route('aver.accueil')}}" class = 'nav-link'>Accueil</a></li>
@@ -12,7 +16,7 @@
       <li class="nav-item"><a href="{{ URL::route('user.index')}}" class = 'nav-link'>Liste Eleveurs</a></li>
 
 
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown smartphone-no">
           <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link"
              role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Paramétrage des visites
@@ -34,7 +38,7 @@
            </ul>
       </li>
 
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown smartphone-no">
         <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link"
            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Administration

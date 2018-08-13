@@ -10,6 +10,10 @@ img{
   max-width: 100%;
 }
 
+.lien-icone-centre {
+  display: inline-flex;
+}
+
 .image-h{
   max-height: 100%;
 }
@@ -67,6 +71,9 @@ img{
 }
 .bordure:last-of-type {
   border: none;
+}
+.card-width-35 {
+  width: 35rem;
 }
 
 .card-cadre {
@@ -126,10 +133,27 @@ label {
     display: hidden ;
 }
 .non_affiche{
-    display: none !important;
+    display: none !important;G
 
 }
 .ailleurs{
 	position: absolute;
 	left: -10000px;
+}
+
+@media screen  and (max-width: 640px)
+{
+  h1, h2, h3, h4, h5{
+    font-size: 1.5em;
+    line-height: -moz-block-height;
+  }
+  .smartphone-vertical {
+    flex-direction: column;
+  }
+  .card-width-35 {
+    width: 100%;
+  }
+  .smartphone-no {
+    display: none;
+  }
 }

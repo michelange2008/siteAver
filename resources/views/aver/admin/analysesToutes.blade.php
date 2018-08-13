@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container-fluid bg-success d-flex flex-row sous-ruban justify-content-between">
+<div class="container-fluid bg-success d-flex flex-row sous-ruban justify-content-between align-middle">
     <h1>Analyses</h1>
 </div>
 <div class="container-fluid">
@@ -60,7 +60,7 @@
           </td>
           <td class="text-center">{{$analyse->id_analyse}}</td>
           <td class="text-center">
-            <a href="{{URL::asset('pdf/analyses').'/'.$analyse->lien}}">fichier</a>
+            <a href="{{URL::asset('pdf/analyses').'/'.$analyse->lien}}"><div class="pdf_download lien-icone-centre"></div></a>
           </td>
         </tr>
         @endforeach()

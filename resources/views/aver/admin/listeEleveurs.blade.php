@@ -1,6 +1,6 @@
 @section('content')
 
-    <div class="container-fluid">
+    <div>
     	<h3 class="alert alert-success">Situation des éleveurs</h3>
       <div class="container-fluid">
         @foreach($boutons->listeSousmenu() as $bouton)
@@ -66,7 +66,7 @@
 						@endif()
 					</td>
             <?php
-            
+
             if($troupeau->bsas !== null) $listeBSA = $troupeau->bsas->sortByDesc('date_bsa'); ?>
               @if($listeBSA->max('date_bsa') != null)
                 <?php
