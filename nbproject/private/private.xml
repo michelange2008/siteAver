@@ -12,13 +12,9 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Factories/PdfFactory/PsConstruitPdf.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Factories/PdfFactory/pdf_context.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Factories/PdfFactory/fpdf_tpl.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Factories/PdfFactory/fpdi_bridge.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Http/Controllers/Aver/Visites/PsController.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Factories/PdfFactory/fpdi.php</file>
-            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Factories/PdfFactory/PDF.php</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/public/js/saisieBsaPs.js</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/resources/views/essai.blade.php</file>
+            <file>file:/C:/Users/michel/Documents/www/siteAver/app/Http/Controllers/Aver/Admin/EssaiController.php</file>
         </group>
     </open-files>
 </project-private>
