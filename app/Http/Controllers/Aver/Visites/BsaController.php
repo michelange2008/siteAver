@@ -11,6 +11,7 @@ use App\Repositories\Visites\BsaRepository;
 use App\Models\Troupeau;
 use App\Models\Ps;
 use App\Traits\PeriodeProphylo;
+use App\Models\Bsa;
 
 class BsaController extends Controller
 {
@@ -53,18 +54,38 @@ class BsaController extends Controller
     
     public function store(Request $request)
     {
-        $msg = "This is a simple message.";
-//         return "coucou";
-        return response()->json(array('msg'=> $msg), 200);
+        $datas = $request->all();
+        
+        $bsa_exist = Bsa::where('troupeau_id', $datas['troupeau_id'])
+            ->where('date_bsa', $datas['date_bsa'])->get();
+        if($bsa_exist->count() == 0)
+        {
+        $bsa = new Bsa();
+        $bsa->troupeau_id = $datas['troupeau_id'];
+        $bsa->date_bsa = $datas['date_bsa'];
+        $bsa->save();
+        $nouveauBsa = Bsa::where('troupeau_id', $datas['troupeau_id'])
+        ->where('date_bsa', $datas['date_bsa'])->first();
+        $title = "Génial !";
+        $msg = 'Le bilan a été enregistré à la date '.$datas['date_bsa'];
+        }
+        else
+        {
+            $title = "Attention !";
+            $msg = 'Il y a déjà un bilan à cette date pour cet éleveur';
+        }
+        return response()->json(['title' => $title, 'msg'=> $msg, 'bsa_id' => $nouveauBsa->id], 200);
     }
     
-    public function ps($troupeau_id)
+    public function ps($troupeau_id, $bsa_id)
     {
         $troupeau = Troupeau::find($troupeau_id);
         $pss = Ps::all();
+        $bsa = Bsa::find($bsa_id);
         return view('visites.bsaPs', [
             'troupeau' => $troupeau,
             'pss' => $pss,
+            'bsa' => $bsa,
         ]);
     }
     

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@extends('aver.menuprincipal')
+
 @extends('aver.admin.menuAdmin')
 
 @section('content')

@@ -95,7 +95,7 @@ Route::group(['middleware' => ['auth']], function () {
         
         Route::post('aver/visites/bsa/store', ['uses' => 'Aver\Visites\BsaController@store', 'as' => 'bsa.store']);
         
-        Route::get('aver/visites/bsa/ps/{troupeau_id}', ['uses' => 'Aver\Visites\BsaController@ps', 'as' => 'bsa.ps']);
+        Route::get('aver/visites/bsa/ps/{troupeau_id}/{bsa_id}', ['uses' => 'Aver\Visites\BsaController@ps', 'as' => 'bsa.ps']);
         
         Route::get('aver/visites/bsa/remarque/{troupeau_id}', ['uses' => 'Aver\Visites\BsaController@remarque', 'as' => 'bsa.remarque']);
         

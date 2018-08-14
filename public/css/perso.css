@@ -6,6 +6,11 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 14px;
 }
+.titre-non-coupe {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 img{
   max-width: 100%;
 }

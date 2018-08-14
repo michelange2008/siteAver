@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
-@extends('aver.admin.menuAdmin')
-
 @section('content')
-<br />
 <div class="container-fluid bg-success">
-  <h1 class="text-light">Protocoles de soins ({{$troupeau->user->name}})</h1>
+  <h1 class="text-light titre-non-coupe">Protocoles de soins ({{$troupeau->user->name}} {{$bsa->id}})</h1>
 </div>
+{{Form::open(['route' => 'bsa.saisie', "method" => "GET"])}}
       <table class="table table-stripped table-hover">
       @foreach($pss as $ps)
       <?php $trouve = false ?>
@@ -40,7 +38,11 @@
         @endforeach()
       @endforeach()
     </table>
+    <div class="container">
+      {{Form::submit('fermer', ['class' => 'btn btn-success'])}}
     </div>
+  </br>
+
 {{Form::close()}}
-</div>
+
 @endsection()

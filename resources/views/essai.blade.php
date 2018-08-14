@@ -5,7 +5,7 @@
 @section('content')
 <br />
 {{Form::open(['route' => 'ajax'])}}
-
+<h1 id = 'nom'>Michel</h1>
 <div id = "ajax">
   {{Form::checkbox('cb')}}
 </div>
@@ -18,4 +18,3 @@
   COUCOU
 </div>
 @endsection()
-

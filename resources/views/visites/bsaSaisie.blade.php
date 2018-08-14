@@ -1,14 +1,11 @@
 @extends('layouts.app')
 
-@extends('aver.admin.menuAdmin')
-
 @section('content')
-<br />
 <div class="container-fluid bg-success d-flex flex-row sous-ruban">
     <a href="{{route('home')}}" title="revenir à l'accueil">
       <img class="image-h" src="{{URL::asset('medias')}}/icones/retour.svg" alt="retour" />
     </a>
-    <h1>Bilans sanitaires annuels</h1>
+    <h1 class="text-light">Bilans sanitaires annuels</h1>
 </div>
 <br />
 <div class="container-fluid">
@@ -33,7 +30,8 @@
 
               <?php
                 if($troupeau->bsas->count() >0) {
-                  $date = new DateTime($troupeau->bsas->sortByDesc('date_bsa')->first()->date_bsa);
+                  $bsa = $troupeau->bsas->sortByDesc('date_bsa')->first();
+                  $date = new DateTime($bsa->date_bsa);
                 } else {
                   $date = null;
                 } ?>
@@ -41,7 +39,7 @@
                 {{ Form::date('date_bsa', $date) }}
             </td>
             <td>
-              <a href="{{route('bsa.ps', $troupeau->id)}}">
+              <a id = "ouvreps_{{$troupeau->id}}" bsa = "{{$bsa->id}}" href="{{route('bsa.ps', [$troupeau->id, $bsa->id])}}">
                 <img class="moyenne-icone" src="{{URL::asset('medias')}}/icones/ps_carre.svg" alt="ps" title="Ajouter un protocole de soin" />
               </a>
             </td>

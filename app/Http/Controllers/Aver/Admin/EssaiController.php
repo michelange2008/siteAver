@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Aver\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Essai;
 use Illuminate\Http\Request;
 
 class EssaiController extends Controller
@@ -15,19 +16,22 @@ class EssaiController extends Controller
 
     public function ajax(Request $request)
     {
-        
-        $datas = collect($request->all())->slice(1);
 
-        if($datas->count() < 2 )
+        $datas = $request->all();
+
+        if($datas['cb'] == true)
         {
-            $datas['cb'] = 0;
+            $cb = 1;
         }
-        else
-        {
-            $datas['cb'] = 1;
+        else {
+            $cb = 0;
         }
-      $temp = json_encode($request->all());
-      
-      return $temp;
+
+        $essai = new Essai();
+        $essai->user_id = $datas['nom'];
+        $essai->coche = $cb;
+        $essai->save();
+        $msg = "C'est bon c'est enregistré";
+      return response()->json(['cb' => $datas['cb']]);
     }
 }
