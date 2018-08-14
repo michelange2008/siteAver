@@ -4,18 +4,9 @@
 
 @section('content')
 <br />
-{{Form::open(['route' => 'ajax'])}}
 
-<div id = "ajax">
-  {{Form::checkbox('cb')}}
-</div>
-
-{{Form::submit('ok')}}
-
-{{Form::close()}}
-
-<div id='reponse'>
-  COUCOU
-</div>
+@foreach($liste as $item)
+<p class=" {{$item->especes->abbreviation}}">{{$item->user->name}}</p>
+@endforeach()
 @endsection()
 

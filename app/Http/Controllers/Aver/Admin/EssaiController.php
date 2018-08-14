@@ -7,10 +7,14 @@ use Illuminate\Http\Request;
 
 class EssaiController extends Controller
 {
+    use \App\Traits\SortTroupeaux;
+    
     public function index()
     {
 
-      return view('essai');
+      return view('essai', [
+          'liste' => $this->sortTroupeaux(),
+      ]);
     }
 
     public function ajax(Request $request)
