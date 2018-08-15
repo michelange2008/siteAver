@@ -12,11 +12,13 @@ use App\Models\Troupeau;
 use App\Models\Ps;
 use App\Traits\PeriodeProphylo;
 use App\Models\Bsa;
+use App\Traits\SortTroupeaux;
 
 class BsaController extends Controller
 {
     use \App\Traits\CardGroupeEspeces;
     use PeriodeProphylo;
+    use SortTroupeaux;
     
     protected $bsaRepository;
     
@@ -31,7 +33,7 @@ class BsaController extends Controller
         $cardGroupesEspece = $this->listCardGroupeEspece();
         return view('visites/bsa', [
             "menu" => $menu,
-            'troupeaux' => $troupeaux,
+            'troupeaux' => $this->sortTroupeaux(),
             'cardGroupesEspece' => $cardGroupesEspece,
         ]);
     }
@@ -45,9 +47,9 @@ class BsaController extends Controller
     
     public function saisie()
     {
-        $troupeaux = Troupeau::all();
+
         return view('visites.bsaSaisie', [
-            'troupeaux' => $troupeaux,
+            'troupeaux' => $this->sortTroupeaux(),
             'campagne' => $this->campagne(),
         ]);
     }
@@ -64,8 +66,10 @@ class BsaController extends Controller
         $bsa->troupeau_id = $datas['troupeau_id'];
         $bsa->date_bsa = $datas['date_bsa'];
         $bsa->save();
+        
         $nouveauBsa = Bsa::where('troupeau_id', $datas['troupeau_id'])
-        ->where('date_bsa', $datas['date_bsa'])->first();
+            ->where('date_bsa', $datas['date_bsa'])->first();
+        
         $title = "Génial !";
         $msg = 'Le bilan a été enregistré à la date '.$datas['date_bsa'];
         }
@@ -92,5 +96,16 @@ class BsaController extends Controller
     public function remarque($troupeau_id)
     {
         return $troupeau_id;
+    }
+    
+    public function attribuePsaBsaUnTroupeau(Request $request)
+    {
+        $datas = $request->all();
+        $bsa = Bsa::find($datas['bsa_id']);
+        $bsa->pss()->attach($datas['ps_id']);
+        $title = $bsa->date_bsa;
+        $msg = $datas['ps_id'];
+        return response()->json(['title' => $title, 'msg'=> $msg], 200);
+        
     }
 }

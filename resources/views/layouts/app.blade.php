@@ -17,6 +17,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/b-1.5.1/b-flash-1.5.1/fh-3.1.3/r-2.2.1/rg-1.0.2/datatables.min.css"/>
 
     <link href="{{ asset('css/perso.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bsaSaisie.css') }}" rel="stylesheet">
+
     <!-- jquery-confirm -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
 
@@ -47,7 +49,7 @@
     <script src="{{ asset('js/bootstrap/bootstrap.js') }}"></script>
     <script src="{{ asset('js/splitAffichage.js')}}"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/b-1.5.1/b-flash-1.5.1/fh-3.1.3/r-2.2.1/rg-1.0.2/datatables.min.js"></script>
-<!--     <script src="https://use.fontawesome.com/f8a7076b4b.js"></script> -->
+    <script src="https://use.fontawesome.com/f8a7076b4b.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 
 

@@ -99,6 +99,8 @@ Route::group(['middleware' => ['auth']], function () {
         
         Route::get('aver/visites/bsa/remarque/{troupeau_id}', ['uses' => 'Aver\Visites\BsaController@remarque', 'as' => 'bsa.remarque']);
         
+        Route::post('aver/visites/bsa/attribuePs', ['uses' => 'Aver\Visites\BsaController@attribuePsaBsaUnTroupeau', 'as' => 'bsa.attribuePs']);
+        
         //################################# VSO #############################################################
     
         Route::get('aver/visites/vso', ['uses' => 'Aver\Visites\VsoController@index', 'as' => 'vso.index']);
