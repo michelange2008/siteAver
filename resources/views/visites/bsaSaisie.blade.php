@@ -40,21 +40,34 @@
           <div class="bsa-nom">
             BSA
           </div>
-          <div id="{{$troupeau->id}}" class="bsa-date">
             <?php
             if($troupeau->bsas->count() >0) {
               $bsa = $troupeau->bsas->sortByDesc('date_bsa')->first();
+              $bsa_id = $bsa->id;
               $date = new DateTime($bsa->date_bsa);
-            } else {
+             ?> 
+             <div id="{{$troupeau->id}}" class="bsa-date">
+              {{ Form::date('date_bsa', $date, ['class' => 'input_date']) }}
+            </div>
+            <div class="icone-ps">
+              <a id = "ouvreps_{{$troupeau->id}}" class = "lien-bsa" bsa = "{{$bsa_id}}" href="{{route('bsa.ps', [$troupeau->id, $bsa_id])}}">
+                <img src="{{URL::asset('medias')}}/icones/ps_carre.svg" alt="ps" title="Ajouter un protocole de soin" />
+              </a>
+            </div>
+            <?php } else {
               $date = null;
-            } ?>
-            {{ Form::date('date_bsa', $date, ['class' => 'input_date']) }}
-          </div>
-          <div class="icone-ps">
-            <a id = "ouvreps_{{$troupeau->id}}" class = "lien-bsa" bsa = "{{$bsa->id}}" href="{{route('bsa.ps', [$troupeau->id, $bsa->id])}}">
-              <img src="{{URL::asset('medias')}}/icones/ps_carre.svg" alt="ps" title="Ajouter un protocole de soin" />
-            </a>
-          </div>
+              $bsa_id = 0;
+             ?>
+             <div id="{{$troupeau->id}}" class="bsa-date">
+              {{ Form::date('date_bsa', $date, ['class' => 'input_date']) }}
+            </div>
+            
+            <div class="icone-ps">
+              <a class = "lien-bsa">
+                <img src="{{URL::asset('medias')}}/icones/ps_carre_sans_bsa.svg" alt="ps" title="Il n'y a pas de protocole de soin sans bilan sanitaire" />
+              </a>
+            </div>
+            <?php } ?>
       </div>
       <div class="vso">
         <div class="vso-nom">
