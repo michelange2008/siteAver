@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
+@push('css')
+  <link href="{{ asset('css/bsaSaisie.css') }}" rel="stylesheet">
+@endpush
+
+@push('js')
+  <script src="{{ asset('js/saisieBsaPs.js')}}"></script>
+@endpush()
+
 @section('content')
+
+
+
 <div class="container-fluid bg-success d-flex flex-row sous-ruban">
     <a href="{{route('home')}}" title="revenir à l'accueil">
       <img class="image-h" src="{{URL::asset('medias')}}/icones/retour.svg" alt="retour" />
@@ -37,7 +48,7 @@
             } else {
               $date = null;
             } ?>
-            {{ Form::date('date_bsa', $date) }}
+            {{ Form::date('date_bsa', $date, ['class' => 'input_date']) }}
           </div>
           <div class="icone-ps">
             <a id = "ouvreps_{{$troupeau->id}}" class = "lien-bsa" bsa = "{{$bsa->id}}" href="{{route('bsa.ps', [$troupeau->id, $bsa->id])}}">
@@ -49,9 +60,9 @@
         <div class="vso-nom">
           VSO
         </div>
-        <div class="vso-date">
+        <div  id="vso_{{$troupeau->id}}" class="vso-date">
           <?php if($troupeau->anneevso->count() > 0 && $troupeau->anneevso->sortByDesc('debut')->first()->campagne == $campagne){?>
-            {!! Form::date('date_vso') !!}
+            {!! Form::date('date_vso','', ['class' => 'input_date']) !!}
           <?php }else{ ?>
             -
           <?php } ?>

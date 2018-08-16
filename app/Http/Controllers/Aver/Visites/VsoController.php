@@ -8,16 +8,18 @@ use App\Repositories\Visites\VisitesSousMenuRepository;
 use App\Repositories\Visites\VsoRepository;
 
 use App\Models\Troupeau;
-
+/*
+* @TODO Modifier les lien entre vso et année - pas de rapport avec les campagnes
+*/
 
 class VsoController extends Controller
 {
     use \App\Traits\PeriodeProphylo;
     use \App\Traits\UserVetsan;
     use \App\Traits\CardGroupeEspeces;
-    
+
     protected $vsoRepository;
-    
+
     public function __construct(VsoRepository $vsoRepository)
     {
         $this->vsoRepository = $vsoRepository;
@@ -35,24 +37,24 @@ class VsoController extends Controller
             'cardGroupesEspece' => $cardGroupesEspece,
         ]);
     }
-    
+
     public function modif(Request $request)
     {
         $this->vsoRepository->maj($request);
         return redirect()->back()->with('message', 'La mise à jour a été ');
     }
-    
+
     public function remplitBv()
     {
         $this->vsoRepository->remplitBv();
-        
+
         return redirect()->back();
     }
-    
+
     public function remplitPr()
     {
         $this->vsoRepository->remplitPr();
-        
+
         return redirect()->back();
     }
 }

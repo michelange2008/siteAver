@@ -37,6 +37,12 @@
     font-size: 1.1rem;
   }
 
+  .input_date {
+    font-size: 1.5em;
+    border: none;
+    background: khaki;
+  }
+
   a.lien-bsa > img, a.lien-vs >img {
     max-width: 75%;
   }
@@ -47,9 +53,9 @@
     display: grid;
     grid-template-columns: 33% 33% 33%;
   }
-  .troupeau-info {
+  .troupeau-infos {
     display: grid;
-    grid-template-columns: auto 20% 20%;
+    grid-template-columns: auto 20%;
   }
 
   .bsa, .vso {
