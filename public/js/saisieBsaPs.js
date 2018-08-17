@@ -1,9 +1,10 @@
 $(function(){
   $(".bsa-date").on('input', function(){
     var date_bsa = $(this).children().val();
-    var troupeau_id = $(this).attr('id');
+    var troupeau_id = $(this).attr('id').split('_')[1];
     var route = $('#ouvreps_'+troupeau_id).attr('href');
     var bsa_id = $('#ouvreps_'+troupeau_id).attr('bsa');
+    var src_icone = $('#icone_'+troupeau_id).attr('src');
     $.ajaxSetup({
         headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -23,8 +24,12 @@ $(function(){
               title: data.title,
               content: data.msg,
           });
+          console.log(bsa_id+' - '+ data.bsa_id);
           $('#ouvreps_'+troupeau_id).attr('href', route.replace(bsa_id, data.bsa_id));
           $('#ouvreps_'+troupeau_id).attr('bsa', data.bsa_id);
+          $('#ouvreps_'+troupeau_id).removeClass('lien-inactif');
+          $('#icone_'+troupeau_id).attr('src', src_icone.replace('ps_carre_sans_bsa', 'ps_carre'));
+          $('#icone_'+troupeau_id).attr('title', "Ajouter un protocole de soin" );
           },
         error: function (e) {
               console.log(e.responseText);
@@ -81,6 +86,6 @@ $(function(){
   $('.vso-date').on('input', function(){
     var troupeau_id = $(this).attr('id').split('_')[1];
 
-    
+
   })
 })

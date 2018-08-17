@@ -47,6 +47,10 @@
     max-width: 75%;
   }
 
+  .lien-inactif {
+    pointer-events: none;
+  }
+
 @media screen and (min-width: 960px) {
 
   .ligne {
