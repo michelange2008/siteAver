@@ -9,12 +9,15 @@ use App\Outils\MajDateMajFevec;
 use App\Models\Bsa;
 use App\Repositories\Admin\AdminRep;
 use App\Traits\PeriodeProphylo;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Traits\SortTroupeaux;
 
 
 class AdminAverController extends Controller
 {
     use MajDateMajFevec;
     use PeriodeProphylo;
+    use SortTroupeaux;
     
     protected $adminRep;
     
@@ -26,12 +29,13 @@ class AdminAverController extends Controller
     public function index()
     {
         $stats = StatRepository::calculStatEleveursTroupeaux();
-        $listeEleveurs = $this->adminRep->listeEleveurs();
+
         $listeBSA = Bsa::all();
+        
         return view('aver.admin.admin', [
             'stats' => $stats,
             'dernMaJ' => MajDateMajFevec::dernMaJEnMois(),
-            'listeEleveurs' => $listeEleveurs,
+            'listeEleveurs' => $this->sortTroupeaux(),
             'listeBSA' => $listeBSA,
             'annee' => $this->campagne(),
             'boutons' => $this->adminRep->boutons(),

@@ -36,7 +36,7 @@
 
           <div class="form-check">
         {{Form::checkbox('vso', 1 , $troupeauCampagne->vso(), ['class' => 'form-check-input'])}}
-        {{Form::label('vso', 'La VSO est à faire en '.$campagne, ['class' => 'form-check-label'])}}
+        {{Form::label('vso', 'La VSO est à faire en '.$annee, ['class' => 'form-check-label'])}}
           </div>
 
           <div class="form-check">

@@ -12,6 +12,7 @@ use App\Repositories\Troupeaux\TroupeauAffichageRep;
 use App\Traits\PeriodeProphylo;
 use Illuminate\Support\Facades\Auth;
 use App\Traits\EdeFormat;
+use Carbon\Carbon;
 
 
 class TroupeauAffichageController extends Controller
@@ -67,6 +68,7 @@ class TroupeauAffichageController extends Controller
             'troupeau' => $troupeau,
             'autreTroupeaux' => $autreTroupeaux,
             'troupeauCampagne' => $this->troupeauCampagne($id),
+            'annee' => Carbon::now()->year,
             'campagne' => $this->campagne(),
             'change' => true,
         ]);

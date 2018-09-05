@@ -37,9 +37,9 @@ class Troupeau extends Model
         return $this->belongsToMany(Anneeprophylo::class);
     }
     
-    public function anneevso()
+    public function vsoafaire()
     {
-        return $this->belongsToMany(Anneevso::class);
+        return $this->hasMany(Vsoafaire::class);
     }
     
     public function bsas()

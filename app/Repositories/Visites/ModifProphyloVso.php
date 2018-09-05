@@ -7,7 +7,9 @@ use App\Models\Troupeau;
 use App\Models\Anneeprophylo;
 use App\Models\Anneeprophylo_troupeau;
 use App\Models\Anneevso;
-use App\Models\Anneevso_troupeau;
+use App\Models\Vsoafaire;
+use Carbon\Carbon;
+use App\Models\Vso;
 
 
 class ModifProphyloVso
@@ -52,21 +54,25 @@ class ModifProphyloVso
     /*
      * Changer le statut d'un éleveur vis à vis de la vso d'une annee donnée et incrémenter le nombre de changements
      */
-    public function modifVso($vso)
+    public function modifVso($vsoAChanger)
     {
-        $ligne = Anneevso_troupeau::where('anneevso_id', $this->campagne)
+        $annee = Carbon::now();
+        
+        $ligne = Vsoafaire::where('annee', $annee)
         ->where('troupeau_id', $this->troupeau_id)
         ->get();
         $troupeau = Troupeau::find($this->troupeau_id);
-        if($vso && count($ligne) === 0)
+        if($vsoAChanger && count($ligne) === 0)
         {
-            $troupeau->anneevso()->attach($this->campagne);
+            $vso = new Vsoafaire();
+            $vso->troupeau_id = $this->troupeau_id;
+            $vso->annee = $annee->year;
+            $vso->save();
             $this->compteur->incrementAjout();
         }
-        elseif(!$vso && count($ligne) > 0)
+        elseif(!$vsoAChanger && count($ligne) > 0)
         {
-            $id = $ligne->first->anneevso_id->id;
-            $troupeau->anneevso()->detach($this->campagne);
+            Vsoafaire::destroy($ligne->first()->id);
             $this->compteur->incrementSuppr();
         }
         return $this->compteur;

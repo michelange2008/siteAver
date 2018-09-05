@@ -10,14 +10,6 @@ use App\Factories\Sousmenu\SousmenuCouleurs;
 
 class AdminRep 
 {
-    public function listeEleveurs()
-    {
-        $troupeaux = Troupeau::all();
-        $listeEleveurs = $troupeaux;
-        
-        return $listeEleveurs;
-    }
-    
     public function boutons()
     {
         $boutons = new SousmenuFactory("boutons");

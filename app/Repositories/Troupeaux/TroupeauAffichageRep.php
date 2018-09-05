@@ -6,7 +6,7 @@ use App\Factories\Blasons\BlasonsListe;
 use App\Factories\Blasons\Vetsan;
 use App\Factories\Blasons\Activite;
 use App\Factories\Blasons\Prophylo;
-use App\Factories\Blasons\Vso;
+use App\Factories\Blasons\VsoBlason;
 use App\Factories\Blasons\Bsaimportant;
 
 use App\Models\Troupeau;
@@ -33,7 +33,7 @@ class TroupeauAffichageRep
         $this->listeBlasons->addBlason(new Activite($id_troupeau));
         $this->listeBlasons->addBlason(new Vetsan($id_troupeau));
         $this->listeBlasons->addBlason(new Prophylo($id_troupeau));
-        $this->listeBlasons->addBlason(new Vso($id_troupeau));
+        $this->listeBlasons->addBlason(new VsoBlason($id_troupeau));
         $this->listeBlasons->addBlason(new Bsaimportant($id_troupeau));
 
         return $this->listeBlasons;
@@ -69,6 +69,7 @@ class TroupeauAffichageRep
         $troupeau = Troupeau::find($param['id_troupeau']);
         $user = User::find($troupeau->user_id);
         $campagne = Anneeprophylo::where('campagne', $this->campagne())->get()->first();
+
         $vetsan = (isset($param['vetsan'])) ? 1 : 0;
         if($vetsan === 0)
         {

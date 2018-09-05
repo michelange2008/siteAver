@@ -54,11 +54,11 @@
                         @endforeach()
 					</td>
 					<td class="vso text-center">
-					@foreach($troupeau->anneevso as $item)
-                        	@if($item->campagne === $annee)
+					       @foreach($troupeau->vsoafaire as $item)
+                        	@if($item->annee == $annee)
                         		<i name = "1" class="fa fa-bullseye" style="color:blue"></i>
                         	@endif()
-                    @endforeach()
+                  @endforeach()
 					</td>
 					<td class="bsaimportant text-center" name="{{ $troupeau->bsaimportant }}">
 						@if($troupeau->bsaimportant === 1)

@@ -5,7 +5,8 @@ use App\Factories\Blasons\Blasons;
 use App\Models\Troupeau;
 use App\Traits\PeriodeProphylo;
 
-class Vso extends Blasons
+
+class VsoBlason extends Blasons
 {
     use PeriodeProphylo;
     
@@ -20,8 +21,8 @@ class Vso extends Blasons
         $this->titre_vrai = 'Visite Sanitaire Obligatoire à faire en '.$this->campagne();
         $this->titre_faux = 'Pas de Visite Sanitaire Obligatoire en '.$this->campagne();
         
-        $vsos= $troupeau->anneevso->sortByDesc('debut');
-        if($vsos->first() !== null && $vsos->first()->campagne == $this->campagne())
+        $vsos= $troupeau->vsoafaire->sortByDesc('annee');
+        if($vsos->first() !== null && $vsos->first()->annee == $this->dateActuelle()->year)
         {
             $this->setCondition(true);
         }else{

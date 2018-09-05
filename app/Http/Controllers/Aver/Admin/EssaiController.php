@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class EssaiController extends Controller
 {
     use \App\Traits\SortTroupeaux;
-    
+
     public function index()
     {
 

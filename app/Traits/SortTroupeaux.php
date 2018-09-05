@@ -19,11 +19,20 @@ trait SortTroupeaux
 {
     public function sortTroupeaux()
     {
+        return $this->sort(Troupeau::all());
+    }
+    
+    public function sortTroupeauxVetSan()
+    {
+        return $this->sort(Troupeau::whereIn('user_id', $this->userVetsan())->get());
+    }
+    
+    public function sort($troupeaux)
+    {
         $users = User::select('id', 'name')->orderBy('name')->get();
-                
-        $troupeaux = Troupeau::all();
         
         $sortTroupeaux = collect();
+        
         foreach ($users as $user)
         {
             foreach ($troupeaux as $troupeau)

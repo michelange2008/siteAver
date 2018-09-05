@@ -16,9 +16,9 @@ namespace App\Repositories\Visites;
 use Illuminate\Support\Collection;
 
 use App\Constantes\ConstAnimaux;
-use App\Models\Anneevso_troupeau;
 use App\Models\Anneevso;
 use App\Models\Troupeau;
+use App\Models\Vsoafaire;
 
 class VsoRepository
 {
@@ -42,9 +42,9 @@ class VsoRepository
             $ecorche = explode('_', $annee_troupeau);
             if(isset($ecorche[1]))
             {
-                $anneevso_id = $ecorche[0];
+                $anneevso = $ecorche[0];
                 $troupeau_id = $ecorche[1];
-                Anneevso_troupeau::firstOrCreate(['troupeau_id' => $troupeau_id, 'anneevso_id' => $anneevso_id]);
+                Vsoafaire::firstOrCreate(['troupeau_id' => $troupeau_id, 'annee' => $anneevso]);
             }
         }
     }
@@ -53,21 +53,20 @@ class VsoRepository
     {
         if($anneePrecedenteActive)
         {
-            $liste_bdd = Anneevso_troupeau::all();
+            $liste_bdd = Vsoafaire::all();
         }
         else
         {
-            $anneeActuelle = $this->anneeActuelle();
-            $anneevsoActuelle = Anneevso::where('debut', $anneeActuelle)->first();
-            $liste_bdd = Anneevso_troupeau::where('anneevso_id', $anneevsoActuelle->id )->get();
+            $anneeActuelle = $this->dateActuelle();
+            $liste_bdd = Vsoafaire::where('annee', $anneeActuelle)->get();
         }
         foreach ($liste_bdd as $item)
         {
             $troupeau_id = $item->troupeau_id;
-            $anneevso_id = $item->anneevso_id;
-            if(!$collect_datas->contains($anneevso_id."_".$troupeau_id))
+            $anneevso = $item->annee;
+            if(!$collect_datas->contains($anneevso."_".$troupeau_id))
             {
-                Anneevso_troupeau::destroy($item->id);
+                Vsoafaire::destroy($item->id);
             }
         }
         
@@ -75,37 +74,64 @@ class VsoRepository
     
     public function remplitBv()
     {
-        $anneeActuelleVso = Anneevso::where('debut', $this->anneeActuelle())->get();
-        $tabIdEspeces = $this->listeIdEspeces("BV");
-        $troupeaux_bv = Troupeau::whereIn('especes_id', $tabIdEspeces)->get();
+        $troupeaux_bv = Troupeau::whereIn('especes_id', $this->listeIdEspeces("BV"))->get();
+        
         foreach($troupeaux_bv as $troupeau_bv)
         {
-            $troupeau_bv->anneevso()->detach($anneeActuelleVso);
+            $vsoBvActuel = Vsoafaire::where('annee', $this->dateActuelle()->year)->where('troupeau_id', $troupeau_bv->id)->get();
             
-            $troupeau_bv->anneevso()->attach($anneeActuelleVso);
+            if($vsoBvActuel->isEmpty())
+            {
+                $vsoAfaire = new Vsoafaire();
+                
+                $vsoAfaire->troupeau_id = $troupeau_bv->id;
+                
+                $vsoAfaire->annee = $this->dateActuelle()->year;
+                
+                $vsoAfaire->save();
+                
+            }
         }
-        
     }
     
     public function remplitPr()
     {
-        $anneeActuelleVso = Anneevso::where('debut', $this->anneeActuelle())->first();
-        $anneeNmoinsUnVso = Anneevso::where('debut', $this->anneeNmoinsUn())->first();
-        $tabIdPR = $this->listeIdEspeces(ConstAnimaux::PR);
-        $troupeaux_pr = Troupeau::whereIn('especes_id', $tabIdPR)->get();
+        $troupeaux_pr = Troupeau::whereIn('especes_id', $this->listeIdEspeces(ConstAnimaux::PR))->get();
+
         foreach($troupeaux_pr as $troupeau_pr)
         {
-            $inListeActuelle = $troupeau_pr->anneevso->contains($anneeActuelleVso);
-            $inListeNmoinsUn = $troupeau_pr->anneevso->contains($anneeNmoinsUnVso);
+            $vsoAFaireAnneeActuelle = Vsoafaire::where('annee', $this->dateActuelle()->year)
+                                                    ->where('troupeau_id', $troupeau_pr->id)
+                                                    ->get();
             
-            if($inListeNmoinsUn && $inListeActuelle)
+            $vsoAfaireAnneeNMoinsUn = Vsoafaire::where('annee', ($this->dateActuelle()->year - 1))
+                                                    ->where('troupeau_id', $troupeau_pr->id)
+                                                    ->get();
+            if($vsoAfaireAnneeNMoinsUn->isEmpty() && $vsoAFaireAnneeActuelle->isEmpty())
             {
-                $troupeau_pr->anneevso()->detach($anneeActuelleVso);
+                $vsoAfaire = new Vsoafaire();
+                
+                $vsoAfaire->troupeau_id = $troupeau_pr->id;
+                
+                $vsoAfaire->annee = $this->dateActuelle()->year;
+                
+                $vsoAfaire->save();
+                
             }
-            elseif(!$inListeNmoinsUn && !$inListeActuelle)
+            elseif($vsoAfaireAnneeNMoinsUn->isNotEmpty() && $vsoAFaireAnneeActuelle->isNotEmpty())
             {
-                $troupeau_pr->anneevso()->attach($anneeActuelleVso);
+                Vsoafaire::destroy($vsoAFaireAnneeActuelle->first()->id);
             }
+
+//             if($inListeNmoinsUn && $inListeActuelle)
+//             {
+//                 $troupeau_pr->anneevso()->detach($anneeActuelleVso);
+//             }
+//             elseif(!$inListeNmoinsUn && !$inListeActuelle)
+//             {
+//                 $troupeau_pr->anneevso()->attach($anneeActuelleVso);
+//             }
         }
+
     }
 }

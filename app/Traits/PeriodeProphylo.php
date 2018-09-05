@@ -52,9 +52,25 @@ trait PeriodeProphylo
     {
         $apres = $this->anneeActuelle()->addYear(1); //Carbon::now()->addYear(0);
         $avant = Carbon::now()->addYears(-$nb_annees);
-        $annees = Anneeprophylo::where('debut', '>', $avant)->where('debut', '<', $apres)->get();
+        $annees = collect();
+        for($i = $nb_annees ; $i >= 0 ; $i-- )
+        {
+            $annees->push($this->anneeActuelle()->addYear(-$i));
+        }
         return $annees;
     }
+    
+    public function xDernieresAnneesCiviles($nb_annees)
+    {
+        $anneesCiviles = collect();
+        for($i = $nb_annees; $i >= 0 ; $i--)
+        {
+            $anneesCiviles->push($this->dateActuelle()->addYear(-$i));
+        }
+        
+        return $anneesCiviles;
+    }
+    
     public function dateActuelle()
     {
         return Carbon::now();
@@ -88,9 +104,9 @@ trait PeriodeProphylo
                 $troupeauCampagne->setProphylo(true);
             }
         }
-        foreach ($troupeau->anneevso as $vso)
+        foreach ($troupeau->vsoafaire as $vso)
         {
-            if($vso->campagne === $this->campagne())
+            if($vso->annee === Carbon::now()->year)
             {
                 $troupeauCampagne->setVso(true);
             }

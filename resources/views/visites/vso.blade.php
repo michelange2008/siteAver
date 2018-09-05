@@ -40,7 +40,7 @@
                     <th>Eleveur</th>
                     <th>Troupeau</th>
                     @foreach($annees as $annee)
-                    <th class="text-center">{{$annee->campagne}}</th>
+                    <th class="text-center">{{$annee->year}}</th>
                     @endforeach()
                 </tr>
             </thead>
@@ -52,19 +52,19 @@
                     <?php $nb_col =1 ?>
                     @foreach($annees as $annee)
                         <td class="colonne align-content-center text-center {{$nb_col}}">
-                            @if(count($troupeau->anneevso) == 0)
-                                {{Form::checkbox($annee->id."_".$troupeau->id, $annee->id."_".$troupeau->id)}}
+                            @if(count($troupeau->vsoafaire) == 0)
+                                {{Form::checkbox($annee->year."_".$troupeau->id, $annee->year."_".$troupeau->id)}}
                             @else()
                             <?php $coche = 0 ?>
-                                @foreach($troupeau->anneevso as $tpp)
-                                    @if($tpp->debut === $annee->debut)
+                                @foreach($troupeau->vsoafaire as $tpp)
+                                    @if($tpp->annee === $annee->year)
                                         <?php $coche = 1 ?>
                                     @endif()
                                 @endforeach()
                                 @if($coche > 0)
-                                    {{Form::checkbox($annee->id."_".$troupeau->id, $annee->id."_".$troupeau->id, 'checked')}}
+                                    {{Form::checkbox($annee->year."_".$troupeau->id, $annee->year."_".$troupeau->id, 'checked')}}
                                 @else()
-                                    {{Form::checkbox($annee->id."_".$troupeau->id, $annee->id."_".$troupeau->id)}}
+                                    {{Form::checkbox($annee->year."_".$troupeau->id, $annee->year."_".$troupeau->id)}}
                                 @endif()
                             @endif()
                         </td>
