@@ -7,22 +7,18 @@
           <button class="btn btn-menu {{$bouton->couleur()}}" id="{{str_replace(" ","_", strtolower($bouton->texte()))}}">{{$bouton->texte()}}</button>
         @endforeach()
       </div>
-       <table id="listeEleveurs" class="table table-striped table-hover tablesorter">
+       <table id="listeEleveurs" class="table table-striped table-hover" style="width:100%">
             <thead >
-            	<tr>
-            		<th colspan = 4><span id='avertissement' class="italique maigre non_affiche"><i class="fa fa-braille"></i> attention affichage d'une sélection</span></th>
-            		<th colspan = 2 class="text-center bg-primary">{{$annee}}</th>
-            		<th colspan = 2 class="text-center bg-warning">Bilans Sanitaires Annuels</th>
-            	</tr>
+
                 <tr id= "titres" class="bg-success">
                     <th>Eleveur</th>
                     <th>Troupeau</th>
                     <th>Type</th>
                     <th class="text-center">Vet. San.</th>
-                    <th class="bg-primary text-center">Proph.</th>
-                    <th class="bg-primary text-center">VSO</th>
-                    <th class="text-center bg-warning">prioritaire</th>
-                    <th class="text-center bg-warning">Dernier</th>
+                    <th class="bg-primary text-center">Proph. {{$campagne}}</th>
+                    <th class="bg-primary text-center">VSO {{$annee}}</th>
+                    <th class="text-center bg-warning">BSA prioritaire</th>
+                    <th class="text-center bg-warning">Dernier BSA</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,7 +44,7 @@
 
                     <td class="prophylo text-center">
                     	@foreach($troupeau->anneeprophylos as $item)
-                        	@if($item->campagne === $annee)
+                        	@if($item->campagne === $campagne)
                         		<i name="1" class="fa fa-bullseye" style="color:blue"></i>
                         	@endif()
                         @endforeach()

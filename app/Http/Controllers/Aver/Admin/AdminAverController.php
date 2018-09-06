@@ -37,7 +37,8 @@ class AdminAverController extends Controller
             'dernMaJ' => MajDateMajFevec::dernMaJEnMois(),
             'listeEleveurs' => $this->sortTroupeaux(),
             'listeBSA' => $listeBSA,
-            'annee' => $this->campagne(),
+            'campagne' => $this->campagne(),
+            'annee' => $this->dateActuelle()->year,
             'boutons' => $this->adminRep->boutons(),
         ]);
         

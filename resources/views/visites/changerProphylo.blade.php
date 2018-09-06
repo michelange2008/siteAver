@@ -15,7 +15,7 @@
 @endif()
 <div class="container-fluid d-flex flex-row justify-content-between espace">
     {{ Form::open(['route' => 'prophylo.modif'])}}
-        {{ Form::hidden('groupe', $groupe) }} 
+        {{ Form::hidden('groupe', $groupe) }}
         <div class="d-flex flex-row justify-content-between">
             <div class="d-flex flex-row justify-content-start">
                 <div id='bascule' class="btn btn-outline-info btn-carre" title="permet de modifier les prophylaxies des années précédentes">Modifier tout le tableau</div>
@@ -24,7 +24,7 @@
                 <p> _____ </p>
                 <a id="remplitVA" href="{{route('prophylo.remplit')}}" class="btn btn-outline-navy btn-carre">
                     Remplir l'année en court
-                </a> 
+                </a>
             @endif()
             </div>
             {{ Form::submit('Mettre à jour', ['id' => 'maj', 'class' => 'btn btn-secondary btn-carre', 'disabled' => 'disabled'])}}

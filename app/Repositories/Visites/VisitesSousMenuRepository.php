@@ -34,23 +34,23 @@ class VisitesSousMenuRepository
       $listeMenu = new SousmenuFactory('Eleveurs dont nous sommes (ou non) vétérinaires sanitaires:');
       $majVetsan = new SousmenuItem('vetsan.majVetsan', 'Vet. san.', SousmenuCouleurs::BLEU, "Met que l'on est vétérinaire sanitaire des éleveurs en convention");
       $listeMenu->addSousmenuItem($majVetsan);
-      $retour = new SousmenuItem('fevec.index', 'Retour', SousmenuCouleurs::GRIS);
+      $retour = new SousmenuItem('aver.accueil', 'Retour', SousmenuCouleurs::GRIS);
       $listeMenu->addSousmenuItem($retour);
 
       return $listeMenu;
-        
+
     }
-    
+
     public static function prophyloSommaire()
     {
       $listeMenu = new SousmenuFactory('Gestion des prophylaxies');
       $majProphylo = new SousmenuItem('prophylo.index', 'Prophylo', SousmenuCouleurs::BLEU, "Met à jour les prophylaxies");
       $listeMenu->addSousmenuItem($majProphylo);
-      $retour = new SousmenuItem('fevec.index', 'Retour', SousmenuCouleurs::GRIS);
+      $retour = new SousmenuItem('aver.accueil', 'Retour', SousmenuCouleurs::GRIS);
       $listeMenu->addSousmenuItem($retour);
 
       return $listeMenu;
-        
+
     }
 
     public static function prophyloChanger()
@@ -80,7 +80,7 @@ class VisitesSousMenuRepository
               'parametre' => ConstAnimaux::BC,
           ],
           [
-              'route' => 'fevec.index',
+              'route' => 'home',
               'titre' => 'Retour',
               'couleur' => SousmenuCouleurs::GRIS,
               'bulle' => 'retour à l\'accueil',
@@ -94,13 +94,13 @@ class VisitesSousMenuRepository
       }
 
       return $listeMenu;
-        
+
     }
-    
+
     public static function bsaAccueil()
     {
         $listeMenu = new SousmenuFactory('Gestion des bilans sanitaires annuels');
-        $retour = new SousmenuItem('fevec.index', 'Retour', SousmenuCouleurs::GRIS);
+        $retour = new SousmenuItem('aver.accueil', 'Retour', SousmenuCouleurs::GRIS);
         $listeMenu->addSousmenuItem($retour);
 
         return $listeMenu;

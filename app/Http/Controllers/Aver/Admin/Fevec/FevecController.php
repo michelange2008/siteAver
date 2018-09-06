@@ -74,7 +74,9 @@ class FevecController extends Controller
         'menu' => $listeMenu,
       ]);
     }
-
+    /* @TODO prévoir le cas où l'import n'a pas fonctionner et voudrait vider complétement la bdd USER et TROUPEAU
+     * 
+     */
     public function importFevec()
     {
       $importFevec = $this->fevecRepository->importFevec();
@@ -132,6 +134,10 @@ class FevecController extends Controller
         ParamGestion::ecritParam($request->all());
         return redirect()->route('fevec.gestion')->with('status', 'Les paramètres ont été mis à jour');
     }
+    
+    /* @TODO Import du fichier aver.mdb
+     * 
+     */
     
     public function videTables() 
     {

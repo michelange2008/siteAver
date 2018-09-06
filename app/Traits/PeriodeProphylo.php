@@ -52,10 +52,12 @@ trait PeriodeProphylo
     {
         $apres = $this->anneeActuelle()->addYear(1); //Carbon::now()->addYear(0);
         $avant = Carbon::now()->addYears(-$nb_annees);
+        
         $annees = collect();
-        for($i = $nb_annees ; $i >= 0 ; $i-- )
+        for($i = $nb_annees-1 ; $i >= 0 ; $i-- )
         {
-            $annees->push($this->anneeActuelle()->addYear(-$i));
+            $annee = Anneeprophylo::where('debut', $this->anneeActuelle()->addYear(-$i) )->first();
+            $annees->push($annee);
         }
         return $annees;
     }

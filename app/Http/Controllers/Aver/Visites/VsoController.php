@@ -9,9 +9,6 @@ use App\Repositories\Visites\VsoRepository;
 
 use App\Models\Troupeau;
 use App\Traits\SortTroupeaux;
-/*
-* @TODO Modifier les lien entre vso et année - pas de rapport avec les campagnes
-*/
 
 class VsoController extends Controller
 {

@@ -14,10 +14,9 @@
       rel="stylesheet"
       integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
       crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/b-1.5.1/b-flash-1.5.1/fh-3.1.3/r-2.2.1/rg-1.0.2/datatables.min.css"/>
-
     <link href="{{ asset('css/perso.css') }}" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.2/b-flash-1.5.2/fh-3.1.4/r-2.2.2/datatables.min.css"/>
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" /> -->
     <!-- jquery-confirm -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
     @stack('css')
@@ -47,10 +46,9 @@
     <script src="{{ asset('js/psbsa.js')}}"></script>
     <script src="{{ asset('js/bootstrap/bootstrap.js') }}"></script>
     <script src="{{ asset('js/splitAffichage.js')}}"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/b-1.5.1/b-flash-1.5.1/fh-3.1.3/r-2.2.1/rg-1.0.2/datatables.min.js"></script>
     <script src="https://use.fontawesome.com/f8a7076b4b.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
-
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     @stack('js')
 
 
