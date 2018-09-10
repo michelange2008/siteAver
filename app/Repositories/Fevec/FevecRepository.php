@@ -164,6 +164,7 @@ class FevecRepository
 
           Fev_eleveurs_n::firstOrCreate($inputs);
         }
+        
       }
       
       
@@ -287,10 +288,12 @@ class FevecRepository
       $eleveursDesTroupeauxASupprimer = $this->listeEleveursDesTroupeauxASupprimer($idTroupeauxDifferents);
       return $eleveursDesTroupeauxASupprimer;
     }
+    
       public function compareIdTpLocalVsTpFevec()
       {
         return array_diff($this->idTroupeauxLocal(), $this->idTroupeauxFevec());
       }
+      
       public function listeEleveursDesTroupeauxASupprimer($idTroupeauxDifferents)
       {
         $eleveursDesTroupeauxASupprimer = [];
@@ -312,10 +315,12 @@ class FevecRepository
       $eleveursDesTroupeauxAAjouter = $this->listeEleveursDesTroupeauxAAjouter($idTroupeauxDifferents);
       return $eleveursDesTroupeauxAAjouter;
     }
+    
       public function compareIdTpFevecVsTpLocal()
       {
         return array_diff($this->idTroupeauxFevec(), $this->idTroupeauxLocal());
       }
+      
       public function idTroupeauxFevec()
       {
         foreach (Fev_troupeaux_n::all() as $troupeauFevec) {
@@ -323,6 +328,7 @@ class FevecRepository
         }
         return $listeIdTroupeauxFevec;
       }
+      
       public function idTroupeauxLocal()
       {
         foreach (Troupeau::all() as $troupeauLocal) {

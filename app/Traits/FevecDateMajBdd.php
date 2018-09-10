@@ -4,7 +4,7 @@
  * Inscrit la date de mise à jour de la bdd éleveurs à partir de la bdd fevec 
  */
 
-namespace App\Outils;
+namespace App\Traits;
 
 /**
  * Description of MajDateMajFevec
@@ -14,10 +14,10 @@ namespace App\Outils;
 use App\Models\DateMaJFevec;
 use Carbon\Carbon;
 
-trait MajDateMajFevec
+trait FevecDateMajBdd
 {
     
-    public static function dateMaJ()
+    public function dateMaJ()
     {
         $dateMaJ = new DateMaJFevec();
         $dateMaJ->date = date("Y-m-d");
@@ -35,7 +35,7 @@ trait MajDateMajFevec
         return $date->diffInMonths();
     }
    
-    public static function dernMaJEnMois()
+    public function dernMaJEnMois()
     {
         return self::diffNowEnMois(self::getDateMaJ());
     }

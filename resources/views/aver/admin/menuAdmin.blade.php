@@ -1,11 +1,11 @@
 @section('menu')
-<nav class="navbar navbar-nav navbar-dark bg-dark navbar-expand-lg sticky-top">
+<nav class="navbar navbar-nav navbar-dark bg-dark navbar-expand-lg sticky-top" role="navigation">
 
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar navbar-nav">
+    <ul class="nav navbar-nav">
 
       <li class="nav-item"><a href="{{ URL::route('aver.accueil')}}" class = 'nav-link'>Accueil</a></li>
 
@@ -15,37 +15,37 @@
 
       <li class="nav-item"><a href="{{ URL::route('user.index')}}" class = 'nav-link'>Liste Eleveurs</a></li>
 
-
       <li class="nav-item dropdown smartphone-no">
-          <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link"
-             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Paramétrage des visites
+          <a id="visitesDropdown" class="nav-link dropdown-toggle nav-link" data-toggle="dropdown">
+            Param visites
           </a>
-           <ul class="dropdown-menu bg-dark text-light" aria-labelledBy = "navbarDropdown">
+          <ul class="dropdown-menu bg-dark text-light" aria-labelledBy = "visitesDropdown">
 
-            <a class="dropdown-item text-muted" href="{{ URL::route('visites.accueil') }}">Sommaire</a>
+            <li><a class="dropdown-item text-muted" href="{{ URL::route('visites.accueil') }}">Sommaire</a></li>
 
-            <a class="dropdown-item text-muted" href="{{ URL::route('vetsan.changer') }}">Vét. San.</a>
+            <li><a class="dropdown-item text-muted" href="{{ URL::route('vetsan.changer') }}">Vét. San.</a></li>
 
-            <a class="dropdown-item text-muted" href="{{ URL::route('prophylo.index') }}">Prophylaxie</a>
+            <li><a class="dropdown-item text-muted" href="{{ URL::route('prophylo.index') }}">Prophylaxie</a></li>
 
-            <a class="dropdown-item text-muted" href="{{ URL::route('bsa.index') }}">Bilan annuel</a>
+            <li><a class="dropdown-item text-muted" href="{{ URL::route('bsa.index') }}">Bilan annuel</a></li>
 
-            <a class="dropdown-item text-muted" href="{{ URL::route('ps.index') }}">Protocoles de soin</a>
+            <li><a class="dropdown-item text-muted" href="{{ URL::route('ps.index') }}">Protocoles de soin</a></li>
 
-            <a class="dropdown-item text-muted" href="{{ URL::route('vso.index') }}">Visite obligatoire</a>
+            <li><a class="dropdown-item text-muted" href="{{ URL::route('vso.index') }}">Visite obligatoire</a></li>
 
            </ul>
       </li>
 
       <li class="nav-item dropdown smartphone-no">
-        <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link"
-           role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a id="adminDropDown" class="nav-link dropdown-toggle nav-link" data-toggle="dropdown">
           Administration
         </a>
-        <ul class="dropdown-menu bg-dark text-light" aria-labelledBy = "navbarDropdown">
+        <ul class="dropdown-menu bg-dark text-light" aria-labelledBy = "adminDropdown">
 
-          <a  class = 'dropdown-item text-muted' href="{{ URL::route('fevec.gestion')}}">Gestion Fevec</a></li>
+          <li>
+            <a  class = 'dropdown-item text-muted' href="{{ URL::route('fevec.gestion')}}">Gestion Fevec</a></li>
+          </li>
+
 
           <!-- <a  class = 'dropdown-item text-muted'  href="{{ URL::route('user.admin')}}">Admin</a> -->
 

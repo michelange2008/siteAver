@@ -47,7 +47,7 @@ class FevecSousmenuRepository
     public static function verifieTroupeaux()
     {
       $listeMenu = new SousmenuFactory('Voici les modifications effectuées sur les troupeaux:');
-      $retour = new SousmenuItem('fevec.index', 'Retourner à l\'accueil', SousmenuCouleurs::GRIS);
+      $retour = new SousmenuItem('aver.accueil', 'Retourner à l\'accueil', SousmenuCouleurs::GRIS);
       $listeMenu->addSousmenuItem($retour);
 
       return $listeMenu;
@@ -60,6 +60,16 @@ class FevecSousmenuRepository
         $listeMenu->addSousmenuItem($annuler);
         
         return $listeMenu;
+    }
+    
+    public static function retour()
+    {
+        $listeMenu = new SousmenuFactory("Retour");
+        $annuler = new SousmenuItem('fevec.gestion', 'Retour sans enregistrer', SousmenuCouleurs::GRIS);
+        $listeMenu->addSousmenuItem($annuler);
+        
+        return $listeMenu;
+        
     }
     
 

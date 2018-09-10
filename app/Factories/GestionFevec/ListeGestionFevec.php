@@ -1,5 +1,5 @@
 <?php
-namespace app\Factories\GestionFevec;
+namespace App\Factories\GestionFevec;
 
 use App\Factories\GestionFevec\CardGestionFevec;
 
@@ -15,11 +15,11 @@ class ListeGestionFevec
 
         $datas = [
             [
-              "route" => "fevec.videTables",
+              "route" => "fevec.telecharge",
               "texteBouton" => "Importer",
-              "icone" => "importDatabase.svg",
+              "icone" => "importDB_videDB.svg",
               "titre" => "Importer les tables",
-              "texte" => "C'est une procédure qui vide les tables avec préfixe fev_ avant l'import de la nouvelle mise à jour de aver.mdb",
+              "texte" => "C'est une procédure qui importe la dernière version de aver.mdb après avoir vider les tables avec préfixe fev_ avant ",
           ],
             [
               "route" => "fevec.normalise",

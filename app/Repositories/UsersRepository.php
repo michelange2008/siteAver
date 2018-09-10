@@ -80,6 +80,7 @@ class UsersRepository
   {
     $this->user->firstOrCreate(['id' => $input['id']], $input);
   }
+  
   public function inscritNombreTroupeauParUser(Array $tableau)
   {
     foreach ($tableau as $value) {
@@ -88,6 +89,7 @@ class UsersRepository
       $user->save();
     }
   }
+  
   public function proposeSupprimerEleveur($listeEleveursFevec)
   {
     $idEleveursFevec = array();
@@ -104,6 +106,7 @@ class UsersRepository
     }
     return $listeASupprimer;
   }
+  
   public function supprimerEleveur($id_user)
   {
     $this->troupeauxRepository->destroyTroupeauxUnUser($id_user);

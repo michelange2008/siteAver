@@ -132,8 +132,6 @@ Route::group(['middleware' => ['auth']], function () {
         
         /* ROUTES CONCERNANT LA GESTION DES ELEVEURS FEVEC: NORMALISATION, IMPORT ET MISE A JOUR */
     
-    Route::get('aver/fevec/accueil', ['uses' => 'Aver\Admin\Fevec\FevecController@index', 'as' => 'fevec.index']);
-    
     Route::get('aver/fevec/gestion/maj', ['uses' => 'Aver\Admin\Fevec\FevecController@toutMettreAJour', 'as' => 'fevec.maj']);
     
     Route::get('aver/fevec/gestion', ['uses' => 'Aver\Admin\Fevec\FevecController@gestion', 'as' => 'fevec.gestion']);
@@ -150,12 +148,18 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::post('aver/fevec/majParam', ['uses' => 'Aver\Admin\Fevec\FevecController@majParam', 'as' => 'fevec.majParam']);
     
+    Route::get('aver/fevec/telecharge', ['uses' => 'Aver\Admin\Fevec\FevecController@telecharge', 'as' => 'fevec.telecharge']);
+    
+    Route::post('aver/fevec/postTelecharge', ['uses' => 'Aver\Admin\Fevec\FevecController@postTelecharge', 'as' => 'fevec.postTelecharge']);
+    
     Route::get('aver/fevec/vide', ['uses' => 'Aver\Admin\Fevec\FevecController@videTables', 'as' => 'fevec.videTables']);
     
+    Route::get('aver/fevec/bddAver', ['uses' => 'Aver\Admin\Fevec\FevecController@bddAver', 'as' => 'fevec.bddAver']);
     
     Route::get('/aver/supprimerEleveur/{id}', ['uses' => 'Aver\UserController@supprimerEleveur', 'as' => 'user.supprimerEleveur']);
     
     Route::get('/aver/toutSupprimer/{listeId}', ['uses' => 'Aver\UserController@toutSupprimer', 'as' => 'user.toutSupprimer']);
+    
     
     //############################################## GESTION DE L'ANCIENNE TABLE DE DONNEES BSA ############################################
     

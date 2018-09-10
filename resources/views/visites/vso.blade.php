@@ -47,7 +47,14 @@
             <tbody>
                 @foreach($troupeaux as $troupeau)
                 <tr class="ligne_eleveur" name = '{{$troupeau->especes->groupe}}'>
-                    <td>{{$troupeau->user->name}}</td>
+                    <td>
+                      {!! link_to_route('troupeau.accueil',
+                        $troupeau->user->name, [$troupeau->id],
+                        [
+                          'class' => $troupeau->user->activite->abbreviation,
+                          'title' => "afficher la situation de ".$troupeau->user->name
+                          ]) !!}
+                    </td>
                     <td class="{{$troupeau->especes->abbreviation}}">{{$troupeau->especes->nom}}</td>
                     <?php $nb_col =1 ?>
                     @foreach($annees as $annee)

@@ -11,7 +11,7 @@
 
   @foreach($actions as $action)
   <div class="card d-flex bg-light justify-content-between" style="width: 18rem">
-    <img class="card-img-top" src="{{ URL::asset('medias')}}/icones/{{$action['icone']}}" alt="{{ $action['icone'] }}">
+    <img class="card-img-top" src="{{ URL::asset('medias')}}/icones/fevec/{{$action['icone']}}" alt="{{ $action['icone'] }}">
     <div class="card-body">
       <h5 class="card-title card-text">{{ $action['titre'] }}</h5>
       @if(!empty($action['troupeaux']))

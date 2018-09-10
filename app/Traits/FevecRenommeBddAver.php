@@ -1,26 +1,20 @@
 <?php
-namespace app\Traits;
+namespace App\Traits;
 
-use App\Models\Fev_typetroupeaux;
-use App\Models\Fev_troupeaux;
-use Illuminate\Support\Facades\DB;
 use Exception;
+use App\Repositories\Fevec\FevecConstantes;
 
-trait RenommeBddAver
+trait FevecRenommeBddAver
 {
-    public function RenommeBddAver($fichierImport)
+    public function RenommeBddAver()
     {
-        $origine = ["Clients", "RaceDominante", "Troupeaux", "TypeActivite", "Typefev_troupeaux"];
-        
-        $final = ["fev_clients", "fev_racedominante", "fev_troupeaux", "fev_typeactivite", "fev_typetroupeaux"];
-
-        $ouvrirLecture = fopen($fichierImport, 'r');
-        $ouvrirEcriture = fopen('aver_mdb_modifie.sql', 'w');
+        $ouvrirLecture = fopen(FevecConstantes::BDD_AVER_ORIGINE, 'r');
+        $ouvrirEcriture = fopen(FevecConstantes::BDD_AVER_MODIFIEE, 'w');
 
         if ($ouvrirLecture) {
             while (($buffer = fgets($ouvrirLecture, 4096)) !== false)
             {
-                fwrite($ouvrirEcriture, str_replace($origine, $final, $buffer));
+                fwrite($ouvrirEcriture, str_replace(FevecConstantes::ENTETE_ORIGINE, FevecConstantes::ENTETE_MODIFIE, $buffer));
             }
 
         }
@@ -29,16 +23,16 @@ trait RenommeBddAver
             fclose($ouvrirLecture);
     }
     
-    public function litBddAver($fichierRenomme)
+    public function litBddAver()
     {
         $connect = new \mysqli($_ENV['DB_HOST'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD'], $_ENV['DB_DATABASE']);
         if ($connect -> connect_errno)
         {
-            printf("Verbindung fehlgeschlagen: %s\n", $connect->connect_error);
+            printf("Echec de la connexion :%s\n", $connect->connect_error);
             exit();
         }
 
-        $ouvrirLecture = fopen($fichierRenomme, 'r');
+        $ouvrirLecture = fopen(FevecConstantes::BDD_AVER_MODIFIEE, 'r');
          
          if($ouvrirLecture)
          {

@@ -15,6 +15,10 @@ img{
   max-width: 100%;
 }
 
+.image-min {
+  min-width: 100%;
+}
+
 .lien-icone-centre {
   display: inline-flex;
 }
@@ -41,6 +45,11 @@ img{
 }
 .curseur {
     cursor: pointer;
+}
+.fleche {
+  background: url("../medias/icones/fevec/fleche.svg") center  no-repeat;
+  background-size: contain;
+  width: 5%;
 }
 .lien:hover {
   background: darkgrey;

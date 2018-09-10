@@ -1,5 +1,5 @@
 <?php
-namespace app\Factories\GestionFevec;
+namespace App\Factories\GestionFevec;
 
 use App\Factories\Sousmenu\SousmenuCouleurs;
 use App\Factories\Sousmenu\SousmenuItem;

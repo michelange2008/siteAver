@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Aver\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Admin\StatRepository;
-use App\Outils\MajDateMajFevec;
+use App\Traits\FevecDateMajBdd;
 use App\Models\Bsa;
 use App\Repositories\Admin\AdminRep;
 use App\Traits\PeriodeProphylo;
@@ -15,7 +15,7 @@ use App\Traits\SortTroupeaux;
 
 class AdminAverController extends Controller
 {
-    use MajDateMajFevec;
+    use FevecDateMajBdd;
     use PeriodeProphylo;
     use SortTroupeaux;
     
@@ -31,10 +31,10 @@ class AdminAverController extends Controller
         $stats = StatRepository::calculStatEleveursTroupeaux();
 
         $listeBSA = Bsa::all();
-        
+
         return view('aver.admin.admin', [
             'stats' => $stats,
-            'dernMaJ' => MajDateMajFevec::dernMaJEnMois(),
+            'dernMaJ' => $this->dernMaJEnMois(),
             'listeEleveurs' => $this->sortTroupeaux(),
             'listeBSA' => $listeBSA,
             'campagne' => $this->campagne(),

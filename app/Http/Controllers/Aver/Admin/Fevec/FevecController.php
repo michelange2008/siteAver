@@ -2,27 +2,25 @@
 
 namespace App\Http\Controllers\Aver\Admin\Fevec;
 
-/* @TODO Prévoir téléchargement du fichier .sql avec fenetre de dialogue
- * 
- */
-
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
-
-use App\Repositories\Fevec\FevecRepository;
-use App\Repositories\UsersRepository;
+use App\Traits\FevecDateMajBdd;
 use App\Repositories\TroupeauxRepository;
+use App\Repositories\UsersRepository;
+use App\Repositories\Fevec\FevecRepository;
 use App\Repositories\Fevec\FevecSousmenuRepository;
 use App\Repositories\Fevec\ParamGestion;
-use App\Outils\MajDateMajFevec;
+use Illuminate\Http\Request;
 
-use App\Traits\RenommeBddAver;
 use App\Factories\GestionFevec\ListeGestionFevec;
+
+use App\Traits\FevecRenommeBddAver;
+use App\Traits\FevecTelecharge;
     
 class FevecController extends Controller
 {
-    use RenommeBddAver;
+    use FevecRenommeBddAver;
+    use FevecTelecharge;
+    use FevecDateMajBdd;
 
   protected $fevecRepository;
   protected $userRepository;
@@ -34,15 +32,6 @@ class FevecController extends Controller
       $this->fevecRepository = $fevecRepository;
       $this->userRepository = $userRepository;
       $this->troupeauxRepository = $troupeauxRepository;
-    }
-
-    public function index()
-    {
-      $stats = $this->fevecRepository->calculStatEleveursTroupeaux();
-      return view('fevec/accueil', [
-          'stats' => $stats,
-          'dernMaJ' => MajDateMajFevec::dernMaJEnMois(),
-           ]);
     }
 
     public function gestion()
@@ -62,7 +51,7 @@ class FevecController extends Controller
         $this->userRepository->supprimerListeEleveur($resultImport['listeIdASupprimer']);
         $this->verifieTroupeaux();
         // Inscrit la date de mise à jour
-        MajDateMajFevec::dateMaJ();
+        $this->dateMaJ();
         return redirect()->route('fevec.index');
     }
 
@@ -89,7 +78,17 @@ class FevecController extends Controller
           'nbUsersAjoutes' => $importFevec['nbUsersAjoutes'],
           'menu' => $listeMenu,
         ]);
-      } else {
+      } elseif(is_array($importFevec['listeASupprimer']) && count($importFevec['listeASupprimer']) > 5) {
+          flash("Attention !!! Il y a ".count($importFevec['listeASupprimer'])." d'éleveurs à supprimer")->error();
+          
+          $listeMenu = FevecSousmenuRepository::retour();
+          
+          return view('fevec.bigdelete', [
+              'menu' => $listeMenu,
+              'liste' => $importFevec['listeASupprimer'],
+          ]);
+      }
+      else {
         return view('fevec/listeASupprimer', [
           'liste' => $importFevec['listeASupprimer'],
           'listeId' => $importFevec['listeIdASupprimer'],
@@ -135,22 +134,45 @@ class FevecController extends Controller
         return redirect()->route('fevec.gestion')->with('status', 'Les paramètres ont été mis à jour');
     }
     
-    /* @TODO Import du fichier aver.mdb
+    /*
+     * Fournit un formulaire pour télécharge le fichier sql qui a été exporté du logiciel FEVEC
+     */
+    public function telecharge() 
+    {
+        return view('fevec.telecharge')->with('status', "ça va");
+    }
+
+    /*
+     * Récupère le fichier, le met dans le répertoire bdd et le renomme
+     */
+    public function postTelecharge(Request $request)
+    {
+        $this->telecharge_fichier($request);
+        
+        return redirect()->back()->with('info', 'telecharge'); 
+    }
+    
+    /* Vide toutes les tables fevec intermédiaires en utilisant la liste d'en-têtes modifiés
      * 
      */
-    
-    public function videTables() 
+    public function videTables()
     {
-        DB::table('fev_clients')->truncate();
-        DB::table('fev_racedominante')->truncate();
-        DB::table('fev_troupeaux')->truncate();
-        DB::table('fev_typeactivite')->truncate();
-        DB::table('fev_typetroupeaux')->truncate();
-        
-        $this->renommeBddAver("aver_import.sql");
-        $this->litBddAver('aver_mdb_modifie.sql');
+        $this->videTables_fev();
 
-        return redirect()->back();
+        return redirect()->back()->with('info', 'vide');
+    }
+
+    /* Renomme les entetes du fichier sql importé puis insert toutes les lignes dans les tables à préfixe fev_
+     * 
+     */
+    public function bddAver()
+    {
+
+        $this->renommeBddAver();
+        flash("Base de donnée renommée")->success();
+        $this->litBddAver();
+
+        return redirect()->back()->with('info', 'import');
     }
     
     

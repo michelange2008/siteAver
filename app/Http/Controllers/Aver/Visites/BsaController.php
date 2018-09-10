@@ -19,9 +19,9 @@ class BsaController extends Controller
     use \App\Traits\CardGroupeEspeces;
     use PeriodeProphylo;
     use SortTroupeaux;
-    
+
     protected $bsaRepository;
-    
+
     public function __construct(BsaRepository $bsaRepository)
     {
         $this->bsaRepository = $bsaRepository;
@@ -37,27 +37,28 @@ class BsaController extends Controller
             'cardGroupesEspece' => $cardGroupesEspece,
         ]);
     }
-    
+
     public function modif(Request $request)
     {
         $modif = $this->bsaRepository->majBsa($request);
-        
+
         return redirect()->back()->with('message', 'Il y a eu '.$modif['ajouts']. ' ajout(s) et '.$modif['suppressions'].' suppression(s).');
     }
-    
+
     public function saisie()
     {
 
         return view('visites.bsaSaisie', [
             'troupeaux' => $this->sortTroupeaux(),
             'campagne' => $this->campagne(),
+            'annee' => $this->dateActuelle(),
         ]);
     }
-    
+
     public function store(Request $request)
     {
         $datas = $request->all();
-        
+
         $bsa_exist = Bsa::where('troupeau_id', $datas['troupeau_id'])
             ->where('date_bsa', $datas['date_bsa'])->get();
         if($bsa_exist->count() == 0)
@@ -66,10 +67,10 @@ class BsaController extends Controller
             $bsa->troupeau_id = $datas['troupeau_id'];
             $bsa->date_bsa = $datas['date_bsa'];
             $bsa->save();
-            
+
             $nouveauBsa = Bsa::where('troupeau_id', $datas['troupeau_id'])
                 ->where('date_bsa', $datas['date_bsa'])->first();
-            $nouveauBsa_id = $nouveauBsa->id; 
+            $nouveauBsa_id = $nouveauBsa->id;
             $title = "Génial !";
             $msg = 'Le bilan a été enregistré à la date '.$datas['date_bsa'];
         }
@@ -81,7 +82,7 @@ class BsaController extends Controller
         }
         return response()->json(['title' => $title, 'msg'=> $msg, 'bsa_id' => $nouveauBsa_id], 200);
     }
-    
+
     public function ps($troupeau_id, $bsa_id)
     {
         $troupeau = Troupeau::find($troupeau_id);
@@ -93,12 +94,12 @@ class BsaController extends Controller
             'bsa' => $bsa,
         ]);
     }
-    
+
     public function remarque($troupeau_id)
     {
         return $troupeau_id;
     }
-    
+
     public function attribuePsaBsaUnTroupeau(Request $request)
     {
         $datas = $request->all();
@@ -107,6 +108,6 @@ class BsaController extends Controller
         $title = $bsa->date_bsa;
         $msg = $datas['ps_id'];
         return response()->json(['title' => $title, 'msg'=> $msg], 200);
-        
+
     }
 }

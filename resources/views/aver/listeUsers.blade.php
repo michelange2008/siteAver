@@ -25,15 +25,22 @@
         @endif()
         <th scope="col" class="text-center">  Activité</th>
         <th scope="col" class="text-center">  Vet.San.</th>
-        <th scope="col" class="text-center">Actions</th>
+
       </tr>
     </thead>
     <tbody>
       @foreach($troupeaux as $troupeau)
       <tr id="{{ $troupeau->user->id }}" class="ligne_eleveur" name="{{$troupeau->especes->abbreviation}}">
-          <th id="{{ $troupeau->id }}_{{ $troupeau->user->id }}" scope="row" class="align-middle nom_eleveur {{ $troupeau->id }}_{{ $troupeau->user->id }}">{{ $troupeau->user->name }}</th>
+          <th id="{{ $troupeau->id }}_{{ $troupeau->user->id }}" scope="row" class="align-middle nom_eleveur {{ $troupeau->id }}_{{ $troupeau->user->id }}">
+            {!! link_to_route('troupeau.accueil',
+              $troupeau->user->name, [$troupeau->id],
+              [
+                'class' => $troupeau->user->activite->abbreviation,
+                'title' => "afficher la situation de ".$troupeau->user->name
+                ]) !!}
+          </th>
         <td class="{{ $troupeau->id }}_{{ $troupeau->user->id }} align-middle">
-            @if(substr($troupeau->user->email, -2) != "af") 
+            @if(substr($troupeau->user->email, -2) != "af")
                {{ $troupeau->user->email }}
             @else -
             @endif
@@ -44,14 +51,13 @@
         @endif()
         <td class="align-middle text-center" >{{ $troupeau->user->activite->nom }}</td>
         <td class="align-middle text-center" >
-            <button class="btn 
+            <button class="btn
                   @if($troupeau->user->vetsan) btn-success
                   @elseif($troupeau->user->vetsan === null) btn-warning
                   @else btn-danger
                   @endif"
                   ></button>
-   
-        <td>{!! link_to_route('troupeau.show', 'Afficher', [$troupeau->id], ['class' => 'btn btn-outline-success btn-sm']) !!}</td>
+
           {!! Form::close() !!}
       </tr>
       @endforeach

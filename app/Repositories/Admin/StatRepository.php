@@ -15,12 +15,7 @@ class StatRepository
         $stat = SELF::statEleveurs();
         return $stat;
     }
-//     public function statTotal()
-//     {
-//         $nbClients = Fev_clients::count();
-//         $stats['nbClients'] = $nbClients;
-//         return $stats;
-//     }
+
     private static function statEleveurs()
     {
 

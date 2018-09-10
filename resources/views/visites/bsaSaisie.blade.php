@@ -74,7 +74,7 @@
           VSO
         </div>
         <div  id="vso_{{$troupeau->id}}" class="vso-date">
-          <?php if($troupeau->anneevso->count() > 0 && $troupeau->anneevso->sortByDesc('debut')->first()->campagne == $campagne){?>
+          <?php if($troupeau->vsoafaire->count() > 0 && $troupeau->vsoafaire->sortByDesc('annee')->first()->annee == $annee->year){?>
             {!! Form::date('date_vso','', ['class' => 'input_date']) !!}
           <?php }else{ ?>
             -

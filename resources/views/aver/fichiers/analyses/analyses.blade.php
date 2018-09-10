@@ -15,7 +15,7 @@
 
   @foreach($listeAnalyses as $analyse)
     <div class="card" style="width : 15rem">
-      <img class="card-img-top" src="{{URL::asset('medias')}}/icones/{{$analyse->codeanalyse->icone}}"/>
+      <img class="card-img-top" src="{{URL::asset('medias')}}/icones/analyses/{{$analyse->codeanalyse->icone}}"/>
       <div class="card-body d-flex flex-column justify-content-between">
         <h5 class = "card-title">{{ucfirst($analyse->codeanalyse->intitule)}}</h5>
         <p class = "card-text">
