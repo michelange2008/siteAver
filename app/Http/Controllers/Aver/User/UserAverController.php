@@ -7,8 +7,13 @@ use App\Http\Controllers\Controller;
 use App\Repositories\User\UserRep;
 use App\Repositories\User\UserSousMenuRep;
 
+use App\Models\Troupeau;
+use App\Traits\PeriodeProphylo;
+
 class UserAverController extends Controller
 {
+    use PeriodeProphylo;
+    
     protected $userRep;
     protected $userSousMenuRep;
     
@@ -21,8 +26,12 @@ class UserAverController extends Controller
     public function index()
     {
         $sousmenu = $this->userSousMenuRep->userSousmenu();
+        $troupeauxUser = Troupeau::where('user_id', Auth()->user()->id)->get();
         
         return view('aver.user.user', [
+            'troupeauxUser' => $troupeauxUser,
+            'campagne' => $this->campagne(),
+            'annee' => $this->dateActuelle(),
             'sousmenu' => $sousmenu,
         ]);
     }

@@ -2,9 +2,6 @@
 <div id="app">
   <nav class="navbar navbar-nav navbar-expand-lg navbar-light bg-light navbar-static-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{{ url('/') }}">
-        {{ config('app.name', 'Antikor') }}
-      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuAver" aria-controls="menuAver" aria-expanded="false" aria-label="Toggle-navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,6 +32,9 @@
                 @endif
       </ul>
     </div>
+    <a class="navbar-brand" href="{{ url('/') }}">
+      {{ config('app.name', 'Antikor') }}
+    </a>
     </div>
   </nav>
 </div>
