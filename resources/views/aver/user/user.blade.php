@@ -49,7 +49,16 @@
             </div>
             @endif()
             <div id="bsa">
-              
+                <p>Date du dernier bilan sanitaire</p>
+                {{Carbon\Carbon::createFromFormat('Y-m-d', $troupeau->bsas->sortByDesc('date_bsa')->first()->date_bsa)->formatLocalized('%A %d %B %Y')}}
+            </div>
+            <div id="ps">
+                <p>liste des protocoles de soin</p>
+                @foreach($troupeau->bsas as $bsa)
+                    @foreach($bsa->pss as $ps)
+                        {{$ps->nom}}
+                    @endforeach()
+                @endforeach()
             </div>
             </div>
           </div>

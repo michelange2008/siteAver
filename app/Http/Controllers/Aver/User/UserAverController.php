@@ -8,6 +8,7 @@ use App\Repositories\User\UserRep;
 use App\Repositories\User\UserSousMenuRep;
 
 use App\Models\Troupeau;
+use App\Models\Ps;
 use App\Traits\PeriodeProphylo;
 
 class UserAverController extends Controller
