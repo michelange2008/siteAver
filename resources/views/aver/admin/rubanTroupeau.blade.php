@@ -5,7 +5,7 @@
       <!-- $change définit si on est en mode affichage ou modification -->
       <a href="{{URL::previous()}}" title="revenir à la liste des éleveurs">
       @else()
-      <a href="{{route('troupeau.accueil', $troupeau->id)}}" title="revenir à la liste des éleveurs">
+      <a href="{{URL::previous()}}" title="revenir à la liste des éleveurs">
       @endif()
         <img src="{{URL::asset('medias')}}/icones/retour.svg" alt="retour"  />
       </a>

@@ -13,7 +13,7 @@ class CardOrdonnances extends Card
         $this->setIcone('ordonnances.svg');
         $this->setTitre("ordonnances");
         $this->setBouton('troupeau.ordonnances');
-
+        $this->setAffichage(false);
     }
 }
 

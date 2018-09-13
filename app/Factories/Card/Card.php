@@ -4,6 +4,7 @@ namespace app\Factories\Card;
 use App\Models\Troupeau;
 use App\Factories\Sousmenu\SousmenuItem;
 use App\Factories\Sousmenu\SousmenuCouleurs;
+use phpDocumentor\Reflection\Types\Boolean;
 
 abstract class Card
 {
@@ -14,10 +15,13 @@ abstract class Card
     protected $texte;
     protected $bouton;
     protected $option;
+    protected $affichage;
     
     public function __construct($id_troupeau)
     {
         $this->troupeau = Troupeau::find($id_troupeau);
+        $this->setAffichage(true);
+        $this->setOption(0);
     }
 
     /**
@@ -68,6 +72,11 @@ abstract class Card
         return $this->option;
     }
     
+    public function affichage()
+    {
+        return $this->affichage;
+    }
+    
     /**
      * @param mixed $titre
      */
@@ -116,7 +125,10 @@ abstract class Card
         $this->option = $option;
     }
 
-    
+    public function setAffichage(bool $affichage)
+    {
+        $this->affichage = $affichage;
+    }
     
     
 }

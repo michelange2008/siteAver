@@ -1,3 +1,4 @@
+@if(Auth()->user()->admin === 1)
 @section('menu')
 <nav class="navbar navbar-nav navbar-dark bg-dark navbar-expand-lg sticky-top" role="navigation">
 
@@ -54,4 +55,6 @@
     </ul>
   </div>
 </nav>
+<br />
 @endsection
+@endif()

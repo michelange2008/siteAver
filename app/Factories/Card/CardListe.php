@@ -13,7 +13,7 @@ class CardListe extends Collection
         $this->cardListe[$card->id()] = $card;
     }
     
-    public function CardListe()
+    public function cardListe()
     {
         return $this->cardListe;    
     }

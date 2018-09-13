@@ -28,7 +28,7 @@
         <p class="card-text italique">
             {{$card->option()}} {{$card->titre()}}
         </p>
-        @if($card->option() == 0)
+        @if(!$card->affichage())
           <div class = 'btn btnsecondary'> </div>
         @else()
           {{ link_to_route($card->bouton()->route(), ucfirst($card->bouton()->texte()), ["user_id" => $troupeau->user_id, "troupeau_id" => $troupeau->id], ['class' => $card->bouton()->couleur().' btn'])}}

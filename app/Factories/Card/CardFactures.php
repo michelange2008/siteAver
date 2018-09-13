@@ -14,6 +14,7 @@ class CardFactures extends Card
         $this->setIcone('factures.svg');
         $this->setTexte("Toutes les factures des cinq dernières années");
         $this->setBouton('troupeau.factures');
+        $this->setAffichage(false);
     }
 }
 

@@ -5,9 +5,8 @@
 @extends('aver.admin.menuAdmin')
 
 @section('content')
-<br />
 <div class="container-fluid bg-success d-flex flex-row sous-ruban">
-    <a href="{{route('troupeau.accueil', $troupeau->id)}}" title="revenir à la liste des éleveurs">
+    <a href="{{URL::previous()}}" title="revenir à la liste des éleveurs">
       <img class="image-h" src="{{URL::asset('medias')}}/icones/retour.svg" alt="retour" />
     </a>
     <h1>Bilans sanitaires annuels</h1>
@@ -19,8 +18,11 @@
       <img class="card-img-top" src="{{URL::asset('medias')}}/icones/bsa.svg"/>
         <div class="card-body bg-light">
             <div class="card-title">
-              <?php $date = new DateTime($bsa->date_bsa) ?>
-                <h1>{{$date->format('Y')}}<span class="plus-petit"> ({{$date->format('j M')}})</span></h1>
+              <?php $date = Carbon\Carbon::createFromFormat('Y-m-d', $bsa->date_bsa) ?>
+                <h1>{{$date->year}}<span class="plus-petit"> ({{$date->formatLocalized('%d %b')}})</span></h1>
+                @if(count($bsa->pss) > 0)
+                  <h5>Protocoles de soins</h5>
+                @endif()
             </div>
             @foreach($bsa->pss as $ps)
             <div class="bordure">

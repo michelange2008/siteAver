@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
+@extends('aver.menuprincipal')
+
 @extends('aver.admin.menuAdmin')
 
+
 @section('content')
-<br />
 <div class="container-fluid bg-success d-flex flex-row sous-ruban">
-    <a href="{{route('troupeau.accueil', $troupeau->id)}}" title="revenir à la liste des éleveurs">
+    <a href="{{URL::previous()}}" title="revenir à la liste des éleveurs">
       <img class="image-h" src="{{URL::asset('medias')}}/icones/retour.svg" alt="retour" />
     </a>
     <h1>Analyses</h1>

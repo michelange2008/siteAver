@@ -21,6 +21,9 @@
 a:hover img {
   filter: brightness(80%);
 }
+.centrer {
+  margin: auto;
+}
 .icone-OA {
   background: url('../medias/icones/OA.svg') no-repeat;
   background-size: contain;
@@ -65,4 +68,8 @@ a:hover img {
   background: url('../medias/icones/pasImportant.svg') no-repeat;
   background-size: contain;
   background-position: center;
+}
+
+.panneau {
+
 }

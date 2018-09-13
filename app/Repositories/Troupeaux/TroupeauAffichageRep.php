@@ -39,6 +39,21 @@ class TroupeauAffichageRep
         return $this->listeBlasons;
     }
     
+    /* Liste pour affiche pour chaque éleveur
+     * 
+     */
+    public function listeBlasonsEleveur($id_troupeau)
+    {
+        $this->listeBlasons = new BlasonsListe();
+        
+        $this->listeBlasons->addBlason(new Vetsan($id_troupeau));
+        $this->listeBlasons->addBlason(new Prophylo($id_troupeau));
+        $this->listeBlasons->addBlason(new VsoBlason($id_troupeau));
+        
+        return $this->listeBlasons;
+    }
+    
+    
     public function listeCards($id_troupeau)
     {
         $nbAnalyses = $this->nbAnalysesSelonId($id_troupeau);
@@ -50,6 +65,22 @@ class TroupeauAffichageRep
         $listeCards->addCard(new CardOrdonnances($id_troupeau));
         $listeCards->addCard(new CardBsa($id_troupeau));
         $listeCards->addCard(new CardFactures($id_troupeau));
+        return $listeCards;
+    }
+    /*Affichage des "cards" pour chaque troupeau d'un éleveur en mode non admin
+     * 
+     */
+    public function listeCardsELeveur($id_troupeau)
+    {
+        $nbAnalyses = $this->nbAnalysesSelonId($id_troupeau);
+        
+        $cardAnalyses = new CardAnalyses($id_troupeau);
+        $cardAnalyses->setOption($nbAnalyses);
+        $listeCards = new CardListe();
+        $listeCards->addCard($cardAnalyses);
+        $cardBsa = new CardBsa($id_troupeau);
+        $cardBsa->setTitre("Protocoles de soins");
+        $listeCards->addCard($cardBsa);
         return $listeCards;
     }
 
