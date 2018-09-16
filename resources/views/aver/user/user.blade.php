@@ -13,9 +13,9 @@
 <div class="container-fluid d-flex flex-column">
   @foreach($troupeauxUser as $troupeau)
     <div class="container-fluid">
-      <div class="card" style="width:50%">
-          <div class="row  card-cadre-simple row-michel">
-            <div class="col-3">
+      <div class="card {{$troupeau->especes->abbreviation}}_bg" style="width:70%">
+          <div class="row  card-cadre-simple zero-marge">
+            <div class="">
               <img src="{{URL::asset('medias')}}/icones/ruban/{{$troupeau->especes->abbreviation}}.svg" alt="tete animal" />
             </div>
             <div class="col-7 d-flex flex-column justify-content-center ml-3">
@@ -28,59 +28,37 @@
                 title="cliquer sur la flèche pour afficher le troupeau {{strtolower($troupeau->especes->nom)}}" />
             </div>
           </div>
-          <div id="row_{{$troupeau->id}} " class="row row-michel espace-lg">
-            <div class="panneau col-12 d-flex flex-row">
-              <div class="sous-panneau col-6)">
+              <div class="panneau col-12 d-flex flex-row">
+              <div class="sous-panneau col-6 zero-marge">
                 @foreach($listeBlasons->get($troupeau->id)->blasonsListe() as $blason)
                   <div class="d-flex flex-row  justify-content-between">
-                    @if($troupeau->user->vetsan)
-                    <div id="{{$blason->getIdentite()}}">
-                      @if($blason->getCondition())
-                        <img src="{{URL::asset('medias')}}/icones/ruban/{{$blason->getIcone_vrai()}}" title = "{{$blason->getTitre_vrai()}}" alt = "{{$blason->getAlt_vrai()}}" />
-                      @else()
-                        <img src="{{URL::asset('medias')}}/icones/ruban/{{$blason->getIcone_faux()}}" title = "{{$blason->getTitre_faux()}}" alt = "{{$blason->getAlt_faux()}}" />
-                      @endif()
-                    </div>
+                    @if($blason->affichage())
+                    <div id="{{$blason->identite()}}" class="d-flex flex-row espace-sm card-cadre-simple flex-fill">
+                        <img src="{{URL::asset('medias').$blason->icone()}}" title = "{{$blason->titre()}}" alt = "{{$blason->alt()}}" />
+                        <div class="col-8">
+                           <h5>{{$blason->titre()}}</h5>
+                           <p>{{$blason->texteUser()}}</p>
+                        </div>
+                     </div>
                     @endif()
-                  <!-- @if($troupeau->user->vetsan)
-                  <div id="prophylaxies" class="d-flex flex-row  justify-content-between">
-                    <p>Prophylaxies en {{$campagne}}</p>
-                    @if(count($troupeau->anneeprophylos) > 0 && $troupeau->anneeprophylos->first()->campagne === $campagne)
-                      OUI
-                    @else
-                      NON
-                    @endif()
-                </div>
-                <div id="vso" class="d-flex flex-row justify-content-between">
-                  <p>VSO en {{$annee->year}}</p>
-                  @if(count($troupeau->vsoafaire) > 0 && $troupeau->vsoafaire->sortBy('annee')->first()->annee === $annee->year)
-                    OUI
-                  @else
-                    NON
-                  @endif()
-                </div>
-                @endif()
-                <div id="bsa" class="d-flex flex-row  justify-content-between">
-                  <p>Dernier bilan sanitaire</p>
-                  {{Carbon\Carbon::createFromFormat('Y-m-d', $troupeau->bsas->sortByDesc('date_bsa')->first()->date_bsa)->formatLocalized('%e %B %Y')}}
-                </div> -->
               </div>
               @endforeach()
             </div>
-              <div class="sous-panneau col-6">
+              <div class="sous-panneau col-6 zero-marge">
                 @foreach($listeCards->get($troupeau->id)->cardListe() as $card)
-                <div>
+                <div class="d-flex flex-row  justify-content-between">
                   @if($card->affichage())
+                    <div id="{{$blason->identite()}}" class="d-flex flex-row espace-sm card-cadre-simple flex-fill">
+                        <img src="{{URL::asset('medias').$card->icone()}}" alt="{{$card->id()}}" />
                   {{$card->titre()}}
                   {{ link_to_route($card->bouton()->route(), ucfirst($card->bouton()->texte()), ["user_id" => $troupeau->user_id, "troupeau_id" => $troupeau->id], ['class' => $card->bouton()->couleur().' btn'])}}
-
+                    </div>
                   @endif()
                 </div>
                 @endforeach()
             </div>
             </div>
 
-        </div>
       </div>
       <br />
     </div>

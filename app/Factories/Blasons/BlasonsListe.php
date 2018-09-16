@@ -9,7 +9,7 @@ class BlasonsListe extends Collection
     
     public function addBlason(Blasons $blason)
     {
-        $this->blasons_liste[$blason->getIdentite()] = $blason;
+        $this->blasons_liste[$blason->identite()] = $blason;
     }
     
     public function blasonsListe()

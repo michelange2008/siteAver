@@ -49,6 +49,7 @@ class TroupeauAffichageRep
         $this->listeBlasons->addBlason(new Vetsan($id_troupeau));
         $this->listeBlasons->addBlason(new Prophylo($id_troupeau));
         $this->listeBlasons->addBlason(new VsoBlason($id_troupeau));
+        $this->listeBlasons->addBlason(new Bsaimportant($id_troupeau));
         
         return $this->listeBlasons;
     }

@@ -3,96 +3,58 @@ namespace App\Factories\Blasons;
 
 class Blasons
 {
-    protected $identite;
-    protected $condition;
-    protected $icone_vrai;
-    protected $icone_faux;
-    protected $alt_vrai;
-    protected $alt_faux;
-    protected $titre_vrai;
-    protected $titre_faux;
+    protected $identite; // nom résumé du blason
+    protected $condition; // variable sans usage pour l'instant
+    protected $icone; // icone qui est différente selon condition
+    protected $alt; // texte alternatif à l'icone différent selon condition
+    protected $titre; // titre du bouton
+    protected $texteAdmin; // texte dans le contexte administrateur variable selon condition
+    protected $texteUser; // texte dans le le contexte user variable selon condition
+    protected $affichage; // booléen qui définit si on doit afficher ou non le blason
     
-    public function __construct($identite, $condition = false, $icone_vrai, $icone_faux, $alt_vrai, $alt_faux, $titre_vrai, $titre_faux)
-    {
-        $this->identite = $identite;
-        $this->condition = $condition;
-        $this->icone_vrai = $icone_vrai;
-        $this->icone_faux = $icone_faux;
-        $this->alt_vrai = $alt_vrai;
-        $this->alt_faux = $alt_faux;
-        $this->titre_vrai = $titre_vrai;
-        $this->titre_faux = $titre_faux;
-    }
-    
+
     public function setCondition($condition)
     {
         $this->condition = $condition;
     }
-    /**
-     * @return mixed
-     */
-    public function getIdentite()
+    
+    public function identite()
     {
         return $this->identite;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getCondition()
+    
+    public function condition()
     {
         return $this->condition;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getIcone_vrai()
-    {
-        return $this->icone_vrai;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIcone_faux()
-    {
-        return $this->icone_faux;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAlt_vrai()
-    {
-        return $this->alt_vrai;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAlt_faux()
-    {
-        return $this->alt_faux;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTitre_vrai()
-    {
-        return $this->titre_vrai;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTitre_faux()
-    {
-        return $this->titre_faux;
-    }
-
     
+    public function icone()
+    {
+        return $this->icone;
+    }
     
+    public function alt()
+    {
+        return $this->alt;
+    }
     
+    public function titre()
+    {
+        return $this->titre;
+    }
+
+    public function texteAdmin()
+    {
+        return $this->texteAdmin;
+    }
+    
+    public function texteUser()
+    {
+        return $this->texteUser;
+    }
+    
+    public function affichage()
+    {
+        return $this->affichage;
+    }
 }

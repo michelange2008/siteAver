@@ -28,13 +28,11 @@
     </div>
     <div id="barre-synthese" class="d-flex flex-row justify-content-between">
       @foreach($listeBlasons->blasonsListe() as $blason)
-        <div id="{{$blason->getIdentite()}}" class="barre-item">
-          @if($blason->getCondition())
-            <img src="{{URL::asset('medias')}}/icones/ruban/{{$blason->getIcone_vrai()}}" title = "{{$blason->getTitre_vrai()}}" alt = "{{$blason->getAlt_vrai()}}" />
-          @else()
-            <img src="{{URL::asset('medias')}}/icones/ruban/{{$blason->getIcone_faux()}}" title = "{{$blason->getTitre_faux()}}" alt = "{{$blason->getAlt_faux()}}" />
-          @endif()
+      @if($blason->affichage())
+        <div id="{{$blason->identite()}}" class="barre-item">
+            <img src="{{URL::asset('medias').$blason->icone()}}" title = "{{$blason->titre()}}" alt = "{{$blason->alt()}}" />
         </div>
+      @endif()
       @endforeach()
       @if($admin)
       <a href="{{route('troupeau.paramAdmin', ['id' => $troupeau->id] )}}">

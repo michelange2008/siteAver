@@ -70,6 +70,10 @@ a:hover img {
   background-position: center;
 }
 
+.zero-marge{
+  margin: 0;
+}
 .panneau {
-
+    padding: 15px 0 15px 0;
+    
 }
