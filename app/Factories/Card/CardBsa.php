@@ -13,8 +13,8 @@ class CardBsa extends Card
         $this->setOption($this->nbBsa($id_troupeau));
         $this->id = ConstCards::BSA_ID;
         $this->titre = ConstCards::BSA_TITRE;
-        $this->icone = ConstCards::PATH_ICONES.ConstCards::BSA_ICONE;
-        $this->texte = ConstCards::BSA_TEXTE;
+        $this->icone = ConstCards::BSA_ICONE;
+        $this->texte = ConstCards::BSA_TEXTE_OUI;
         $this->setBouton(ConstCards::BSA_BOUTON);
     }
     

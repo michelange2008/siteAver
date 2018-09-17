@@ -50,8 +50,14 @@
                   @if($card->affichage())
                     <div id="{{$blason->identite()}}" class="d-flex flex-row espace-sm card-cadre-simple flex-fill">
                         <img src="{{URL::asset('medias').$card->icone()}}" alt="{{$card->id()}}" />
-                  {{$card->titre()}}
-                  {{ link_to_route($card->bouton()->route(), ucfirst($card->bouton()->texte()), ["user_id" => $troupeau->user_id, "troupeau_id" => $troupeau->id], ['class' => $card->bouton()->couleur().' btn'])}}
+                        <div class="col-8">
+                          <h5>{{$card->titre()}} ({{ $card->option() }})</h5>
+                          <p>{{$card->texte()}}</p>
+                        </div>
+                        @if($card->option() > 0)
+                        {{ link_to_route($card->bouton()->route(), ucfirst($card->bouton()->texte()),
+                            ["user_id" => $troupeau->user_id, "troupeau_id" => $troupeau->id], ['class' => $card->bouton()->couleur().' btn align-self-center'])}}
+                        @endif()
                     </div>
                   @endif()
                 </div>

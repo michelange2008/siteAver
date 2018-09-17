@@ -50,19 +50,14 @@ class TroupeauAffichageRep
         $this->listeBlasons->addBlason(new Prophylo($id_troupeau));
         $this->listeBlasons->addBlason(new VsoBlason($id_troupeau));
         $this->listeBlasons->addBlason(new Bsaimportant($id_troupeau));
-        
         return $this->listeBlasons;
     }
     
     
     public function listeCards($id_troupeau)
     {
-        $nbAnalyses = $this->nbAnalysesSelonId($id_troupeau);
-        
-        $cardAnalyses = new CardAnalyses($id_troupeau);
-        $cardAnalyses->setOption($nbAnalyses);
         $listeCards = new CardListe();
-        $listeCards->addCard($cardAnalyses);
+        $listeCards->addCard(new CardAnalyses($id_troupeau));
         $listeCards->addCard(new CardOrdonnances($id_troupeau));
         $listeCards->addCard(new CardBsa($id_troupeau));
         $listeCards->addCard(new CardFactures($id_troupeau));
@@ -73,10 +68,7 @@ class TroupeauAffichageRep
      */
     public function listeCardsELeveur($id_troupeau)
     {
-        $nbAnalyses = $this->nbAnalysesSelonId($id_troupeau);
-        
         $cardAnalyses = new CardAnalyses($id_troupeau);
-        $cardAnalyses->setOption($nbAnalyses);
         $listeCards = new CardListe();
         $listeCards->addCard($cardAnalyses);
         $cardBsa = new CardBsa($id_troupeau);
