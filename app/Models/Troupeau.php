@@ -51,7 +51,12 @@ class Troupeau extends Model
         return $this->belongsToMany(Troupeauancien::class);
     }
     
-    public function vsos()
+    public function pss()
+    {
+        return $this->hasManyThrough(Ps::class, Bsa::class);
+    }
+
+        public function vsos()
     {
         return $this->hasMany(Vso::class);
     }

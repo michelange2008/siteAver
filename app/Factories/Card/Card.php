@@ -4,7 +4,6 @@ namespace app\Factories\Card;
 use App\Models\Troupeau;
 use App\Factories\Sousmenu\SousmenuItem;
 use App\Factories\Sousmenu\SousmenuCouleurs;
-use phpDocumentor\Reflection\Types\Boolean;
 
 abstract class Card
 {

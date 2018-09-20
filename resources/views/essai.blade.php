@@ -1,11 +1,14 @@
 @extends('layouts.app')
 
-@extends('aver.admin.menuAdmin')
+@extends('aver.menuprincipal')
 
 @section('content')
 <br />
 
-@foreach($liste as $item)
-<p class=" {{$item->especes->abbreviation}}">{{$item->user->name}}</p>
-@endforeach()
+{{$activite->affichage()}}
+
+<br />
+
+{!!dd($activite)!!}
+
 @endsection()
