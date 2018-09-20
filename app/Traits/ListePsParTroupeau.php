@@ -12,11 +12,19 @@ trait ListePsParTroupeau
 {
     public function listePsParTroupeau($id_troupeau)
     {
-        if(Bsa::where('troupeau_id', $id_troupeau)->count() > 0)
+        $listePs = collect();
+        $reqBsa = Bsa::where('troupeau_id', $id_troupeau);
+        if($reqBsa->count() > 0)
         {
-            $troupeau = Troupeau::find($id_troupeau);
-            return $troupeau->pss();
+            foreach($reqBsa->get() as $bsa)
+            {
+              foreach($bsa->pss as $ps)
+              {
+                $listePs->push($ps);
+              }
+            }
+
         }
+        return $listePs;
     }
-        
 }

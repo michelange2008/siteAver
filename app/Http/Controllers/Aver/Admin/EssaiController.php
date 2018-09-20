@@ -15,15 +15,12 @@ class EssaiController extends Controller
 
     public function index()
     {
-//        $activite = new \App\Factories\Sceaux\SceauBsaPs(131);
+        $activite = new \App\Factories\Sceaux\SceauAnalyses(131);
         $pss = $this->listePsParTroupeau(131);
         $troupeau = Troupeau::find(131);
-        $troupeau->pss->each(function($ps)
-        {
-            dump($ps);
-        });
+
       return view('essai', [
- //        'activite' => $activite,
+        'activite' => $activite,
       ]);
     }
 

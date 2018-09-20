@@ -18,7 +18,7 @@ namespace App\Constantes;
 class ConstSceaux
 {
     const PATH_ICONES = "/icones/ruban/";
-    
+
     const VETSAN_IDENTITE = "vetsan";
     const VETSAN_TITRE = "mandat sanitaire";
     const VETSAN_ICONE_VRAI = SELF::PATH_ICONES."vetsan_carre.svg";
@@ -27,7 +27,7 @@ class ConstSceaux
     const VETSAN_TEXT_ADMIN_FAUX = "Antikor n'est pas vétérinaire sanitaire de ";
     const VETSAN_TEXT_USER_VRAI = "Antikor est votre vétérinaire sanitaire";
     const VETSAN_TEXT_USER_FAUX = "Antikor n'est pas votre vétérinaire sanitaire";
-            
+
     const PROPHYLO_IDENTITE = "prophylo";
     const PROPHYLO_TITRE = "prophylaxies";
     const PROPHYLO_ICONE_VRAI = SELF::PATH_ICONES."prophylo_carre.svg";
@@ -69,8 +69,22 @@ class ConstSceaux
     const BSAPS_TITRE = "Protocoles de soin";
     const BSAPS_SOUSTITRE = "Nombre de protocoles de soins: ";
     const BSAPS_ICONE = SELF::PATH_ICONE_PS.'ps_carre.svg';
-    const BSAPS_TEXTE_OUI = "Toutes les dates des bilans sanitaires et les protocoles de soin";
-    const BSAPS_TEXTE_NON = "Il n'y a pas encore de protocole de soin téléchargeable";
+    const BSAPS_TEXTE_ADMIN_VRAI = "Toutes les dates des BSA et liste de protocoles de soin";
+    const BSAPS_TEXTE_USER_VRAI = "Toutes les dates des bilans sanitaires et les protocoles de soin";
+    const BSAPS_TEXTE_ADMIN_FAUX = "Il n'y a pas encore de protocole de soin téléchargeable";
+    const BSAPS_TEXTE_USER_FAUX = "Il n'y a pas encore de protocole de soin téléchargeable";
     const BSAPS_BOUTON = 'troupeau.bsa';
+    
+    const PATH_ICONE_ANA = "/icones/analyses/";
+    
+    const ANA_IDENTITE = 'ANA';
+    const ANA_TITRE = "résultats d'analyse";
+    const ANA_SOUSTITRE = "Nombre d'analyses: ";
+    const ANA_ICONE = SELF::PATH_ICONE_ANA.'analyses_carre.svg';
+    const ANA_TEXTE_ADMIN_VRAI = "Présente les analyses de laboratoire (toutes espèces).";
+    const ANA_TEXTE_ADMIN_FAUX = "Il n'y a pas encore de résultats d'analyses téléchargeables";
+    const ANA_TEXTE_USER_VRAI = "Présente les analyses de laboratoire (toutes espèces).";
+    const ANA_TEXTE_USER_FAUX = "Il n'y a pas encore de résultats d'analyses téléchargeables";
+    const ANA_BOUTON = 'troupeau.analyses';
 
 }
