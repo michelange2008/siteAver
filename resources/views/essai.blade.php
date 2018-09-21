@@ -5,7 +5,7 @@
 @section('content')
 <br />
 
-{{$activite->affichage()}}
+
 
 <br />
 

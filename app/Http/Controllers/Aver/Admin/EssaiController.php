@@ -15,7 +15,7 @@ class EssaiController extends Controller
 
     public function index()
     {
-        $activite = new \App\Factories\Sceaux\SceauAnalyses(131);
+        $activite = new \App\Factories\Sceaux\SceauxListe(131);
         $pss = $this->listePsParTroupeau(131);
         $troupeau = Troupeau::find(131);
 

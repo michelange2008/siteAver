@@ -18,14 +18,14 @@ class SceauAnalyses extends Sceau
         
         $this->identite = ConstSceaux::ANA_IDENTITE;
         $this->titre = ConstSceaux::ANA_TITRE;
-        $this->soustitre = ConstSceaux::ANA_SOUSTITRE.$this->analysesSelonId($id_troupeau);
+        $this->soustitre = ConstSceaux::ANA_SOUSTITRE.$this->nbAnalysesSelonId($id_troupeau);
         $this->icone = ConstSceaux::ANA_ICONE;
         
         $this->setBouton(ConstSceaux::ANA_BOUTON);
         
-        $this->parametre = $this->analysesSelonId($id_troupeau);
+        $this->parametre = $this->nbAnalysesSelonId($id_troupeau);
         
-        if($this->analysesSelonId($id_troupeau) > 0)
+        if($this->parametre > 0)
         {
             $this->texteAdmin = ConstSceaux::ANA_TEXTE_ADMIN_VRAI;
             $this->texteUser = ConstSceaux::ANA_TEXTE_USER_VRAI;

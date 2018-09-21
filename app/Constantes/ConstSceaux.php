@@ -44,7 +44,7 @@ class ConstSceaux
     const BSAIMP_TEXT_ADMIN_VRAI = "Bilan sanitaire à faire en ";
     const BSAIMP_TEXT_ADMIN_FAUX = "Bilan sanitaire annuel non obligatoire en ";
     const BSAIMP_TEXT_USER_VRAI = "Le bilan sanitaire est à faire en ";
-    const BSAIMP_TEXT_USER_FAUX = "Il n'y a pas de bilan sanitaire à faire";
+    const BSAIMP_TEXT_USER_FAUX = "Il n'y a pas de bilan sanitaire à faire en ";
 
     const ACTIVITE_IDENTITE = "activite";
     const ACTIVITE_TITRE = "type d'activité";
