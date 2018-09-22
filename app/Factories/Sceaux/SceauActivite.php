@@ -28,6 +28,7 @@ class SceauActivite extends Sceau
         $this->texteAdmin = ConstSceaux::ACTIVITE_TEXT_ADMIN;
         $this->texteUser = ConstSceaux::ACTIVITE_TEXT_USER;
         $this->setTexte();
+        $this->type = ConstSceaux::TYPE_INFO;
         
         if(!$this->troupeau->user->vetsan)
         {

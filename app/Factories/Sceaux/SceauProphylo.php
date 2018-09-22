@@ -1,5 +1,5 @@
 <?php
-namespace app\Factories\Sceaux;
+namespace App\Factories\Sceaux;
 
 use App\Factories\Sceaux\Sceau;
 use App\Constantes\ConstSceaux;
@@ -15,6 +15,7 @@ class SceauProphylo extends Sceau
         
         $this->identite = ConstSceaux::PROPHYLO_IDENTITE;
         $this->titre = ConstSceaux::PROPHYLO_TITRE;
+        $this->type = ConstSceaux::TYPE_INFO;
         
         $prophylo = $this->troupeau->anneeprophylos->sortByDesc('debut');
         

@@ -17,6 +17,9 @@ namespace App\Constantes;
 
 class ConstSceaux
 {
+    const TYPE_INFO = "info";
+    const TYPE_LIEN = "lien";
+    
     const PATH_ICONES = "/icones/ruban/";
 
     const VETSAN_IDENTITE = "vetsan";
@@ -65,26 +68,26 @@ class ConstSceaux
 
     const PATH_ICONE_PS = "/icones/ps/";
 
-    const BSAPS_IDENTITE = 'BSA';
+    const BSAPS_IDENTITE = 'bsaps';
     const BSAPS_TITRE = "Protocoles de soin";
-    const BSAPS_SOUSTITRE = "Nombre de protocoles de soins: ";
+    const BSAPS_SOUSTITRE = "Nombre: ";
     const BSAPS_ICONE = SELF::PATH_ICONE_PS.'ps_carre.svg';
-    const BSAPS_TEXTE_ADMIN_VRAI = "Toutes les dates des BSA et liste de protocoles de soin";
-    const BSAPS_TEXTE_USER_VRAI = "Toutes les dates des bilans sanitaires et les protocoles de soin";
+    const BSAPS_TEXTE_ADMIN_VRAI = "Dates des BSA et protocoles de soin";
+    const BSAPS_TEXTE_USER_VRAI = "Dates des bilans sanitaires et protocoles de soin";
     const BSAPS_TEXTE_ADMIN_FAUX = "Il n'y a pas encore de protocole de soin téléchargeable";
     const BSAPS_TEXTE_USER_FAUX = "Il n'y a pas encore de protocole de soin téléchargeable";
     const BSAPS_BOUTON = 'troupeau.bsa';
     
     const PATH_ICONE_ANA = "/icones/analyses/";
     
-    const ANA_IDENTITE = 'ANA';
+    const ANA_IDENTITE = 'analyses';
     const ANA_TITRE = "résultats d'analyse";
-    const ANA_SOUSTITRE = "Nombre d'analyses: ";
+    const ANA_SOUSTITRE = "Nombre: ";
     const ANA_ICONE = SELF::PATH_ICONE_ANA.'analyses_carre.svg';
-    const ANA_TEXTE_ADMIN_VRAI = "Présente les analyses de laboratoire (toutes espèces).";
-    const ANA_TEXTE_ADMIN_FAUX = "Il n'y a pas encore de résultats d'analyses téléchargeables";
-    const ANA_TEXTE_USER_VRAI = "Présente les analyses de laboratoire (toutes espèces).";
-    const ANA_TEXTE_USER_FAUX = "Il n'y a pas encore de résultats d'analyses téléchargeables";
+    const ANA_TEXTE_ADMIN_VRAI = "(toutes espèces)";
+    const ANA_TEXTE_ADMIN_FAUX = "Pas d'analyses téléchargeables";
+    const ANA_TEXTE_USER_VRAI = "(toutes espèces)";
+    const ANA_TEXTE_USER_FAUX = "Pas d'analyses téléchargeables";
     const ANA_BOUTON = 'troupeau.analyses';
 
 }

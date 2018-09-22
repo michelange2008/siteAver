@@ -7,6 +7,7 @@ use App\Models\Essai;
 use Illuminate\Http\Request;
 use App\Models\Troupeau;
 use App\Factories\Sceaux\SceauActivite;
+use App\Constantes\ConstSceaux;
 
 class EssaiController extends Controller
 {
@@ -16,8 +17,10 @@ class EssaiController extends Controller
     public function index()
     {
         $activite = new \App\Factories\Sceaux\SceauxListe(131);
-        $pss = $this->listePsParTroupeau(131);
-        $troupeau = Troupeau::find(131);
+        $activite->construitListeComplete();
+        // $activite->construitListeSpeciale(ConstSceaux::TYPE_INFO);
+        // $activite->retireSceau(ConstSceaux::ACTIVITE_IDENTITE);
+        $activite->cacheSceau(ConstSceaux::PROPHYLO_IDENTITE);
 
       return view('essai', [
         'activite' => $activite,

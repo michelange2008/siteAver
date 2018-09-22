@@ -12,6 +12,8 @@ use App\Models\Troupeau;
 use App\Models\Ps;
 use App\Traits\PeriodeProphylo;
 use Illuminate\Support\Facades\Auth;
+use App\Factories\Sceaux\SceauxListe;
+use App\Constantes\ConstSceaux;
 
 class UserAverController extends Controller
 {
@@ -42,7 +44,14 @@ class UserAverController extends Controller
         {
             $listeBlasons->put($troupeauUser->id, $this->troupeauAffichageRep->listeBlasonsEleveur($troupeauUser->id));
         }
-        
+        $groupeSceaux = collect();
+        foreach ($troupeauxUser as $troupeauUser)
+        {
+            $listeSceaux = new SceauxListe($troupeauUser->id);
+            $listeSceaux->cacheSceau(ConstSceaux::ACTIVITE_IDENTITE);
+            $listeSceaux->construitListeComplete();
+            $groupeSceaux->put($troupeauUser->id, $listeSceaux);
+        }
 //         dd($listeCards->get('721')->cardListe()); 
         return view('aver.user.user', [
             'troupeauxUser' => $troupeauxUser,
@@ -50,6 +59,7 @@ class UserAverController extends Controller
             'annee' => $this->dateActuelle(),
             'listeCards' => $listeCards,
             'listeBlasons' => $listeBlasons,
+            'groupeSceaux' => $groupeSceaux,
             'sousmenu' => $sousmenu,
         ]);
     }

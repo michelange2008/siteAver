@@ -15,7 +15,8 @@ class SceauBsaimportant extends Sceau
         
         $this->identite = ConstSceaux::BSAIMP_IDENTITE;
         $this->titre = ConstSceaux::BSAIMP_TITRE;
-
+        $this->type = ConstSceaux::TYPE_INFO;
+        
         if($this->troupeau->bsaimportant)
         {
                 $this->icone = ConstSceaux::BSAIMP_ICONE_VRAI;

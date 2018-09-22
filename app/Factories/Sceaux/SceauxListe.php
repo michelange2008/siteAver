@@ -2,43 +2,74 @@
 namespace App\Factories\Sceaux;
 
 use Illuminate\Support\Collection;
-use App\Factories\Sceaux\SceauActivite;
-use App\Factories\Sceaux\SceauVetsan;
-use App\Factories\Sceaux\SceauBsaimportant;
-use App\Factories\Sceaux\SceauProphylo;
-use App\Factories\Sceaux\SceauBsaPs;
-use App\Factories\Sceaux\SceauAnalyses;
 
 class SceauxListe extends Collection
 {
     protected $sceauxListe;
-    
-    protected $sceaux = [];
+    protected $liste;
+    protected $sceauActivite;
+    protected $sceauVetsan;
+    protected $sceauProphylo;
+    protected $sceauBsaimportant;
+    protected $sceauAnalyses;
+    protected $sceauVso;
+    protected $sceauBsaPs;
     
     public function __construct($id_troupeau) {
-        $this->sceaux = [
-            new SceauActivite($id_troupeau),
-            new SceauVetsan($id_troupeau),
-            new SceauProphylo($id_troupeau),
-            new SceauBsaimportant($id_troupeau),
-            new SceauAnalyses($id_troupeau),
-            new SceauVso($id_troupeau),
-            new SceauBsaPs($id_troupeau),
+    
+        $this->sceauxListe = collect();
+        
+        $this->sceauActivite = new SceauActivite($id_troupeau);
+        $this->sceauVetsan = new SceauVetsan($id_troupeau);
+        $this->sceauProphylo = new SceauProphylo($id_troupeau);
+        $this->sceauBsaimportant = new SceauBsaimportant($id_troupeau);
+        $this->sceauAnalyses = new SceauAnalyses($id_troupeau);
+        $this->sceauVso = new SceauVso($id_troupeau);
+        $this->sceauBsaPs = new SceauBsaPs($id_troupeau);
+        
+        $this->liste = [
+            $this->sceauActivite,
+            $this->sceauVetsan,
+            $this->sceauProphylo,
+            $this->sceauBsaimportant,
+            $this->sceauVso,
+            $this->sceauBsaPs,
+            $this->sceauAnalyses,
         ];
-    }
 
-    public function addsceaux()
+    }
+    
+    public function construitListeComplete()
     {
-        foreach($this->sceaux as $sceau)
+        foreach ($this->liste as $sceau)
         {
-            if($sceau->affichage)
+            $this->sceauxListe->put($sceau->identite(), $sceau);
+        }
+    }
+    
+    public function construitListeSpeciale($type)
+    {
+        foreach ($this->liste as $sceau)
+        {
+            if($sceau->type() === $type)
             {
-                $this->sceauxListe[$sceau->id()] = $sceau;
+                $this->sceauxListe->put($sceau->identite(), $sceau);
             }
         }
     }
     
-    public function sceauxListe()
+    public function cacheSceau($nom)
+    {
+        foreach ($this->liste as $sceau)
+        {
+            if($nom === $sceau->identite())
+            {
+                $sceau->setAffichage(false);
+            }
+        }
+    }
+    
+    public function listeSceaux()
     {
         return $this->sceauxListe;    
     }

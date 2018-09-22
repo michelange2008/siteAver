@@ -19,6 +19,7 @@ class SceauVso extends Sceau
         
        $this->identite = ConstSceaux::VSO_IDENTITE;
        $this->titre = ConstSceaux::VSO_TITRE;
+       $this->type = ConstSceaux::TYPE_INFO;
        
         if($this->troupeau->user->vetsan)
         {

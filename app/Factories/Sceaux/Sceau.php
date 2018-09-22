@@ -23,6 +23,7 @@ abstract class Sceau
     protected $texte; // description en détail du sceau
     protected $bouton; // bouton à cliquer objet SousmenuItem
     protected $parametre; // information supplémentaire (nombre d'analyses ou de protocoles de soin par exemple)
+    protected $type; // définit le type de sceau: informatif ou avec lien cliquable ou autre (?)
     protected $affichage; // booléen précisant si ce sceau doit être affiché ou non
 
     public function __construct($id_troupeau)
@@ -47,6 +48,11 @@ abstract class Sceau
         {
             $this->texte = "";
         }
+    }
+    
+    public function setAffichage(bool $affiche)
+    {
+        $this->affichage = $affiche;
     }
 
     public function troupeau()
@@ -87,6 +93,11 @@ abstract class Sceau
     public function parametre()
     {
         return $this->parametre;
+    }
+    
+    public function type() 
+    {
+        return $this->type;
     }
 
     public function affichage()

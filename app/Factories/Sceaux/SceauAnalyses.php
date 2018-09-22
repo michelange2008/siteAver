@@ -1,5 +1,5 @@
 <?php
-namespace app\Factories\Sceaux;
+namespace App\Factories\Sceaux;
 
 use App\Factories\Sceaux\Sceau;
 use App\Constantes\ConstSceaux;
@@ -20,6 +20,7 @@ class SceauAnalyses extends Sceau
         $this->titre = ConstSceaux::ANA_TITRE;
         $this->soustitre = ConstSceaux::ANA_SOUSTITRE.$this->nbAnalysesSelonId($id_troupeau);
         $this->icone = ConstSceaux::ANA_ICONE;
+        $this->type = ConstSceaux::TYPE_LIEN;
         
         $this->setBouton(ConstSceaux::ANA_BOUTON);
         

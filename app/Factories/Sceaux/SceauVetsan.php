@@ -1,5 +1,5 @@
 <?php
-namespace app\Factories\Sceaux;
+namespace App\Factories\Sceaux;
 
 use App\Constantes\ConstSceaux;
 use App\Factories\Sceaux\Sceau;
@@ -12,6 +12,7 @@ class SceauVetsan extends Sceau
         
         $this->identite = ConstSceaux::VETSAN_IDENTITE;
         $this->titre = ConstSceaux::VETSAN_TITRE;
+        $this->type = ConstSceaux::TYPE_INFO;
         $this->affichage = true;
         
         if($this->troupeau->user->vetsan)

@@ -3,7 +3,9 @@
 @extends('aver.menuprincipal')
 
 @extends('aver.admin.menuAdmin')
-
+@push('css')
+      <link href="{{ asset('css/analyses.css') }}" rel="stylesheet">
+@endpush()
 
 @section('content')
 <div class="container-fluid bg-success d-flex flex-row sous-ruban">
@@ -12,13 +14,13 @@
     </a>
     <h1>Analyses</h1>
 </div>
-<br />
-<div class="container-fluid d-flex flex-row justify-content-between">
+
+<div class="container-fluid d-flex analyses">
 
   @foreach($listeAnalyses as $analyse)
-    <div class="card" style="width : 15rem">
-      <img class="card-img-top" src="{{URL::asset('medias')}}/icones/analyses/{{$analyse->codeanalyse->icone}}"/>
-      <div class="card-body d-flex flex-column justify-content-between">
+    <div class="card card-analyses" >
+      <img class="card-img-top card-img-analyses" src="{{URL::asset('medias')}}/icones/analyses/{{$analyse->codeanalyse->icone}}"/>
+      <div class="card-body card-body-analyses d-flex">
         <h5 class = "card-title">{{ucfirst($analyse->codeanalyse->intitule)}}</h5>
         <p class = "card-text">
           @if($analyse->date_analyse->year == 0)
@@ -27,13 +29,13 @@
             {{$analyse->date_analyse->toDateString()}}
           @endif()
         </p>
-        <p class="car-text">
+        <p class="car-text smartphone-no">
           {{$analyse->id_analyse}}
         </p>
         @if($analyse->important)
-          <a href="{{URL::asset('pdf/analyses').'/'.$analyse->lien}}" class = "btn btn-danger">Voir l'analyse</a>
+          <a href="{{URL::asset('pdf/analyses').'/'.$analyse->lien}}" class = "btn btn-danger btn-analyses">Voir<span class="smartphone-no"> l'analyse</span></a>
         @else()
-          <a href="{{URL::asset('pdf/analyses').'/'.$analyse->lien}}" class = "btn btn-success">Voir l'analyse</a>
+          <a href="{{URL::asset('pdf/analyses').'/'.$analyse->lien}}" class = "btn btn-success btn-analyses">Voir<span class="smartphone-no"> l'analyse</span></a>
         @endif()
       </div>
     </div>
