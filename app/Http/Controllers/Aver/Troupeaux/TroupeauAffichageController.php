@@ -13,6 +13,8 @@ use App\Traits\PeriodeProphylo;
 use Illuminate\Support\Facades\Auth;
 use App\Traits\EdeFormat;
 use Carbon\Carbon;
+use App\Constantes\ConstSceaux;
+use App\Factories\Sceaux\SceauxListe;
 
 
 class TroupeauAffichageController extends Controller
@@ -38,13 +40,12 @@ class TroupeauAffichageController extends Controller
         }
         $troupeau = Troupeau::find($id);
         $troupeau->user->ede = $this->formatEde($troupeau->user->ede);
-        $listeBlasons = $this->troupeauAffichageRep->listeBlasons($id);
-        $listeCards = $this->troupeauAffichageRep->listeCards($id);
+        $listeSceaux = new SceauxListe($id);
+        $listeSceaux->construitListeComplete();
         $autreTroupeaux = $this->troupeauAffichageRep->hasPlusTroupeau($id);
         return view('aver/troupeaux/troupeauAffiche')->with([
             'admin' => $admin,
-            'listeBlasons' => $listeBlasons,
-            'listeCards' => $listeCards->cardListe(),
+            'listeSceaux' => $listeSceaux,
             'troupeau' => $troupeau,
             'autreTroupeaux' => $autreTroupeaux,
             'campagne' => $this->campagne(),

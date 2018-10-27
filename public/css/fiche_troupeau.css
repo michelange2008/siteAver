@@ -79,6 +79,11 @@ a:hover img {
 .card-troupeau {
   min-width: 70%;
 }
+
+.card-troupeau-admin {
+  width: 20%; 
+  background:lightgrey;
+}
 .mini-card {
   padding-left: 5px;
   padding-right: 5px;

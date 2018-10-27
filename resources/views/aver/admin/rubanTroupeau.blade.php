@@ -27,10 +27,10 @@
       </div>
     </div>
     <div id="barre-synthese" class="d-flex flex-row justify-content-between">
-      @foreach($listeBlasons->blasonsListe() as $blason)
-      @if($blason->affichage())
-        <div id="{{$blason->identite()}}" class="barre-item">
-            <img src="{{URL::asset('medias').$blason->icone()}}" title = "{{$blason->titre()}}" alt = "{{$blason->alt()}}" />
+      @foreach($listeSceaux->listeSceaux() as $sceau)
+      @if($sceau->affichage() && $sceau->type() === App\Constantes\ConstSceaux::TYPE_INFO)
+        <div id="{{$sceau->identite()}}" class="barre-item">
+            <img src="{{URL::asset('medias').$sceau->icone()}}" title = "{{$sceau->titre()}}" alt = "{{$sceau->identite()}}" />
         </div>
       @endif()
       @endforeach()

@@ -26,58 +26,7 @@ class TroupeauAffichageRep
   use PeriodeProphylo;
   use AnalyseMetadatas;
 
-    public function listeBlasons($id_troupeau)
-    {
-        $this->listeBlasons = new BlasonsListe();
-
-        $this->listeBlasons->addBlason(new Activite($id_troupeau));
-        $this->listeBlasons->addBlason(new Vetsan($id_troupeau));
-        $this->listeBlasons->addBlason(new Prophylo($id_troupeau));
-        $this->listeBlasons->addBlason(new VsoBlason($id_troupeau));
-        $this->listeBlasons->addBlason(new Bsaimportant($id_troupeau));
-
-        return $this->listeBlasons;
-    }
-    
-    /* Liste pour affiche pour chaque éleveur
-     * 
-     */
-    public function listeBlasonsEleveur($id_troupeau)
-    {
-        $this->listeBlasons = new BlasonsListe();
-        
-        $this->listeBlasons->addBlason(new Vetsan($id_troupeau));
-        $this->listeBlasons->addBlason(new Prophylo($id_troupeau));
-        $this->listeBlasons->addBlason(new VsoBlason($id_troupeau));
-        $this->listeBlasons->addBlason(new Bsaimportant($id_troupeau));
-        return $this->listeBlasons;
-    }
-    
-    
-    public function listeCards($id_troupeau)
-    {
-        $listeCards = new CardListe();
-        $listeCards->addCard(new CardAnalyses($id_troupeau));
-        $listeCards->addCard(new CardOrdonnances($id_troupeau));
-        $listeCards->addCard(new CardBsa($id_troupeau));
-        $listeCards->addCard(new CardFactures($id_troupeau));
-        return $listeCards;
-    }
-    /*Affichage des "cards" pour chaque troupeau d'un éleveur en mode non admin
-     * 
-     */
-    public function listeCardsELeveur($id_troupeau)
-    {
-        $cardAnalyses = new CardAnalyses($id_troupeau);
-        $listeCards = new CardListe();
-        $listeCards->addCard($cardAnalyses);
-        $cardBsa = new CardBsa($id_troupeau);
-        $cardBsa->setTitre("Protocoles de soins");
-        $listeCards->addCard($cardBsa);
-        return $listeCards;
-    }
-
-    public function hasPlusTroupeau($id_troupeau)
+     public function hasPlusTroupeau($id_troupeau)
     {
         $troupeau = Troupeau::find($id_troupeau);
         $eleveur = $troupeau->user->id;
