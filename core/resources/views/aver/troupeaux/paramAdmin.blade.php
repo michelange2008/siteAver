@@ -3,8 +3,7 @@
 @extends('aver.admin.menuAdmin')
 
 @extends('aver.admin.rubanTroupeau', [
-  'admin' => $admin,
-  'listeBlasons' => $listeBlasons,
+  'listeSceaux' => $listeSceaux,
   'troupeau' => $troupeau,
   'autreTroupeaux' => $autreTroupeaux,
   'campagne' => $campagne,
@@ -16,7 +15,7 @@
   <br />
 <div class="container-flex d-flex flex-row justify-content-center">
   <div class="card" style = "width : 33%">
-    <img class="card-img-top" src = '{{URL::asset('medias')}}/icones/modifParam.svg'/>
+    <img class="card-img-top" src = '{{URL::asset(config('icones.path'))}}/modifParam.svg' />
     <div class="card-body">
       <div class="card-title">
         <h5>Modification des paramètres de cet éleveur</h5>
@@ -45,7 +44,7 @@
           </div>
           <br />
           <div class="form-check">
-            {{Form::submit('Enregistrer', ['class' => 'btn btn-primary card-link'])}}
+            {{Form::submit('Enregistrer', ['class' => 'btn btn-success card-link'])}}
             <a href="{{route('troupeau.accueil', $troupeau->id)}}" class="btn btn-danger card-link">Annuler</a>
           </div>
         </div>

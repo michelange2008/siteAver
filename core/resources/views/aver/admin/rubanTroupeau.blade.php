@@ -7,14 +7,14 @@
       @else()
       <a href="{{URL::previous()}}" title="revenir à la liste des éleveurs">
       @endif()
-        <img src="{{URL::asset('medias')}}/icones/retour.svg" alt="retour"  />
+        <img src="{{URL::asset(config('fichiers.icones'))}}/retour.svg" alt="retour"  />
       </a>
-      <img src="{{URL::asset('medias')}}/icones/ruban/{{$troupeau->especes->abbreviation}}.svg"  alt="{{$troupeau->especes->nom}}" />
+      <img src="{{URL::asset(config('fichiers.icones'))}}/ruban/{{$troupeau->especes->abbreviation}}.svg"  alt="{{$troupeau->especes->nom}}" />
       @if($autreTroupeaux !== null)
       <!-- Prévoit le cas où l'éleveur à plusieurs troupeaux -->
         @foreach($autreTroupeaux as $autreTroupeau)
         <a  class="img-petite" href="{{route('troupeau.accueil', ['id' => $autreTroupeau->id])}}" title="Afficher le troupeau {{strtolower($autreTroupeau->especes->nom)}}">
-          <img class="img-normale" src="{{URL::asset('medias')}}/icones/ruban/{{$autreTroupeau->especes->abbreviation}}.svg"  alt="{{$autreTroupeau->especes->nom}}" />
+          <img class="img-normale" src="{{URL::asset(config('fichiers.icones'))}}/ruban/{{$autreTroupeau->especes->abbreviation}}.svg"  alt="{{$autreTroupeau->especes->nom}}" />
         </a>
         @endforeach()
       @endif()
@@ -30,13 +30,13 @@
       @foreach($listeSceaux->listeSceaux() as $sceau)
       @if($sceau->affichage() && $sceau->type() === App\Constantes\ConstSceaux::TYPE_INFO)
         <div id="{{$sceau->identite()}}" class="barre-item">
-            <img src="{{URL::asset('medias').$sceau->icone()}}" title = "{{$sceau->titre()}}" alt = "{{$sceau->identite()}}" />
+            <img src="{{URL::asset(config('fichiers.icones')).$sceau->icone()}}" title = "{{$sceau->titre()}}" alt = "{{$sceau->identite()}}" />
         </div>
       @endif()
       @endforeach()
-      @if($admin)
+      @if(Auth::user()->admin)
       <a href="{{route('troupeau.paramAdmin', ['id' => $troupeau->id] )}}">
-        <img src="{{URL::asset('medias')}}/icones/ruban/parametres.svg" alt="modifier" title="Modifier les paramètres de cet éleveur" />
+        <img src="{{URL::asset(config('fichiers.icones'))}}/ruban/parametres.svg" alt="modifier" title="Modifier les paramètres de cet éleveur" />
       </a>
       @endif()
     </div>

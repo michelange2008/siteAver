@@ -13,7 +13,7 @@
       </div>
   </div>
 </div>
-
+<!-- TODO remplacer le chemin pour les fichiers jpg png-->
 @else($nombreTroupeaux > 1)
 <div class="container d-flex justify-content-between">
 @foreach($troupeaux as $troupeau)

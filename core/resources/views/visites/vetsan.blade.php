@@ -24,7 +24,7 @@
 
     @foreach($listeItem->listeCard() as $item)
     <div class="card" style="width: 25rem">
-        <img class="card-img-top" src="{{ URL::asset('medias')}}/icones/visites/{{$item->icone()}}"" alt="{{ $item->titre() }}">
+        <img class="card-img-top" src="{{ URL::asset(config('icones.path'))}}/visites/{{$item->icone()}}"" alt="{{ $item->titre() }}">
         <div class="card-body">
             <h4 class=" alert-success card-title">{{ $item->titre()}}</h4>
             <table class="tab-content container-fluid">

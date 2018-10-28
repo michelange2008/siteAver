@@ -15,7 +15,7 @@
     <div class="container-fluid {{$troupeau->especes->abbreviation}}_bg card-troupeau" style="margin-bottom:10px">
         <div class="row  card-cadre-simple">
             <div class="">
-              <img src="{{URL::asset('medias')}}/icones/ruban/{{$troupeau->especes->abbreviation}}.svg" alt="tete animal" />
+              <img src="{{URL::asset(config('icones.path'))}}/ruban/{{$troupeau->especes->abbreviation}}.svg" alt="tete animal" />
             </div>
             <div class="col-7 d-flex flex-column justify-content-center ml-3">
               <h2 class="card-title">Troupeau</h2>

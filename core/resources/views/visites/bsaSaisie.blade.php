@@ -14,7 +14,7 @@
 
 <div class="container-fluid bg-success d-flex flex-row sous-ruban">
     <a href="{{route('home')}}" title="revenir à l'accueil">
-      <img class="image-h" src="{{URL::asset('medias')}}/icones/retour.svg" alt="retour" />
+      <img class="image-h" src="{{URL::asset(config('icones.path'))}}/retour.svg" alt="retour" />
     </a>
     <h1 class="text-light titre-non-coupe">Bilans sanitaires annuels</h1>
 </div>
@@ -51,7 +51,7 @@
             </div>
             <div class="icone-ps">
               <a id = "ouvreps_{{$troupeau->id}}" class = "lien-bsa" bsa = "{{$bsa_id}}" href="{{route('bsa.ps', [$troupeau->id, $bsa_id])}}">
-                <img id = "icone_{{$troupeau->id}}" src="{{URL::asset('medias')}}/icones/ps_carre.svg" alt="ps" title="Ajouter un protocole de soin" />
+                <img id = "icone_{{$troupeau->id}}" src="{{URL::asset(config('icones.path'))}}/ps_carre.svg" alt="ps" title="Ajouter un protocole de soin" />
               </a>
             </div>
             <?php } else {
@@ -64,7 +64,7 @@
 
             <div class="icone-ps">
               <a id = "ouvreps_{{$troupeau->id}}" class = "lien-bsa lien-inactif" bsa = "{{$bsa_id}}" href="{{route('bsa.ps', [$troupeau->id, $bsa_id])}}">
-                <img id = "icone_{{$troupeau->id}}" src="{{URL::asset('medias')}}/icones/ps_carre_sans_bsa.svg" alt="ps" title="Il n'y a pas de protocole de soin sans bilan sanitaire" />
+                <img id = "icone_{{$troupeau->id}}" src="{{URL::asset(config('icones.path'))}}/ps_carre_sans_bsa.svg" alt="ps" title="Il n'y a pas de protocole de soin sans bilan sanitaire" />
               </a>
             </div>
             <?php } ?>
@@ -82,7 +82,7 @@
         </div>
         <div class="icone-remarque">
           <a id = "rem_{{$troupeau->id}}" class="lien-bsa">
-            <img src="{{URL::asset('medias')}}/icones/remarques.svg" alt="remarque" title="Ajouter un commentaire" />
+            <img src="{{URL::asset(config('icones.path'))}}/remarques.svg" alt="remarque" title="Ajouter un commentaire" />
           </a>
         </div>
       </div>

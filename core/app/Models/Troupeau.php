@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use app\Factories\Blasons\Vso;
 
 class Troupeau extends Model
 {
@@ -31,17 +30,17 @@ class Troupeau extends Model
     {
       return $this->belongsTo(Especes::class);
     }
-    
+
     public function anneeprophylos()
     {
         return $this->belongsToMany(Anneeprophylo::class);
     }
-    
+
     public function vsoafaire()
     {
         return $this->hasMany(Vsoafaire::class);
     }
-    
+
     public function bsas()
     {
         return $this->hasMany(Bsa::class);
@@ -50,7 +49,7 @@ class Troupeau extends Model
     {
         return $this->belongsToMany(Troupeauancien::class);
     }
-    
+
     public function pss()
     {
         return $this->hasManyThrough(Ps::class, Bsa::class);

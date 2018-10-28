@@ -34,7 +34,7 @@
         {{ Form::close()}}
       </div>
       <div class="card-img-bottom">
-        <img src="{{URL::asset('medias')}}/icones/fevec/importDatabase.svg" alt="import databases" class="image-min"/>
+        <img src="{{URL::asset(config('icones.path'))}}/fevec/importDatabase.svg" alt="import databases" class="image-min"/>
       </div>
     </div>
 
@@ -53,7 +53,7 @@
       </div>
 
       <div class="card-img-bottom">
-        <img src="{{URL::asset('medias')}}/icones/fevec/videBdd.svg" alt="vider les bdd" class="image-min"/>
+        <img src="{{URL::asset(config('icones.path'))}}/fevec/videBdd.svg" alt="vider les bdd" class="image-min"/>
       </div>
       @endif()
     </div>
@@ -75,7 +75,7 @@
       </div>
 
       <div class="card-img-bottom">
-        <img src="{{URL::asset('medias')}}/icones/fevec/ecritBdd.svg" alt="vider les bdd" class="image-min"/>
+        <img src="{{URL::asset(config('icones.path'))}}/fevec/ecritBdd.svg" alt="vider les bdd" class="image-min"/>
       </div>
 
       @endif()
@@ -95,7 +95,7 @@
     <div class="col-sm">
       <div class="card">
         <div class="card-img-top">
-          <img src="{{URL::asset('medias')}}/icones/fevec/finImport.svg" alt="fin" class="image-min"/>
+          <img src="{{URL::asset(config('icones.path'))}}/fevec/finImport.svg" alt="fin" class="image-min"/>
         </div>
         <div class="card-body">
           <h5 class="card-title">L'importation est maintenant terminée</h5>

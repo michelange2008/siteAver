@@ -19,8 +19,8 @@ class ConstSceaux
 {
     const TYPE_INFO = "info";
     const TYPE_LIEN = "lien";
-    
-    const PATH_ICONES = "/icones/ruban/";
+
+    const PATH_ICONES = "/ruban/";
 
     const VETSAN_IDENTITE = "vetsan";
     const VETSAN_TITRE = "mandat sanitaire";
@@ -66,7 +66,7 @@ class ConstSceaux
     const VSO_TEXT_USER_VRAI = "VSO à faire en ";
     const VSO_TEXT_USER_FAUX = "pas de VSO à faire en ";
 
-    const PATH_ICONE_PS = "/icones/ps/";
+    const PATH_ICONE_PS = "/ps/";
 
     const BSAPS_IDENTITE = 'bsaps';
     const BSAPS_TITRE = "Protocoles de soin";
@@ -77,9 +77,9 @@ class ConstSceaux
     const BSAPS_TEXTE_ADMIN_FAUX = "Il n'y a pas encore de protocole de soin téléchargeable";
     const BSAPS_TEXTE_USER_FAUX = "Il n'y a pas encore de protocole de soin téléchargeable";
     const BSAPS_BOUTON = 'troupeau.bsa';
-    
-    const PATH_ICONE_ANA = "/icones/analyses/";
-    
+
+    const PATH_ICONE_ANA = "/analyses/";
+
     const ANA_IDENTITE = 'analyses';
     const ANA_TITRE = "résultats d'analyse";
     const ANA_SOUSTITRE = "Nombre: ";

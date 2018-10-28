@@ -5,7 +5,6 @@
 @extends('aver.admin.menuAdmin')
 
 @extends('aver.admin.rubanTroupeau', [
-  'admin' => $admin,
   'listeSceaux' => $listeSceaux,
   'troupeau' => $troupeau,
   'autreTroupeaux' => $autreTroupeaux,
@@ -22,12 +21,13 @@
   @foreach($listeSceaux->listeSceaux() as $sceau)
   @if($sceau->type() === App\Constantes\ConstSceaux::TYPE_LIEN)
     <div class="card card-troupeau-admin">
-      <img class="card-img-top" src="{{URL::asset('medias').$sceau->icone()}}" alt="{{$sceau->icone()}}" style="width:50px"/>
+      <img class="card-img-top" src="{{URL::asset(config('fichiers.icones')).$sceau->icone()}}" alt="{{$sceau->icone()}}" style="width:50px"/>
       <div class="card-body card-cadre d-flex flex-column justify-content-between">
         <h5 class="card-title">{{ucfirst($sceau->titre())}}</h5>
         <p class = "card-text">
           {{$sceau->texte()}}
         </p>
+
         <p class="card-text italique">
             {{$sceau->parametre()}} {{$sceau->titre()}}
         </p>

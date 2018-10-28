@@ -1,0 +1,55 @@
+$rose: hotpink;
+$brique: DarkRed;
+$navy: navy;
+$gold: goldenrod;
+
+$gris : 230;
+
+
+
+/*
+Définit les couleurs des éleveurs en fonction de leur type
+*/
+
+.CONV {
+    color: blue;
+}
+
+.SUIV {
+    color: green;
+}
+.SANI {
+  color: orange;
+}
+
+.VETO {
+  color: orange;
+}
+
+/*
+définit les couleurs liées aux especes
+*/
+
+.OA{ color: Orange;}
+
+.OA_bg{ background: Orange;}
+
+.VA{ color: Red;}
+
+.VA_bg { background: Red;}
+
+.OL { color: blue;}
+
+.OL_bg { background: blue;}
+
+.CP { color: Green;}
+
+.CP_bg { background: Green;}
+
+.VL { color: SteelBlue;}
+
+.VL_bg { background: SteelBlue;}
+
+.PC { color: Pink;}
+
+.PC_bg{ background: Pink;}

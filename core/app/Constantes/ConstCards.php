@@ -17,16 +17,16 @@ use phpDocumentor\Reflection\Types\Self_;
  */
 class ConstCards
 {
-    const PATH_ICONE_ANA = "/icones/analyses/";
-    
+    const PATH_ICONE_ANA = "/analyses/";
+
     const ANA_ID = 'ANA';
     const ANA_TITRE = "résultats d'analyse";
     const ANA_ICONE = SELF::PATH_ICONE_ANA.'analyses_carre.svg';
     const ANA_TEXTE_OUI = "Présente les analyses de laboratoire (toutes espèces).";
     const ANA_TEXTE_NON = "Il n'y a pas encore de résultats d'analyses téléchargeables";
     const ANA_BOUTON = 'troupeau.analyses';
-    
-    const PATH_ICONE_PS = "/icones/ps/";
+
+    const PATH_ICONE_PS = "/ps/";
 
     const BSA_ID = 'BSA';
     const BSA_TITRE = "bilans sanitaires annuels";

@@ -1,0 +1,45 @@
+/*
+Personnalisation des boutons
+*/
+
+@mixin btn-couleur($fond, $lettres, $bordure) {
+  border: solid 1px $bordure;
+  background: $fond;
+  color: $lettres;
+}
+
+
+.btn {
+  margin-top: 5px;
+}
+.btn-menu {
+  margin-bottom: 20px;
+  line-height: 2;
+}
+.btn-rose,.btn-outline-rose:hover {
+  @include btn-couleur($rose, white, $rose);
+}
+.btn-outline-rose, .btn-rose:hover{
+  @include btn-couleur(white, $rose, black);
+}
+.btn-navy,.btn-outline-navy:hover {
+  @include btn-couleur($navy, white, $navy);
+}
+.btn-outline-navy, .btn-navy:hover{
+  @include btn-couleur(white, $navy, black);
+}
+.btn-gold,.btn-outline-gold:hover {
+  @include btn-couleur($gold, white, $gold);
+}
+.btn-outline-gold, .btn-gold:hover{
+  @include btn-couleur(white, $gold, black);
+}
+.btn-brique {
+  @include btn-couleur($brique, white, $brique);
+}
+.btn-brique:hover {
+    filter: brightness(80%);
+}
+.btn-carre {
+    border-radius: 0;
+}

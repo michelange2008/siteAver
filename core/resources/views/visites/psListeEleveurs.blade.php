@@ -6,7 +6,7 @@
 <br />
 <div class="container-fluid bg-success d-flex flex-row sous-ruban">
     <a href="{{route('ps.index')}}" title="revenir à la liste des protocoles de soin">
-      <img class="image-h" src="{{URL::asset('medias')}}/icones/retour.svg" alt="retour" />
+      <img class="image-h" src="{{URL::asset(config('icones.path'))}}/retour.svg" alt="retour" />
     </a>
     <h1>{{$ps->nom}}</h1>
 </div>

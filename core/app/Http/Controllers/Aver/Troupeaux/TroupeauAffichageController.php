@@ -21,21 +21,17 @@ class TroupeauAffichageController extends Controller
 {
     use PeriodeProphylo;
     use EdeFormat;
-    
+
     protected $troupeauAffichageRep;
-    
+
     public function __construct(TroupeauAffichageRep $troupeauAfficheRep)
     {
         $this->troupeauAffichageRep = $troupeauAfficheRep;
     }
-    
+
     public function index($id)
     {
-        if(Auth::check()){
-            $admin = (Auth::user()->admin) ? 1 :0;
-        }
-        else
-        {
+        if(!Auth::check()){
             return redirect()->guest(route('login'));
         }
         $troupeau = Troupeau::find($id);
@@ -44,7 +40,6 @@ class TroupeauAffichageController extends Controller
         $listeSceaux->construitListeComplete();
         $autreTroupeaux = $this->troupeauAffichageRep->hasPlusTroupeau($id);
         return view('aver/troupeaux/troupeauAffiche')->with([
-            'admin' => $admin,
             'listeSceaux' => $listeSceaux,
             'troupeau' => $troupeau,
             'autreTroupeaux' => $autreTroupeaux,
@@ -57,15 +52,15 @@ class TroupeauAffichageController extends Controller
      */
     public function paramAdmin($id)
     {
-        $admin = (Auth::user()->admin) ? 1 :0;
+
         $troupeau = Troupeau::find($id);
         $troupeau->user->ede = $this->formatEde($troupeau->user->ede);
-        $listeBlasons = $this->troupeauAffichageRep->listeBlasons($id);
+        $listeSceaux = new SceauxListe($id);
+        $listeSceaux->construitListeComplete();
         $autreTroupeaux = null;
         $troupeauCampagne = $this->troupeauCampagne($id);
         return view('aver/troupeaux/paramAdmin')->with([
-            'admin' => $admin,
-            'listeBlasons' => $listeBlasons,
+            'listeSceaux' => $listeSceaux,
             'troupeau' => $troupeau,
             'autreTroupeaux' => $autreTroupeaux,
             'troupeauCampagne' => $this->troupeauCampagne($id),
@@ -73,15 +68,15 @@ class TroupeauAffichageController extends Controller
             'campagne' => $this->campagne(),
             'change' => true,
         ]);
-        
+
     }
     /*
      * Récupération via POST des modifications saisies dans le formulaire
      */
     public function paramAdminModif(Request $request){
-        
+
         $modif = $this->troupeauAffichageRep->modifParam(array_slice($request->all(), 1));
-        
+
         return redirect()->route('troupeau.accueil', $request->all()['id_troupeau'])->with('message', $modif.' modifications effectuées');
     }
 }

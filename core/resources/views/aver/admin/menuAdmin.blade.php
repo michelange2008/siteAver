@@ -1,6 +1,6 @@
 @if(Auth()->user()->admin === 1)
 @section('menu')
-<nav class="navbar navbar-nav navbar-dark bg-dark navbar-expand-lg sticky-top" role="navigation">
+<nav class=" navbar navbar-nav navbar-dark bg-dark navbar-expand-xl menu" role="navigation">
 
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
@@ -22,17 +22,17 @@
           </a>
           <ul class="dropdown-menu bg-dark text-light" aria-labelledBy = "visitesDropdown">
 
-            <li><a class="dropdown-item text-muted" href="{{ URL::route('visites.accueil') }}">Sommaire</a></li>
+            <li><a class="dropdown-item" href="{{ URL::route('visites.accueil') }}">Sommaire</a></li>
 
-            <li><a class="dropdown-item text-muted" href="{{ URL::route('vetsan.changer') }}">Vét. San.</a></li>
+            <li><a class="dropdown-item" href="{{ URL::route('vetsan.changer') }}">Vét. San.</a></li>
 
-            <li><a class="dropdown-item text-muted" href="{{ URL::route('prophylo.index') }}">Prophylaxie</a></li>
+            <li><a class="dropdown-item" href="{{ URL::route('prophylo.index') }}">Prophylaxie</a></li>
 
-            <li><a class="dropdown-item text-muted" href="{{ URL::route('bsa.index') }}">Bilan annuel</a></li>
+            <li><a class="dropdown-item" href="{{ URL::route('bsa.index') }}">Bilan annuel</a></li>
 
-            <li><a class="dropdown-item text-muted" href="{{ URL::route('ps.index') }}">Protocoles de soin</a></li>
+            <li><a class="dropdown-item" href="{{ URL::route('ps.index') }}">Protocoles de soin</a></li>
 
-            <li><a class="dropdown-item text-muted" href="{{ URL::route('vso.index') }}">Visite obligatoire</a></li>
+            <li><a class="dropdown-item" href="{{ URL::route('vso.index') }}">Visite obligatoire</a></li>
 
            </ul>
       </li>
@@ -44,17 +44,16 @@
         <ul class="dropdown-menu bg-dark text-light" aria-labelledBy = "adminDropdown">
 
           <li>
-            <a  class = 'dropdown-item text-muted' href="{{ URL::route('fevec.gestion')}}">Gestion Fevec</a></li>
+            <a  class = 'dropdown-item' href="{{ URL::route('fevec.gestion')}}">Gestion Fevec</a></li>
           </li>
 
 
-          <!-- <a  class = 'dropdown-item text-muted'  href="{{ URL::route('user.admin')}}">Admin</a> -->
+          <!-- <a  class = 'dropdown-item'  href="{{ URL::route('user.admin')}}">Admin</a> -->
 
         </ul>
       </li>
     </ul>
   </div>
 </nav>
-<br />
 @endsection
 @endif()

@@ -11,7 +11,7 @@
 @foreach($liste->listeCard() as $item)
 
     <div class="card" style="width: 15rem">
-        <img class="card-img-top" src="{{ URL::asset('medias')}}/icones/visites/{{$item->icone()}}"" alt="{{ $item->titre() }}">
+        <img class="card-img-top" src="{{ URL::asset(config('icones.path'))}}/visites/{{$item->icone()}}"" alt="{{ $item->titre() }}">
         <div class="card-body d-flex flex-column justify-content-between ">
             <h5 class=" alert-success card-title">{{ $item->titre()}}</h5>
             <p class="card-text">{{ $item->texte()}}</p>

@@ -15,7 +15,7 @@
 
         @foreach($params as $param)
             <div class="card" style="width: 25rem">
-                <img class="card-img-top" src="{{ URL::asset('medias')}}/icones/fevec/{{ $param->icone() }}" alt="type">
+                <img class="card-img-top" src="{{ URL::asset(config('icones.path'))}}/fevec/{{ $param->icone() }}" alt="type">
                 <div class="card-body">
                     <div class="card-text">
                         <h4>{{ $param->titre() }}</h4>

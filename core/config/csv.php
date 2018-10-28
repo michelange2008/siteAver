@@ -1,4 +1,4 @@
 <?php
 return [
-  'path' => 'csv/',
+  'path' => 'core/public/csv/',
 ];

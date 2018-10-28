@@ -5,5 +5,23 @@
 // Variables
 @import "variables";
 
+@import "couleurs";
+
+@import "selecteurs";
+
+@import "main";
+
+@import "menu";
+
+@import "bsa_saisie";
+
+@import "boutons_perso";
+
+@import "fiche_troupeau";
+
+@import "analyses";
+
+@import "media_768";
+
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";

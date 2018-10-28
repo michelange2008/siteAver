@@ -1,4 +1,4 @@
 <?php
 return [
-  'path' => 'medias/accueil/',
+  'path' => 'core/resources/assets/medias/accueil/',
 ];

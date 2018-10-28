@@ -1,24 +1,11 @@
 <?php
 namespace App\Repositories\Troupeaux;
 
-use App\Factories\Blasons\BlasonsListe;
-
-use App\Factories\Blasons\Vetsan;
-use App\Factories\Blasons\Activite;
-use App\Factories\Blasons\Prophylo;
-use App\Factories\Blasons\VsoBlason;
-use App\Factories\Blasons\Bsaimportant;
-
 use App\Models\Troupeau;
 use App\Models\User;
 use App\Models\Anneeprophylo;
 use App\Traits\PeriodeProphylo;
 use App\Repositories\Visites\ModifProphyloVso;
-use App\Factories\Card\CardListe;
-use App\Factories\Card\CardAnalyses;
-use App\Factories\Card\CardOrdonnances;
-use App\Factories\Card\CardFactures;
-use App\Factories\Card\CardBsa;
 use App\Factories\Analyses\AnalyseMetadatas;
 
 class TroupeauAffichageRep
@@ -59,10 +46,10 @@ class TroupeauAffichageRep
 
         $troupeau->bsaimportant = $bsaimportant;
         $troupeau->save();
-        
+
         $modifProphyloVso = new ModifProphyloVso($campagne->id, $troupeau->id);
         $modifProphyloVso->modifProphylo($prophylo);
         $modifProphyloVso->modifVso($vso);
-        
+
     }
 }

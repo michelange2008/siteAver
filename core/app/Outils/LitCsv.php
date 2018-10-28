@@ -6,7 +6,8 @@ class LitCsv
 {
   public static function litCsv($csv)
   {
-    $csvAvecChemin = config('csv.path').$csv.".csv";
+
+    $csvAvecChemin = config('fichiers.csv').$csv.".csv";
 
     $ligne = 1;
 

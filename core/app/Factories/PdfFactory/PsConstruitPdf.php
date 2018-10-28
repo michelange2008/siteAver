@@ -6,6 +6,7 @@ use App\Factories\PdfFactory\FPDI;
 use App\Models\Ps;
 use App\Models\User;
 use Carbon\Carbon;
+use App\Models\Veto;
 
 // require ('../pdf/tcpdf/tcpdf.php');
 // require ('fpdi.php');
@@ -20,8 +21,9 @@ class PsConstruitPdf extends FPDI
 	}
 
 	public function creePdf(Ps $ps, User $user, $date, $veto) {
+
 		// Origine du modèle
-		$this->setSourceFile("pdf/ps/".$ps->fichier);
+		$this->setSourceFile(asset(config('fichiers.pdf'))"/ps/".$ps->fichier);
 		//AJout d'une page
 		$this->AddPage();
 		// Définition du modèle
@@ -46,7 +48,7 @@ class PsConstruitPdf extends FPDI
  		$this->SetXY(20, 185);
  		$this->Write(5, "Signatures:  ");
 
-		$this->Image('medias/logos/signature_MB.jpg',100, 222, 85);
+		$this->Image($veto->signature,100, 222, 85);
  		$this->SetXY(40, 192);
  		$this->Write(5, "Eleveur(-euse)", '', 0, 'L', false, 0, false, false, 0);
  		$this->SetXY(100, 192);

@@ -1,11 +1,10 @@
 @section('menuprincipal')
 <div id="app">
-  <nav class="navbar navbar-nav navbar-expand-lg navbar-light bg-light navbar-static-top">
-    <div class="container-fluid">
+  <nav class="navbar navbar-nav navbar-expand navbar-light bg-light navbar-static-top">
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuAver" aria-controls="menuAver" aria-expanded="false" aria-label="Toggle-navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse menu-on-right" id="menuAver">
       <ul class="nav navbar-nav navbar-left">
               <!-- Authentication Links -->
               @if (Auth::guest())
@@ -31,13 +30,11 @@
                     </li>
                 @endif
       </ul>
-    </div>
     <a class="navbar-brand" href="{{ url('/') }}">
       {{ config('app.name', 'Antikor') }}
     </a>
-    </div>
+
   </nav>
 </div>
-</div>
-<br />
+
 @endsection()

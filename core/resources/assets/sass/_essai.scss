@@ -1,0 +1,11 @@
+.ligne {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-bottom: 5px solid darkgray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &:first-of-type {
+    border-top: 5px solid darkgray;
+  }
+}

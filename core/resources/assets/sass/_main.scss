@@ -1,0 +1,153 @@
+.titre-non-coupe {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.image-min {
+  min-width: 100%;
+}
+
+.lien-icone-centre {
+  display: inline-flex;
+}
+
+.image-h{
+  max-height: 100%;
+}
+
+.sous-ruban {
+  height: 50px;
+  color: rgb($gris, $gris, $gris);
+}
+
+.gras {
+  font-weight: bold;
+}
+.italique {
+	font-style: italic;
+}
+.plus-petit {
+	font-size: 80%;
+}
+.maigre {
+  font-weight: lighter;
+}
+.curseur {
+    cursor: pointer;
+}
+.fleche {
+  background: url("../medias/icones/fevec/fleche.svg") center  no-repeat;
+  background-size: contain;
+  width: 5%;
+}
+.lien:hover {
+  background: darkgrey;
+}
+.lien:hover a {
+  text-decoration: none;
+  color: white;
+}
+.icone {
+    opacity: 0.7;
+}
+.icone:hover {
+    opacity: 1;
+}
+.pdf_download {
+  background: url('../medias/icones/PDF_telecharge.svg') no-repeat;
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+}
+.delete {
+  background: url('../medias/icones/delete.svg') no-repeat;
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+
+.bordure {
+  border-bottom:1px solid darkgrey;
+  padding-bottom: 2px;
+  padding-top: 2px;
+}
+.bordure:last-of-type {
+  border: none;
+}
+.card-width-35 {
+  width: 35rem;
+}
+
+.card-cadre {
+  border: solid 1px darkgray;
+  padding-left: 2%;
+  padding-right: 2%;
+  background: #e4e4e4;
+}
+.card-cadre-simple {
+  border: solid 1px darkgray;
+  background: #e4e4e4;
+}
+
+.card-text {
+  padding-left: 5px;
+}
+
+.centpourcent {
+  width: 100%;
+}
+
+.navbar-serree {
+  margin-bottom: 2px;
+}
+
+.menu-on-right {
+  flex-grow: 0;
+}
+
+.espace-lg {
+  padding-top: 15px
+}
+.espace {
+  padding-top: 10px;
+}
+.espace-sm {
+  margin-top: 5px;
+}
+
+.espace-bas{
+  padding-bottom: 10px;
+}
+
+
+.invisible {
+    display: hidden ;
+}
+.non_affiche{
+    display: none !important;
+
+}
+.ailleurs{
+	position: absolute;
+	left: -10000px;
+}
+@media screen  and (max-width: 597px)
+
+{
+  h1, h2, h3, h4, h5{
+    font-size: 1em;
+    line-height: -moz-block-height;
+  }
+  .smartphone-vertical {
+    flex-direction: column;
+  }
+  .card-width-35 {
+    width: 100%;
+  }
+  .smartphone-no {
+    display: none;
+  }
+}

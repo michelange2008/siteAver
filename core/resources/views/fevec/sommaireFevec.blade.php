@@ -18,7 +18,7 @@
 <div class="container-fluid d-flex justify-content-between">
 @foreach($tableSommaire->liste() as $item)
 <div class="card bg-light" style="width: 14rem">
-  <img class="card-img-top" src="{{ URL::asset('medias')}}/icones/fevec/{{$item->icone()}}" alt="{{ $item->icone() }}">
+  <img class="card-img-top" src="{{ URL::asset(config('icones.path'))}}/fevec/{{$item->icone()}}" alt="{{ $item->icone() }}">
   <div class="card-body d-flex flex-column justify-content-between">
     <h5 class="card-title card-text">{{ $item->titre() }}</h5>
     <p class="card-text">{{ $item->texte() }}</p>

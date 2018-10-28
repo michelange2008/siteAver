@@ -5,7 +5,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="content-type">
     <title>ANTIKOR</title>
     <link rel="icon" type="image/png" href="{{URL::asset('medias/logo.png')}}" />
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('css/accueil.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset(config('styles.accueil'))}}" />
 
   </head>
   <body>
@@ -18,7 +18,7 @@
       @if ($element['affiche'] != 0)
       <a href="{{$element['lien']}}">
       @endif
-         <div class="img"><img src="{{URL::asset(config('images_accueil.path').$element['image'])}}" alt=""></div>
+         <div class="img"><img src="{{URL::asset(config('fichiers.images_accueil').$element['image'])}}" alt=""></div>
      @if ($element['affiche'] != 0)
          <div class="intitule"><p>{{$element['intitule']}}</p></div>
      @endif
