@@ -1,4 +1,5 @@
 $(function(){
+
   $('#mdp1').focus(function(){
     $('#mdp1').attr('class', 'form-control');
     $('#mdp1').attr('placeholder', 'Retapez votre mot de passe');
@@ -59,12 +60,6 @@ $(function(){
         paging: false,
         fixedHeader: true,
         responsive: true,
-            columnDefs: [
-        { responsivePriority: 1, targets: 0 },
-        { responsivePriority: 2, targets: -1 },
-        { responsivePriority: 3, targets: 2},
-
-            ]
     });
 
   // Affiche les éleveurs selon l'espece

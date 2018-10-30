@@ -7,6 +7,10 @@
 
 require('./bootstrap');
 
+require( 'datatables.net-dt' )();
+require( 'datatables.net-fixedheader-dt' )();
+require( 'datatables.net-responsive-dt' )();
+
 window.Vue = require('vue');
 
 /**

@@ -1,6 +1,6 @@
 @section('menuprincipal')
 <div id="app">
-  <nav class="navbar navbar-nav navbar-expand navbar-light bg-light navbar-static-top">
+  <nav class="navbar navbar-nav navbar-expand navbar-light bg-light navbar-static-top menu_admin">
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuAver" aria-controls="menuAver" aria-expanded="false" aria-label="Toggle-navigation">
         <span class="navbar-toggler-icon"></span>

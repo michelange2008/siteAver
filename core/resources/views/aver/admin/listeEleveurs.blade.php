@@ -7,18 +7,18 @@
           <button class="btn btn-menu {{$bouton->couleur()}}" id="{{str_replace(" ","_", strtolower($bouton->texte()))}}">{{$bouton->texte()}}</button>
         @endforeach()
       </div>
-       <table id="listeEleveurs" class="table table-striped table-hover" style="width:100%">
+       <table id="listeEleveurs" class="table table-striped table-hover display  dt-responsive nowrap" width:"100%">
             <thead >
 
                 <tr id= "titres" class="bg-success">
-                    <th>Eleveur</th>
-                    <th>Troupeau</th>
-                    <th>Type</th>
-                    <th class="text-center">Vet. San.</th>
-                    <th class="bg-primary text-center">Proph. {{$campagne}}</th>
-                    <th class="bg-primary text-center">VSO {{$annee}}</th>
-                    <th class="text-center bg-warning">BSA prioritaire</th>
-                    <th class="text-center bg-warning">Dernier BSA</th>
+                    <th >Eleveur</th>
+                    <th >Troupeau</th>
+                    <th >Type</th>
+                    <th  class="text-center">Vet. San.</th>
+                    <th  class="bg-primary text-center">Proph. {{$campagne}}</th>
+                    <th  class="bg-primary text-center">VSO {{$annee}}</th>
+                    <th  class="text-center bg-warning">BSA prioritaire</th>
+                    <th  class="text-center bg-warning">Dernier BSA</th>
                 </tr>
             </thead>
             <tbody>

@@ -1,6 +1,6 @@
 @if(Auth()->user()->admin === 1)
 @section('menu')
-<nav class=" navbar navbar-nav navbar-dark bg-dark navbar-expand-xl menu" role="navigation">
+<nav class=" navbar navbar-nav navbar-dark bg-dark navbar-expand-sm menu" role="navigation">
 
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>

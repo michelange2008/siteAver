@@ -27,11 +27,13 @@
     <div class="row">
       @yield('menuprincipal')
     </div>
-    <div class="row">
-        <div class="col-md-2" style="background:#343a40; padding:0;">
-          @yield('menu')
+    @if(Auth::user())
+    <div class="d-sm-flex flex-row justify-content-start">
+        <div class="col-menu">
         </div>
-        <div class="col-md-10 ">
+        @yield('menu')
+    @endif
+        <div class="col-main">
           @yield('sousmenu')
           @yield('dashboard')
           @yield('content')
@@ -53,11 +55,11 @@
     <script src="{{ asset(config('scripts.path'))}}/user_gestion.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/analyses.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/psbsa.js"></script>
-    <script src="{{ asset(config('scripts.path'))}}/bootstrap/bootstrap.js"></script>
+    <!-- <script src="{{ asset(config('scripts.path'))}}/bootstrap/bootstrap.js"></script> -->
     <script src="{{ asset(config('scripts.path'))}}/splitAffichage.js"></script>
     <script src="https://use.fontawesome.com/f8a7076b4b.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
-    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!-- <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
     @stack(config('scripts.path'))
 
 
