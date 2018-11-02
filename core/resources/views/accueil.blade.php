@@ -5,7 +5,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="content-type">
     <title>ANTIKOR</title>
     <link rel="icon" type="image/png" href="{{URL::asset('medias/logo.png')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset(config('styles.accueil'))}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset(config('stylesAccueil.accueil'))}}" />
 
   </head>
   <body>

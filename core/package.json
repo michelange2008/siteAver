@@ -21,6 +21,9 @@
   "dependencies": {
     "datatables.net-dt": "^1.10.19",
     "datatables.net-fixedheader-dt": "^3.1.5",
-    "datatables.net-responsive-dt": "^2.2.3"
+    "datatables.net-responsive-dt": "^2.2.3",
+    "jquery": "^3.3.1",
+    "jquery-ui-bundle": "^1.12.1-migrate",
+    "popper.js": "^1.14.4"
   }
 }

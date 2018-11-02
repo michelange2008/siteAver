@@ -14,52 +14,45 @@
       rel="stylesheet"
       integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
       crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset(config('styles.app'))}}">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.2/b-flash-1.5.2/fh-3.1.4/r-2.2.2/datatables.min.css"/>
-    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" /> -->
-    <!-- jquery-confirm -->
+      @foreach(config('styles') as $path)
+        <link rel="stylesheet" href="{{ asset($path)}}">
+      @endforeach
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
     @stack('css')
 
 </head>
 <body>
+  @if(Auth::user())
+  <div class="d-sm-flex flex-row justify-content-start">
+    <div class="col-menu">
+    </div>
+    @yield('menu')
+    @endif
   <div class="container-fluid">
     <div class="row">
       @yield('menuprincipal')
     </div>
-    @if(Auth::user())
-    <div class="d-sm-flex flex-row justify-content-start">
-        <div class="col-menu">
-        </div>
-        @yield('menu')
-    @endif
-        <div class="col-main">
-          @yield('sousmenu')
-          @yield('dashboard')
-          @yield('content')
-          @yield('troupeau')
-          @yield('pied_de_page')
-        </div>
+    <div class="col-main">
+      @yield('sousmenu')
+      @yield('dashboard')
+      @yield('content')
+      @yield('troupeau')
+      @yield('pied_de_page')
     </div>
+  </div>
 </div>
-   <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script
-        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-        crossorigin="anonymous"></script>
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!-- <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
     <script src="{{ asset(config('scripts.path'))}}/app.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/user_gestion.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/analyses.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/psbsa.js"></script>
     <!-- <script src="{{ asset(config('scripts.path'))}}/bootstrap/bootstrap.js"></script> -->
     <script src="{{ asset(config('scripts.path'))}}/splitAffichage.js"></script>
-    <script src="https://use.fontawesome.com/f8a7076b4b.js"></script>
+    <!-- <script src="https://use.fontawesome.com/f8a7076b4b.js"></script> -->
+    <!-- TODO vérifier s'il faut le téléchargement d'ajax ou si le npm suffit -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
-    <!-- <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
+
     @stack(config('scripts.path'))
 
 

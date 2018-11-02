@@ -2,9 +2,9 @@
 
     <div>
     	<h3 class="alert alert-success">Situation des éleveurs</h3>
-      <div class="container-fluid">
+      <div class="d-flex justify-content-between flex-wrap">
         @foreach($boutons->listeSousmenu() as $bouton)
-          <button class="btn btn-menu {{$bouton->couleur()}}" id="{{str_replace(" ","_", strtolower($bouton->texte()))}}">{{$bouton->texte()}}</button>
+          <button style="margin:5px" class="btn btn-menu align-self-stretch flex-grow-1 {{$bouton->couleur()}} rounded-0" id="{{str_replace(" ","_", strtolower($bouton->texte()))}}">{{$bouton->texte()}}</button>
         @endforeach()
       </div>
        <table id="listeEleveurs" class="table table-striped table-hover display  dt-responsive nowrap" width:"100%">
@@ -42,14 +42,14 @@
                     	@endif()
                     </td>
 
-                    <td class="prophylo text-center">
+                    <td class="align-middle text-center">
                     	@foreach($troupeau->anneeprophylos as $item)
                         	@if($item->campagne === $campagne)
                         		<i name="1" class="fa fa-bullseye" style="color:blue"></i>
                         	@endif()
                         @endforeach()
 					</td>
-					<td class="vso text-center">
+					<td class="align-middle text-center">
 					       @foreach($troupeau->vsoafaire as $item)
                         	@if($item->annee == $annee)
                         		<i name = "1" class="fa fa-bullseye" style="color:blue"></i>

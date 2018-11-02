@@ -3,5 +3,7 @@ $path = 'core/public/css/';
 
 return [
   'app' => $path.'app.css',
-  'accueil' => $path.'accueil.css',
+  'dataTables' => $path.'jquery.dataTables.min.css',
+  'responsive_dataTables' => $path.'responsive.jquery.dataTables.min.css',
+  'fixedHeader_dataTables' => $path.'fixedHeader.dataTables.min.css',
 ];

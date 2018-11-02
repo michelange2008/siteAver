@@ -1,3 +1,4 @@
+
 .menu:hover {
   z-index: 10000;
 
@@ -18,8 +19,16 @@ $largeur_menu : 160px;
 @media screen and (min-width:576px) {
   $marges : 5px;
 
+  #app {
+    width: 100%;
+
+    .menu_admin {
+      width: 100%;
+      justify-content: right;
+    }
+  }
+
   .col-menu {
-    background: #343a40;
     margin: 0 5px 0 0;
     width: $largeur_menu;
     flex-shrink: 0;
@@ -31,7 +40,6 @@ $largeur_menu : 160px;
   }
   .menu
   {
-    padding: 20px 0;
     border: 0;
     border-radius: 0;
     position: fixed !important;

@@ -18,14 +18,14 @@ class AdminAverController extends Controller
     use FevecDateMajBdd;
     use PeriodeProphylo;
     use SortTroupeaux;
-    
+
     protected $adminRep;
-    
+
     public function __construct(AdminRep $adminRep)
     {
         $this->adminRep = $adminRep;
     }
-    
+
     public function index()
     {
         $stats = StatRepository::calculStatEleveursTroupeaux();
@@ -41,7 +41,7 @@ class AdminAverController extends Controller
             'annee' => $this->dateActuelle()->year,
             'boutons' => $this->adminRep->boutons(),
         ]);
-        
+
     }
 
 }

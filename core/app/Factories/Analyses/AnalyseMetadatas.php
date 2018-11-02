@@ -7,7 +7,7 @@ namespace App\Factories\Analyses;
  * Il permet de remplir la base de donnée Analyse avec ces éléments
  * Il fournit les analyses d'un user donné
  * Il compte les analses d'un user donné
- * 
+ *
  * @author michel
  */
 use App\Models\Troupeau;
@@ -18,10 +18,10 @@ use App\Models\User;
 trait AnalyseMetadatas
 {
     use ChercheEdeAvecNom;
-    
+
     public function analyseMetadatas()
     {
-        $url = 'pdf/analyses/';
+        $url = config('fichiers.analyses');
         $dir = array_slice(scandir($url), 2);
         $listeAnalyses = collect();
         foreach($dir as $item)
@@ -41,7 +41,7 @@ trait AnalyseMetadatas
                             $fichierAnalyse = new FichierAnalyse($metadatas[0], $metadatas[1], $ede, "", $metadatas[2], $item, true);
                             $listeAnalyses->push($fichierAnalyse);
                         }
-                        else 
+                        else
                         {
                             $fichierAnalyse = new FichierAnalyse($item, "","NA","","", "", false);
                             $listeAnalyses->push($fichierAnalyse);
@@ -84,12 +84,12 @@ trait AnalyseMetadatas
                     $fichierAnalyse = new FichierAnalyse($item, "","","","", "", false);
                     $listeAnalyses->push($fichierAnalyse);
                 }
-                
+
             }
         }
         return $listeAnalyses;
     }
-    
+
     public function analysesSelonId($id_troupeau)
     {
         $troupeau= Troupeau::find($id_troupeau);
@@ -100,12 +100,12 @@ trait AnalyseMetadatas
         }
         return $listeAnalyses;
     }
-    
+
     public function nbAnalysesSelonId($id_troupeau)
     {
         return $this->analysesSelonId($id_troupeau)->count();
     }
-    
+
     public function remplitBdd($listeAnalyses)
     {
         foreach($listeAnalyses as $ana)
@@ -130,7 +130,7 @@ trait AnalyseMetadatas
                     }
                 }
             }
-            
+
         }
     }
 }
