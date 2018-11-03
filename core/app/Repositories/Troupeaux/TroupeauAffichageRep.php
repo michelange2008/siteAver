@@ -22,6 +22,18 @@ class TroupeauAffichageRep
             $troupeauxAutres = Troupeau::where('user_id', $eleveur)->where('id','<>', $id_troupeau)->get();
             return $troupeauxAutres;
         }
+        else {
+          return false;
+        }
+    }
+
+    public function nombreDeTroupeau($id_troupeau)
+    {
+      $troupeau = Troupeau::find($id_troupeau);
+      $eleveur = $troupeau->user->id;
+      $nombreDeTroupeau = (Troupeau::where('user_id', $eleveur)->count() > 1) ? 2 : 1;
+
+      return $nombreDeTroupeau;
     }
 
     public function modifParam($param)

@@ -6,6 +6,7 @@
   'listeSceaux' => $listeSceaux,
   'troupeau' => $troupeau,
   'autreTroupeaux' => $autreTroupeaux,
+  'nombreDeTroupeau' => $nombreDeTroupeau,
   'campagne' => $campagne,
 ])
 
@@ -13,9 +14,10 @@
   {{Form::open(['route' => 'troupeau.paramAdmin.modif'])}}
   {{Form::hidden('id_troupeau', $troupeau->id)}}
   <br />
-<div class="container-flex d-flex flex-row justify-content-center">
-  <div class="card" style = "width : 33%">
+  <div class="card carte-param">
+    <div>
     <img class="card-img-top" src = '{{URL::asset(config('icones.path'))}}/modifParam.svg' />
+  </div>
     <div class="card-body">
       <div class="card-title">
         <h5>Modification des paramètres de cet éleveur</h5>

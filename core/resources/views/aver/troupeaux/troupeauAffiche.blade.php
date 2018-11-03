@@ -8,6 +8,7 @@
   'listeSceaux' => $listeSceaux,
   'troupeau' => $troupeau,
   'autreTroupeaux' => $autreTroupeaux,
+  'nombreDeTroupeau' => $nombreDeTroupeau,
   'campagne' => $campagne,
 ])
 
@@ -17,27 +18,31 @@
 @endif()
 
 <br />
-<div class="container d-flex flex-row justify-content-between">
+<div class="analyse-bsps">
   @foreach($listeSceaux->listeSceaux() as $sceau)
   @if($sceau->type() === App\Constantes\ConstSceaux::TYPE_LIEN)
-    <div class="card card-troupeau-admin">
-      <img class="card-img-top" src="{{URL::asset(config('fichiers.icones')).$sceau->icone()}}" alt="{{$sceau->icone()}}" style="width:50px"/>
-      <div class="card-body card-cadre d-flex flex-column justify-content-between">
-        <h5 class="card-title">{{ucfirst($sceau->titre())}}</h5>
-        <p class = "card-text">
-          {{$sceau->texte()}}
-        </p>
-
-        <p class="card-text italique">
-            {{$sceau->parametre()}} {{$sceau->titre()}}
-        </p>
-        @if(!$sceau->affichage())
-          <div class = 'btn btnsecondary'> </div>
-        @else()
-          {{ link_to_route($sceau->bouton()->route(), ucfirst($sceau->bouton()->texte()), ["user_id" => $troupeau->user_id, "troupeau_id" => $troupeau->id], ['class' => $sceau->bouton()->couleur().' btn'])}}
-        @endif()
+    <div class="carte">
+      <div class="carte-titre">
+        <div class="carte-titre-icone">
+          <img src="{{URL::asset(config('fichiers.icones')).$sceau->icone()}}" alt="{{$sceau->icone()}}" style="width:50px"/>
+        </div>
+        <div class="carte-titre-texte">
+          <h5>{{ucfirst($sceau->titre())}}</h5>
+        </div>
       </div>
-
+      <div class="carte-main">
+          <p class>
+            {{$sceau->texte()}}
+          </p>
+          <p>
+            {{$sceau->parametre()}} {{$sceau->titre()}}
+          </p>
+          @if($sceau->parametre() == 0)
+            <div class = 'btn btn-secondary'>...</div>
+          @else()
+            {{ link_to_route($sceau->bouton()->route(), ucfirst($sceau->bouton()->texte()), ["user_id" => $troupeau->user_id, "troupeau_id" => $troupeau->id], ['class' => $sceau->bouton()->couleur().' btn'])}}
+          @endif()
+      </div>
     </div>
 
 @endif()

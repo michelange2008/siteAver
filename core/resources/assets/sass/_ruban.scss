@@ -1,11 +1,24 @@
-.ruban-barre {
+.ruban-barre_1, .ruban-barre_2 {
   display: grid;
 }
 
 #entete {
     h3, h4, h5 {
       margin-bottom: 0;
+      text-align: center;
     }
+}
+#img-especes {
+  .img-main {
+
+  }
+  .img-petite {
+    height: 50px;
+
+    img {
+      height: 100%;
+    }
+  }
 }
 #barre-synthese {
   img:first-of-type {
@@ -15,13 +28,24 @@
     margin-left: 5px;
   }
 }
-
-@media screen and (max-width: 576px) {
-  .ruban-barre {
-    grid-template-columns: 10% 50% 1fr;
+.modifier {
+  max-height: 100%;
+}
+@media screen and (max-width: 575.98px) {
+  .ruban-barre_1 {
+    grid-template-columns: 30px 100px 1fr;
+    padding: 10px 5px;
+  }
+  .ruban-barre_2 {
+    grid-template-columns: 30px 150px 1fr;
+    padding: 10px 5px;
   }
   #retour {
     grid-column: 1;
+
+    img {
+      width: 30px;
+    }
   }
   #img-especes {
     grid-column: 2;
@@ -29,7 +53,7 @@
   #entete {
     grid-column: 3;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     h3 {
       font-size: 1rem;
     }
@@ -45,24 +69,28 @@
   }
   #barre-synthese {
     margin-top: 5px;
-    grid-column: 1 / span 3;
+    grid-column: 2 / span 3;
   }
 
 }
 
   @media screen and (min-width: 577px) {
-    .ruban-barre {
-      grid-template-columns: 15% 40% 1fr;
+    .ruban-barre_1 {
+      grid-template-columns: 50px 100px 1fr;
+    }
+    .ruban-barre_2 {
+      grid-template-columns: 50px 155px 1fr;
     }
     #retour {
       grid-row: 1; grid-column: 1;
 
       img {
-        max-width: inherit;
+        max-width: 50px;
       }
     }
     #img-especes {
       grid-row: 1; grid-column: 2;
+      justify-content: space-between;
     }
     #entete {
       grid-row: 1; grid-column: 3;
@@ -84,13 +112,26 @@
     }
     #barre-synthese {
       margin-top: 5px;
-      grid-row: 2; grid-column: 1 / span 3;
+      grid-row: 2; grid-column: 2 / span 3;
+      justify-content: space-between;
     }
-  }
 
+
+  }
+  @media screen and (min-width: 768px) {
+    // .img-petite {
+    //   img {
+    //     max-width: 70%;
+    //   }
+    // }
+  }
   @media screen and (min-width: 1200px) {
     .ruban-barre {
       display: flex;
+      justify-content: space-between;
+    }
+    #img-especes {
+      min-width: 155px;
     }
     #entete {
       margin: 0 10px;

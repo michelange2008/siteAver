@@ -7,8 +7,9 @@
 var $ = require("jquery");
 require("jquery-ui");
 require("ajax");
-// require("jquery-ui-bundle"); // Est-ce nécessaire d'utiliser jquery-bundle ... je ne sais pas
-require('bootstrap');
+// // require("jquery-ui-bundle"); // Est-ce nécessaire d'utiliser jquery-bundle ... je ne sais pas
+require('./bootstrap');
+//
 require( 'datatables.net-dt' );
 require( 'datatables.net-fixedheader-dt' );
 require( 'datatables.net-responsive-dt' );

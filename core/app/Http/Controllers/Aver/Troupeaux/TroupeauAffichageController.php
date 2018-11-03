@@ -39,10 +39,12 @@ class TroupeauAffichageController extends Controller
         $listeSceaux = new SceauxListe($id);
         $listeSceaux->construitListeComplete();
         $autreTroupeaux = $this->troupeauAffichageRep->hasPlusTroupeau($id);
+        $nombreDeTroupeau = $this->troupeauAffichageRep->nombreDeTroupeau($id);
         return view('aver/troupeaux/troupeauAffiche')->with([
             'listeSceaux' => $listeSceaux,
             'troupeau' => $troupeau,
             'autreTroupeaux' => $autreTroupeaux,
+            'nombreDeTroupeau' => $nombreDeTroupeau,
             'campagne' => $this->campagne(),
             'change' => false,
         ]);
@@ -57,12 +59,14 @@ class TroupeauAffichageController extends Controller
         $troupeau->user->ede = $this->formatEde($troupeau->user->ede);
         $listeSceaux = new SceauxListe($id);
         $listeSceaux->construitListeComplete();
-        $autreTroupeaux = null;
+        $autreTroupeaux = false;
+        $nombreDeTroupeau = 1;
         $troupeauCampagne = $this->troupeauCampagne($id);
         return view('aver/troupeaux/paramAdmin')->with([
             'listeSceaux' => $listeSceaux,
             'troupeau' => $troupeau,
             'autreTroupeaux' => $autreTroupeaux,
+            'nombreDeTroupeau' => $nombreDeTroupeau,
             'troupeauCampagne' => $this->troupeauCampagne($id),
             'annee' => Carbon::now()->year,
             'campagne' => $this->campagne(),

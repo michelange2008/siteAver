@@ -1,5 +1,5 @@
 @section('dashboard')
-  <div class="ruban-barre container-fluid bg bg-secondary espace-lg espace-bas">
+  <div class="ruban-barre_{{$nombreDeTroupeau}} container-fluid bg bg-secondary espace-lg espace-bas">
     <div id="retour" class=" ">
       <a href="{{URL::route('home')}}" title="revenir à la liste des éleveurs">
         <img src="{{URL::asset(config('fichiers.icones'))}}/retour.svg" alt="retour"  />
@@ -7,12 +7,14 @@
     </div>
 
     <div id="img-especes" class="barre-item d-flex flex-row align-items-end" title="troupeau {{$troupeau->especes->nom}}">
-      <img src="{{URL::asset(config('fichiers.icones'))}}/ruban/{{$troupeau->especes->abbreviation}}.svg"  alt="{{$troupeau->especes->nom}}" />
-      @if($autreTroupeaux !== null)
+      <a src="#" class="img-main">
+        <img src="{{URL::asset(config('fichiers.icones'))}}/ruban/{{$troupeau->especes->abbreviation}}.svg"  alt="{{$troupeau->especes->nom}}" />
+      </a>
+      @if($autreTroupeaux !== false)
       <!-- Prévoit le cas où l'éleveur à plusieurs troupeaux -->
         @foreach($autreTroupeaux as $autreTroupeau)
         <a  class="img-petite" href="{{route('troupeau.accueil', ['id' => $autreTroupeau->id])}}" title="Afficher le troupeau {{strtolower($autreTroupeau->especes->nom)}}">
-          <img class="img-normale" src="{{URL::asset(config('fichiers.icones'))}}/ruban/{{$autreTroupeau->especes->abbreviation}}.svg"  alt="{{$autreTroupeau->especes->nom}}" />
+          <img src="{{URL::asset(config('fichiers.icones'))}}/ruban/{{$autreTroupeau->especes->abbreviation}}.svg"  alt="{{$autreTroupeau->especes->nom}}" />
         </a>
         @endforeach()
       @endif()
@@ -26,7 +28,7 @@
       {{-- </div> --}}
     </div>
 
-    <div id="barre-synthese" class="d-flex flex-row justify-content-between">
+    <div id="barre-synthese" class="d-flex flex-row">
       @foreach($listeSceaux->listeSceaux() as $sceau)
       @if($sceau->affichage() && $sceau->type() === App\Constantes\ConstSceaux::TYPE_INFO)
         {{-- <div id="{{$sceau->identite()}}" class="barre-item"> --}}
@@ -36,7 +38,7 @@
       @endforeach()
       @if(Auth::user()->admin)
       <a href="{{route('troupeau.paramAdmin', ['id' => $troupeau->id] )}}">
-        <img src="{{URL::asset(config('fichiers.icones'))}}/ruban/parametres.svg" alt="modifier" title="Modifier les paramètres de cet éleveur" />
+        <img src="{{URL::asset(config('fichiers.icones'))}}/ruban/parametres.svg" class="modifier" alt="modifier" title="Modifier les paramètres de cet éleveur" />
       </a>
       @endif()
     </div>
