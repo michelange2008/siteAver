@@ -14,18 +14,22 @@
 
 @import "couleurs";
 
-@import "selecteurs";
+@import "selecteurs"; // mise en forme de certains sélecteurs hors de tout contexte
 
-@import "main";
+@import "main"; // principal fichier de styles
 
-@import "menu";
+@import "menu"; // menu principal
 
-@import "ruban";
+@import "ruban"; // Affiche des infos sur le troupeau d'un éleveur donné
 
-@import "bsa_saisie";
+@import "sous-ruban"; // bandeau soustitre
+
+@import "bsa_saisie"; // styles pour la saisie des bsa
 
 @import "boutons_perso";
 
-@import "fiche_troupeau";
+@import "fiche_troupeau"; // présentation des éléments d'un troupeau: analyses, bsa, etc.
 
-@import "analyses";
+@import "affiche-bsaps"; // styles pour l'affichage des cartes des bsa d'une troupeau avec les ps
+
+@import "analyses"; // présentation des analyses

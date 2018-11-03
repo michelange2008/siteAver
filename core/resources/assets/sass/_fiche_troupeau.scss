@@ -22,10 +22,15 @@
 }
 .carte-titre-texte {
   padding-left: 5px;
+  flex-grow: 1;
   h5 {
     font-size: 1em;
     font-weight: bold;
+    text-align: center;
   }
+}
+.carte-titre-icone {
+  width: 50px;
 }
 .carte-main {
   padding: 10px;
@@ -40,7 +45,7 @@
     font-style: italic;
     font-weight: bold;
   }
-  :last-child {
+  .carte-bouton {
     margin: 20px 5% 5px 40%;
   }
 }
@@ -131,9 +136,6 @@ a:hover img {
     flex-direction: column;
     .carte {
       width: 100%;
-
-    }
-    .carte:first-of-type {
       margin-bottom: 5px;
     }
   }

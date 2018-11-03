@@ -1,0 +1,26 @@
+// vient en complément du scss _fiche_troupeau.scss
+.carte-main {
+  .no-ps {
+    margin: auto;
+    max-width: 100px;
+  }
+}
+
+.carte-main-ps {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+
+
+  h6 {
+    margin-left: 5%;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .a {
+    width: 50px;
+  }
+
+
+}

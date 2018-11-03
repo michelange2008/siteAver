@@ -17,16 +17,14 @@
   max-height: 100%;
 }
 
-.sous-ruban {
-  height: 50px;
-  color: rgb($gris, $gris, $gris);
-}
-
 .gras {
   font-weight: bold;
 }
 .italique {
 	font-style: italic;
+}
+.estompe {
+  color: grey;
 }
 .plus-petit {
 	font-size: 80%;
@@ -56,8 +54,6 @@
     opacity: 1;
 }
 .pdf_download {
-  background: url('../medias/icones/PDF_telecharge.svg') no-repeat;
-  background-size: contain;
   width: 25px;
   height: 25px;
 }

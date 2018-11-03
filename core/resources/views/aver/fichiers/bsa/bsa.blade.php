@@ -1,3 +1,4 @@
+{{-- < vue issue de Aver\Fichiers\Bsa\BsaController@index--}}
 @extends('layouts.app')
 
 @extends('aver.menuprincipal')
@@ -12,31 +13,37 @@
     <h1>Bilans sanitaires annuels</h1>
 </div>
 <br />
-<div class="container-fluid d-flex flex-row justify-content-around">
+<div class="analyse-bsps">
     @foreach($bsas as $bsa)
-    <div class="card">
-      <img class="card-img-top" src="{{URL::asset(config('icones.path'))}}/bsa.svg"/>
-        <div class="card-body bg-light">
-            <div class="card-title">
-              <?php $date = Carbon\Carbon::createFromFormat('Y-m-d', $bsa->date_bsa) ?>
-                <h1>{{$date->year}}<span class="plus-petit"> ({{$date->formatLocalized('%d %b')}})</span></h1>
-                @if(count($bsa->pss) > 0)
-                  <h5>Protocoles de soins</h5>
-                @endif()
-            </div>
+      <div class="carte">
+        <div class="carte-titre">
+          <div class="carte-titre-icone">
+            <img src="{{URL::asset(config('icones.path'))}}/visites/bsa_carre.svg"/>
+          </div>
+          <div class="carte-titre-texte">
+            <?php $date = Carbon\Carbon::createFromFormat('Y-m-d', $bsa->date_bsa) ?>
+            <h5>{{$date->year}} ({{$date->formatLocalized('%d %B')}})</h5>
+          </div>
+        </div>
+        <div class="carte-main">
+          @if(count($bsa->pss) > 0)
+            <h5>Protocoles de soins</h5>
             @foreach($bsa->pss as $ps)
-            <div class="bordure">
-                <div class="card-text d-flex justify-content-between align-items-end">
+                <div class="carte-main-ps">
                   <img src="{{URL::asset(config('fichiers.ps')).'/'.$ps->icone}}" style="height : 50px"/>
                   <h6>{{$ps->nom}}</h6>
                   <a href="{{route('ps.afficheUnEleveur', [$troupeau->user->id, $bsa->id, $ps->id])}}">
-                    <div class="pdf_download"></div>
+                    <div class="pdf_download">
+                      <img src="{{URL::asset(config('fichiers.icones'))}}/PDF_telecharge.svg">
+                    </div>
                   </a>
                 </div>
-                </div>
             @endforeach()
+          @else
+            <h5 class="estompe">Pas de protocole de soins enregistré</h5>
+            <img class="no-ps" src="{{URL::asset(config('fichiers.icones'))}}/visites/no_ps.svg" alt="no ps">           
+          @endif()
         </div>
-    </div>
+      </div>
     @endforeach()
-</div>
 @endsection()

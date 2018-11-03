@@ -106,17 +106,16 @@ label {
   max-height: 100%;
 }
 
-.sous-ruban {
-  height: 50px;
-  color: #e6e6e6;
-}
-
 .gras {
   font-weight: bold;
 }
 
 .italique {
   font-style: italic;
+}
+
+.estompe {
+  color: grey;
 }
 
 .plus-petit {
@@ -155,8 +154,6 @@ label {
 }
 
 .pdf_download {
-  background: url(/fonts/PDF_telecharge.svg?84fe1ddb72948ee235ea9f2e58d2a2e2) no-repeat;
-  background-size: contain;
   width: 25px;
   height: 25px;
 }
@@ -508,6 +505,29 @@ label {
   }
 }
 
+.sous-ruban {
+  height: 50px;
+  color: #e6e6e6;
+}
+
+.sous-ruban a {
+  width: 50px;
+}
+
+.sous-ruban h1 {
+  line-height: 3rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+
+@media screen and (max-width: 991.98px) {
+  .sous-ruban h1 {
+    font-size: 1.25rem;
+  }
+}
+
 .enveloppe {
   background-color: Moccasin;
   padding-left: 0;
@@ -766,11 +786,19 @@ Personnalisation des boutons
 
 .carte-titre-texte {
   padding-left: 5px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .carte-titre-texte h5 {
   font-size: 1em;
   font-weight: bold;
+  text-align: center;
+}
+
+.carte-titre-icone {
+  width: 50px;
 }
 
 .carte-main {
@@ -796,7 +824,7 @@ Personnalisation des boutons
   font-weight: bold;
 }
 
-.carte-main :last-child {
+.carte-main .carte-bouton {
   margin: 20px 5% 5px 40%;
 }
 
@@ -909,9 +937,6 @@ a:hover img {
 
   .analyse-bsps .carte {
     width: 100%;
-  }
-
-  .analyse-bsps .carte:first-of-type {
     margin-bottom: 5px;
   }
 
@@ -952,6 +977,34 @@ a:hover img {
   .carte-param {
     max-width: 60%;
   }
+}
+
+.carte-main .no-ps {
+  margin: auto;
+  max-width: 100px;
+}
+
+.carte-main-ps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5px;
+}
+
+.carte-main-ps h6 {
+  margin-left: 5%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.carte-main-ps .a {
+  width: 50px;
 }
 
 .analyses {
