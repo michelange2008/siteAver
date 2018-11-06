@@ -53,7 +53,7 @@ a.lien-bsa > img, a.lien-vs >img {
   pointer-events: none;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 991.98px) {
 
   .ligne {
     display: grid;
@@ -67,13 +67,14 @@ a.lien-bsa > img, a.lien-vs >img {
   .bsa, .vso {
     border-left: 5px solid lightgrey;
   }
-
-  h4 {
-    font-size: 1rem;
+  .user-name {
+    h4 {
+      font-size: 1rem;
+    }
   }
 }
 
-@media screen and (min-width: 640px) and (max-width: 960px)
+@media screen and (min-width: 640px) and (max-width: 991.98px)
 {
   .ligne {
     display: grid;

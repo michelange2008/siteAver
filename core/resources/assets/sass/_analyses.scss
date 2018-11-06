@@ -11,9 +11,15 @@
 .card-body-analyses {
   flex-direction: column;
   justify-content: space-between;
+  h5, .btn-analyses {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: initial;
+  }
+
 }
 
-@media screen  and (max-width: 640px)
+@media screen  and (max-width: 768px)
 {
   .analyses {
     flex-direction: column;

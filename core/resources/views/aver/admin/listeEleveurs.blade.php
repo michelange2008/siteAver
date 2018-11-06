@@ -1,10 +1,13 @@
 @section('content')
 
     <div>
-    	<h3 class="alert alert-success">Situation des éleveurs</h3>
-      <div class="d-flex justify-content-between flex-wrap">
+      <div class="alert alert-success d-flex justify-content-between align-items-center">
+    	   <h4 >Situation des éleveurs</h4>
+         <img id="tri" class="img-15 curseur" src="{{config('fichiers.icones')}}/fleche_bas.svg" alt="tri" title="afficher le tri">
+      </div>
+      <div id="controles" class="non_affiche d-flex justify-content-between flex-wrap">
         @foreach($boutons->listeSousmenu() as $bouton)
-          <button style="margin:5px" class="btn btn-menu align-self-stretch flex-grow-1 {{$bouton->couleur()}} rounded-0" id="{{str_replace(" ","_", strtolower($bouton->texte()))}}">{{$bouton->texte()}}</button>
+          <button style="margin:5px" class="btn btn-menu btn-petit align-self-stretch flex-grow-1 {{$bouton->couleur()}} rounded-0" id="{{str_replace(" ","_", strtolower($bouton->texte()))}}">{{$bouton->texte()}}</button>
         @endforeach()
       </div>
        <table id="listeEleveurs" class="table table-striped table-hover display  dt-responsive nowrap" width:"100%">
@@ -42,14 +45,14 @@
                     	@endif()
                     </td>
 
-                    <td class="align-middle text-center">
+                    <td class="prophylo align-middle text-center">
                     	@foreach($troupeau->anneeprophylos as $item)
                         	@if($item->campagne === $campagne)
                         		<i name="1" class="fa fa-bullseye" style="color:blue"></i>
                         	@endif()
                         @endforeach()
 					</td>
-					<td class="align-middle text-center">
+					<td class="vso-a-faire align-middle text-center">
 					       @foreach($troupeau->vsoafaire as $item)
                         	@if($item->annee == $annee)
                         		<i name = "1" class="fa fa-bullseye" style="color:blue"></i>

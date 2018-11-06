@@ -1,14 +1,15 @@
 @section('dashboard')
         @if($dernMaJ > 3)
-              <h4 class="alert alert-warning">attention dernière mise à jour il y a {{$dernMaJ}} mois</h4>
+              <h4 class="alert alert-warning">Attention dernière mise à jour il y a {{$dernMaJ}} mois</h4>
         @elseif($dernMaJ > 6)
              <h4 class="alert alert-danger">attention dernière mise à jour il y a {{$dernMaJ}} mois</h4>
         @endif()
-
-        <h3 id="titre" class="alert alert-success curseur">Tableau de bord
-        	<span class="italique plus-petit"> (cliquer pour afficher les graphiques) </span>
-        	<span id="fleche" class="fa fa-angle-double-down"></span>
-        </h3>
+        <div id="titre" class="alert alert-success curseur d-flex flex-row justify-content-between align-items-center">
+          <h4>Tableau de bord
+          	<span class="italique plus-petit"> (cliquer pour afficher les graphiques) </span>
+          </h4>
+          <img class="img-15" src="{{config('fichiers.icones')}}/fleche_bas.svg" alt="bas">
+        </div>
 
         <div id="graph" class="container-fluid d-flex smartphone-vertical justify-content-between ailleurs">
             @foreach($stats as $key => $stat)

@@ -8,7 +8,7 @@ return [
   'icones' => $medias.'icones/',
   'images_accueil' => $medias.'accueil/',
   'csv' => $medias.'csv/',
-  'pdf' => $medias.'pdf/',
+  'ps_pdf' => $medias.'pdf/ps/',
   'analyses' => $medias.'pdf/analyses/',
   'races' => $medias.'races/',
   'signatures' => $medias.'signatures/',

@@ -147,8 +147,12 @@ $(function(){
         }
     })
 // PAGE LISTE ELEVEURS ///////////////////////////////////////////////
+      // Affiche ou masque les boutons de tri
+      $('#tri').on('click', function(){
+        $("#controles").toggleClass('non_affiche')
+      })
       // Affiche les éleveurs dont on n'est pas vet San
-      $('#eleveurs_non_vét_san').on('click', function(){
+      $('#non_veto_san').on('click', function(){
         $('#avertissement').removeClass('non_affiche');
         $('.vetsan').each(function(){
           $(this).parent().removeClass('non_affiche');
@@ -170,7 +174,7 @@ $(function(){
       //  Affiche les vso à faire
       $('#vso').on('click', function(){
           $('#avertissement').removeClass('non_affiche');
-          $('.vso').each(function(){
+          $('.vso-a-faire').each(function(){
             $(this).parent().removeClass('non_affiche');
             if($(this).children().attr('name')!= 1){
               $(this).parent().toggleClass('non_affiche');
@@ -179,7 +183,6 @@ $(function(){
       })
       //  Affiche les BSA importants à faire
       $('#bsa_important').on('click', function(){
-        console.log('toto');
           $('#avertissement').removeClass('non_affiche');
           $('.bsaimportant').each(function(){
             $(this).parent().removeClass('non_affiche');

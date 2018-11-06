@@ -9,7 +9,7 @@
 <div class="container-fluid bg-success d-flex flex-row sous-ruban justify-content-between align-middle">
     <h1>Analyses</h1>
 </div>
-<div class="container-fluid">
+
   {!! Form::open(['route' => 'admin.analyses.changeImportant', 'id' => 'changeImportant']) !!}
   <div class="d-flex justify-content-end">
     <a href="{{Route('admin.analyses.majAnalyses')}}" class="btn btn-gold">Mise à jour de la base de donnée</a>
@@ -19,11 +19,11 @@
     <table id="listeAnalyses" class="table table-striped table-hover tablesorter">
       <thead class="bg-success">
         <tr>
-          <th>Nom de l'éleveur</th>
+          <th>Eleveur</th>
           <th class="text-center">Date</th>
-          <th class="text-center">Type d'analyse</th>
+          <th class="text-center">Analyse</th>
           <th class="text-center">Important</th>
-          <th class="text-center">n° d'analyse</th>
+          <th class="text-center">n°</th>
           <th class="text-center">Fichier</th>
         </tr>
       </thead>
@@ -62,14 +62,12 @@
           </td>
           <td class="text-center">{{$analyse->id_analyse}}</td>
           <td class="text-center">
-            <a href="{{URL::asset('pdf/analyses').'/'.$analyse->lien}}"><div class="pdf_download lien-icone-centre"></div></a>
+            <a href="{{config('fichiers.analyses').'/'.$analyse->lien}}"><div class="pdf_download lien-icone-centre"></div></a>
           </td>
         </tr>
         @endforeach()
       </tbody>
     </table>
   </div>
-
-</div>
 
 @endsection()

@@ -23,7 +23,7 @@ class PsConstruitPdf extends FPDI
 	public function creePdf(Ps $ps, User $user, $date, $veto) {
 
 		// Origine du modèle
-		$this->setSourceFile(asset(config('fichiers.pdf'))"/ps/".$ps->fichier);
+		$this->setSourceFile(config('fichiers.ps_pdf')."/".$ps->fichier);
 		//AJout d'une page
 		$this->AddPage();
 		// Définition du modèle
@@ -47,12 +47,26 @@ class PsConstruitPdf extends FPDI
  		$this->Write(5, "Date: ".$date->format(' j/m/Y'));
  		$this->SetXY(20, 185);
  		$this->Write(5, "Signatures:  ");
-
-		$this->Image($veto->signature,100, 222, 85);
+		$signature = $this->signature($veto);
+		$this->Image($signature,100, 222, 85);
  		$this->SetXY(40, 192);
  		$this->Write(5, "Eleveur(-euse)", '', 0, 'L', false, 0, false, false, 0);
  		$this->SetXY(100, 192);
  		$this->Write(5, "Vétérinaire", '', 0, 'C', false, 0, false, false, 0);
  		$this->Output("essai.pdf",'I', true);
+	}
+
+	public function signature($veto)
+	{
+		if(file_exists(config('fichiers.logos')."/signature_".$veto->id.".jpg"))
+		{
+			$img_ext = ["png", "jpg", "jpeg"];
+		 	$extension = explode("/", mime_content_type(config('fichiers.logos')."/logo.png"))[1];
+			if(in_array($extension, $img_ext))
+			{
+				return config('fichiers.logos')."/signature_".$veto->id.".jpg";
+			}
+		}
+		return config('fichiers.logos')."/signature.jpg";
 	}
 }

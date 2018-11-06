@@ -4,16 +4,14 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-var $ = require("jquery");
+ require('./bootstrap');
+ require('./dropdown.js');
+
 require("jquery-ui");
-require("ajax");
-// // require("jquery-ui-bundle"); // Est-ce nécessaire d'utiliser jquery-bundle ... je ne sais pas
-require('./bootstrap');
-//
-require( 'datatables.net-dt' );
-require( 'datatables.net-fixedheader-dt' );
-require( 'datatables.net-responsive-dt' );
 require('jquery-confirm');
+require("ajax");
+
+
 
 // window.Vue = require('vue');
 

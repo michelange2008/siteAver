@@ -33,9 +33,9 @@
           {{$analyse->id_analyse}}
         </p>
         @if($analyse->important)
-          <a href="{{URL::asset('pdf/analyses').'/'.$analyse->lien}}" class = "btn btn-danger btn-analyses">Voir<span class="smartphone-no"> l'analyse</span></a>
+          <a href="{{asset(config('fichiers.analyses').'/'.$analyse->lien)}}" class = "btn btn-danger btn-analyses">Voir<span class="smartphone-no"> l'analyse</span></a>
         @else()
-          <a href="{{URL::asset('pdf/analyses').'/'.$analyse->lien}}" class = "btn btn-success btn-analyses">Voir<span class="smartphone-no"> l'analyse</span></a>
+          <a href="{{asset(config('fichiers.analyses').'/'.$analyse->lien)}}" class = "btn btn-success btn-analyses">Voir<span class="smartphone-no"> l'analyse</span></a>
         @endif()
       </div>
     </div>

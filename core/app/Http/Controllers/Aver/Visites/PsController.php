@@ -61,23 +61,25 @@ class PsController extends Controller
         return redirect()->route('ps.index');
     }
 
-
     public function destroy($id)
     {
         $this->psRep->destroy($id);
 
         return redirect()->back()->with('message', 'ce protocole de soin a bien été supprimé');
     }
+
     public function affichePs($ps_id)
     {
         $ps = Ps::find($ps_id);
-        
-        
+
         return view('visites.psListeEleveurs', [
             'ps' => $ps,
         ]);
     }
-    
+
+    /*
+    // crée un pdf avec le ps d'un éleveur donné pour un bsa donné
+    */
     public function affichePsUnEleveur($user_id, $bsa_id, $ps_id)
     {
         $ps = Ps::find($ps_id);
@@ -85,7 +87,7 @@ class PsController extends Controller
         $date = $bsa->date_bsa;
         $dateTab = explode("-", $date);
         $dateEntiere = Carbon::createFromDate($dateTab[0], $dateTab[1], $dateTab[2]);
-        $veto = Veto::find(Auth::user()->id);
+        $veto = Veto::where('user_id', Auth::user()->id)->first();
         $user = User::find($user_id);
         $construitPdf = new PsConstruitPdf();
         $construitPdf->Header();

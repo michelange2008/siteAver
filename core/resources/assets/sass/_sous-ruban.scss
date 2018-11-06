@@ -1,4 +1,4 @@
-
+// Affichage d'un grand sous-titre style "analyses" ou "bilans sanitaires" avec alert de bootstrap
 .sous-ruban {
   height: 50px;
   color: rgb($gris, $gris, $gris);
@@ -8,7 +8,9 @@
 
   h1 {
       line-height: 3rem;
-      flex-grow: 1;
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
       text-align: center;
   }
 

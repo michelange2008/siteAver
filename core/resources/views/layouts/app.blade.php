@@ -9,11 +9,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Aver') }}</title>
-     <!-- Styles -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-      crossorigin="anonymous">
       @foreach(config('styles') as $path)
         <link rel="stylesheet" href="{{ asset($path)}}">
       @endforeach
@@ -41,8 +36,12 @@
     </div>
   </div>
 </div>
+    <script type="text/javascript" src="{{asset('/core/node_modules/jquery/dist/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/core/node_modules/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/core/node_modules/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/core/node_modules/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
 
-    <!-- <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+    </script>
     <script src="{{ asset(config('scripts.path'))}}/app.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/user_gestion.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/analyses.js"></script>
@@ -51,7 +50,8 @@
     <script src="{{ asset(config('scripts.path'))}}/splitAffichage.js"></script>
     <!-- <script src="https://use.fontawesome.com/f8a7076b4b.js"></script> -->
     <!-- TODO vérifier s'il faut le téléchargement d'ajax ou si le npm suffit -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+    <!-- <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script> --}}
 
     @stack(config('scripts.path'))
 

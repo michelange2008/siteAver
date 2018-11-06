@@ -38,10 +38,13 @@
     @foreach($listePs as $ps)
     <tr>
       <td class="lien">
-        <a class = "text-dark" href="{{route('ps.affiche', $ps->id)}}" ><img class="moyenne-icone " src ="{{URL::asset(config('icones_ps.path')).'/'.$ps->icone}}" /> {{$ps->nom}} <span class="plus-petit italique">({{$ps->fichier}})</span></a>
+        <a class = "text-dark" href="{{route('ps.affiche', $ps->id)}}" >
+          <img class="moyenne-icone " src ="{{asset(config('fichiers.ps'))."/".$ps->icone}}" />
+           {{$ps->nom}} <span class="plus-petit italique">({{$ps->fichier}})</span>
+        </a>
       </td>
       @foreach($listeEspeces as $espece)
-      <td style="text-align : center">
+      <td class="align-middle text-center">
         @if($ps->especes->pluck('id')->contains($espece->id))
           <input type="checkbox" name="{{$ps->id}}_{{$espece->id}}" checked = 'checked' />
         @else()
@@ -50,12 +53,18 @@
       </td>
       @endforeach()
       <td >
-         <a href="{{URL::asset('pdf/ps').'/'.$ps->fichier}}" title="ouvrir le fichier">
-           <div class="pdf_download" ></div>
+         <a class="d-flex justify-content-center align-items-center" href="{{URL::asset(config('fichiers.ps_pdf'))."/".$ps->fichier}}" title="ouvrir le fichier">
+           <div class="pdf_download">
+             <img src="{{URL::asset(config('fichiers.icones'))}}/PDF_telecharge.svg">
+           </div>
          </a>
       </td>
-      <td class="essai d-flex justify-content-end">
-        <div class = 'delete' name="{{route('ps.destroy', $ps->id)}}"></div>
+      <td class="essai d-flex justify-content-center">
+        <div class = 'curseur delete' name="{{route('ps.destroy', $ps->id)}}">
+          <div class="pdf_download">
+            <img src="{{URL::asset(config('fichiers.icones'))}}/delete.svg">
+          </div>
+        </div>
       </td>
     </tr>
     @endforeach()

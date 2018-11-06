@@ -2,5 +2,5 @@
 $path = 'core/public/css/';
 
 return [
-  'accueil' => $path.'accueil.css',
+  'accueil' => $path.'accueil/accueil.css',
 ];

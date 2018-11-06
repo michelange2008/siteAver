@@ -19,7 +19,7 @@ use Illuminate\Http\Response;
 class AnalysesController extends Controller
 {
     use AnalyseMetadatas;
-    
+
     public function index()
     {
         $listeAnalyses = Analyse::all();
@@ -27,22 +27,22 @@ class AnalysesController extends Controller
             'listeAnalyses' => $listeAnalyses,
         ]);
     }
-    
+
     public function parEleveur($user_id, $troupeau_id)
     {
         $listeAnalyses = Analyse::where('user_id', $user_id)->get();
            return view('aver.fichiers.analyses.analyses',[
             'listeAnalyses' => $listeAnalyses,
             'troupeau' => Troupeau::find($troupeau_id),
-            
+
         ]);
     }
-    
+
     public function telechargement($id, $fichier)
     {
-        return Response()->download($fichier);
+        return Storage::response($fichier);
     }
-    
+
     public function majAnalyses()
     {
         $listeAnalyses = $this->analyseMetadatas();
@@ -66,7 +66,7 @@ class AnalysesController extends Controller
             }
             $analyse->save();
         }
-        
+
         return redirect()->back();
     }
 }
