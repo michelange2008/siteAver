@@ -31,7 +31,9 @@
                 @endif
       </ul>
     <a class="navbar-brand" href="{{ url('/') }}">
-      {{ config('app.name', 'Antikor') }}
+      @if(Auth::user()->admin == 1)Antikor
+      @else{{ config('app.name', 'Aver') }}
+      @endif
     </a>
 
   </nav>

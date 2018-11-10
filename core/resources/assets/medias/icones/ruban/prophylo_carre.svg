@@ -15,7 +15,7 @@
    sodipodi:docname="prophylo_carre.svg"
    width="100"
    height="100"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+   inkscape:version="0.92.1 r15371">
   <metadata
      id="metadata20">
     <rdf:RDF>
@@ -24,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -39,19 +39,19 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1600"
-     inkscape:window-height="836"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
      id="namedview16"
      showgrid="false"
      inkscape:zoom="1.888"
-     inkscape:cx="1.8622881"
+     inkscape:cx="-134.26059"
      inkscape:cy="62.5"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg14" />
   <rect
-     style="opacity:0.57399998;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:2.75571513;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     style="opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:2.75571513;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect4491"
      width="113.62291"
      height="118.55932"

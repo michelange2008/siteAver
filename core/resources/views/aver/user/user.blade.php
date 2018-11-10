@@ -9,51 +9,48 @@
 @stop
 
 @section('content')
-
-<div class="container-fluid d-flex flex-column">
-  @foreach($troupeauxUser as $troupeau)
-    <div class="container-fluid {{$troupeau->especes->abbreviation}}_bg card-troupeau" style="margin-bottom:10px">
-        <div class="row  card-cadre-simple">
-            <div class="">
+<div id="accordion">
+@foreach($troupeauxUser as $troupeau)
+<div class="d-flex flex-column">
+    <div class="{{$troupeau->especes->abbreviation}}_bg card-troupeau" style="margin-bottom:10px">
+        <div class="row card-cadre-simple justify-content-between align-items-center" style="margin:0">
+            <div class="d-flex flex-row justify-content-center align-items-center">
               <img src="{{URL::asset(config('icones.path'))}}/ruban/{{$troupeau->especes->abbreviation}}.svg" alt="tete animal" />
+              <h3 class="card-title">Troupeau {{strtolower($troupeau->especes->nom)}}</h3>
             </div>
-            <div class="col-7 d-flex flex-column justify-content-center ml-3">
-              <h2 class="card-title">Troupeau</h2>
-              <h2>{{$troupeau->especes->nom}}</h2>
+            <div class="bouton-voir-troupeau">
+              <button class="btn btn-secondary" type="button"  data-parent="#accordion"
+              data-toggle="collapse" data-target="#troupeau_{{$troupeau->id}}">
+                voir
+              </button>
             </div>
         </div>
-        <div class="container-fluid">
-              <div class="row panneau justify-content-between">
-                @foreach($groupeSceaux->get($troupeau->id)->listeSceaux() as $sceau)
-                  @if($sceau->affichage())
-                    <div id="{{$sceau->identite()}}" class="sceau col-6 d-flex flex-row espace-sm mini-card card-cadre-simple justify-content-start">
-                        <img src="{{URL::asset('medias').$sceau->icone()}}" alt="{{$sceau->identite()}}" />
-                        <div class="mini-card">
-                          <h5>{{$sceau->titre()}}</h5>
-                          <div class="d-flex flex-row justify-content-between">
-                            <div class="d-flex flex-column">
-                              @if(!is_null($sceau->soustitre()))
-                                <h6 class="smartphone-no">{{$sceau->soustitre()}}</h6>
-                              @endif()
-                              <p class="smartphone-no">{{$sceau->texte()}}</p>
-                          </div>
-                          <div>
-                            @if($sceau->parametre() > 0)
-                            {{ link_to_route($sceau->bouton()->route(), ucfirst($sceau->bouton()->texte()),
-                              ["user_id" => $troupeau->user_id, "troupeau_id" => $troupeau->id], ['class' => $sceau->bouton()->couleur().' btn btn-sceau align-self-end'])}}
-                              @endif()
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  @endif()
+        @if($troupeauxUser->count() > 1) <div id="troupeau_{{$troupeau->id}}" class="collapse panneau">
+        @else <div id="troupeau_{{$troupeau->id}}" class="collapse show panneau">
+        @endif
+          @foreach($groupeSceaux->get($troupeau->id)->listeSceaux() as $sceau)
+            @if($sceau->affichage())
+              <div id="{{$sceau->identite()}}" class="sceau">
+                  <img src="{{URL::asset(config('fichiers.icones')).$sceau->icone()}}" alt="{{$sceau->identite()}}" />
+                  <h5>{{$sceau->titre()}}
+                    @if($sceau->soustitre() > 0) ({{$sceau->soustitre()}})
+                    @endif
+                  </h5>
+                  <!-- <div class="d-flex flex-row justify-content-between"> -->
+                  <div class="lien-ps-ana">
+                  <p class="">{{$sceau->texte()}}</p>
+                @if($sceau->soustitre() > 0)
+                {{ link_to_route($sceau->bouton()->route(), ucfirst($sceau->bouton()->texte()),
+                  ["user_id" => $troupeau->user_id, "troupeau_id" => $troupeau->id], ['class' => $sceau->bouton()->couleur().' btn btn-sceau align-self-end'])}}
+                @endif()
+                </div>
 
-                @endforeach()
-
-            </div>
-          </div>
+              </div>
+            @endif()
+          @endforeach()
+        </div>
     </div>
+  </div>
   @endforeach()
 </div>
-
 @stop

@@ -18,32 +18,32 @@ use App\Constantes\ConstSceaux;
 class UserAverController extends Controller
 {
     use PeriodeProphylo;
-    
+
     protected $userRep;
     protected $userSousMenuRep;
     protected $troupeauAffichageRep;
-    
+
     public function __construct(UserRep $userRep, UserSousMenuRep $userSousMenuRep, TroupeauAffichageRep $troupeauAffichageRep)
     {
         $this->userRep = $userRep;
         $this->userSousMenuRep = $userSousMenuRep;
         $this->troupeauAffichageRep = $troupeauAffichageRep;
     }
-    
+
     public function index()
     {
         $sousmenu = $this->userSousMenuRep->userSousmenu();
         $troupeauxUser = Troupeau::where('user_id', Auth()->user()->id)->get();
-        $listeCards = collect();
-        foreach ($troupeauxUser as $troupeauUser)
-        {
-            $listeCards->put($troupeauUser->id, $this->troupeauAffichageRep->listeCardsELeveur($troupeauUser->id));
-        }
-        $listeBlasons = collect();
-        foreach ($troupeauxUser as $troupeauUser)
-        {
-            $listeBlasons->put($troupeauUser->id, $this->troupeauAffichageRep->listeBlasonsEleveur($troupeauUser->id));
-        }
+        // $listeCards = collect();
+        // foreach ($troupeauxUser as $troupeauUser)
+        // {
+        //     $listeCards->put($troupeauUser->id, $this->troupeauAffichageRep->listeCardsELeveur($troupeauUser->id));
+        // }
+        // $listeBlasons = collect();
+        // foreach ($troupeauxUser as $troupeauUser)
+        // {
+        //     $listeBlasons->put($troupeauUser->id, $this->troupeauAffichageRep->listeBlasonsEleveur($troupeauUser->id));
+        // }
         $groupeSceaux = collect();
         foreach ($troupeauxUser as $troupeauUser)
         {
@@ -52,13 +52,13 @@ class UserAverController extends Controller
             $listeSceaux->construitListeComplete();
             $groupeSceaux->put($troupeauUser->id, $listeSceaux);
         }
-//         dd($listeCards->get('721')->cardListe()); 
+//         dd($listeCards->get('721')->cardListe());
         return view('aver.user.user', [
             'troupeauxUser' => $troupeauxUser,
             'campagne' => $this->campagne(),
             'annee' => $this->dateActuelle(),
-            'listeCards' => $listeCards,
-            'listeBlasons' => $listeBlasons,
+            // 'listeCards' => $listeCards,
+            // 'listeBlasons' => $listeBlasons,
             'groupeSceaux' => $groupeSceaux,
             'sousmenu' => $sousmenu,
         ]);

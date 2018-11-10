@@ -6,7 +6,7 @@
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
-@import "node_modules/font-awesome/scss/font-awesome";
+// @import "node_modules/font-awesome/scss/font-awesome";
 
 
 // Variables
@@ -33,3 +33,7 @@
 @import "affiche-bsaps"; // styles pour l'affichage des cartes des bsa d'une troupeau avec les ps
 
 @import "analyses"; // présentation des analyses
+
+@import "antikor/akcouleurs";
+
+@import "antikor/akmain";

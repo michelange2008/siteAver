@@ -3,16 +3,14 @@
 @extends('aver.admin.menuAdmin')
 
 @section('content')
-<br>
-<div class="container">
   @if(isset($titre)) <h4>{{$titre}}</h4>@endif
   @if($titre != 'Admin')
-  <nav class="nav navbar justify-content-around">
-      <nav class="nav-item"><button id="tous" class="btn btn-sm btn-secondary text-white" > Tous </button></nav>
+  <div class="d-flex flex-wrap justify-content-around" style="column-gap:5px">
+      <button id="tous" class="btn btn-sm btn-secondary text-white" > Tous </button>
       @foreach($especes as $espece)
-          <nav class="nav-item"><button id="{{$espece->abbreviation}}" class="btn btn-sm btn-secondary text-white espece {{$espece->abbreviation}}_bg" > {{$espece->nom }} </button></nav>
+        <button id="{{$espece->abbreviation}}" class="col btn btn-sm btn-secondary text-white espece {{$espece->abbreviation}}_bg" > {{$espece->nom }} </button>
       @endforeach
-  </nav>
+  </div>
   @endif()
   <table id="listeEleveurs" class="table table-hover table-sm tablesorter">
     <thead>
@@ -63,5 +61,4 @@
       @endforeach
       <tbody>
     </table>
-  </div>
 @endsection

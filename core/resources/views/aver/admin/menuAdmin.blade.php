@@ -14,7 +14,7 @@
 
       <li class="nav-item"><a href="{{URL::route('bsa.saisie')}}" class="nav-link">BSA et PS</a></li>
 
-      <li class="nav-item"><a href="{{ URL::route('user.index')}}" class = 'nav-link'>Liste Eleveurs</a></li>
+      <li class="nav-item"><a href="{{URL::route('user.index')}}" class = 'nav-link'>Liste Eleveurs</a></li>
 
       <li class="nav-item dropdown smartphone-no">
           <a id="visitesDropdown" class="nav-link dropdown-toggle nav-link" data-toggle="dropdown">
@@ -52,6 +52,7 @@
 
         </ul>
       </li>
+      <li class="nav-item"><a href="{{ URL::route('antikor.index')}}" class = 'nav-link'>Antikor</a></li>
     </ul>
   </div>
 </nav>

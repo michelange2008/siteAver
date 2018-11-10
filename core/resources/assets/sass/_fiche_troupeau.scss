@@ -144,23 +144,59 @@ a:hover img {
   margin: 0;
 }
 .panneau {
-    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    padding: 5px;
 }
+.bouton-voir-troupeau {
+  margin: 10px;
+  align-self: flex-end;
+}
+
 .card-troupeau {
-  max-width: 48%;
+  width: 100%;
+}
+.card-title {
+  margin-left: 10px;
 }
 
 .card-troupeau-admin {
   background:lightgrey;
 }
-.mini-card {
-  padding-left: 5px;
-  padding-right: 5px;
-  width: 100%;
+.sceau {
+  background: lightgrey;
+  display: grid;
+  grid-template-columns: 50px 1fr 100px;
+  grid-template-rows: 50px 1fr;
+
   img {
-    margin-left: -5px;
+    grid-row: 1; grid-column: 1;
   }
+  h5 {
+    margin-bottom: 0;
+    grid-row: 1; grid-column: 2 / span 3;
+    text-align: center;
+    line-height: -moz-block-height;
+    background: $gris-icone;
+  }
+  h6 {
+    grid-row: 3; grid-column: 2;
+  }
+  .lien-ps-ana {
+    grid-row: 2; grid-column: 1 / span 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 15px;
+    p {
+      flex-grow: 1;
+    }
+  }
+
 }
+
+
 .btn-sceau {
   margin: auto;
 }
@@ -184,8 +220,7 @@ a:hover img {
 {
 
   .panneau {
-    padding-left: 0;
-    padding-right: 0;
+    grid-template-columns: 1fr;
   }
   .mini-card {
     padding-left: 1px;
@@ -194,20 +229,31 @@ a:hover img {
   .mini-card > img {
     margin-left: -1px;
     width: 50px;
+    margin: 5px;
   }
   .sceau {
-    min-width: 100%;
-    max-height: 50px;
-  }
-  .btn-sceau {
-    font-size: 1em;
-    padding: 0.1em 0.75em;
-    margin: auto;
+    h5 {
+      font-weight: bold;
+    }
+    .lien-ps-ana {
+      margin: 15px 0;
+    }
+    .btn-sceau {
+      font-size: 1em;
+      padding: 0.1em 0.75em;
+      margin: auto;
+    }
   }
 }
 
 @media screen and (min-width:768px) {
   .carte-param {
     max-width: 60%;
+  }
+}
+
+@media screen and (min-width:992px) {
+  .card-troupeau {
+    width: 80%;
   }
 }

@@ -70,7 +70,7 @@ class ConstSceaux
 
     const BSAPS_IDENTITE = 'bsaps';
     const BSAPS_TITRE = "Protocoles de soin";
-    const BSAPS_SOUSTITRE = "Nombre: ";
+    const BSAPS_SOUSTITRE = "";
     const BSAPS_ICONE = SELF::PATH_ICONE_PS.'ps_carre.svg';
     const BSAPS_TEXTE_ADMIN_VRAI = "Dates des BSA et protocoles de soin";
     const BSAPS_TEXTE_USER_VRAI = "Dates des bilans sanitaires et protocoles de soin";
@@ -82,7 +82,7 @@ class ConstSceaux
 
     const ANA_IDENTITE = 'analyses';
     const ANA_TITRE = "résultats d'analyse";
-    const ANA_SOUSTITRE = "Nombre: ";
+    const ANA_SOUSTITRE = "";
     const ANA_ICONE = SELF::PATH_ICONE_ANA.'analyses_carre.svg';
     const ANA_TEXTE_ADMIN_VRAI = "(toutes espèces)";
     const ANA_TEXTE_ADMIN_FAUX = "Pas d'analyses téléchargeables";

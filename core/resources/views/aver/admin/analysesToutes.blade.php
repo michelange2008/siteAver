@@ -62,7 +62,10 @@
           </td>
           <td class="text-center">{{$analyse->id_analyse}}</td>
           <td class="text-center">
-            <a href="{{config('fichiers.analyses').'/'.$analyse->lien}}"><div class="pdf_download lien-icone-centre"></div></a>
+            <a href="{{URL::asset(config('fichiers.analyses'))."/".$analyse->lien}}">
+              <div class="pdf_download lien-icone-centre">
+                <img src="{{URL::asset(config('fichiers.icones'))}}/PDF_download.svg" alt="">
+              </div></a>
           </td>
         </tr>
         @endforeach()
