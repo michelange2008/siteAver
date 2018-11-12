@@ -1,3 +1,9 @@
+#app {
+  width: 100%;
+  .menu_admin {
+    justify-content: space-between;
+  }
+}
 
 .menu:hover {
   z-index: 10000;
@@ -20,11 +26,9 @@ $largeur_menu : 160px;
   $marges : 5px;
 
   #app {
-    width: 100%;
-
     .menu_admin {
       width: 100%;
-      justify-content: right;
+      justify-content: space-between !important;
     }
   }
 

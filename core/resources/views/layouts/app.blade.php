@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>
-      @if(Auth::user()->admin == 1)Antikor
+      @if(null !== Auth::user() && Auth::user()->admin == 1)Antikor
       @else{{ config('app.name', 'Aver') }}
       @endif
     </title>

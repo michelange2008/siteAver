@@ -13177,6 +13177,7 @@ __webpack_require__(7);
 __webpack_require__(8);
 __webpack_require__(10);
 __webpack_require__(11);
+__webpack_require__(27);
 
 // window.Vue = require('vue');
 
@@ -20330,6 +20331,66 @@ module.exports = function(module) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */
+/***/ (function(module, exports) {
+
+$(function () {
+  // Permet de permuter les préparations au cas par cas
+  $('.preparation').on('click', function () {
+    var num = $(this).attr('id').split('_')[1];
+    var cb = "#cb_" + num;
+    $(cb).val(Math.abs($(cb).val() - 1)); // Passe les cases cochée à la valeur 0 si elles valent 1 et vice-versa
+    $(this).toggleClass('preparation-oui');
+    $(this).toggleClass('preparation-non');
+  });
+  // Permet passer toutes les préparations en mode à faire et case à cocher 1
+  function afficheTout() {
+    $('.preparation').each(function () {
+      $(this).removeClass('preparation-non');
+      $(this).addClass('preparation-oui');
+      var num = $(this).attr('id').split('_')[1];
+      var cb = "#cb_" + num;
+      $(cb).val(1); // Passe les cases cochée à la valeur 1
+    });
+  }
+  // Toutes les préparations sont à faire
+  $('#tous').on('click', function () {
+    afficheTout();
+  });
+  // Préparations selon le choix de la formation
+  $('.choix').on('click', function () {
+    afficheTout();
+    var nom_id = $(this).attr('id');
+    $('.preparation').each(function () {
+      if ($(this).attr('class').indexOf(nom_id) === -1) {
+        $(this).addClass('preparation-non');
+        $(this).removeClass('preparation-oui');
+        var num = $(this).attr('id').split('_')[1];
+        var cb = "#cb_" + num;
+        console.log(cb);
+        $(cb).val(0); // Passe les cases à la valeur 0
+      } else {
+        var num = $(this).attr('id').split('_')[1];
+        var cb = "#cb_" + num;
+        $(cb).val(1); // Passe les cases à la valeur 1
+      }
+    });
+  });
+});
 
 /***/ })
 /******/ ]);

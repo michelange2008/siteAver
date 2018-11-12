@@ -1,0 +1,108 @@
+@mixin background-image($img, $background-position, $background-color) {
+    background-image: url('../img/#{$img}');
+    background-repeat: no-repeat;
+    background-position: $background-position;
+    background-color: $background-color ;
+    background-size: contain;
+}
+
+$he: Firebrick;
+$pp: OliveDrab;
+$tm: DarkGreen;
+$ex: OrangeRed;
+$hy: MediumBlue;
+$ma: SlateGrey;
+$au: DarkGrey;
+
+@media screen and (max-width: 568px) {
+
+  .akboutons {
+    border-radius: 0;
+    border: inherit;
+    background: $rouge-1;
+    color: $rouge-4;
+  }
+  .preparations {
+
+    .bandeau {
+      margin: 0;
+    }
+    .liste-preparations {
+      background: $vert-primaire-2;
+      padding: 0 10px;
+    }
+    .preparation {
+      cursor: pointer;
+      padding: 5px 0;
+      td {
+        img {
+          width: 30px;
+        }
+      }
+    }
+    .preparation-oui {
+      color: $rouge-4;
+      font-weight: bold;
+      td#non {
+        display: none;
+      }
+    }
+    .preparation-non {
+      color: $rouge-2;
+      font-weight: lighter;
+      td#oui {
+        display: none;
+      }
+    }
+  }
+
+
+
+  .produit {
+    padding: 0.5rem 0.25rem;
+  }
+  .produit-fait {
+    background: aliceBlue;
+    border:none;
+  }
+
+  .container-icone {
+    min-width: 20px;
+    min-height: 20px;
+  }
+  .icone {
+    width: 100%;
+  }
+
+  .marque {
+    min-width: 30px;
+    min-height: 30px;
+  }
+  .invisible {
+    display: none;
+  }
+
+  .he {
+    color: $he;
+  }
+  .pp {
+    color: $pp;
+  }
+  .tm {
+    color: $tm;
+  }
+  .hy {
+    color: $hy;
+  }
+  .ma {
+    color: $ma;
+  }
+  .ex {
+    color: $ex;
+  }
+  .au {
+    color: $au;
+  }
+
+
+}

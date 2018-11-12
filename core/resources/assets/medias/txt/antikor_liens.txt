@@ -1,0 +1,3 @@
+nuage;https://antikor.fr/nextcloud;nuage.svg
+fichiers;https://antikor.fr/antikor/biblio;biblio.svg
+aromaliste;antikor/aromaliste;aromaliste.svg

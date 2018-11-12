@@ -60,5 +60,7 @@ class Kernel extends HttpKernel
 
         // Middleware visant à calculer la date du dernier BSA par rapport à aujourd'hui
         'delaiBSA' => \App\Http\Middleware\DelaiBSA::class,
+        // Middleware visant à empêcher l'accès à antikor pour un nom Admin
+        'isAdmin' => \App\Http\Middleware\IsAdmin::class,
     ];
 }

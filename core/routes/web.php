@@ -20,8 +20,6 @@ Route::get('/plantes_libres', 'MainController@plantes_libres');
 
 Route::get('/aver', ['uses' => 'Aver\AverController@index', 'as' => 'aver.accueil'])->middleware('delaiBSA');
 
-Route::get('/antikor', ['uses' => 'Antikor\AntikorController@index', 'as' => 'antikor.index']);
-
 Route::get('/forum', 'MainController@forum');
 
 // ROUTES AVER ##############################################################################################
@@ -32,6 +30,15 @@ Auth::routes();
 Route::get('/home', 'Aver\AverController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
+
+  Route::middleware(['isAdmin'])->group(function(){
+
+    Route::get('/antikor', ['uses' => 'Antikor\AntikorController@index', 'as' => 'antikor.index']);
+
+    Route::get('/antikor/aromaliste', ['uses' => 'Antikor\Aromaliste\AromalisteController@index', 'as' => 'aromaliste']);
+
+    Route::post('/antikor/aromaliste/choix', ['uses' => 'Antikor\Aromaliste\AromalisteController@choix', 'as' => 'aromaliste.choix']);
+  });
 
     Route::resource('aver/troupeau', 'Aver\TroupeauxController');
 
@@ -168,5 +175,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('aver/essai', ['uses' =>'Aver\Admin\EssaiController@index', 'as' => 'essai']);
 
     Route::post('aver/essai/ajax', ['uses' =>'Aver\Admin\EssaiController@ajax', 'as' => 'ajax']);
+
+    //################################################ ROUTES ANTIKOR ###################################################################
 
 });

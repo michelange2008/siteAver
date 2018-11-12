@@ -7,29 +7,36 @@
 
 @section('content')
 <div class="fond">
-  <div id="informations">
+  <div id="info">
     <div class="alert bandeau">
       <h3>Informations</h3>
     </div>
-    <div class="info-contenu">
-      <table class="table table-stripped table-focus">
-        <thead>
-          <tr>
-            <th>Libellé</th>
-            <th>Info</th>
-          </tr>
-        </thead>
+    <div id="info-contenu">
+      <table class="table table-striped table-focus">
         <tbody>
+          @foreach ($listeInfos as $intitule => $valeur)
             <tr>
-              <td>Numéro Ordre SCOP</td>
-              <td>XXXXXX</td>
+              <td class="intitule">{{$intitule}}</td>
+              <td class="valeur">{{$valeur}}</td>
             </tr>
+          @endforeach
         </tbody>
       </table>
     </div>
   </div>
-  <div id="liens" class="alert bandeau">
-    <h3>Liens</h3>
+  <div id="liens">
+    <div class="alert bandeau">
+      <h3>Liens</h3>
+    </div>
+    <div id="liens-contenu">
+      @foreach ($listeLiens as $liens)
+        <div id="{{$liens->nom()}}" class="etiquette">
+          <a href="{{$liens->url()}}">
+            <img src="{{config('fichiers.icones')}}antikor/{{$liens->icone()}}" alt="{{$liens->nom()}}">
+            <h5>{{$liens->nom()}}</h5>
+          </a>
+        </div>
+      @endforeach
   </div>
 </div>
 
