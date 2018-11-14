@@ -9,8 +9,12 @@ use App\Models\Aromaliste\Arompreparation;
 use App\Models\Aromaliste\Aromproduit;
 use App\Models\Aromaliste\Arompreparation_Aromproduit;
 
+use App\Traits\ArronditProduits;
+
 class AromalisteController extends Controller
 {
+
+    use ArronditProduits;
 
     public function index()
     {
@@ -48,6 +52,7 @@ class AromalisteController extends Controller
         if($quantite_totale > 0)
         {
           $produit->quantite_totale = $quantite_totale;
+          $this->arrondiProduits($produit);
           $liste_produits->push($produit);
         }
       }

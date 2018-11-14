@@ -9,4 +9,8 @@ class Aromcategorie extends Model
     public $timestamps = false;
     protected $guarded = [];
 
+    public function produits()
+    {
+      return $this->hasMany(Aromproduit::class);
+    }
 }

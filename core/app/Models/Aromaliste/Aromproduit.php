@@ -11,11 +11,7 @@ class Aromproduit extends Model
 
   public function categorie()
   {
-    return $this->belongsTo(Categorie::class);
-  }
-  public function listes()
-  {
-    return $this->hasMany(Liste::class);
+    return $this->belongsTo(Aromcategorie::class);
   }
   public function unite()
   {
