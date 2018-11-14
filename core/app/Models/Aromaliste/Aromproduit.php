@@ -17,5 +17,9 @@ class Aromproduit extends Model
   {
     return $this->hasMany(Liste::class);
   }
+  public function unite()
+  {
+    return $this->belongsTo(Aromunite::class);
+  }
 
 }

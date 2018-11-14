@@ -8,6 +8,7 @@ class Arompreparation_Aromproduit extends Model
 {
   public $timestamps = false;
   protected $guarded = [];
+  protected $table = "arompreparation_aromproduit";
 
   public function unite()
   {

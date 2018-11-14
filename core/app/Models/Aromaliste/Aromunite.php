@@ -9,8 +9,8 @@ class Aromunite extends Model
     public $timestamps = false;
     protected $guarded = [];
 
-    public function preps_prods()
+    public function produits()
     {
-      return $this->hasMany(AromPreparation_AromProduit::class);
+      return $this->hasMany(AromProduit::class);
     }
 }
