@@ -10,9 +10,9 @@
     <table class="table table-striped table-hover">
       @foreach($liste_produits as $produit)
         <tr>
-          <td>{{$produit->nom}}</td>
-          <td>{{$produit->quantite_totale}}</td>
-          <td>{{$produit->unite->abbreviation}}</td>
+          <td>{{$produit->nom}} ({{$produit->unite->abbreviation}})</td>
+          <td class="text-right">{{$produit->quantite_totale}}</td>
+          <td></td>
         </tr>
       @endforeach
     </table
