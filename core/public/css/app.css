@@ -11751,6 +11751,32 @@ a:hover img {
 }
 
 @media screen and (max-width: 568px) {
+  .bandeau a img {
+    width: 30px;
+  }
+
+  .bandeau-choix {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .bandeau-choix .akboutons {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    margin-right: 3px;
+  }
+
   .akboutons {
     border-radius: 0;
     border: inherit;
@@ -11758,22 +11784,50 @@ a:hover img {
     color: #870c1f;
   }
 
-  .preparations .bandeau {
+  .choix-prep-control {
+    margin: 10px 0;
+    background: #f59dab;
+  }
+
+  .choix-prep-control .akboutons {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     margin: 0;
   }
 
-  .preparations .liste-preparations {
+  .choix-prep-control label {
+    line-height: 2;
+    background: #f59dab;
+    color: #870c1f;
+    padding: 0 2px;
+  }
+
+  .input-nb-stagiaires {
+    width: 25%;
+    margin: 0 5px 0 5px;
+    border: none;
+    border-radius: 0;
+    background: #f59dab;
+    color: #870c1f;
+  }
+
+  .tableau {
     background: #80d163;
     padding: 0 10px;
   }
 
-  .preparations .preparation {
+  .ligne-tableau {
     cursor: pointer;
     padding: 5px 0;
   }
 
-  .preparations .preparation td img {
+  .ligne-tableau td img {
     width: 30px;
+  }
+
+  .preparations .bandeau {
+    margin: 0;
   }
 
   .preparations .preparation-oui {
@@ -11794,13 +11848,18 @@ a:hover img {
     display: none;
   }
 
-  .produit {
-    padding: 0.5rem 0.25rem;
+  .produit-a-preparer {
+    font-weight: bold;
   }
 
   .produit-fait {
-    background: aliceBlue;
-    border: none;
+    font-weight: inherit;
+    background: lightgray;
+    color: grey !important;
+  }
+
+  .produit-fait td img {
+    display: none;
   }
 
   .container-icone {
@@ -11848,5 +11907,26 @@ a:hover img {
   .au {
     color: DarkGrey;
   }
+}
+
+.message-error {
+  background: #80d163;
+  width: 100vw;
+  height: 100vh;
+  padding: 30vh 5vw 0 5vw;
+}
+
+.message-error h1 {
+  text-align: center;
+  font-size: 120%;
+}
+
+.message-error a {
+  text-align: center;
+  display: block;
+}
+
+.img-error {
+  width: 20vw;
 }
 

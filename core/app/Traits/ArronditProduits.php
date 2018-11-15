@@ -11,7 +11,11 @@ trait ArronditProduits
   function arrondiProduits($produit)
   {
     $categorie = Aromcategorie::find($produit->categorie->id);
+
     $quantite_arrondi = round($produit->quantite_totale, $categorie->arrondi);
-    return number_format($quantite_arrondi, $categorie->arrondi, ",", "");
+
+    $produit->quantite_totale = number_format($quantite_arrondi, $categorie->arrondi, ",", "");
+
+    return $produit;
   }
 }

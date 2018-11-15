@@ -20371,6 +20371,16 @@ $(function () {
   $('#tous').on('click', function () {
     afficheTout();
   });
+  // Déselectionner toutes les Préparations
+  $('#aucune').on('click', function () {
+    $('.preparation').each(function () {
+      $(this).addClass('preparation-non');
+      $(this).removeClass('preparation-oui');
+      var num = $(this).attr('id').split('_')[1];
+      var cb = "#cb_" + num;
+      $(cb).val(0); // Passe les cases cochée à la valeur 0
+    });
+  });
   // Préparations selon le choix de la formation
   $('.choix').on('click', function () {
     afficheTout();
@@ -20389,6 +20399,10 @@ $(function () {
         $(cb).val(1); // Passe les cases à la valeur 1
       }
     });
+  });
+
+  $('.produit-a-preparer').on('click', function () {
+    $(this).toggleClass('produit-fait');
   });
 });
 

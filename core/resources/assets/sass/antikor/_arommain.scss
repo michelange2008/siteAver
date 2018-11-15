@@ -15,32 +15,73 @@ $ma: SlateGrey;
 $au: DarkGrey;
 
 @media screen and (max-width: 568px) {
+  .bandeau {
+    a {
+      img {
+        width: 30px;
+      }
+    }
+  }
 
+  .bandeau-choix {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    justify-content: space-between;
+
+    .akboutons {
+      flex-grow: 1;
+      margin-right: 3px;
+    }
+  }
   .akboutons {
     border-radius: 0;
     border: inherit;
     background: $rouge-1;
     color: $rouge-4;
   }
-  .preparations {
 
+  .choix-prep-control {
+    margin: 10px 0;
+    background: $rouge-1;
+    .akboutons {
+      flex-grow: 1;
+      margin: 0;
+    }
+    label {
+      line-height: 2;
+      background: $rouge-1;
+      color: $rouge-4;
+      padding: 0 2px;
+    }
+  }
+  .input-nb-stagiaires {
+    width: 25%;
+    margin: 0 5px 0 5px;
+    border: none;
+    border-radius: 0;
+    background: $rouge-1;
+    color: $rouge-4;
+  }
+  .tableau {
+    background: $vert-primaire-2;
+    padding: 0 10px;
+  }
+
+  .ligne-tableau {
+    cursor: pointer;
+    padding: 5px 0;
+    td {
+      img {
+        width: 30px;
+      }
+    }
+  }
+  .preparations {
     .bandeau {
       margin: 0;
     }
-    .liste-preparations {
-      background: $vert-primaire-2;
-      padding: 0 10px;
-    }
-    .preparation {
-      cursor: pointer;
-      padding: 5px 0;
-      td {
-        img {
-          width: 30px;
-        }
-      }
-    }
-    .preparation-oui {
+      .preparation-oui {
       color: $rouge-4;
       font-weight: bold;
       td#non {
@@ -57,13 +98,18 @@ $au: DarkGrey;
   }
 
 
-
-  .produit {
-    padding: 0.5rem 0.25rem;
+  .produit-a-preparer {
+    font-weight: bold;
   }
   .produit-fait {
-    background: aliceBlue;
-    border:none;
+  	font-weight: inherit;
+  	background: lightgray;
+  	color: grey !important;
+    td {
+      img {
+        display:none;
+      }
+    }
   }
 
   .container-icone {
