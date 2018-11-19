@@ -1,6 +1,0 @@
-href;bouton;icone;titre;texte
-fevec.videTables;Importer;importDatabase.svg;Importer les tables;C'est une proc�dure qui vide les tables avec pr�fixe fev_ avant l'import de la nouvelle mise � jour de aver.mdb;
-fevec.normalise;Normaliser;normalise.svg;Normaliser la BDD;Proc�dures pour enlever les clients ni conventionn�s ni contractuels. Elimination des troupeaux inutiles (chiens & chevaux). Etc.
-fevec.import;Mettre � jour;import.svg;Mettre à jour;Met � jour la base de donn�es �leveurs et troupeaux � partir de la bdd FEVEC
-fevec.verifieTroupeaux;V�rifier;troupeaux.svg;V�rifier troupeaux;V�rifie que la base de donn�e locale est � jour par rapport � la bdd FEVEC
-fevec.liste;Afficher;eleveurs_fevec.svg;Liste Eleveurs;Affiche l'ensemble des �leveurs conventionn�s pr�sents dans la base de donn�e du logiciel FEVEC

@@ -1,4 +1,4 @@
 <?php
 return [
-  'path' => 'core/public/js/',
+  'path' => 'public/js/',
 ];
