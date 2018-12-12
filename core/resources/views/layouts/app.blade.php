@@ -16,7 +16,7 @@
       @foreach(config('styles') as $path)
         <link rel="stylesheet" href="{{ asset($path)}}">
       @endforeach
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css"> -->
+
     @stack('css')
 
 </head>
@@ -50,9 +50,8 @@
     <script src="{{ asset(config('scripts.path'))}}/user_gestion.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/analyses.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/psbsa.js"></script>
-    <!-- <script src="{{ asset(config('scripts.path'))}}/bootstrap/bootstrap.js"></script> -->
     <script src="{{ asset(config('scripts.path'))}}/splitAffichage.js"></script>
-    <!-- <script src="https://use.fontawesome.com/f8a7076b4b.js"></script> -->
+    <script src="https://use.fontawesome.com/f8a7076b4b.js"></script>
     <!-- TODO vérifier s'il faut le téléchargement d'ajax ou si le npm suffit -->
     <!-- <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script> --}}

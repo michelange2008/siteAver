@@ -11281,7 +11281,7 @@ Personnalisation des boutons
   -webkit-box-align: baseline;
   -ms-flex-align: baseline;
   align-items: baseline;
-  background: #0000b3;
+  background: #b3b3b3;
 }
 
 .carte-titre-texte {
@@ -11444,7 +11444,7 @@ a:hover img {
   grid-column: 2 / span 3;
   text-align: center;
   line-height: -moz-block-height;
-  background: #0000b3;
+  background: #b3b3b3;
 }
 
 .sceau h6 {
