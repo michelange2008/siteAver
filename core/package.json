@@ -29,6 +29,6 @@
     "jquery-confirm": "^3.3.2",
     "jquery-ui": "^1.12.1",
     "jquery-ui-bundle": "^1.12.1-migrate",
-    "popper.js": "^1.14.4"
+    "popper.js": "^1.14.5"
   }
 }

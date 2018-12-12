@@ -4,7 +4,6 @@
   white-space: nowrap;
 }
 
-
 .image-min {
   min-width: 100%;
 }
@@ -41,7 +40,7 @@
     cursor: pointer;
 }
 .fleche {
-  background: url("../medias/icones/fevec/fleche.svg") center  no-repeat;
+  // background: url("../medias/icones/fevec/fleche.svg") center  no-repeat;
   background-size: contain;
   width: 5%;
 }
@@ -69,7 +68,7 @@
 }
 
 .delete {
-  background: url('../medias/icones/delete.svg') no-repeat;
+  //background: url('../medias/icones/delete.svg') no-repeat;
   background-size: contain;
   width: 25px;
   height: 25px;
