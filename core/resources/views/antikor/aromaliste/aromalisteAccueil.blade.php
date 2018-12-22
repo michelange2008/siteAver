@@ -3,11 +3,13 @@
 @extends('aver.admin.menuAdmin')
 
 @section('content')
+  <div class="listes-prep-prod">
+
 <br>
   <div class="alert bandeau">
     <h5>Choix des formations</h5>
     <div class="bandeau-choix">
-      <button id="tous"class="akboutons btn btn-sm" type="button" name="button">
+      <button id="tous" class="akboutons btn btn-sm" type="button" name="button">
         toutes
       </button>
       @foreach($formations as $formation)
@@ -53,4 +55,5 @@
     </table>
   </div>
   {{Form::close()}}
+</div>
 @endsection

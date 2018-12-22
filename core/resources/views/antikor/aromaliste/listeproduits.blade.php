@@ -3,14 +3,17 @@
 @extends('aver.admin.menuAdmin')
 
 @section('content')
+  <div class="listes-prep-prod">
+
   <br>
     <div class="alert bandeau">
-      <h5>
         <a href="{{URL::previous()}}">
           <img class="retour-vers-prep" src="{{asset(config('fichiers.icones'))}}/retour.svg" alt="">
         </a>
+        <h5>
         Liste des {{$liste_produits->count()}} produits ({{$nb_stagiaires}} stagiaires)
       </h5>
+        <img id="voir-ou-pas" src="{{asset(config('fichiers.icones'))}}/oeil_ouvert.svg" alt="voir">
     </div>
     @if (session()->has('message'))
       <div class="alert alert-warning">
@@ -29,6 +32,10 @@
           <td></td>
         </tr>
       @endforeach
-    </table
+    </table>
+    <a href="{{route('antikor.index')}}">
+      <button class="akboutons btn btn-sm> "type="button" name="button">retour au sommaire</button>
+    </a>
+  </div>
 
 @endsection

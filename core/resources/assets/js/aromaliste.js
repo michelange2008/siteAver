@@ -58,9 +58,14 @@ $(function() {
 
     })
   });
-
+  // Changer l'affichage des produits déjà préparés
   $('.produit-a-preparer').on('click', function() {
     $(this).toggleClass('produit-fait');
   })
-
+  // Ne pas montrer les produits déjà préparés
+  $('#voir-ou-pas').on('click', function() {
+    $('.produit-a-preparer').each(function() {
+      console.log($(this).attr('class').indexOf('produit-fait'));
+    })
+  })
 })

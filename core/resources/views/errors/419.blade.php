@@ -3,7 +3,7 @@
 
 <div class="message-error">
   <h1>La session a expiré</h1>
-  <a href="{{route('login')}}">
+  <a href="{{url('/')}}">
     <button class="btn btn-danger rounded-0" type="button" name="button">retour</button>
   </a>
 </div>

@@ -14,12 +14,22 @@ $hy: MediumBlue;
 $ma: SlateGrey;
 $au: DarkGrey;
 
-@media screen and (max-width: 568px) {
+@media screen {
   .bandeau {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     a {
       img {
         width: 30px;
       }
+    }
+    h5 {
+      margin: 0;
+    }
+    #voir-ou-pas {
+      cursor: pointer;
     }
   }
 
@@ -150,5 +160,11 @@ $au: DarkGrey;
     color: $au;
   }
 
+  @media screen and (min-width: 767.98px) {
 
+  .listes-prep-prod {
+    width: 517px;
+    margin: auto;
+  }
+  }
 }
