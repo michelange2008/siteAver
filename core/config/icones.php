@@ -1,4 +1,4 @@
 <?php
 return [
-  'path' => 'core/resources/assets/medias/icones/',
+  'path' => 'public/medias/icones/',
 ];

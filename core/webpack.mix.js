@@ -10,9 +10,10 @@ let mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+mix.setPublicPath('../public/');
+mix.sass('resources/assets/sass/app.scss', 'css').js('resources/assets/js/app.js', 'js');
 
-mix.sass('resources/assets/sass/app.scss', 'public/css').js('resources/assets/js/app.js', 'public/js');
-
-mix.copy('node_modules/datatables.net-dt/css/jquery.dataTables.min.css', 'public/css/jquery.dataTables.min.css');
-mix.copy('node_modules/datatables.net-responsive-dt/css/responsive.dataTables.min.css', 'public/css/responsive.jquery.dataTables.min.css');
-mix.copy('node_modules/datatables.net-fixedheader-dt/css/fixedHeader.dataTables.min.css', 'public/css/fixedHeader.dataTables.min.css');
+mix.copy('node_modules/datatables.net-dt/css/jquery.dataTables.min.css', '../public/css/jquery.dataTables.min.css');
+mix.copy('node_modules/datatables.net-responsive-dt/css/responsive.dataTables.min.css', '../public/css/responsive.jquery.dataTables.min.css');
+mix.copy('node_modules/datatables.net-fixedheader-dt/css/fixedHeader.dataTables.min.css', '../public/css/fixedHeader.dataTables.min.css');
+//

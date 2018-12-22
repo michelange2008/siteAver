@@ -1,8 +1,8 @@
 <?php
 
-$public = 'core/public/';
-$resources = 'core/resources/assets/';
-$medias = $resources."medias/";
+$public = 'public/';
+
+$medias = $public."medias/";
 
 return [
   'icones' => $medias.'icones/',

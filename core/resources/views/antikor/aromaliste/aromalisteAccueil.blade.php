@@ -3,9 +3,8 @@
 @extends('aver.admin.menuAdmin')
 
 @section('content')
-  <div class="listes-prep-prod">
-
-<br>
+<div class="aromaliste">
+  <br>
   <div class="alert bandeau">
     <h5>Choix des formations</h5>
     <div class="bandeau-choix">

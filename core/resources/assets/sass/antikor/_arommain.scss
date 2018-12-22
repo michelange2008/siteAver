@@ -14,16 +14,10 @@ $hy: MediumBlue;
 $ma: SlateGrey;
 $au: DarkGrey;
 
-@media screen {
-  .bandeau {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    a {
-      img {
-        width: 30px;
-      }
+.bandeau {
+  a {
+    img {
+      width: 30px;
     }
     h5 {
       margin: 0;
@@ -32,139 +26,148 @@ $au: DarkGrey;
       cursor: pointer;
     }
   }
+}
 
-  .bandeau-choix {
-    display: flex;
-    flex-direction: column;
-    flex-flow: wrap;
-    justify-content: space-between;
+.bandeau-choix {
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
+  justify-content: space-between;
 
-    .akboutons {
-      flex-grow: 1;
-      margin-right: 3px;
-    }
-  }
   .akboutons {
-    border-radius: 0;
-    border: inherit;
+    flex-grow: 1;
+    margin-right: 3px;
+  }
+}
+.akboutons {
+  border-radius: 0;
+  border: inherit;
+  background: $rouge-1;
+  color: $rouge-4;
+}
+
+.choix-prep-control {
+  margin: 10px 0;
+  background: $rouge-1;
+  .akboutons {
+    flex-grow: 1;
+    margin: 0;
+  }
+  label {
+    line-height: 2;
     background: $rouge-1;
     color: $rouge-4;
+    padding: 0 2px;
   }
+}
+.input-nb-stagiaires {
+  width: 25%;
+  margin: 0 5px 0 5px;
+  border: none;
+  border-radius: 0;
+  background: $rouge-1;
+  color: $rouge-4;
+}
+.tableau {
+  background: $vert-primaire-2;
+  padding: 0 10px;
+}
 
-  .choix-prep-control {
-    margin: 10px 0;
-    background: $rouge-1;
-    .akboutons {
-      flex-grow: 1;
-      margin: 0;
-    }
-    label {
-      line-height: 2;
-      background: $rouge-1;
-      color: $rouge-4;
-      padding: 0 2px;
+.ligne-tableau {
+  cursor: pointer;
+  padding: 5px 0;
+  td {
+    img {
+      width: 30px;
     }
   }
-  .input-nb-stagiaires {
-    width: 25%;
-    margin: 0 5px 0 5px;
-    border: none;
-    border-radius: 0;
-    background: $rouge-1;
+}
+.preparations {
+  .bandeau {
+    margin: 0;
+  }
+    .preparation-oui {
     color: $rouge-4;
-  }
-  .tableau {
-    background: $vert-primaire-2;
-    padding: 0 10px;
-  }
-
-  .ligne-tableau {
-    cursor: pointer;
-    padding: 5px 0;
-    td {
-      img {
-        width: 30px;
-      }
-    }
-  }
-  .preparations {
-    .bandeau {
-      margin: 0;
-    }
-      .preparation-oui {
-      color: $rouge-4;
-      font-weight: bold;
-      td#non {
-        display: none;
-      }
-    }
-    .preparation-non {
-      color: $rouge-2;
-      font-weight: lighter;
-      td#oui {
-        display: none;
-      }
-    }
-  }
-
-
-  .produit-a-preparer {
     font-weight: bold;
-  }
-  .produit-fait {
-  	font-weight: inherit;
-  	background: lightgray;
-  	color: grey !important;
-    td {
-      img {
-        display:none;
-      }
+    td#non {
+      display: none;
     }
   }
+  .preparation-non {
+    color: $rouge-2;
+    font-weight: lighter;
+    td#oui {
+      display: none;
+    }
+  }
+}
 
-  .container-icone {
-    min-width: 20px;
-    min-height: 20px;
-  }
-  .icone {
-    width: 100%;
-  }
 
-  .marque {
-    min-width: 30px;
-    min-height: 30px;
+.produit-a-preparer {
+  font-weight: bold;
+}
+.produit-fait {
+	font-weight: inherit;
+	background: lightgray;
+	color: grey !important;
+  td {
+    img {
+      display:none;
+    }
   }
-  .invisible {
-    display: none;
-  }
+}
 
-  .he {
-    color: $he;
-  }
-  .pp {
-    color: $pp;
-  }
-  .tm {
-    color: $tm;
-  }
-  .hy {
-    color: $hy;
-  }
-  .ma {
-    color: $ma;
-  }
-  .ex {
-    color: $ex;
-  }
-  .au {
-    color: $au;
-  }
+.container-icone {
+  min-width: 20px;
+  min-height: 20px;
+}
+.icone {
+  width: 100%;
+}
+
+.marque {
+  min-width: 30px;
+  min-height: 30px;
+}
+.invisible {
+  display: none;
+}
+
+.he {
+  color: $he;
+}
+.pp {
+  color: $pp;
+}
+.tm {
+  color: $tm;
+}
+.hy {
+  color: $hy;
+}
+.ma {
+  color: $ma;
+}
+.ex {
+  color: $ex;
+}
+.au {
+  color: $au;
+}
 
   @media screen and (min-width: 767.98px) {
 
+<<<<<<< HEAD
   .listes-prep-prod {
     width: 517px;
     margin: auto;
   }
   }
+=======
+@media screen and (min-width:768px) {
+  .aromaliste {
+    width: 583px;
+    margin: auto;
+  }
+>>>>>>> e93a61c55bd125f8c908e0e0c437436baace4a53
 }

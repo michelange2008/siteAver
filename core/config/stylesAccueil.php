@@ -1,5 +1,5 @@
 <?php
-$path = 'core/public/css/';
+$path = 'public/css/';
 
 return [
   'accueil' => $path.'accueil/accueil.css',
