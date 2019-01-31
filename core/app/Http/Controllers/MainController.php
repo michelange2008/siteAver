@@ -43,4 +43,9 @@ class MainController extends Controller
     {
       return 'ceci est un forum';
     }
+
+    public function parasitisme()
+    {
+      return 'parasitisme';
+    }
   }

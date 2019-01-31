@@ -12,7 +12,7 @@
 */
 // ROUTES INITIALES ######################################################################################
 
-Route::get('/', 'MainController@index');
+Route::get('/', ['uses' => 'MainController@index', 'as' => 'accueil']);
 
 Route::get('/phyto', 'MainController@phytotherapie');
 
@@ -21,6 +21,8 @@ Route::get('/plantes_libres', 'MainController@plantes_libres');
 Route::get('/aver', ['uses' => 'Aver\AverController@index', 'as' => 'aver.accueil'])->middleware('delaiBSA');
 
 Route::get('/forum', 'MainController@forum');
+
+Route::get('/parasitisme', ['uses' => 'Parasitisme\ParasitismeController@index', 'as' => 'parasitisme.accueil']);
 
 // ROUTES AVER ##############################################################################################
 
@@ -177,5 +179,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('aver/essai/ajax', ['uses' =>'Aver\Admin\EssaiController@ajax', 'as' => 'ajax']);
 
     //################################################ ROUTES ANTIKOR ###################################################################
+
+    //################################################ ROUTES PARASITO ###################################################################
+    Route::get('/parasitisme/fiches', ['uses' => 'Parasitisme\ParasitismeController@fiches', 'as' => 'parasitisme.fiches']);
+
+    Route::get('/parasitisme/formations', ['uses' => 'Parasitisme\ParasitismeController@formations', 'as' => 'parasitisme.formations']);
 
 });

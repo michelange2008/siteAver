@@ -8,7 +8,7 @@ class LitCsv
   {
 
     $csvAvecChemin = config('fichiers.csv').$csv.".csv";
-
+    
     $ligne = 1;
 
     if(($fichier = fopen($csvAvecChemin, 'r')) !== FALSE)

@@ -18,9 +18,9 @@
       @if ($element['affiche'] != 0)
       <a href="{{$element['lien']}}">
       @endif
-         <div class="img"><img src="{{URL::asset(config('fichiers.images_accueil').$element['image'])}}" alt=""></div>
+         <div class="img"><img src="{{URL::asset(config('fichiers.images_accueil').$element['image'])}}" alt="" title="{{utf8_decode($element['descriptif'])}}"></div>
      @if ($element['affiche'] != 0)
-         <div class="intitule"><p>{{$element['intitule']}}</p></div>
+         <div class="intitule"><p>{{utf8_decode($element['intitule'])}}</p></div>
      @endif
       </a>
   </div>

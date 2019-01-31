@@ -1,6 +1,7 @@
-ordre;nom;intitule;image;lien;affiche
-1;phyto;Phytoth�rapie;phyto.jpg;phyto;1
-2;plantes_libres;Plantes Libres;achillee.jpg;plantes_libres;0
-3;forum;Forum;forum.jpg;forum;1
-4;aver;Aver;aver.jpg;aver;1
-5;antikor;Antikor;antikor.jpg;antikor;1
+ordre;nom;intitule;image;lien;affiche;descriptif
+1;phyto;Phytothérapie;phyto.jpg;phyto;1;composition de différentes plantes
+2;plantes_libres;Plantes Libres;achillee.jpg;plantes_libres;0;liste de plantes
+3;forum;Forum;forum.jpg;forum;1;un forum pour débattre
+4;aver;Aver;aver.jpg;aver;1;site de l'association vétérinaire des éleveurs de la Raye
+5;antikor;Antikor;antikor.jpg;antikor;1;Société Coopérative Ouvrière de Production ANTIKOR
+6;parasitisme;Parasitisme;parasitisme.jpg;parasitisme;1;Pour une maîtrise raisonnée du parasitisme
