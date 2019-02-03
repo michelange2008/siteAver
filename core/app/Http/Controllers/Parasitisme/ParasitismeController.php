@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Parasitisme;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Outils\LitCsv;
 
 class ParasitismeController extends Controller
 {
@@ -15,7 +16,11 @@ class ParasitismeController extends Controller
 
     public function fiches()
     {
-      return view('parasitisme/fiches');
+      $fiches = LitCsv::litJson('fiches');
+
+      return view('parasitisme/fiches', [
+        'fiches' => $fiches,
+      ]);
     }
 
     public function formations()

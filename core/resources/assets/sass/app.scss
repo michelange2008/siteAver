@@ -26,7 +26,7 @@
 
 @import "bsa_saisie"; // styles pour la saisie des bsa
 
-@import "boutons_perso";
+@import "boutons_perso"; // mes propres boutons
 
 @import "fiche_troupeau"; // présentation des éléments d'un troupeau: analyses, bsa, etc.
 
@@ -40,4 +40,6 @@
 
 @import "antikor/arommain";
 
-@import "errors/error"
+@import "errors/error";
+
+@import "parasitisme";

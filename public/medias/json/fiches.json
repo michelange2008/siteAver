@@ -1,0 +1,32 @@
+{
+  "cycle" : {
+    "nom" : "Cycle des strongles gastro-intestinaux",
+    "fichier" : "cycles_strongles_digestifs.pdf",
+    "image" : "cycles_strongles_digestifs.png"
+  },
+  "immunite" : {
+    "nom" : "Immunité vis-à-vis des strongles gastro-intestinaux",
+    "fichier" : "immunite_strongles_digestifs.pdf",
+    "image" : "immunite_strongles_digestifs.png"
+  },
+  "maitrise" : {
+    "nom" : "Maîtrise raisonnée des strongles digestifs",
+    "fichier" : "maitrise_strongles_digestifs.pdf",
+    "image" : "maitrise_strongles_digestifs.png"
+  },
+  "genisses_1" : {
+    "nom" : "Immunité des génisses vis-à-vis des strongles (1/2)",
+    "fichier" : "immunite_des_genisses_1.pdf",
+    "image" : "immunite_des_genisses_1.png"
+  },
+  "genisses_2" : {
+    "nom" : "Immunité des génisses vis-à-vis des strongles (2/2)",
+    "fichier" : "immunite_des_genisses_2.pdf",
+    "image" : "immunite_des_genisses_2.png"
+  },
+  "vaches_grande_douve" : {
+    "nom" : "Grande douve chez les bovins: arbre de décision",
+    "fichier" : "grande_douve_arbre_décision.pdf",
+    "image" : "grande_douve_arbre_décision.png"
+  }
+}

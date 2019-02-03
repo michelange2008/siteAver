@@ -15,8 +15,11 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-   sodipodi:docname="grande douve arbre décision.svg">
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="grande_douve_arbre_décision.svg"
+   inkscape:export-filename="/srv/siteAver/public/medias/parasitisme/fiches/grande_douve_arbre_décision.png"
+   inkscape:export-xdpi="36.290001"
+   inkscape:export-ydpi="36.290001">
   <defs
      id="defs2">
     <linearGradient
@@ -72,11 +75,11 @@
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="5.6"
-     inkscape:cx="752.25259"
-     inkscape:cy="1081.7392"
+     inkscape:cx="707.7883"
+     inkscape:cy="1081.0249"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -135,7 +138,7 @@
        inkscape:connector-curvature="0"
        d="m 183.5553,242.15323 -2.1716,-2.17517 c 8.59563,3.1193 14.84823,11.15541 15.32382,20.7021 h 5.179 l -8.7006,8.7006 -8.70048,-8.70048 h 5.00073 c -0.46865,-6.43444 -4.71045,-11.8058 -10.51891,-13.93901 z m 5.04259,25.1713 c -2.12964,5.80846 -7.50457,10.05037 -13.93902,10.51891 v -5.00073 l -8.70037,8.70048 8.70049,8.70048 v -5.179 c 9.5468,-0.47559 17.5828,-6.72818 20.70211,-15.32728 l -2.17518,2.17518 z m -20.58316,9.63062 c -5.80845,-2.12963 -10.05037,-7.50457 -10.51891,-13.939 h 5.00073 l -8.70059,-8.70037 -8.70048,8.70048 h 5.179 c 0.47905,9.5468 6.73165,17.5828 15.32728,20.70211 l -2.17507,-2.17518 z M 158.384,256.372 c 2.13321,-5.80845 7.50457,-10.05037 13.939,-10.51891 v 5.00074 l 8.70049,-8.7006 -8.70049,-8.70048 v 5.179 c -9.5468,0.47906 -17.5828,6.73165 -20.70211,15.32728 l 2.17507,-2.17507 z m 4.36422,5.47621 c 0,5.93434 4.80838,10.74272 10.74272,10.74272 5.93434,0 10.74272,-4.80838 10.74272,-10.74272 0,-5.93434 -4.80838,-10.74271 -10.74272,-10.74271 -5.93434,0 -10.74272,4.80837 -10.74272,10.74271 z"
        id="path2-70"
-       style="stroke-width:0.11190329;fill:#008000;fill-opacity:1;opacity:0.57" />
+       style="opacity:0.56999996;fill:#008000;fill-opacity:1;stroke-width:0.11190329" />
     <rect
        style="opacity:0.75;fill:#cccccc;fill-opacity:1;fill-rule:nonzero;stroke:#cccccc;stroke-width:0.7301861;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect2899"
@@ -184,7 +187,7 @@
        style="fill:#0000ff;fill-opacity:1">
       <polygon
          style="fill:#0000ff;fill-opacity:1"
-         points="198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 "
+         points="287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 "
          id="polygon2-1-2-9" />
       <rect
          style="fill:#0000ff;fill-opacity:1"
@@ -229,7 +232,7 @@
        style="fill:#0000ff;fill-opacity:1">
       <polygon
          style="fill:#0000ff;fill-opacity:1"
-         points="198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 "
+         points="198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 "
          id="polygon2-1-2" />
       <rect
          style="fill:#0000ff;fill-opacity:1"
@@ -257,7 +260,7 @@
        style="fill:#b3b3b3;fill-opacity:0.96862745">
       <polygon
          style="fill:#b3b3b3;fill-opacity:0.96862745"
-         points="198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 "
+         points="131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 "
          id="polygon2-3-6" />
       <rect
          style="fill:#b3b3b3;fill-opacity:0.96862745"
@@ -280,7 +283,7 @@
        style="fill:#b3b3b3;fill-opacity:0.96862745">
       <polygon
          style="fill:#b3b3b3;fill-opacity:0.96862745"
-         points="198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 "
+         points="287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 "
          id="polygon2-4" />
       <rect
          style="fill:#b3b3b3;fill-opacity:0.96862745"
@@ -517,7 +520,7 @@
        style="fill:#b3b3b3;fill-opacity:0.96862745">
       <polygon
          style="fill:#b3b3b3;fill-opacity:0.96862745"
-         points="198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 "
+         points="198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 "
          id="polygon2" />
       <rect
          style="fill:#b3b3b3;fill-opacity:0.96862745"
@@ -540,7 +543,7 @@
        style="fill:#b3b3b3;fill-opacity:0.96862745">
       <polygon
          style="fill:#b3b3b3;fill-opacity:0.96862745"
-         points="131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 "
+         points="131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 "
          id="polygon2-3" />
       <rect
          style="fill:#b3b3b3;fill-opacity:0.96862745"
@@ -563,7 +566,7 @@
        style="fill:#b3b3b3;fill-opacity:0.96862745">
       <polygon
          style="fill:#b3b3b3;fill-opacity:0.96862745"
-         points="198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 "
+         points="198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 "
          id="polygon2-1" />
       <rect
          style="fill:#b3b3b3;fill-opacity:0.96862745"
@@ -743,7 +746,7 @@
        style="fill:#b3b3b3;fill-opacity:0.96862745">
       <polygon
          style="fill:#b3b3b3;fill-opacity:0.96862745"
-         points="131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 "
+         points="198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 "
          id="polygon2-3-6-0" />
       <rect
          style="fill:#b3b3b3;fill-opacity:0.96862745"
@@ -894,7 +897,7 @@
        style="fill:#0000ff;fill-opacity:1">
       <polygon
          style="fill:#0000ff;fill-opacity:1"
-         points="131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 "
+         points="198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 "
          id="polygon2-1-2-1" />
       <rect
          style="fill:#0000ff;fill-opacity:1"
@@ -917,7 +920,7 @@
        style="fill:#0000ff;fill-opacity:1">
       <polygon
          style="fill:#0000ff;fill-opacity:1"
-         points="198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 "
+         points="198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 "
          id="polygon2-1-2-9-3" />
       <rect
          style="fill:#0000ff;fill-opacity:1"
@@ -940,7 +943,7 @@
        style="fill:#0000ff;fill-opacity:1">
       <polygon
          style="fill:#0000ff;fill-opacity:1"
-         points="287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 "
+         points="198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 "
          id="polygon2-1-2-9-1" />
       <rect
          style="fill:#0000ff;fill-opacity:1"
@@ -1042,7 +1045,7 @@
        style="fill:#7fff2a;fill-opacity:1">
       <polygon
          style="fill:#7fff2a;fill-opacity:1"
-         points="198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 "
+         points="198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 "
          id="polygon2-1-2-7" />
       <rect
          style="fill:#7fff2a;fill-opacity:1"
@@ -1065,7 +1068,7 @@
        style="fill:#7fff2a;fill-opacity:1">
       <polygon
          style="fill:#7fff2a;fill-opacity:1"
-         points="131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 "
+         points="131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 "
          id="polygon2-1-2-6" />
       <rect
          style="fill:#7fff2a;fill-opacity:1"
@@ -1167,7 +1170,7 @@
        style="fill:#7fff2a;fill-opacity:1">
       <polygon
          style="fill:#7fff2a;fill-opacity:1"
-         points="198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 "
+         points="198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 "
          id="polygon2-1-2-7-2" />
       <rect
          style="fill:#7fff2a;fill-opacity:1"
@@ -1190,7 +1193,7 @@
        style="fill:#7fff2a;fill-opacity:1">
       <polygon
          style="fill:#7fff2a;fill-opacity:1"
-         points="131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 "
+         points="131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 "
          id="polygon2-1-2-6-3" />
       <rect
          style="fill:#7fff2a;fill-opacity:1"
@@ -1213,7 +1216,7 @@
        style="fill:#7fff2a;fill-opacity:1">
       <polygon
          style="fill:#7fff2a;fill-opacity:1"
-         points="131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 "
+         points="131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 "
          id="polygon2-1-2-7-3" />
       <rect
          style="fill:#7fff2a;fill-opacity:1"
@@ -1236,7 +1239,7 @@
        style="fill:#0000ff;fill-opacity:1">
       <polygon
          style="fill:#0000ff;fill-opacity:1"
-         points="287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 "
+         points="198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 "
          id="polygon2-1-2-0" />
       <rect
          style="fill:#0000ff;fill-opacity:1"
@@ -1284,7 +1287,7 @@
        style="fill:#7fff2a;fill-opacity:1">
       <polygon
          style="fill:#7fff2a;fill-opacity:1"
-         points="198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 "
+         points="198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 "
          id="polygon2-1-2-7-2-1" />
       <rect
          style="fill:#7fff2a;fill-opacity:1"
@@ -1434,7 +1437,7 @@
        style="fill:#008000;fill-opacity:0.74901961">
       <polygon
          style="fill:#008000;fill-opacity:0.74901961"
-         points="131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 "
+         points="198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 "
          id="polygon2-1-2-9-4" />
       <rect
          style="fill:#008000;fill-opacity:0.74901961"
@@ -1508,7 +1511,7 @@
        style="fill:#008000;fill-opacity:0.74901961">
       <polygon
          style="fill:#008000;fill-opacity:0.74901961"
-         points="198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 "
+         points="131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 "
          id="polygon2-1-2-6-3-2" />
       <rect
          style="fill:#008000;fill-opacity:0.74901961"
@@ -1531,7 +1534,7 @@
        style="fill:#008000;fill-opacity:0.74901961">
       <polygon
          style="fill:#008000;fill-opacity:0.74901961"
-         points="131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 "
+         points="131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 "
          id="polygon2-1-2-6-3-2-5" />
       <rect
          style="fill:#008000;fill-opacity:0.74901961"
@@ -1554,7 +1557,7 @@
        style="fill:#008000;fill-opacity:0.74901961">
       <polygon
          style="fill:#008000;fill-opacity:0.74901961"
-         points="198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 "
+         points="198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 "
          id="polygon2-1-2-6-3-2-5-5" />
       <rect
          style="fill:#008000;fill-opacity:0.74901961"
@@ -1577,7 +1580,7 @@
        style="fill:#008000;fill-opacity:0.74901961">
       <polygon
          style="fill:#008000;fill-opacity:0.74901961"
-         points="198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 "
+         points="198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 "
          id="polygon2-1-2-6-3-2-5-59" />
       <rect
          style="fill:#008000;fill-opacity:0.74901961"
@@ -1600,7 +1603,7 @@
        style="fill:#7fff2a;fill-opacity:1">
       <polygon
          style="fill:#7fff2a;fill-opacity:1"
-         points="198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 "
+         points="131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 "
          id="polygon2-1-2-6-3-1" />
       <rect
          style="fill:#7fff2a;fill-opacity:1"
@@ -1623,7 +1626,7 @@
       <polygon
          transform="matrix(0.023137,0,0,0.03402936,56.137895,188.03589)"
          style="fill:#7fff2a;fill-opacity:1"
-         points="198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 "
+         points="198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 "
          id="polygon2-1-2-6-3-1-6" />
       <rect
          style="fill:#7fff2a;fill-opacity:1;stroke-width:0.02805953"
@@ -1726,7 +1729,7 @@
        style="fill:#008000;fill-opacity:0.74901961">
       <polygon
          style="fill:#008000;fill-opacity:0.74901961"
-         points="198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 "
+         points="287.6,212.6 198.6,123.8 198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 "
          id="polygon2-1-2-6-3-2-5-1" />
       <rect
          style="fill:#008000;fill-opacity:0.74901961"
@@ -1755,7 +1758,7 @@
            x="403.05087"
            y="1149.7938" /></flowRegion><flowPara
          id="flowPara2015">D'après Knubben-Schweizer et al. (2011)</flowPara></flowRoot>    <rect
-       style="opacity:0.746;fill:#cccccc;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.2758956;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:0.74599998;fill:#cccccc;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.2758956;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect1145-2-2"
        width="52.116486"
        height="22.018265"
@@ -1767,7 +1770,7 @@
        style="fill:#008000;fill-opacity:0.74901961">
       <polygon
          style="fill:#008000;fill-opacity:0.74901961"
-         points="198.6,161.6 131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 "
+         points="131.9,161.6 131.9,263.6 198.6,263.6 198.6,301.4 287.6,212.6 198.6,123.8 198.6,161.6 "
          id="polygon2-1-2-6-3-2-5-1-9" />
       <rect
          style="fill:#008000;fill-opacity:0.74901961"
@@ -1787,15 +1790,15 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot2076"
-       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:'DIN Pro';font-style:normal;font-weight:normal;font-size:13.33333333px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'DIN Pro';font-stretch:normal;font-variant:normal;"><flowRegion
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.33333302px;line-height:125%;font-family:'DIN Pro';-inkscape-font-specification:'DIN Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
          id="flowRegion2078"
-         style="-inkscape-font-specification:'DIN Pro';font-family:'DIN Pro';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.33333333px;"><rect
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.33333302px;font-family:'DIN Pro';-inkscape-font-specification:'DIN Pro'"><rect
            id="rect2080"
            width="164.28572"
            height="44.285713"
            x="578.57141"
            y="911.09113"
-           style="-inkscape-font-specification:'DIN Pro';font-family:'DIN Pro';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.33333333px;" /></flowRegion><flowPara
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.33333302px;font-family:'DIN Pro';-inkscape-font-specification:'DIN Pro'" /></flowRegion><flowPara
          id="flowPara2082" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot2084"
@@ -1808,11 +1811,11 @@
            x="575.78693"
            y="906.85211" /></flowRegion><flowPara
          id="flowPara2090"
-         style="-inkscape-font-specification:'DIN Pro';font-family:'DIN Pro';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.3333335px;line-height:125%"><flowSpan
-   style="-inkscape-font-specification:'DIN Pro Bold';font-family:'DIN Pro';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.33333397px;line-height:125%;font-family:'DIN Pro';-inkscape-font-specification:'DIN Pro'"><flowSpan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'DIN Pro';-inkscape-font-specification:'DIN Pro Bold'"
    id="flowSpan2094">Rotation de pâturage</flowSpan>:</flowPara><flowPara
          id="flowPara2092"
-         style="-inkscape-font-specification:'DIN Pro';font-family:'DIN Pro';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.3333335px;line-height:125%">Ne pas fréquenter les zones à limnées au printemps et à l'automne</flowPara></flowRoot>    <g
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.33333397px;line-height:125%;font-family:'DIN Pro';-inkscape-font-specification:'DIN Pro'">Ne pas fréquenter les zones à limnées au printemps et à l'automne</flowPara></flowRoot>    <g
        id="g2159"
        transform="translate(1.5399631)">
       <g

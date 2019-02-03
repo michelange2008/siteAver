@@ -180,9 +180,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     //################################################ ROUTES ANTIKOR ###################################################################
 
-    //################################################ ROUTES PARASITO ###################################################################
-    Route::get('/parasitisme/fiches', ['uses' => 'Parasitisme\ParasitismeController@fiches', 'as' => 'parasitisme.fiches']);
-
-    Route::get('/parasitisme/formations', ['uses' => 'Parasitisme\ParasitismeController@formations', 'as' => 'parasitisme.formations']);
-
 });
+
+//################################################ ROUTES PARASITO ###################################################################
+Route::get('/parasitisme/fiches', ['uses' => 'Parasitisme\ParasitismeController@fiches', 'as' => 'parasitisme.fiches']);
+
+Route::get('/parasitisme/formations', ['uses' => 'Parasitisme\ParasitismeController@formations', 'as' => 'parasitisme.formations']);

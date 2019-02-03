@@ -14,8 +14,8 @@
    viewBox="0 0 297 210"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-   sodipodi:docname="immunite des genisses 2.svg">
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="immunite_des_genisses_2.svg">
   <defs
      id="defs2">
     <marker
@@ -53,11 +53,11 @@
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497476"
-     inkscape:cx="671.79412"
-     inkscape:cy="367.59049"
+     inkscape:cx="168.73817"
+     inkscape:cy="359.50927"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -90,7 +90,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -109,7 +109,7 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot994"
-       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:10px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+       style="font-style:normal;font-weight:normal;font-size:10px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
          id="flowRegion996"><rect
            id="rect998"
            width="1347.0237"
@@ -119,7 +119,7 @@
          id="flowPara1000" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot1255"
-       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:10px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+       style="font-style:normal;font-weight:normal;font-size:10px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
          id="flowRegion1257"><rect
            id="rect1259"
            width="151.18111"
@@ -129,7 +129,7 @@
          id="flowPara1261" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot1337"
-       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:10px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+       style="font-style:normal;font-weight:normal;font-size:10px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
          id="flowRegion1339"><rect
            id="rect1341"
            width="37.795277"
@@ -149,7 +149,7 @@
          style="stroke-width:0.26458332px">(d'après RAVINET N. et coll. - Stratégie de traitement anthelminthique ciblé-sélectif: exemple chez la vache laitières adulte - Bulletin des GTV n°80 décembre 2015)</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.64583325px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#d5ffd5;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-weight:normal;font-size:2.64583325px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#d5ffd5;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="4.7105827"
        y="99.620865"
        id="text4552"><tspan
@@ -157,11 +157,11 @@
          id="tspan4550"
          x="4.7105827"
          y="99.620865"
-         style="font-size:7.05555534px;line-height:125%;fill:#d5ffd5;stroke-width:0.26458332px;">Vos génisses s'immunisent-elles suffisamment </tspan><tspan
+         style="font-size:7.05555534px;line-height:125%;fill:#d5ffd5;stroke-width:0.26458332px">Vos génisses s'immunisent-elles suffisamment </tspan><tspan
          sodipodi:role="line"
          x="4.7105827"
          y="108.44031"
-         style="font-size:7.05555534px;line-height:125%;fill:#d5ffd5;stroke-width:0.26458332px;"
+         style="font-size:7.05555534px;line-height:125%;fill:#d5ffd5;stroke-width:0.26458332px"
          id="tspan4554">contre les strongles gastro-intestinaux ?</tspan></text>
     <flowRoot
        xml:space="preserve"
@@ -511,19 +511,19 @@
        transform="matrix(0.26458333,0,0,0.26458333,3.9309578,157.5268)"
        style="fill:#b3b3b3;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
        stroke-miterlimit="10"
-       points="16.894,7.574 83.106,50 16.894,92.426 "
+       points="83.106,50 16.894,92.426 16.894,7.574 "
        id="polygon2" />
     <polygon
        transform="matrix(0.26458333,0,0,0.26458333,3.9309578,199.48215)"
        style="fill:#b3b3b3;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
        stroke-miterlimit="10"
-       points="83.106,50 16.894,92.426 16.894,7.574 "
+       points="16.894,92.426 16.894,7.574 83.106,50 "
        id="polygon2-0" />
     <polygon
        transform="matrix(0.26458333,0,0,0.26458333,3.9309578,241.4375)"
        style="fill:#b3b3b3;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
        stroke-miterlimit="10"
-       points="16.894,7.574 83.106,50 16.894,92.426 "
+       points="83.106,50 16.894,92.426 16.894,7.574 "
        id="polygon2-5" />
     <g
        id="g7111"
@@ -700,7 +700,7 @@
            x="921.25909"
            y="287.61438" /></flowRegion><flowPara
          id="flowPara7342"
-         style="font-size:21.3333336px;fill:#ffffff;line-height:125%">Pas de traitement des vaches laitières</flowPara></flowRoot>    <g
+         style="font-size:21.33333397px;line-height:125%;fill:#ffffff">Pas de traitement des vaches laitières</flowPara></flowRoot>    <g
        id="g22-91-5"
        transform="matrix(0.26458333,0,0,0.26458333,217.01066,227.42588)">
       <g

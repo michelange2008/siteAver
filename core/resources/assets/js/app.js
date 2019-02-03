@@ -8,10 +8,10 @@
  require('./dropdown.js');
 
 require("jquery-ui");
-require('jquery-confirm');
+// require('jquery-confirm');
 require("ajax");
 require("./aromaliste");
-
+require("./parasitisme.js");
 
 
 // window.Vue = require('vue');

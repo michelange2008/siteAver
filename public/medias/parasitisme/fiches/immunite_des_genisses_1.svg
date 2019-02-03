@@ -14,8 +14,11 @@
    viewBox="0 0 297 210"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-   sodipodi:docname="immunite des genisses.svg">
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="immunite_des_genisses_1.svg"
+   inkscape:export-filename="/srv/siteAver/public/medias/parasitisme/fiches/immunite_des_genisses_1.png"
+   inkscape:export-xdpi="25"
+   inkscape:export-ydpi="25">
   <defs
      id="defs2">
     <marker
@@ -68,11 +71,11 @@
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.70000001"
-     inkscape:cx="657.58915"
-     inkscape:cy="562.48605"
+     inkscape:cx="301.87487"
+     inkscape:cy="556.77176"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -99,7 +102,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -131,7 +134,7 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot994"
-       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:10px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+       style="font-style:normal;font-weight:normal;font-size:10px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
          id="flowRegion996"><rect
            id="rect998"
            width="1347.0237"
@@ -390,7 +393,7 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot1255"
-       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:10px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+       style="font-style:normal;font-weight:normal;font-size:10px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
          id="flowRegion1257"><rect
            id="rect1259"
            width="151.18111"
@@ -494,7 +497,7 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot1337"
-       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:10px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+       style="font-style:normal;font-weight:normal;font-size:10px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
          id="flowRegion1339"><rect
            id="rect1341"
            width="37.795277"
@@ -565,7 +568,7 @@
        id="path1345-46"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:#918a6f;fill-rule:evenodd;stroke:#1a1a1a;stroke-width:0.765;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#918a6f;fill-rule:evenodd;stroke:#1a1a1a;stroke-width:0.76499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 180,130.17502 v 110"
        id="path1345-63"
        inkscape:connector-curvature="0"
@@ -630,7 +633,7 @@
        id="path1345-7"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:#1a1a1a;fill-rule:evenodd;stroke:#1a1a1a;stroke-width:0.765;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#1a1a1a;fill-rule:evenodd;stroke:#1a1a1a;stroke-width:0.76499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 280,130.17502 v 90"
        id="path1345-33"
        inkscape:connector-curvature="0"
@@ -660,7 +663,7 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:#1a1a1a;fill-rule:evenodd;stroke:#1a1a1a;stroke-width:0.765;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#1a1a1a;fill-rule:evenodd;stroke:#1a1a1a;stroke-width:0.76499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 60,130.17502 v 90"
        id="path1345-33-5"
        inkscape:connector-curvature="0"
@@ -837,7 +840,7 @@
        y="250.53044"
        id="text1317-8-5"><tspan
          sodipodi:role="line"
-         x="126.78002"
+         x="127.01588"
          y="250.53044"
          style="font-size:4.23333311px;line-height:125%;text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan1707-0">TCE<tspan
@@ -879,7 +882,7 @@
          id="tspan1707-0-9">TCE avant le premier vêlage = TCE<tspan
    style="font-size:64.99999762%;baseline-shift:sub"
    id="tspan2037">1</tspan> + TCE<tspan
-   style="font-size:65%;baseline-shift:sub"
+   style="font-size:64.99999762%;baseline-shift:sub"
    id="tspan4691">2</tspan> = </tspan></text>
     <rect
        style="opacity:1;fill:#333333;fill-opacity:0;fill-rule:nonzero;stroke:#1a1a1a;stroke-width:0.44721374;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -901,7 +904,7 @@
          style="stroke-width:0.26458332px">(d'après RAVINET N. et coll. - Stratégie de traitement anthelminthique ciblé-sélectif: exemple chez la vache laitières adulte - Bulletin des GTV n°80 décembre 2015)</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.64583325px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#d5ffd5;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-weight:normal;font-size:2.64583325px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#d5ffd5;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="4.7105827"
        y="99.620865"
        id="text4552"><tspan
@@ -909,11 +912,11 @@
          id="tspan4550"
          x="4.7105827"
          y="99.620865"
-         style="font-size:7.05555534px;line-height:125%;fill:#d5ffd5;stroke-width:0.26458332px;">Vos génisses s'immunisent-elles suffisamment </tspan><tspan
+         style="font-size:7.05555534px;line-height:125%;fill:#d5ffd5;stroke-width:0.26458332px">Vos génisses s'immunisent-elles suffisamment </tspan><tspan
          sodipodi:role="line"
          x="4.7105827"
          y="108.44031"
-         style="font-size:7.05555534px;line-height:125%;fill:#d5ffd5;stroke-width:0.26458332px;"
+         style="font-size:7.05555534px;line-height:125%;fill:#d5ffd5;stroke-width:0.26458332px"
          id="tspan4554">contre les strongles gastro-intestinaux ?</tspan></text>
     <text
        xml:space="preserve"

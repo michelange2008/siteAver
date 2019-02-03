@@ -40,12 +40,13 @@
     </div>
   </div>
 </div>
-    <script type="text/javascript" src="{{asset('/core/node_modules/jquery/dist/jquery.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('/core/node_modules/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('/core/node_modules/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('/core/node_modules/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+    <script src="{{asset('/core/node_modules/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('/core/node_modules/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('/core/node_modules/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js')}}"></script>
+    <script src="{{asset('/core/node_modules/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
 
-    </script>
+
+    <script src="{{ asset(config('scripts.path'))}}/jquery.confirm.min.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/app.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/user_gestion.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/analyses.js"></script>
