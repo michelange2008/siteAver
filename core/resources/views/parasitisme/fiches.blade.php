@@ -14,8 +14,8 @@
       <div class="para-container-fiches">
           @foreach ($fiches as $key => $value)
             <a href="{{URL::asset(config('fichiers.fiches'))."/".$value->fichier}}" title="cliquez pour afficher ou télécharger">
-              <img src="{{URL::asset(config('fichiers.fiches'))."/".$value->image}}" alt="">
               <h5>{{$value->nom}}</h5>
+              <img src="{{URL::asset(config('fichiers.fiches'))."/".$value->image}}" alt="">
             </a>
           @endforeach
       </div>

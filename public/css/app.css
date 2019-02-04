@@ -12306,7 +12306,10 @@ Personnalisation des boutons
   margin: auto;
 }
 
-
+a:hover img {
+  -webkit-filter: brightness(80%);
+  filter: brightness(80%);
+}
 
 .centrer {
   margin: auto;
@@ -13170,9 +13173,10 @@ body {
   color: #d4b26aff;
   text-decoration: none;
   margin: 5px;
+  padding: 3px;
   width: 200px;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+  -webkit-filter: grayscale(50%);
+          filter: grayscale(50%);
   -webkit-transition: width 1s, -webkit-filter;
   transition: width 1s, -webkit-filter;
   transition: filter, width 1s;
@@ -13184,3 +13188,4 @@ body {
   -webkit-filter: grayscale(0%);
           filter: grayscale(0%);
 }
+
