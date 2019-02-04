@@ -43,10 +43,10 @@
       <div class="fleche-bas"></div>
     </div>
     <div class="carre-menu">
-      <a href="{{route('parasitisme.fiches')}}"><h2>fiches</h2></a>
-      <a href="{{route('parasitisme.formations')}}"><h2>formations</h2></a>
-      <a href="#"><h2>autres</h2></a>
-      <a href="#"><h2>liens</h2></a>
+      <a href="{{route('parasitisme.fiches')}}" title="fiches techniques à télécharger"><h2>fiches</h2></a>
+      <a href="{{route('parasitisme.formations')}}" title="formations destinées aux éleveurs"><h2>formations</h2></a>
+      <a href="#" title="En cours de construction"><h2>autres</h2></a>
+      <a href="#" title="En cours de construction"><h2>liens</h2></a>
     </div>
   </div>
 

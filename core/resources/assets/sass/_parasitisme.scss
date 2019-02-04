@@ -19,6 +19,9 @@ body {
     background:url("/siteAver/public/medias/parasitisme/fleche-gauche.svg") no-repeat;
     background-size: contain;
   }
+  .fleche:hover {
+    box-shadow: 3px 3px 10px black;
+  }
   .fleche-droite {
     background:url("/siteAver/public/medias/parasitisme/menu.svg") no-repeat;
     background-size: contain;
@@ -186,5 +189,15 @@ body {
   a:hover {
     width: 250px;
     filter: grayscale(0%);
+  }
+}
+.para-container-formations {
+  margin:auto;
+  width: 50%;
+  color: $parasito-jaune;
+  background: $parasito-rouge;
+  filter: opacity(80%);
+  img, h5 {
+    filter: opacity(100%) !important;
   }
 }

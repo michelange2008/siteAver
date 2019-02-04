@@ -12943,6 +12943,11 @@ body {
   background-size: contain;
 }
 
+.para-fleche .fleche:hover {
+  -webkit-box-shadow: 3px 3px 10px black;
+          box-shadow: 3px 3px 10px black;
+}
+
 .para-fleche .fleche-droite {
   background: url("/siteAver/public/medias/parasitisme/menu.svg") no-repeat;
   background-size: contain;
@@ -13187,5 +13192,20 @@ body {
   width: 250px;
   -webkit-filter: grayscale(0%);
           filter: grayscale(0%);
+}
+
+.para-container-formations {
+  margin: auto;
+  width: 50%;
+  color: #d4b26aff;
+  background: #550000ff;
+  -webkit-filter: opacity(80%);
+          filter: opacity(80%);
+}
+
+.para-container-formations img,
+.para-container-formations h5 {
+  -webkit-filter: opacity(100%) !important;
+          filter: opacity(100%) !important;
 }
 
