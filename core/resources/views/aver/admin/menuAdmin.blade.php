@@ -53,6 +53,10 @@
         </ul>
       </li>
       <li class="nav-item"><a href="{{ URL::route('antikor.index')}}" class = 'nav-link'>Antikor</a></li>
+
+      <li class="nav-item"><a href="{{ URL::route('parasitisme.accueil')}}" class = 'nav-link'>Parasitisme</a></li>
+
+      <li class="nav-item"><a href="{{ URL::route('accueil')}}" class = 'nav-link'>Sommaire</a></li>
     </ul>
   </div>
 </nav>

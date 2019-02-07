@@ -8,7 +8,7 @@
       </a>
     </div>
     <div class="para-container-titre">
-      <h1>fiches</h1><h1>techniques</h1><h1>(à télécharger)</h1>
+      <h1>fiches techniques (à télécharger)</h1>
     </div>
     <div class="para-container-texte ">
       <div class="para-container-fiches">
@@ -34,9 +34,10 @@
     <div class="carre-menu">
       <a href="{{route('parasitisme.accueil')}}"><h2>accueil</h2></a>
       <a href="{{route('parasitisme.formations')}}" title="formations destinées aux éleveurs"><h2>formations</h2></a>
+      <a href="#" title="En cours de construction"><h2>game of strongles</h2></a>
       <a href="#" title="En cours de construction"><h2>autres</h2></a>
-      <a href="#" title="En cours de construction"><h2>liens</h2></a>
     </div>
   </div>
+  <link rel="stylesheet" href="{{ asset(config('stylesParasito.parasito'))}}">
 
 @endsection

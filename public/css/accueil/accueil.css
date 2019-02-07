@@ -21,6 +21,7 @@ html{
 body {
 	background-color: grey;
 }
+
 #trait {
 	display: none;
 	position: fixed;
@@ -44,17 +45,18 @@ body {
 .intitule {
 	color: white;
 	margin-left: 10%;
-	margin-top: -15%;
+	margin-top: 0;
 }
 .img {
 	width: 15vw;
 	height: 15vw;
 	color: white;
-	padding: 10%;
+}
+.img:hover {
+  box-shadow: 1px 3px 3px black;
 }
 img {
 	max-width: 100%;
-	max-height: 100%;
 }
 #antikor {
 		cursor: pointer;
@@ -106,59 +108,49 @@ input {
 .invisible {
 	display: none;
 }
-/*.flip-horizontal-bottom {
-  animation: flip-horizontal-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0.2s both;
-}*/
 
 a {
 	text-decoration: none;
 	color: white;
 }
 @media screen and (max-width:768px) {
-	#container{
-		left: 17.5vw;
-		width: 65vw;
-		display: flex;
-	}
+  
 }
 @media (max-width: 576px){
 	#container{
-		flex-flow: column nowrap;
+		flex-flow: row wrap;
 		justify-content: space-between;
 		top: 5%;
 		left: 5%;
 		height: 90vh;
 		width: 90%;
-		overflow-y: scroll;
 	}
 
 	#trait{
 		display: none;
 	}
 	.boite{
-		width: 90vw;
-		height: 30vh;
+    margin: 10px;
 	}
 	.boite > a {
 		display: flex;
-		flex-direction: row;
-		align-items: center;
-
+		flex-direction: column;
+		align-items: flex-start;
 	}
+  .intitule {
+    margin-left: 0;
+  }
 	.img {
 		padding: 0;
-		padding-bottom: 5vh;
-		width: 30vw;
-		height: 30vw;
+		width: 35vw;
+    height: 35vw;
 	}
+  .img:hover {
+    width: 36vw;
+  }
 	.img_grande {
-		width: 80vw;
+		width: 50vw;
 		height: 50vw;
-	}
-	#antikor {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
 	}
 	.antikor_grand {
 		position: fixed;

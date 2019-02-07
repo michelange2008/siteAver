@@ -1,9 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
     "/js/jquery.confirm.min.js": "/js/jquery.confirm.min.js",
     "/css/jquery.confirm.min.css": "/css/jquery.confirm.min.css",
     "/css/jquery.dataTables.min.css": "/css/jquery.dataTables.min.css",
     "/css/responsive.jquery.dataTables.min.css": "/css/responsive.jquery.dataTables.min.css",
-    "/css/fixedHeader.dataTables.min.css": "/css/fixedHeader.dataTables.min.css",
-    "/css/app.css": "/css/app.css"
+    "/css/fixedHeader.dataTables.min.css": "/css/fixedHeader.dataTables.min.css"
 }

@@ -8,7 +8,7 @@
       </a>
     </div>
     <div class="para-container-titre">
-      <h1>Strongles gastro-</h1><h1>intestinaux des</h1><h1>ruminants</h1>
+      <h1>Strongles gastro-intestinaux des ruminants</h1>
     </div>
     <div class="para-container-texte ">
       <div class="para-container-soustitre">
@@ -45,9 +45,9 @@
     <div class="carre-menu">
       <a href="{{route('parasitisme.fiches')}}" title="fiches techniques à télécharger"><h2>fiches</h2></a>
       <a href="{{route('parasitisme.formations')}}" title="formations destinées aux éleveurs"><h2>formations</h2></a>
+      <a href="#" title="En cours de construction"><h2>game of strongles</h2></a>
       <a href="#" title="En cours de construction"><h2>autres</h2></a>
-      <a href="#" title="En cours de construction"><h2>liens</h2></a>
     </div>
   </div>
-
+<link rel="stylesheet" href="{{ asset(config('stylesParasito.parasito'))}}">
 @endsection

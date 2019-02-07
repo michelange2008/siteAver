@@ -11956,7 +11956,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 100000;
 }
 
 .para-fleche .fleche {
@@ -11985,25 +11984,16 @@ body {
 .para-container {
   margin-left: -15px;
   width: 100vw;
-  height: 100vh;
   background: url("/siteAver/public/medias/parasitisme/strongle.svg") no-repeat #550000ff;
   background-position: right;
   display: grid;
-  grid-template-columns: 50px 25% 5% 1fr 50px;
-  overflow: auto;
+  grid-template-columns: 5% 25% 5% 1fr 5%;
 }
 
 .para-container h1 {
   color: #d4b26aff;
   font-size: 300%;
   font-weight: bold;
-}
-
-.para-container h5 {
-  font-size: 1.10rem;
-  background: #550000ff;
-  -webkit-box-shadow: 3px 3px 10px #550000ff;
-          box-shadow: 3px 3px 10px #550000ff;
 }
 
 .para-container-titre {
@@ -12063,7 +12053,6 @@ body {
   background: #d4b26aff;
   width: 55%;
   padding: 0.5rem;
-  margin: 10px 0;
 }
 
 .para-container-texte2 {
@@ -12097,7 +12086,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-right: 0.5rem;
-  width: 40%;
+  width: 240px;
 }
 
 .para-container-texte2 .para-container-texte2-image img {
@@ -12136,14 +12125,6 @@ body {
           transform: rotate(-10deg);
 }
 
-.para-menu h5,
-.para-menu h4,
-.para-menu h2 {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-}
-
 .para-menu h4,
 .para-menu h2 {
   font-weight: lighter;
@@ -12178,14 +12159,8 @@ body {
   left: 30%;
 }
 
-.para-menu .carre-menu a {
-  white-space: nowrap;
-}
-
 .para-menu .carre-menu h2 {
-  font-size: 2.0rem;
-  -webkit-transition: font-size 1s;
-  transition: font-size 1s;
+  font-size: 2.5rem;
 }
 
 .para-menu .carre-menu h2:hover {
@@ -12213,39 +12188,35 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  height: 98vh;
 }
 
 .para-container-fiches a {
+  background-color: #550000ff;
   color: #d4b26aff;
   text-decoration: none;
   margin: 5px;
   padding: 3px;
-  width: 250px;
-}
-
-.para-container-fiches a img {
-  -webkit-filter: grayscale(60%);
-          filter: grayscale(60%);
+  width: 200px;
+  -webkit-filter: grayscale(50%);
+          filter: grayscale(50%);
   -webkit-transition: width 1s, -webkit-filter;
   transition: width 1s, -webkit-filter;
   transition: filter, width 1s;
   transition: filter, width 1s, -webkit-filter;
-  width: 200px;
-  margin: auto;
 }
 
-.para-container-fiches a img:hover {
+.para-container-fiches a:hover {
   width: 250px;
-  overflow: hidden;
   -webkit-filter: grayscale(0%);
           filter: grayscale(0%);
 }
@@ -12272,6 +12243,7 @@ body {
   }
 
   .para-container {
+    height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -12288,13 +12260,8 @@ body {
   }
 
   .para-container-titre {
-    position: -webkit-sticky;
-    position: sticky;
     grid-row: 1;
     grid-column: 1;
-    background: #550000ff;
-    top: 0;
-    z-index: 10000;
   }
 
   .para-container-texte {
@@ -12343,29 +12310,36 @@ body {
     right: 0;
     top: 50vh;
   }
+}
 
-  .para-menu {
-    left: 15vw;
-    top: 10vh;
-    width: 70vw;
-    height: 70vw;
-  }
+.para-menu {
+  left: 10vw;
+  top: 10vh;
+  width: 70vw;
+  height: 70vw;
+}
 
-  .para-menu .fleche-bas {
-    height: 30px;
-  }
+.para-menu .fleche-bas {
+  height: 30px;
+}
 
-  .carre-menu h2 {
-    font-size: 1.8rem !important;
-  }
+.carre-menu {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+}
 
-  .para-container-fiches {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -ms-flex-item-align: center;
-        align-self: center;
-    height: 98vh;
-  }
+.carre-menu h2 {
+  font-size: 1.8rem !important;
+}
+
+.carre-menu h2:hover {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.carre-menu a:hover {
+  text-decoration: none;
 }
 
 @media (min-width: 568px) and (max-width: 768px) {
@@ -12405,7 +12379,7 @@ body {
   }
 
   .para-container-texte .para-container-soustitre {
-    width: 100vw;
+    width: 90vw;
     margin: 0 0 5px 0;
   }
 
@@ -12465,76 +12439,6 @@ body {
     position: fixed;
     right: 0;
     top: 50vh;
-  }
-
-  .para-menu {
-    left: 25vw;
-    top: 10vh;
-    width: 50vw;
-    height: 50vw;
-  }
-
-  .para-menu .fleche-bas {
-    height: 30px;
-  }
-
-  .carre-menu h2 {
-    font-size: 2rem !important;
-  }
-
-  .para-container-fiches {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1200px) {
-  .para-container-texte1 {
-    width: 85%;
-  }
-
-  .para-container-texte2 {
-    width: 100%;
-  }
-
-  .para-menu {
-    left: 25vw;
-    top: 10vh;
-    width: 40vw;
-    height: 40vw;
-  }
-
-  .para-menu .fleche-bas {
-    height: 30px;
-  }
-
-  .carre-menu h2 {
-    font-size: 2rem !important;
-  }
-
-  .para-container-fiches {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
-
-@media (hover) {
-  body {
-    display: none;
   }
 }
 

@@ -1,0 +1,20 @@
+ /* Petit fichier de style pour éliminer le menu dans les fiches parasito */
+
+ .col-menu {
+   display: none;
+ }
+ /* .fleche-bas {
+   background: url("../medias/parasitisme/fleche-bas.svg") no-repeat;
+}
+.fermer {
+  background: url("../medias/parasitisme/fermer.svg") no-repeat;
+}
+.fleche-gauche {
+  background:url("../medias/parasitisme/fleche-gauche.svg") no-repeat;
+}
+.fleche-droite {
+  background:url("../medias/parasitisme/menu.svg") no-repeat;
+}
+.para-container {
+  background: url("../medias/parasitisme/strongle.svg") no-repeat $parasito-rouge;
+} */
