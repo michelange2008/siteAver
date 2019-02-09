@@ -11,7 +11,11 @@ let mix = require('laravel-mix');
  |
  */
 mix.setPublicPath('../public/');
-mix.sass('resources/assets/sass/app.scss', 'css').js('resources/assets/js/app.js', 'js');
+mix.sass('resources/assets/sass/app.scss', 'css')
+  .options({
+      processCssUrls: false
+   })
+   .js('resources/assets/js/app.js', 'js');
 
 mix.copy('node_modules/jquery-confirm/dist/jquery-confirm.min.js', '../public/js/jquery.confirm.min.js');
 mix.copy('node_modules/jquery-confirm/dist/jquery-confirm.min.css', '../public/css/jquery.confirm.min.css');
