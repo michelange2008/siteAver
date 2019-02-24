@@ -12360,10 +12360,11 @@ body {
   }
 
   .para-container-fiches {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -ms-flex-item-align: center;
-        align-self: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 98vh;
   }
 }
@@ -12537,4 +12538,3 @@ body {
     display: none;
   }
 }
-

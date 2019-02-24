@@ -24,6 +24,8 @@ Route::get('/forum', 'MainController@forum');
 
 Route::get('/parasitisme', ['uses' => 'Parasitisme\ParasitismeController@index', 'as' => 'parasitisme.accueil']);
 
+Route::get('/technique', ['uses' => 'Technique\TechniqueController@index', 'as' => 'technique.index']);
+
 // ROUTES AVER ##############################################################################################
 
 Auth::routes();
@@ -186,3 +188,5 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/parasitisme/fiches', ['uses' => 'Parasitisme\ParasitismeController@fiches', 'as' => 'parasitisme.fiches']);
 
 Route::get('/parasitisme/formations', ['uses' => 'Parasitisme\ParasitismeController@formations', 'as' => 'parasitisme.formations']);
+
+//######################################### ROUTES TECHNIQUE #########################################################################

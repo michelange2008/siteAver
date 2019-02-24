@@ -303,8 +303,8 @@ body {
     }
   }
   .para-container-fiches {
-    flex-wrap: nowrap;
-    align-self: center;
+    flex-wrap: wrap;
+    justify-content: center;
     height: 98vh;
   }
 

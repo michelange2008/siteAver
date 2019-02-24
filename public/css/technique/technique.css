@@ -1,0 +1,29 @@
+.container-fluid {
+  margin: 0 !important;
+  padding: 0!important;
+}
+.tech-container {
+  background:darkgreen;
+  width:100vw;
+}
+.tech-rond {
+  margin: 50px;
+  width:100px;
+  height:100px;
+  border-radius:100%;
+  background:black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tech-rond-texte {
+  position: absolute;
+  text-align: center;
+  color: white;
+}
+.tech-sousmenu {
+  display: none;
+}
+.tech-rond:hover .tech-sousmenu {
+  display: block;
+}

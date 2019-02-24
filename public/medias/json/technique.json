@@ -1,0 +1,12 @@
+{
+  "repro" : {
+    "nom" : "reproduction",
+    "icone": "reproduction.svg",
+    "lien": "reproduction"
+  },
+  "respi" : {
+    "nom" : "respiration",
+    "icone": "respiration.svg",
+    "lien": "respiration"
+    }
+}
