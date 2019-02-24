@@ -23,14 +23,14 @@ body {
     margin: 2px;
   }
   .fleche-gauche {
-    background:url("/siteAver/public/medias/parasitisme/fleche-gauche.svg") no-repeat;
+    background:url("../medias/parasitisme/fleche-gauche.svg") no-repeat;
     background-size: contain;
   }
   .fleche:hover {
     box-shadow: 3px 3px 10px black;
   }
   .fleche-droite {
-    background:url("/siteAver/public/medias/parasitisme/menu.svg") no-repeat;
+    background:url("../medias/parasitisme/menu.svg") no-repeat;
     background-size: contain;
     &:hover {
     }
@@ -41,7 +41,7 @@ body {
   margin-left: -15px;
   width: 100vw;
   height: 100vh;
-  background: url("/siteAver/public/medias/parasitisme/strongle.svg") no-repeat $parasito-rouge;
+  background: url("../medias/parasitisme/strongle.svg") no-repeat $parasito-rouge;
   background-position: right;
   display: grid;
   grid-template-columns:50px 25% 5% 1fr 50px;
@@ -155,7 +155,7 @@ body {
     flex-direction: column;
     text-align: right;
     .fleche-bas {
-      background: url("/siteAver/public/medias/parasitisme/fleche-bas.svg") no-repeat;
+      background: url("../medias/parasitisme/fleche-bas.svg") no-repeat;
       background-size: contain;
       height: 50px;
     }
@@ -181,7 +181,7 @@ body {
   }
   .fermer {
     position: absolute;
-    background: url("/siteAver/public/medias/parasitisme/fermer.svg") no-repeat;
+    background: url("../medias/parasitisme/fermer.svg") no-repeat;
     right: 1%;
     top: 1%;
     cursor: pointer;
@@ -226,7 +226,17 @@ body {
     filter: opacity(100%) !important;
   }
 }
-
+.texte-bouton-menu {
+  position: fixed;
+  right: 50px;
+  top: 40vh;
+  color: $parasito-jaune;
+  .fleche-bas-droite {
+    background: url("../medias/parasitisme/fleche-bas-droite.svg") no-repeat;
+    background-size: contain;
+    height: 30px;
+  }
+}
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
   p {
@@ -433,10 +443,7 @@ body {
     // height: 98vh;
   }
 }
-@media not(hover) {
-  body {
-    display: none;
-  }
+@media not(hover:none) {
 }
 // Extra large devices (large desktops, 1200px and up)
 // @media (min-width: 1200px) { }

@@ -49,5 +49,9 @@
       <a href="#" title="En cours de construction"><h2>autres</h2></a>
     </div>
   </div>
+  <div class="texte-bouton-menu">
+    <h5>menu</h5>
+    <div class="fleche-bas-droite"></div>
+  </div>
 <link rel="stylesheet" href="{{ asset(config('stylesParasito.parasito'))}}">
 @endsection
