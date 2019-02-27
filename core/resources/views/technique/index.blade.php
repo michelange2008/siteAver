@@ -13,7 +13,9 @@
             </div>
             <div class="tech-sousmenu">
               @foreach ($value->menu as $sousmenu)
-                <h4 class="tech-intitule">{{$sousmenu->intitule}}</h4>
+                <a href="{{URL::route($sousmenu->lien)}}">
+                  <h4 class="tech-intitule">{{$sousmenu->intitule}}</h4>
+                </a>
               @endforeach
             </div>
           </div>

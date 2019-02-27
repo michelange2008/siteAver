@@ -1,6 +1,10 @@
 body {
   background:darkgreen !important;
 }
+a, a:hover{
+  text-decoration: none;
+  color: inherit;
+}
 .container-fluid {
   margin: 0 !important;
   padding: 0!important;

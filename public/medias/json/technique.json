@@ -6,22 +6,22 @@
     "menu": {
       "animation": {
         "intitule": "animation",
-        "lien": "animation"
+        "lien": "technique.index"
       },
       "fiches" : {
         "intitule": "fiches",
-        "lien": "fiches"
+        "lien": "technique.index"
       }
     }
   },
   "respi" : {
     "nom" : "respiration",
     "icone": "respiration.svg",
-    "lien": "respiration",
+    "lien": "technique.index",
     "menu": {
       "fiches" : {
         "intitule": "fiches",
-        "lien": "fiches"
+        "lien": "technique.index"
       }
     }
   },
@@ -30,9 +30,13 @@
     "icone": "parasitisme.svg",
     "lien": "parasitisme",
     "menu": {
+      "site" : {
+        "intitule": "site",
+        "lien": "parasitisme.accueil"
+      },
       "fiches" : {
         "intitule": "fiches",
-        "lien": "fiches"
+        "lien": "parasitisme.fiches"
       }
     }
 
