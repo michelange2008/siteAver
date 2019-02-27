@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_parasito')
 
 @section('content')
   <div class="para-container">

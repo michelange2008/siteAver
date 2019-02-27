@@ -1,35 +1,5 @@
-@font-face {
-  font-family: "din";
-  font-style: normal;
-  src: url("../fonts/din/DINPRO-REGULAR.OTF");
-}
-
-@font-face {
-  font-family: "din";
-  font-style: italic;
-  src: url("../fonts/din/DINPro-Italic.otf");
-}
-
-@font-face {
-  font-family: "din";
-  font-style: normal;
-  font-weight: lighter;
-  src: url("../fonts/din/DINPRO-LIGHT.OTF");
-}
-
-@font-face {
-  font-family: "din";
-  font-weight: bold;
-  src: url("../fonts/din/DINPRO-BOLD.OTF");
-}
-
 body {
   font-family: 'din';
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
 }
 
 .para-fleche {
@@ -70,7 +40,7 @@ a {
 }
 
 .para-container {
-  padding: 0 8px;
+  width: 100vw;
   height: 100vh;
   background: url("../medias/parasitisme/strongle.svg") no-repeat #550000ff;
   background-position: right;
@@ -349,8 +319,7 @@ a {
 
 .texte-bouton-menu {
   position: fixed;
-  font-size: 1.2rem;
-  right: 60px;
+  right: 50px;
   top: 40vh;
   color: #d4b26aff;
 }
@@ -447,12 +416,6 @@ a {
         -ms-flex-pack: center;
             justify-content: center;
     height: 98vh;
-  }
-  .texte-bouton-menu {
-    top: 50vh;
-  }
-  .texte-bouton-menu .fleche-bas-droite {
-    display: none;
   }
 }
 
@@ -562,9 +525,6 @@ a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-  }
-  .texte-bouton-menu {
-    display: none;
   }
 }
 

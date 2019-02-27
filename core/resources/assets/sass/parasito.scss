@@ -1,3 +1,5 @@
+@import "font";
+
 $parasito-rouge: #550000ff;
 $parasito-rouge-trans: #55000084;
 $parasito-jaune: #d4b26aff;
@@ -7,8 +9,11 @@ $parasito-violet-trans: #9775aa84;
 
 body {
   font-family: 'din';
+  margin: 0;
 }
-
+a {
+  text-decoration: none;
+}
 
 .para-fleche {
   display: flex;
@@ -38,14 +43,14 @@ body {
 }
 
 .para-container {
-  margin-left: -15px;
-  width: 100vw;
+  padding: 0 8px;
   height: 100vh;
   background: url("../medias/parasitisme/strongle.svg") no-repeat $parasito-rouge;
   background-position: right;
   display: grid;
   grid-template-columns:50px 25% 5% 1fr 50px;
   overflow: auto;
+
   h1 {
     color: $parasito-jaune;
     font-size: 300%;
@@ -228,7 +233,8 @@ body {
 }
 .texte-bouton-menu {
   position: fixed;
-  right: 50px;
+  font-size: 1.2rem;
+  right: 60px;
   top: 40vh;
   color: $parasito-jaune;
   .fleche-bas-droite {
@@ -317,7 +323,12 @@ body {
     justify-content: center;
     height: 98vh;
   }
-
+  .texte-bouton-menu {
+    top:50vh;
+    .fleche-bas-droite {
+      display: none;
+    }
+  }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -413,6 +424,9 @@ body {
     justify-content: center;
     // height: 98vh;
   }
+  .texte-bouton-menu {
+    display: none;
+}
 }
 // Large devices (desktops, 992px and up)
 @media (min-width:768px) and (max-width: 1200px) {
@@ -443,7 +457,6 @@ body {
     // height: 98vh;
   }
 }
-@media not(hover:none) {
-}
+
 // Extra large devices (large desktops, 1200px and up)
 // @media (min-width: 1200px) { }

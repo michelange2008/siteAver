@@ -12,6 +12,7 @@ let mix = require('laravel-mix');
  */
 mix.setPublicPath('../public/');
 mix.sass('resources/assets/sass/app.scss', 'css')
+  .sass('resources/assets/sass/parasito.scss', 'css')
   .options({
       processCssUrls: false
    })

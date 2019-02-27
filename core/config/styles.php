@@ -7,4 +7,6 @@ return [
   'responsive_dataTables' => $path.'responsive.jquery.dataTables.min.css',
   'fixedHeader_dataTables' => $path.'fixedHeader.dataTables.min.css',
   'font' => $path.'font.css',
+  'parasito' => $path.'parasito.css',
+  'technique' => $path.'technique.css'
 ];

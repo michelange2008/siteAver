@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/css/parasito.css": "/css/parasito.css",
     "/js/jquery.confirm.min.js": "/js/jquery.confirm.min.js",
     "/css/jquery.confirm.min.css": "/css/jquery.confirm.min.css",
     "/css/jquery.dataTables.min.css": "/css/jquery.dataTables.min.css",

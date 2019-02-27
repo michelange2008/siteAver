@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_parasito')
 
 @section('content')
   <div class="para-container">
@@ -50,8 +50,8 @@
     </div>
   </div>
   <div class="texte-bouton-menu">
-    <h5>menu</h5>
+    <p>menu</p>
     <div class="fleche-bas-droite"></div>
   </div>
-<link rel="stylesheet" href="{{ asset(config('stylesParasito.parasito'))}}">
+
 @endsection

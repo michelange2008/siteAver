@@ -13207,6 +13207,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(5);
+__webpack_require__(14);
 module.exports = __webpack_require__(15);
 
 
@@ -13227,7 +13228,6 @@ __webpack_require__(8);
 // require('jquery-confirm');
 __webpack_require__(10);
 __webpack_require__(13);
-__webpack_require__(14);
 
 // window.Vue = require('vue');
 
@@ -20433,20 +20433,7 @@ $(function () {
 /* 14 */
 /***/ (function(module, exports) {
 
-$(function () {
-  $("#fleche-droite").on('click', function () {
-    $("#para-menu").fadeToggle();
-    var opacite = $('.para-container-texte').css('opacity');
-    var op = opacite == 1 ? 0.5 : 1;
-    $('.para-container-texte').animate({
-      opacity: op
-    }, 'slow').toggleClass('flou');
-    $(".para-container").toggleClass('gris');
-  });
-  $('.fermer').on('click', function () {
-    $('#fleche-droite').trigger('click');
-  });
-});
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 15 */

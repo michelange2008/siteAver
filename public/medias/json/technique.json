@@ -2,11 +2,39 @@
   "repro" : {
     "nom" : "reproduction",
     "icone": "reproduction.svg",
-    "lien": "reproduction"
+    "lien": "reproduction",
+    "menu": {
+      "animation": {
+        "intitule": "animation",
+        "lien": "animation"
+      },
+      "fiches" : {
+        "intitule": "fiches",
+        "lien": "fiches"
+      }
+    }
   },
   "respi" : {
     "nom" : "respiration",
     "icone": "respiration.svg",
-    "lien": "respiration"
+    "lien": "respiration",
+    "menu": {
+      "fiches" : {
+        "intitule": "fiches",
+        "lien": "fiches"
+      }
     }
+  },
+  "parasitisme": {
+    "nom" : "parasitisme",
+    "icone": "parasitisme.svg",
+    "lien": "parasitisme",
+    "menu": {
+      "fiches" : {
+        "intitule": "fiches",
+        "lien": "fiches"
+      }
+    }
+
+  }
 }
