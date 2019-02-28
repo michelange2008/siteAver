@@ -14,6 +14,17 @@ class TechniqueController extends Controller
 
       return view('technique.index', [
         "items" => $items,
+        "route" => 'accueil'
       ]);
+    }
+
+    public function animation()
+    {
+      return view('technique.reproduction.animation');
+    }
+
+    public function fiches()
+    {
+      return view('technique.reproductions.fiches');
     }
 }

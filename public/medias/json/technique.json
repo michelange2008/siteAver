@@ -6,11 +6,11 @@
     "menu": {
       "animation": {
         "intitule": "animation",
-        "lien": "technique.index"
+        "lien": "technique.reproduction.animation"
       },
       "fiches" : {
         "intitule": "fiches",
-        "lien": "technique.index"
+        "lien": "technique.reproduction.fiches"
       }
     }
   },

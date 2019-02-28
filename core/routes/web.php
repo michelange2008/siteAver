@@ -190,3 +190,7 @@ Route::get('/parasitisme/fiches', ['uses' => 'Parasitisme\ParasitismeController@
 Route::get('/parasitisme/formations', ['uses' => 'Parasitisme\ParasitismeController@formations', 'as' => 'parasitisme.formations']);
 
 //######################################### ROUTES TECHNIQUE #########################################################################
+
+Route::get('/technique/reproduction/animation', ['uses' => 'Technique\TechniqueController@animation', 'as' => 'technique.reproduction.animation']);
+
+Route::get('/technique/reproduction/fiches', ['uses' => 'Technique\TechniqueController@fiches', 'as' => 'technique.reproduction.fiches']);

@@ -1,7 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.app_technique')
 @push('css')
   <link href="{{asset('public/css/technique/technique.css')}}" rel="stylesheet">
 @endpush
+@section('gauche')
+  @include('technique.gauche')
+@endsection
 @section('content')
   <div class="tech-container">
     @foreach($items as $value)
@@ -9,7 +12,7 @@
         <div class="tech-cube">
           <div class="tech-rond">
             <div class="ball">
-              <img src="{{asset('public/medias/technique/')."/".$value->icone}}" alt="{{$value->nom}}" title="{{$value->nom}}">
+              <img class="tech-icone" src="{{asset('public/medias/technique/')."/".$value->icone}}" alt="{{$value->nom}}" title="{{$value->nom}}">
             </div>
             <div class="tech-sousmenu">
               @foreach ($value->menu as $sousmenu)

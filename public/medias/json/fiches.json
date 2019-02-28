@@ -1,32 +1,44 @@
 {
   "cycle" : {
+    "categorie" : "parasitisme",
     "nom" : "Cycle des strongles gastro-intestinaux",
     "fichier" : "cycles_strongles_digestifs.pdf",
     "image" : "cycles_strongles_digestifs.png"
   },
   "immunite" : {
-    "nom" : "Immunité vis-à-vis des strongles gastro-intestinaux",
+    "categorie" : "parasitisme",
     "fichier" : "immunite_strongles_digestifs.pdf",
+    "nom" : "Immunité vis-à-vis des strongles gastro-intestinaux",
     "image" : "immunite_strongles_digestifs.png"
   },
   "maitrise" : {
+    "categorie" : "parasitisme",
     "nom" : "Maîtrise raisonnée des strongles digestifs",
     "fichier" : "maitrise_strongles_digestifs.pdf",
     "image" : "maitrise_strongles_digestifs.png"
   },
   "genisses_1" : {
+    "categorie" : "parasitisme",
     "nom" : "Immunité des génisses vis-à-vis des strongles (1/2)",
     "fichier" : "immunite_des_genisses_1.pdf",
     "image" : "immunite_des_genisses_1.png"
   },
   "genisses_2" : {
+    "categorie" : "parasitisme",
     "nom" : "Immunité des génisses vis-à-vis des strongles (2/2)",
     "fichier" : "immunite_des_genisses_2.pdf",
     "image" : "immunite_des_genisses_2.png"
   },
   "vaches_grande_douve" : {
+    "categorie" : "parasitisme",
     "nom" : "Grande douve chez les bovins: arbre de décision",
     "fichier" : "grande_douve_arbre_décision.pdf",
     "image" : "grande_douve_arbre_décision.png"
+  },
+  "cycle_repro_vache" : {
+    "categorie" : "reproduction",
+    "nom" : "Cycle sexuel de la vache et problèmes",
+    "fichier" : "cycle_sexuel_vache.pdf",
+    "image" : "cycle_sexuel_vache.png"    
   }
 }

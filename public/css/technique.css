@@ -1,0 +1,229 @@
+@font-face {
+  font-family: "din";
+  font-style: normal;
+  src: url("../fonts/din/DINPRO-REGULAR.OTF");
+}
+
+@font-face {
+  font-family: "din";
+  font-style: italic;
+  src: url("../fonts/din/DINPro-Italic.otf");
+}
+
+@font-face {
+  font-family: "din";
+  font-style: normal;
+  font-weight: lighter;
+  src: url("../fonts/din/DINPRO-LIGHT.OTF");
+}
+
+@font-face {
+  font-family: "din";
+  font-weight: bold;
+  src: url("../fonts/din/DINPRO-BOLD.OTF");
+}
+
+body {
+  background: darkgreen !important;
+  font-family: 'din';
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.technique-global-container {
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+}
+
+.tech-gauche {
+  grid-column: 1;
+  margin: auto;
+}
+
+.tech-fleche-gauche {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  background: url("../medias/technique/fleche-gauche.svg") no-repeat;
+  background-size: contain;
+}
+
+.tech-container {
+  grid-column: 2;
+  background: darkgreen;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 96vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tech-cube {
+  min-width: 100px;
+  min-height: 100px;
+  width: 20vw;
+  height: 20vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 100px;
+}
+
+.tech-icone {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.ball {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 120%, #323232, #0a0a0a 80%, #000000 100%);
+  -webkit-animation: pulse 5s ease-out infinite;
+          animation: pulse 5s ease-out infinite;
+  cursor: pointer;
+}
+
+.ball:before {
+  content: "";
+  position: absolute;
+  background: radial-gradient(circle at 50% 120%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  bottom: 2.5%;
+  left: 5%;
+  opacity: 0.6;
+  height: 100%;
+  width: 90%;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  z-index: 2;
+}
+
+.ball:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.tech-rond:hover > .tech-sousmenu {
+  color: white;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.ball:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+  -webkit-transform: translateX(-45%) translateY(-45%) skewX(-20deg);
+          transform: translateX(-45%) translateY(-45%) skewX(-20deg);
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+.tech-rond {
+  width: 80%;
+  height: 80%;
+}
+
+.tech-rond-texte {
+  position: absolute;
+  text-align: center;
+  color: white;
+}
+
+.tech-sousmenu {
+  color: darkgreen;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-transition: color 1.5s ease;
+  transition: color 1.5s ease;
+  position: relative;
+  left: 110%;
+  top: -100%;
+  border-left: solid 1px darkgreen;
+  -webkit-transition: border 1s ease;
+  transition: border 1s ease;
+}
+
+.tech-rond:hover > .tech-sousmenu {
+  border-left: 1px solid white;
+  color: white;
+}
+
+.tech-intitule {
+  font-weight: lighter;
+  font-size: 1.4rem;
+  padding: 5px;
+  cursor: pointer;
+  overflow: visible;
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
+}
+
+.tech-intitule:hover {
+  -webkit-transform: translateX(10px) scale(1.1);
+          transform: translateX(10px) scale(1.1);
+}
