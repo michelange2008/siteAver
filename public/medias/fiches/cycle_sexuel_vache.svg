@@ -18,10 +18,7 @@
    version="1.1"
    id="svg856"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="reproduction de la vache.svg"
-   inkscape:export-filename="/srv/siteAver/public/medias/fiches/reproduction de la vache.png"
-   inkscape:export-xdpi="26"
-   inkscape:export-ydpi="26">
+   sodipodi:docname="reproduction de la vache.svg">
   <title
      id="title2846">La reproduction de la vache et l'infécondité</title>
   <defs
@@ -316,8 +313,8 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="-395.38023"
-     inkscape:cy="606.94547"
+     inkscape:cx="316.04834"
+     inkscape:cy="618.37404"
      inkscape:document-units="mm"
      inkscape:current-layer="layer6"
      showgrid="false"
@@ -2633,7 +2630,7 @@
        x="4.9136906"
        y="65.235115" />
     <rect
-       style="opacity:0.50100092;fill:#008000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.52787328;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:0.50100086;fill:#008000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.52787328;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect15679"
        width="131.36299"
        height="53.969448"
@@ -3177,7 +3174,7 @@
          id="tspan15901"
          x="200.18488"
          y="91.802383"
-         style="stroke-width:0.26458332px" /></text>
+         style="stroke-width:0.26458332px"></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.64583325px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -3381,7 +3378,7 @@
            height="67.680222"
            x="1009.1424"
            y="204.78185" /></flowRegion><flowPara
-         id="flowPara16224" /></flowRoot>    <ellipse
+         id="flowPara16224"></flowPara></flowRoot>    <ellipse
        style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.46499991;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path15416-3-7"
        cx="280.90027"
@@ -3512,7 +3509,7 @@
        transform="matrix(0,0.14581523,-0.14581523,0,296.01732,22.74773)">
       <polygon
          id="polygon4"
-         points="95.59,50 73.64,28.08 69.4,32.32 84.1,47 47.62,47 47.41,47 41.62,47 41.62,53 47.41,53 47.62,53 84.1,53 69.4,67.68 73.64,71.92 " />
+         points="73.64,71.92 95.59,50 73.64,28.08 69.4,32.32 84.1,47 47.62,47 47.41,47 41.62,47 41.62,53 47.41,53 47.62,53 84.1,53 69.4,67.68 " />
       <rect
          id="rect6-8"
          height="6"

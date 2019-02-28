@@ -193,4 +193,4 @@ Route::get('/parasitisme/formations', ['uses' => 'Parasitisme\ParasitismeControl
 
 Route::get('/technique/reproduction/animation', ['uses' => 'Technique\TechniqueController@animation', 'as' => 'technique.reproduction.animation']);
 
-Route::get('/technique/reproduction/fiches', ['uses' => 'Technique\TechniqueController@fiches', 'as' => 'technique.reproduction.fiches']);
+Route::get('/technique/fiches/{id?}', ['uses' => 'Technique\TechniqueController@fiches', 'as' => 'technique.fiches']);

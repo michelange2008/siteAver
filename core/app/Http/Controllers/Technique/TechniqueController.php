@@ -23,8 +23,14 @@ class TechniqueController extends Controller
       return view('technique.reproduction.animation');
     }
 
-    public function fiches()
+    public function fiches($categorie)
     {
-      return view('technique.reproductions.fiches');
+      $fiches = LitCsv::litJson('fiches');
+
+      return view('technique.fiches', [
+        'fiches' => $fiches,
+        'categorie' => $categorie,
+        'route' => 'technique.index',
+      ]);
     }
 }

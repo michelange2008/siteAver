@@ -10,7 +10,7 @@
       },
       "fiches" : {
         "intitule": "fiches",
-        "lien": "technique.reproduction.fiches"
+        "lien": "technique.fiches"
       }
     }
   },
@@ -21,7 +21,7 @@
     "menu": {
       "fiches" : {
         "intitule": "fiches",
-        "lien": "technique.index"
+        "lien": "technique.fiches"
       }
     }
   },
@@ -39,6 +39,17 @@
         "lien": "parasitisme.fiches"
       }
     }
-
+  },
+  "tout": {
+    "nom" : "tout",
+    "icone": "toutes_les_fiches.svg",
+    "lien": "toutes_les_fiches",
+    "menu": {
+      "fiches" : {
+        "intitule": "fiches",
+        "lien": "technique.fiches"
+      }
+    }
   }
+
 }
