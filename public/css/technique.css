@@ -23,6 +23,84 @@
   src: url("../fonts/din/DINPRO-BOLD.OTF");
 }
 
+.tech-fichin {
+  grid-column: 2;
+  height: 98vh;
+}
+
+.tech-titre {
+  text-align: center;
+  color: white;
+  text-transform: capitalize;
+}
+
+.tech-titre span {
+  text-transform: lowercase;
+  font-size: 1rem;
+}
+
+.tech-container-texte {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: lighter;
+  margin: 0 1rem;
+}
+
+.tech-container-fiches {
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.tech-container-fiches a {
+  text-decoration: none;
+  margin: 5px;
+  padding: 3px;
+  width: 250px;
+}
+
+.tech-container-fiches a img {
+  -webkit-filter: grayscale(60%);
+          filter: grayscale(60%);
+  -webkit-transition: width 1s, -webkit-filter;
+  transition: width 1s, -webkit-filter;
+  transition: filter, width 1s;
+  transition: filter, width 1s, -webkit-filter;
+  width: 200px;
+  margin: auto;
+}
+
+.tech-container-fiches a img:hover {
+  width: 250px;
+  overflow: hidden;
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+#downloadButton {
+  display: none;
+}
+
 body {
   background: darkgreen !important;
   font-family: 'din';
@@ -68,6 +146,8 @@ a, a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .tech-cube {

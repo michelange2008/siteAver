@@ -1,0 +1,49 @@
+.tech-fichin {
+  grid-column: 2;
+  height: 98vh;
+}
+.tech-titre {
+  text-align: center;
+  color: white;
+  text-transform: capitalize;
+  span {
+    text-transform: lowercase;
+    font-size: 1rem;
+  }
+}
+.tech-container-texte {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: lighter;
+  margin: 0 1rem;
+}
+
+.tech-container-fiches {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  a {
+    text-decoration: none;
+    margin: 5px;
+    padding: 3px;
+    width: 250px;
+    img {
+      filter: grayscale(60%);
+      transition: filter, width 1s;
+      width: 200px;
+      margin: auto;
+    }
+    img:hover {
+      width: 250px;
+      overflow: hidden;
+      filter: grayscale(0%);
+    }
+  }
+}

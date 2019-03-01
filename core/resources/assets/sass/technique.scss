@@ -2,6 +2,9 @@
 
 @import "fiches";
 
+#downloadButton {
+  display: none;
+}
 body {
   background:darkgreen !important;
   font-family: 'din';
@@ -34,6 +37,7 @@ a, a:hover{
   flex-wrap: wrap;
   height: 96vh;
   align-items:center;
+  justify-content: space-around;
 }
 .tech-cube {
   min-width:100px;

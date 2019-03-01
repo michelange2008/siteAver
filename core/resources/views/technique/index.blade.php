@@ -1,14 +1,11 @@
 @extends('layouts.app_technique')
-@push('css')
-  <link href="{{asset('public/css/technique/technique.css')}}" rel="stylesheet">
-@endpush
+
 @section('gauche')
   @include('technique.gauche')
 @endsection
 @section('content')
   <div class="tech-container">
-    @foreach($items as $value)
-      {{-- <div class="tech-souscontainer"> --}}
+    @foreach($items as $key => $value)
         <div class="tech-cube">
           <div class="tech-rond">
             <div class="ball">
@@ -16,14 +13,13 @@
             </div>
             <div class="tech-sousmenu">
               @foreach ($value->menu as $sousmenu)
-                <a href="{{URL::route($sousmenu->lien, $value->nom)}}">
+                <a href="{{URL::route($sousmenu->lien, $key)}}">
                   <h4 class="tech-intitule">{{$sousmenu->intitule}}</h4>
                 </a>
               @endforeach
             </div>
           </div>
         </div>
-    {{-- </div> --}}
   @endforeach
   </div>
 @endsection

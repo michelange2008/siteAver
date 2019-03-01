@@ -26,10 +26,16 @@ class TechniqueController extends Controller
     public function fiches($categorie)
     {
       $fiches = LitCsv::litJson('fiches');
+      $items = LitCsv::litJson('technique');
+      foreach ($items as $key => $value) {
+        if($key === $categorie) {
+          $theme = $items->$key;
+        }
+      }
 
-      return view('technique.fiches', [
+      return view('technique.fiches0', [
         'fiches' => $fiches,
-        'categorie' => $categorie,
+        'theme' => $theme,
         'route' => 'technique.index',
       ]);
     }
