@@ -19,7 +19,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 100000;
+  z-index: 1001;
   .fleche {
     cursor: pointer;
     width: 50px;
@@ -47,6 +47,7 @@ a {
   height: 100vh;
   background: url("../medias/parasitisme/strongle.svg") no-repeat $parasito-rouge;
   background-position: right;
+  background: $parasito-rouge;
   display: grid;
   grid-template-columns:50px 25% 5% 1fr 50px;
   overflow: auto;
@@ -58,8 +59,8 @@ a {
   }
   h5 {
     font-size: 1.10rem;
-    background: $parasito-rouge;
-    box-shadow: 3px 3px 10px $parasito-rouge;
+    background: $parasito-rouge-trans;
+    box-shadow: 0px 0px 10px $parasito-rouge;
   }
 }
 
@@ -77,6 +78,19 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+}
+.para-container-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  vertical-align: middle;
+  img {
+    width: 100%;
+    filter: opacity(60%);
+  }
 }
 .flou {
   filter: blur(1px);
@@ -135,6 +149,7 @@ a {
   box-shadow: 3px 3px 10px black;
   background: $parasito-rouge;
   .carre {
+    z-index: 10000;
     position: absolute;
     top: 35%;
     left: 25%;
@@ -169,6 +184,7 @@ a {
     position: absolute;
     top: 40%;
     left: 30%;
+    z-index: 10000;
     a {
       white-space: nowrap;
     }
@@ -201,7 +217,7 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-
+  position: absolute;
   a {
     color: $parasito-jaune;
     text-decoration: none;
@@ -250,6 +266,7 @@ a {
     text-align: justify;
   }
   .para-container {
+    top: 20px;
     display: flex;
     flex-direction: column;
 
@@ -263,14 +280,13 @@ a {
     position: sticky;
     grid-row: 1;
     grid-column: 1;
-    background: $parasito-rouge;
     top: 0;
-    z-index: 10000;
   }
   .para-container-texte {
     grid-row: 2;
     grid-column: 1;
     margin: 0;
+    justify-content: flex-start;
     .para-container-soustitre {
       margin: 0 0 5px 0;
       h2 {
@@ -279,15 +295,25 @@ a {
     }
     .para-container-texte1 {
       font-size: 100%;
-      width: 100%;
+      width: inherit;
       margin: 0 0 5px 0;
     }
     .para-container-texte2 {
       flex-direction: column;
       align-items: center;
-      width: 100%;
+      width: inherit;
       .para-container-texte2-texte {
-        width: 100%;
+        width: inherit;
+      }
+    }
+    .para-container-fiches {
+      height: inherit;
+      a {
+        display: flex;
+        flex-direction: column;
+        h5 {
+          text-align: center;
+        }
       }
     }
   }
@@ -324,9 +350,14 @@ a {
     height: 98vh;
   }
   .texte-bouton-menu {
+    background: $parasito-violet;
+    box-shadow: 0 0 5px $parasito-violet;
     top:50vh;
     .fleche-bas-droite {
       display: none;
+    }
+    p {
+      margin: 1px;
     }
   }
 }
@@ -357,6 +388,7 @@ a {
     grid-column: 1;
     margin: 0;
     flex: 1;
+    justify-content: flex-start;
     .para-container-soustitre {
       width: 100vw;
       margin: 0 0 5px 0;
@@ -365,16 +397,16 @@ a {
       }
     }
     .para-container-texte1 {
-      width: 80vw;
+      width: inherit;
       align-self: center;
       font-size: 100%;
     }
     .para-container-texte2 {
-      width: 80vw;
+      width: inherit;
       align-self: center;
       flex-direction: column;
       .para-container-texte2-texte {
-        width: 100%;
+        width: inherit;
       }
       .para-container-texte2-image {
         flex-direction: row;

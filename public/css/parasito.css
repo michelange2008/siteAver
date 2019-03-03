@@ -43,7 +43,7 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 100000;
+  z-index: 1001;
 }
 
 .para-fleche .fleche {
@@ -74,6 +74,7 @@ a {
   height: 100vh;
   background: url("../medias/parasitisme/strongle.svg") no-repeat #550000ff;
   background-position: right;
+  background: #550000ff;
   display: grid;
   grid-template-columns: 50px 25% 5% 1fr 50px;
   overflow: auto;
@@ -87,9 +88,9 @@ a {
 
 .para-container h5 {
   font-size: 1.10rem;
-  background: #550000ff;
-  -webkit-box-shadow: 3px 3px 10px #550000ff;
-          box-shadow: 3px 3px 10px #550000ff;
+  background: #55000084;
+  -webkit-box-shadow: 0px 0px 10px #550000ff;
+          box-shadow: 0px 0px 10px #550000ff;
 }
 
 .para-container-titre {
@@ -120,6 +121,24 @@ a {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.para-container-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  vertical-align: middle;
+}
+
+.para-container-img img {
+  width: 100%;
+  -webkit-filter: opacity(60%);
+          filter: opacity(60%);
 }
 
 .flou {
@@ -212,6 +231,7 @@ a {
 }
 
 .para-menu .carre {
+  z-index: 10000;
   position: absolute;
   top: 35%;
   left: 25%;
@@ -259,6 +279,7 @@ a {
   position: absolute;
   top: 40%;
   left: 30%;
+  z-index: 10000;
 }
 
 .para-menu .carre-menu a {
@@ -305,6 +326,7 @@ a {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  position: absolute;
 }
 
 .para-container-fiches a {
@@ -367,6 +389,7 @@ a {
     text-align: justify;
   }
   .para-container {
+    top: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -385,14 +408,15 @@ a {
     position: sticky;
     grid-row: 1;
     grid-column: 1;
-    background: #550000ff;
     top: 0;
-    z-index: 10000;
   }
   .para-container-texte {
     grid-row: 2;
     grid-column: 1;
     margin: 0;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
   .para-container-texte .para-container-soustitre {
     margin: 0 0 5px 0;
@@ -402,7 +426,7 @@ a {
   }
   .para-container-texte .para-container-texte1 {
     font-size: 100%;
-    width: 100%;
+    width: inherit;
     margin: 0 0 5px 0;
   }
   .para-container-texte .para-container-texte2 {
@@ -413,10 +437,25 @@ a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 100%;
+    width: inherit;
   }
   .para-container-texte .para-container-texte2 .para-container-texte2-texte {
-    width: 100%;
+    width: inherit;
+  }
+  .para-container-texte .para-container-fiches {
+    height: inherit;
+  }
+  .para-container-texte .para-container-fiches a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .para-container-texte .para-container-fiches a h5 {
+    text-align: center;
   }
   .para-fleche .fleche-gauche {
     position: fixed;
@@ -449,10 +488,16 @@ a {
     height: 98vh;
   }
   .texte-bouton-menu {
+    background: #9775aaff;
+    -webkit-box-shadow: 0 0 5px #9775aaff;
+            box-shadow: 0 0 5px #9775aaff;
     top: 50vh;
   }
   .texte-bouton-menu .fleche-bas-droite {
     display: none;
+  }
+  .texte-bouton-menu p {
+    margin: 1px;
   }
 }
 
@@ -486,6 +531,9 @@ a {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
   .para-container-texte .para-container-soustitre {
     width: 100vw;
@@ -495,13 +543,13 @@ a {
     font-size: 150%;
   }
   .para-container-texte .para-container-texte1 {
-    width: 80vw;
+    width: inherit;
     -ms-flex-item-align: center;
         align-self: center;
     font-size: 100%;
   }
   .para-container-texte .para-container-texte2 {
-    width: 80vw;
+    width: inherit;
     -ms-flex-item-align: center;
         align-self: center;
     -webkit-box-orient: vertical;
@@ -510,7 +558,7 @@ a {
             flex-direction: column;
   }
   .para-container-texte .para-container-texte2 .para-container-texte2-texte {
-    width: 100%;
+    width: inherit;
   }
   .para-container-texte .para-container-texte2 .para-container-texte2-image {
     -webkit-box-orient: horizontal;

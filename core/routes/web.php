@@ -185,12 +185,12 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 //################################################ ROUTES PARASITO ###################################################################
-Route::get('/parasitisme/fiches', ['uses' => 'Parasitisme\ParasitismeController@fiches', 'as' => 'parasitisme.fiches']);
+// Route::get('/parasitisme/fiches', ['uses' => 'Parasitisme\ParasitismeController@fiches', 'as' => 'parasitisme.fiches']);
 
 Route::get('/parasitisme/formations', ['uses' => 'Parasitisme\ParasitismeController@formations', 'as' => 'parasitisme.formations']);
 
 //######################################### ROUTES TECHNIQUE #########################################################################
 
-Route::get('/technique/reproduction/animation', ['uses' => 'Technique\TechniqueController@animation', 'as' => 'technique.reproduction.animation']);
+Route::get('/technique/reproduction/animation', ['uses' => 'Technique\Reproduction\ReproductionController@animation', 'as' => 'technique.reproduction.animation']);
 
 Route::get('/technique/fiches/{id?}', ['uses' => 'Technique\TechniqueController@fiches', 'as' => 'technique.fiches']);

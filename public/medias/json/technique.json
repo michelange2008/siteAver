@@ -36,12 +36,24 @@
       },
       "fiches" : {
         "intitule": "fiches",
-        "lien": "parasitisme.fiches"
+        "lien": "technique.fiches"
+      },
+      "formations" : {
+        "intitule": "formations",
+        "lien": "parasitisme.formations"
+      },
+      "GoS" : {
+        "intitule": "Game of Strongle",
+        "lien": "parasitisme.accueil"
+      },
+      "autre": {
+        "intitule": "autre",
+        "lien": "parasitisme.accueil"
       }
     }
   },
   "tout": {
-    "nom" : "tout",
+    "nom" : "toutes les fiches",
     "icone": "toutes_les_fiches.svg",
     "lien": "toutes_les_fiches",
     "menu": {

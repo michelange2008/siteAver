@@ -17,5 +17,7 @@ return [
   'logos' => $medias.'logos/',
   'ps' => $medias.'icones/ps/',
   'parasitisme' => $medias.'parasitisme/',
+  'technique' => $medias.'technique/',
+  'reproduction' => $medias.'technique/reproduction/',
   'fiches' => $medias.'fiches/',
 ];

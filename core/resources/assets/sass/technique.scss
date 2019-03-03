@@ -2,11 +2,18 @@
 
 @import "fiches";
 
+$parasito-rouge: #550000ff;
+$parasito-rouge-trans: #55000084;
+$parasito-jaune: #d4b26aff;
+$parasito-jaune-trans: #d4b26a84;
+$parasito-violet: #9775aaff;
+$parasito-violet-trans: #9775aa84;
+
 #downloadButton {
   display: none;
 }
 body {
-  background:darkgreen !important;
+  background:$parasito-rouge;
   font-family: 'din';
 }
 a, a:hover{
@@ -21,37 +28,50 @@ a, a:hover{
   grid-column: 1;
   margin: auto;
 }
-.tech-fleche-gauche {
+.tech-fleche {
   width: 50px;
   height: 50px;
   margin: auto;
+  cursor: pointer;
+}
+.tech-fleche-gauche {
   background: url('../medias/technique/fleche-gauche.svg') no-repeat;
   background-size: contain;
 }
-.tech-container {
+.tech-droite {
+  grid-column: 3;
+  margin: auto;
+}
+.tech-fleche-droite {
+  background: url('../medias/technique/menu.svg') no-repeat;
+  background-size: contain;
+}
+.tech-container-boules {
   grid-column: 2;
-  background:darkgreen;
-  width:100vw;
+  height: 100vh;
   display: flex;
   flex-direction: row;
+
   flex-wrap: wrap;
-  height: 96vh;
   align-items:center;
   justify-content: space-around;
 }
 .tech-cube {
+  width: calc(20vw + 150px);
+  display: grid;
+  grid-template-columns: 20vw 1fr;
+  margin: 0 20px;
+}
+.tech-autour {
   min-width:100px;
   min-height:100px;
   width: 20vw;
   height: 20vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 100px;
 }
 .tech-icone {
   max-width: 100%;
   max-height: 100%;
+  width: 100%;
 }
 .ball {
   display: inline-block;
@@ -80,9 +100,7 @@ a, a:hover{
 .ball:hover {
   animation-play-state: paused;
 }
-.tech-rond:hover > .tech-sousmenu {
-  color: white;
-}
+
 @keyframes pulse {
   0% {
     transform: none;
@@ -117,20 +135,17 @@ a, a:hover{
   color: white;
 }
 .tech-sousmenu {
-  color: darkgreen;
-  display: flex;
+  color: $parasito-jaune;
+  display: none;
   flex-direction: column;
-  justify-content: space-around;
-  transition: color 1.5s ease;
-  position: relative;
-  left: 110%;
-  top:-100%;
-  border-left: solid 1px darkgreen;
-  transition: border 1s ease;
-}
-.tech-rond:hover > .tech-sousmenu {
-  border-left: 1px solid white;
-  color: white;
+  justify-content: flex-start;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: ellipsis;
+
+  h4 {
+    margin: 0;
+  }
 }
 
 .tech-intitule {
@@ -139,8 +154,42 @@ a, a:hover{
   padding: 5px;
   cursor: pointer;
   overflow: visible;
-  transition: transform 1s ease;
+  transition: font-size 1s ease;
 }
 .tech-intitule:hover {
-  transform: translateX(10px) scale(1.1);
+  font-size: 1.5rem;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .tech-container-boules {
+    flex-direction: column;
+    height: inherit;
+    align-items: flex-start;
+    margin: 50px 0 0 10px;
+  }
+  .tech-cube {
+    width: calc(40vw + 150px);
+    display: grid;
+    grid-template-columns: 40vw 1fr;
+    margin: 0 20px;
+  }
+  .tech-autour {
+    width: 40vw;
+    height: 40vw;
+  }
+  .tech-sousmenu {
+    h1 {
+      font-size: 100%;
+      margin: 0;
+    }
+    h4 {
+      font-size: 80%;
+    }
+  }
+  .tech-rond:hover > .tech-sousmenu {
+    border-left: 1px solid white;
+    color: white;
+    visibility: visible;
+  }
 }

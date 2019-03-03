@@ -9,11 +9,7 @@ class ReproductionController extends Controller
 {
     public function animation()
     {
-      // code...
+      return view('technique.reproduction.animation');
     }
 
-    public function fiches()
-    {
-      // code...
-    }
 }

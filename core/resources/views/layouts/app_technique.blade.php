@@ -22,13 +22,13 @@
   <div class="technique-global-container">
     @yield('gauche')
     @yield('content')
-    @yield('droit')
+    @yield('droite')
   </div>
 </div>
 
     @stack(config('scripts.path'))
 
-    {{-- <script src="{{asset('/core/node_modules/jquery/dist/jquery.min.js')}}"></script>
-    <script src="{{ asset(config('scripts.path'))}}/parasitisme.js"></script> --}}
+    <script src="{{asset('/core/node_modules/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{ asset(config('scripts.path'))}}/technique.js"></script>
 </body>
 </html>

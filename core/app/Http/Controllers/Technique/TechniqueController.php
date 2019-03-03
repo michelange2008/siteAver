@@ -25,17 +25,25 @@ class TechniqueController extends Controller
 
     public function fiches($categorie)
     {
-      $fiches = LitCsv::litJson('fiches');
-      $items = LitCsv::litJson('technique');
-      foreach ($items as $key => $value) {
+      $themes = []; // liste des thèmes technique
+      $fiches = LitCsv::litJson('fiches'); // récupération de l'ensemble des fiches
+      $items = LitCsv::litJson('technique');// recupération des différents themes techniques
+      foreach ($items as $key => $value) { // creation d'une sous-liste en fonction de la catégorie (= theme)
         if($key === $categorie) {
-          $theme = $items->$key;
+          $theme = $items->$key; //récupération des infos de la catégorie sélectionnée
+          $menu = $theme->menu; //récupération du menu de la catégorie sélectionnée
         }
       }
 
-      return view('technique.fiches0', [
+      foreach ($fiches as $value) { // creation d'une liste des thèmes (pour l'affiches de toutes les fiches)
+        $themes[] = $value->categorie;
+      }
+
+      return view('technique.fiches', [
         'fiches' => $fiches,
+        'themes' => array_unique($themes),
         'theme' => $theme,
+        'menu' => $menu,
         'route' => 'technique.index',
       ]);
     }

@@ -9,6 +9,9 @@ $(function() {
     }, 'slow')
     .toggleClass('flou');
     $(".para-container").toggleClass('gris');
+    $(".para-container-titre").toggleClass('gris');
+    $(".para-container-titre").toggleClass('flou');
+
   })
   $('.fermer').on('click', function() {
     $('#fleche-droite').trigger('click');

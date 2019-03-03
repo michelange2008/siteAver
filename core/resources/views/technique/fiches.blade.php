@@ -5,5 +5,9 @@
 @endsection
 
 @section('content')
-  @include('technique.fichin', ['categorie' => $categorie])
+  @include('technique.fichin', ['theme' => $theme])
+@endsection
+
+@section('droite')
+  @include('technique.droite')
 @endsection
