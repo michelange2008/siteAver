@@ -105,6 +105,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .para-container-texte1 {
   background: $parasito-jaune;
@@ -288,6 +289,7 @@ a {
     margin: 0;
     justify-content: flex-start;
     .para-container-soustitre {
+      width: 100%;
       margin: 0 0 5px 0;
       h2 {
         font-size: 150%;
@@ -390,7 +392,7 @@ a {
     flex: 1;
     justify-content: flex-start;
     .para-container-soustitre {
-      width: 100vw;
+      width: 100%;
       margin: 0 0 5px 0;
       h2 {
         font-size: 150%;

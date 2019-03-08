@@ -162,6 +162,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
 .para-container-texte1 {
@@ -419,6 +420,7 @@ a {
             justify-content: flex-start;
   }
   .para-container-texte .para-container-soustitre {
+    width: 100%;
     margin: 0 0 5px 0;
   }
   .para-container-texte .para-container-soustitre h2 {
@@ -536,7 +538,7 @@ a {
             justify-content: flex-start;
   }
   .para-container-texte .para-container-soustitre {
-    width: 100vw;
+    width: 100%;
     margin: 0 0 5px 0;
   }
   .para-container-texte .para-container-soustitre h2 {

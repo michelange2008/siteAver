@@ -715,13 +715,13 @@ a, a:hover {
 }
 
 .tech-gauche {
+  margin-top: 10px;
   grid-column: 1;
-  margin: auto;
 }
 
 .tech-fleche {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   margin: auto;
   cursor: pointer;
 }
@@ -732,8 +732,8 @@ a, a:hover {
 }
 
 .tech-droite {
+  margin-top: 10px;
   grid-column: 3;
-  margin: auto;
 }
 
 .tech-fleche-droite {

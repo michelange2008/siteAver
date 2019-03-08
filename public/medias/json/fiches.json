@@ -39,6 +39,12 @@
     "categorie" : "reproduction",
     "nom" : "Cycle sexuel de la vache et problèmes",
     "fichier" : "cycle_sexuel_vache.pdf",
-    "image" : "cycle_sexuel_vache.png"    
+    "image" : "cycle_sexuel_vache.png"
+  },
+  "respipathoovins" : {
+    "categorie" : "respiration",
+    "nom" : "Respiration et pathologie (ovins)",
+    "fichier" : "respiration_ovins.pdf",
+    "image" : "respiration_ovins.png"    
   }
 }

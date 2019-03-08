@@ -25,12 +25,12 @@ a, a:hover{
   grid-template-columns: 50px 1fr 50px;
 }
 .tech-gauche {
+  margin-top: 10px;
   grid-column: 1;
-  margin: auto;
 }
 .tech-fleche {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   margin: auto;
   cursor: pointer;
 }
@@ -39,8 +39,8 @@ a, a:hover{
   background-size: contain;
 }
 .tech-droite {
+  margin-top: 10px;
   grid-column: 3;
-  margin: auto;
 }
 .tech-fleche-droite {
   background: url('../medias/technique/menu.svg') no-repeat;
