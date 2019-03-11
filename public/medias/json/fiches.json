@@ -45,6 +45,18 @@
     "categorie" : "respiration",
     "nom" : "Respiration et pathologie (ovins)",
     "fichier" : "respiration_ovins.pdf",
-    "image" : "respiration_ovins.png"    
+    "image" : "respiration_ovins.png"
+  },
+  "respipathobovins" : {
+    "categorie" : "respiration",
+    "nom" : "Respiration et pathologie (bovins)",
+    "fichier" : "respiration_bovins.pdf",
+    "image" : "respiration_bovins.png"
+  },
+  "respipathocaprins" : {
+    "categorie" : "respiration",
+    "nom" : "Respiration et pathologie (caprins)",
+    "fichier" : "respiration_caprins.pdf",
+    "image" : "respiration_caprins.png"    
   }
 }

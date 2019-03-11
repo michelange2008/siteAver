@@ -18,6 +18,8 @@
     </a>
     <h1 class="text-light titre-non-coupe">Bilans sanitaires annuels</h1>
 </div>
+<label for="search">Recherche</label>
+<input type="text" name="search" value="">
 
 {{ Form::open(['route' => 'bsa.store'])}}
 <ul class = "enveloppe">

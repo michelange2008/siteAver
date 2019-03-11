@@ -189,6 +189,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::get('/parasitisme/formations', ['uses' => 'Parasitisme\ParasitismeController@formations', 'as' => 'parasitisme.formations']);
 
+Route::get('/parasitisme/fiches', ['uses' => 'Parasitisme\ParasitismeController@fiches', 'as' => 'parasitisme.fiches']);
+
 //######################################### ROUTES TECHNIQUE #########################################################################
 
 Route::get('/technique/reproduction/animation', ['uses' => 'Technique\Reproduction\ReproductionController@animation', 'as' => 'technique.reproduction.animation']);
