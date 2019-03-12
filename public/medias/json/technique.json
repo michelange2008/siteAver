@@ -62,6 +62,17 @@
         "lien": "technique.fiches"
       }
     }
+  },
+  "immunite": {
+    "nom" : "immunité",
+    "icone": "immunite.svg",
+    "lien": "immunite",
+    "menu": {
+      "fiches" : {
+        "intitule": "fiches",
+        "lien": "technique.fiches"
+      }
+    }
   }
 
 }

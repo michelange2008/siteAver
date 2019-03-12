@@ -4,27 +4,19 @@
   <link href="{{ asset('css/bsaSaisie.css') }}" rel="stylesheet">
 @endpush
 
-@push('js')
-  <script src="{{ asset('js/saisieBsaPs.js')}}"></script>
-@endpush()
-
 @section('content')
-
-
-
 <div class="container-fluid bg-success d-flex flex-row sous-ruban">
     <a href="{{route('home')}}" title="revenir à l'accueil">
       <img class="image-h" src="{{URL::asset(config('icones.path'))}}/retour.svg" alt="retour" />
     </a>
     <h1 class="text-light titre-non-coupe">Bilans sanitaires annuels</h1>
 </div>
-<label for="search">Recherche</label>
-<input type="text" name="search" value="">
+<input id="chercher" class="form-control mr-sm-2" type="text" name="search" placeholder="chercher" value="">
 
 {{ Form::open(['route' => 'bsa.store'])}}
 <ul class = "enveloppe">
     @foreach($troupeaux as $troupeau)
-    <li class="ligne">
+    <li class="ligne" id="{{$troupeau->user->name}}">
       <div class="troupeau-infos">
         <div class="name-espece">
           <div class="user-name">

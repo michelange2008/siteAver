@@ -1,4 +1,22 @@
 $(function(){
+  $('#chercher').focus().val('');
+  $('#chercher').on('bind keyup', function(ev) {
+    var saisie = ($.trim($(this).val()));
+
+    if(saisie.length > 2) {
+      if(!saisie) {
+        $('ul>li').show();
+      } else {
+        $('li').each(function() {
+          if($(this).attr('id').toLowerCase().indexOf(saisie) == -1) {
+            $(this).hide();
+          }
+        })
+      }
+    } else {
+      $('ul>li').show();
+    }
+  })
   $(".bsa-date").on('input', function(){
     var date_bsa = $(this).children().val();
     var troupeau_id = $(this).attr('id').split('_')[1];
