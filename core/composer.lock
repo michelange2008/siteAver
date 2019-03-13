@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "96c958ea04cb25ee765cbddbc2d80a36",
+    "content-hash": "d35e4798151e20665c2cc2199bf98bcc",
     "packages": [
         {
             "name": "bestmomo/nice-artisan",

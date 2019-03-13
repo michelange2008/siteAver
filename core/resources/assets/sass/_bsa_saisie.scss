@@ -48,6 +48,13 @@ a.lien-bsa > img, a.lien-vs >img {
   max-width: 75%;
 }
 
+.pdf_ps {
+  height: 30px;
+  min-width: 20px;
+}
+.pdf_ps_gris {
+  filter: grayscale(100%) brightness(2);
+}
 
 .lien-inactif {
   pointer-events: none;

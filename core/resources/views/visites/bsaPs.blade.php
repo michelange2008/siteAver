@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+  <!-- Page d'affichage des protocoles de soin pour un éleveur -->
 <div class="container-fluid bg-success">
   <h1 class="text-light titre-non-coupe">Protocoles de soins ({{$troupeau->user->name}})</h1>
 </div>
@@ -25,6 +26,11 @@
                       <input type="date" id = "{{$ps->id}}" class="date_ps"  value = "{{ $ps->bsas->sortByDesc('date_bsa')->first()->date_bsa }}"/>
                         <!-- avec la date du bsa correspondant -->
                     </td>
+                    <td>
+                      <a href="{{route('ps.afficheUnEleveur',[$troupeau->user->id, $bsa->id, $ps->id])}}">
+                        <img class="pdf_ps" src="{{URL::asset(config('icones.path'))}}/PDF_download.svg" alt="">
+                      </a>
+                    </td>
                   @endif()
                 @endforeach()
               @endif()
@@ -34,6 +40,9 @@
                     </td>
                     <td>
                       <input type="date" id = "{{$ps->id}}" class="date_ps invisible" />
+                    </td>
+                    <td>
+                      <img class="pdf_ps pdf_ps_gris" src="{{URL::asset(config('icones.path'))}}/PDF_download.svg" alt="">
                     </td>
               @endif()
             </tr>
