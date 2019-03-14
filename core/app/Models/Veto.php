@@ -7,11 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Veto extends Model
 {
     protected $table = "vetos";
-    
+
     protected $guarded =[];
-    
+
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public function bsa()
+    {
+      return $this->hasMany(Bsa::class);
     }
 }

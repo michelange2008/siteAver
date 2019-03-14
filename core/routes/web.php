@@ -11,7 +11,7 @@
 |
 */
 // ROUTES INITIALES ######################################################################################
-Route::get('/test-mail', ['uses' => 'Aver\Visites\EnvoiPsController@index', 'as' => 'envoiPs']);
+Route::get('/test-mail/{user_id}/{bsa_id}/{ps_id}', ['uses' => 'Aver\Visites\EnvoiPsController@envoiPs', 'as' => 'envoiPs']);
 
 Route::get('/', ['uses' => 'MainController@index', 'as' => 'accueil']);
 

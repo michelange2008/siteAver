@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Aver\Visites;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Repositories\Visites\VisitesSousMenuRepository;
 use App\Repositories\Visites\BsaRepository;
@@ -13,6 +14,7 @@ use App\Models\Ps;
 use App\Traits\PeriodeProphylo;
 use App\Models\Bsa;
 use App\Traits\SortTroupeaux;
+use App\Models\Veto;
 
 class BsaController extends Controller
 {
@@ -59,6 +61,8 @@ class BsaController extends Controller
     {
         $datas = $request->all();
 
+        $veto = Veto::where('user_id', Auth::user()->id)->first();
+
         $bsa_exist = Bsa::where('troupeau_id', $datas['troupeau_id'])
             ->where('date_bsa', $datas['date_bsa'])->get();
         if($bsa_exist->count() == 0)
@@ -66,6 +70,7 @@ class BsaController extends Controller
             $bsa = new Bsa();
             $bsa->troupeau_id = $datas['troupeau_id'];
             $bsa->date_bsa = $datas['date_bsa'];
+            $bsa->veto_id = $veto->id;
             $bsa->save();
 
             $nouveauBsa = Bsa::where('troupeau_id', $datas['troupeau_id'])

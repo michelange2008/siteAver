@@ -4,4 +4,4 @@
 <p>Prenez connaissance de ce protocole de soin qui doit être archivé</p>
 <p>Pour toute question, n'hésitez pas à nous contacter</p>
 <p style="font-style:italic">Les vétérinaires de l'AVER</p>
-<img src="{{URL::asset(config('fichiers.logos'))}}/logo.png" alt="logo antikor">
+<img style="width:200px" src="{{URL::asset(config('fichiers.logos'))}}/antikor.svg" alt="logo antikor">

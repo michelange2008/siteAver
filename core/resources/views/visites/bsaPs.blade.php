@@ -27,7 +27,7 @@
                         <!-- avec la date du bsa correspondant -->
                     </td>
                     <td>
-                      <a href="{{route('ps.afficheUnEleveur',[$troupeau->user->id, $bsa->id, $ps->id])}}">
+                      <a href="{{route('envoiPs',['user_id'=>$troupeau->user->id, "bsa" => $bsa->id, "ps" => $ps->id])}}">
                         <img class="pdf_ps" src="{{URL::asset(config('icones.path'))}}/PDF_download.svg" alt="">
                       </a>
                     </td>

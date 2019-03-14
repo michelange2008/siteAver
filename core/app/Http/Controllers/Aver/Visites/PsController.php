@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Aver\Visites;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Especes;
-use App\Models\Ps;
 use App\Models\Troupeau;
 use App\Traits\EspecesPresentes;
 use App\Repositories\Visites\PsRep;
-use App\Models\Veto;
 
-use App\Factories\PdfFactory\PsConstruitPdf;
 use Illuminate\Support\Facades\Auth;
+use App\Factories\PdfFactory\PsConstruitPdf;
+use App\Models\Ps;
+use App\Models\Veto;
 use App\Models\User;
 use App\Models\Bsa;
 use Carbon\Carbon;
@@ -87,7 +87,7 @@ class PsController extends Controller
         $date = $bsa->date_bsa;
         $dateTab = explode("-", $date);
         $dateEntiere = Carbon::createFromDate($dateTab[0], $dateTab[1], $dateTab[2]);
-        $veto = Veto::where('user_id', Auth::user()->id)->first();
+        $veto = Veto::where('id', $bsa->veto_id)->first();
         $user = User::find($user_id);
         $construitPdf = new PsConstruitPdf();
         $construitPdf->Header();
