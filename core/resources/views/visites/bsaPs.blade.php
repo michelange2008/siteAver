@@ -28,7 +28,7 @@
                     </td>
                     <td>
                       <a href="{{route('envoiPs',['user_id'=>$troupeau->user->id, "bsa" => $bsa->id, "ps" => $ps->id])}}">
-                        <img class="pdf_ps" src="{{URL::asset(config('icones.path'))}}/PDF_download.svg" alt="">
+                        <img class="pdf_ps" src="{{URL::asset(config('icones.path'))}}/PDF_send.svg" alt="">
                       </a>
                     </td>
                   @endif()

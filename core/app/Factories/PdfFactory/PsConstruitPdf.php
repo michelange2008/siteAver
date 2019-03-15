@@ -21,7 +21,6 @@ class PsConstruitPdf extends FPDI
 	}
 
 	public function creePdf(Ps $ps, User $user, $date, $veto) {
-
 		// Origine du modèle
 		$this->setSourceFile(config('fichiers.ps_pdf')."/".$ps->fichier);
 		//AJout d'une page

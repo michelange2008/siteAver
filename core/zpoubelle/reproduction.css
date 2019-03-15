@@ -1,0 +1,228 @@
+@import url("font.css");
+
+h1, h2, h3, h4, p {
+  font-family: "din";
+}
+
+body {
+  margin: 0;
+  background: lightgrey;
+}
+.detail {
+  font-size: 1.2rem;
+}
+#menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px;
+}
+.control {
+  width: 40px;
+  height: 40px;
+  margin: 0 1px;
+  border: none;
+  background: green;
+  color: white;
+  transition: background 1s;
+}
+.control:hover {
+  background: darkgreen;
+}
+.play:active {
+  border: inset 1px black;
+}
+.play {
+  margin:auto;
+  width: 0;height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 16px solid black;
+  transition: border-left 0.5s;
+}
+.control:hover > .play {
+  border-left: 16px solid lightgrey;
+}
+.control:hover > .pause {
+  border-left: 6px solid lightgrey;
+  border-right: 6px solid lightgrey;
+}
+
+.pause {
+  margin: auto;
+  height: 22px;
+  width: 6px;
+  border-left: 6px solid black;
+  border-right: 6px solid black;
+  transition: border 0.5s;
+}
+.depart {
+  height: 25px;
+  width: 22px;
+  background: url("../medias/technique/reproduction/depart.svg") no-repeat;
+  background-size: contain;
+}
+.control:hover > .depart {
+  background: url("../medias/technique/reproduction/depart-blanc.svg") no-repeat;
+  background-size: contain;
+}
+#barre-titre {
+  background: darkgreen;
+  color: white;
+  padding: 0 5px 0 20px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+h1 {
+  font-weight: lighter;
+  margin:0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.logos {
+  display: flex;
+  flex-direction: row;
+}
+.cc {
+  background: url("../medias/technique/reproduction/cc.svg") no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 80px;
+  height: 50px;
+  margin: 0 2px;
+}
+.antikor {
+  background: url("../medias/technique/reproduction/antikor.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 80px;
+  height: 50px;
+}
+.animation {
+  padding: 5px 0;
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  /* display: flex;
+  justify-content: space-around; */
+}
+#moniteur {
+  /* min-width: 160px; */
+  grid-column: 1; grid-row: 1;
+  padding: 15px 1% 0 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.moniteur-item {
+  text-align: center;
+}
+.moniteur-texte {
+  margin: 2px 0;
+}
+.compteur-chiffres {
+  border: inset 2px black;
+  background: darkgrey;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: bold;
+  margin: auto;
+  font-family: "din";
+}
+.bouton {
+  width: 80%;
+  border: solid 1px black;
+  background: darkgrey;
+  box-shadow: 2px 2px 5px;
+}
+.bouton-rond {
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+}
+.bouton-demi {
+  border-top-left-radius: 75px;
+  border-top-right-radius: 75px;
+  height: 80%;
+  width: 100%;
+  background: linear-gradient(90deg, darkgreen,greenyellow,yellow,orange,red);
+}
+.roller {
+  background: url("../medias/technique/reproduction/roller.svg") no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+.base-aiguille {
+  height: 15px;
+  width: 30px;
+  background: darkgrey;
+  position: relative;
+  left: calc(50% - 15px);
+  /* top: -15px; */
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 2px 2px 3px;
+}
+.aiguille {
+  height: 75px;
+  width: 15px;
+  background: url("../medias/technique/reproduction/fleche.svg") no-repeat;
+  background-size: contain;
+  position: relative;
+  top: 12%;
+  left: calc(50% - 7px);
+  cursor: grab;
+}
+#timeline {
+  width: 100%;
+  height: 40px;
+  background:darkgrey;
+}
+#ligne {
+  margin: 15px 1%;
+  width:98%;
+  height: 10px;
+  background: green;
+  display: flex;
+  flex-direction: row;
+}
+.jour {
+  height: 10px;
+  width: calc(100% /40);
+  border-right: solid 1px black;
+}
+#marque {
+  height: 30px;
+  width: 5px;
+  /* border-radius: 100%; */
+  background: linear-gradient(-90deg, black, grey, black);
+  position: relative;
+  top: -35px;
+  left: 1%;
+}
+
+.texte {
+  margin:auto;
+  width: 70%;
+  background: sienna;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.organe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  margin:0 5%;
+  box-shadow: 3px 3px 5px;
+}

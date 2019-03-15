@@ -11,8 +11,6 @@
 |
 */
 // ROUTES INITIALES ######################################################################################
-Route::get('/test-mail/{user_id}/{bsa_id}/{ps_id}', ['uses' => 'Aver\Visites\EnvoiPsController@envoiPs', 'as' => 'envoiPs']);
-
 Route::get('/', ['uses' => 'MainController@index', 'as' => 'accueil']);
 
 Route::get('/phyto', 'MainController@phytotherapie');
@@ -139,7 +137,9 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::get('aver/visites/ps/affiche/{ps_id}', ['uses' => 'Aver\Visites\PsController@affichePs', 'as' => 'ps.affiche']);
 
+        Route::get('/visites/bsa/ps/{user_id}/{bsa_id}/{ps_id}', ['uses' => 'Aver\Visites\EnvoiPsController@envoiPs', 'as' => 'envoiPs']);
 
+        Route::get('/modifieEmail/{user}', ['uses' => 'Aver\Visites\EnvoiPsController@modifEmailUser', 'as' => 'envoiPs.modifEmail']);
         //################################# FEVEC #############################################################
 
         /* ROUTES CONCERNANT LA GESTION DES ELEVEURS FEVEC: NORMALISATION, IMPORT ET MISE A JOUR */

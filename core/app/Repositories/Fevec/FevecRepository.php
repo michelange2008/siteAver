@@ -19,6 +19,8 @@ use App\Factories\StatFactory;
 use App\Traits\RemplaceCaract;
 use App\Traits\ValideEde;
 
+use App\Constantes\Constantes_diverses;
+
 const CONVENTION = 1;
 const CONTRAT = 5;
 
@@ -26,7 +28,7 @@ class FevecRepository
 {
   use RemplaceCaract;
   use ValideEde;
-  
+
   protected $clientFevec;
   protected $troupeauFevec;
 
@@ -51,7 +53,7 @@ class FevecRepository
                         ->whereIn('TypeTroupeau', self::getParamUtile($especes))
                         ->get();
   }
-  
+
   public static function getParamUtile(ParamModels $model)
   {
       $listeparamUtile = [];
@@ -60,7 +62,7 @@ class FevecRepository
       {
           $listeparamUtile[] = $param->id;
       }
-      return $listeparamUtile; 
+      return $listeparamUtile;
   }
 
     public function listeEleveurs()
@@ -68,7 +70,7 @@ class FevecRepository
     $eleveursFevec = Fev_eleveurs_n::all();
     return $eleveursFevec;
   }
-  
+
   public function listeTroupeaux()
   {
     $troupeauxFevec = Fev_troupeaux_n::all();
@@ -111,7 +113,7 @@ class FevecRepository
             $inputs['nom'] = $typeActivite->LibelleActivite;
             // Création de l'abbreviation en enlevant les accents
             $inputs['abbreviation'] = strtoupper(substr($this->suppr_accents($typeActivite->LibelleActivite), 0, 4)); // puis en prenant les 4 1ères lettres en capitale
-            
+
             Activite::where('id', $typeActivite->Cle)->update($inputs);
         }
     }
@@ -155,7 +157,7 @@ class FevecRepository
         {
           $inputs['id'] = $clientFevec->CodeClient;
           $inputs['name'] = $clientFevec->NomClient;
-          $inputs['email'] = ($clientFevec->email == null) ? $inputs['name']."@nomail.af" : $clientFevec->email;
+          $inputs['email'] = ($clientFevec->email == null) ? $inputs['name']."@".Constantes_diverses::FAUX_MAIL : $clientFevec->email;
           $inputs['ede'] = $this->valideEde($clientFevec->NumeroEDE);
           $inputs['adresse'] = $clientFevec->AdresseRue;
           $inputs['cp'] = $clientFevec->CodePostal;
@@ -164,10 +166,10 @@ class FevecRepository
 
           Fev_eleveurs_n::firstOrCreate($inputs);
         }
-        
+
       }
-      
-      
+
+
     public function videTableEleveurs()
     {
       $tableEleveurs = Fev_eleveurs_n::all();
@@ -288,12 +290,12 @@ class FevecRepository
       $eleveursDesTroupeauxASupprimer = $this->listeEleveursDesTroupeauxASupprimer($idTroupeauxDifferents);
       return $eleveursDesTroupeauxASupprimer;
     }
-    
+
       public function compareIdTpLocalVsTpFevec()
       {
         return array_diff($this->idTroupeauxLocal(), $this->idTroupeauxFevec());
       }
-      
+
       public function listeEleveursDesTroupeauxASupprimer($idTroupeauxDifferents)
       {
         $eleveursDesTroupeauxASupprimer = [];
@@ -315,12 +317,12 @@ class FevecRepository
       $eleveursDesTroupeauxAAjouter = $this->listeEleveursDesTroupeauxAAjouter($idTroupeauxDifferents);
       return $eleveursDesTroupeauxAAjouter;
     }
-    
+
       public function compareIdTpFevecVsTpLocal()
       {
         return array_diff($this->idTroupeauxFevec(), $this->idTroupeauxLocal());
       }
-      
+
       public function idTroupeauxFevec()
       {
         foreach (Fev_troupeaux_n::all() as $troupeauFevec) {
@@ -328,7 +330,7 @@ class FevecRepository
         }
         return $listeIdTroupeauxFevec;
       }
-      
+
       public function idTroupeauxLocal()
       {
         foreach (Troupeau::all() as $troupeauLocal) {
@@ -367,7 +369,7 @@ class FevecRepository
           if(isset($troupeauLocal)){
             if($troupeauLocal->user_id != $troupeauFevec->user_id) {
                 echo "le troupeau n°$idTroupeauFevec n'a pas le même éleveur";
-                
+
             }
             elseif($troupeauLocal->especes_id != $troupeauFevec->especes_id)
             {
