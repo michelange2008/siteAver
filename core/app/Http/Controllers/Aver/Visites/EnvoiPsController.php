@@ -64,4 +64,9 @@ class EnvoiPsController extends Controller
       "user" => $user,
     ]);
   }
+
+  public function storeEmailUser(Request $request)
+  {
+    dd($request->all()['email']);
+  }
 }

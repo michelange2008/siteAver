@@ -140,7 +140,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/visites/bsa/ps/{user_id}/{bsa_id}/{ps_id}', ['uses' => 'Aver\Visites\EnvoiPsController@envoiPs', 'as' => 'envoiPs']);
 
         Route::get('/modifieEmail/{user}', ['uses' => 'Aver\Visites\EnvoiPsController@modifEmailUser', 'as' => 'envoiPs.modifEmail']);
-        //################################# FEVEC #############################################################
+
+        Route::post('/modifieEmail/store', ['uses' => 'Aver\Visites\EnvoiPsController@storeEmailUser', 'as' => 'envoiPs.storeEmailUser']);        //################################# FEVEC #############################################################
 
         /* ROUTES CONCERNANT LA GESTION DES ELEVEURS FEVEC: NORMALISATION, IMPORT ET MISE A JOUR */
 
