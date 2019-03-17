@@ -29,14 +29,15 @@
                       <input type="checkbox" id = "cb_{{$ps->id}}" class = "cb" name = "{{$ps->id}}" checked = "checked" /> <!-- Si oui on renvoie la case cochée -->
                     </td>
                     <td>
-                      <input type="date" id = "{{$ps->id}}" class="date_ps"  value = "{{ $ps->bsas->sortByDesc('date_bsa')->first()->date_bsa }}"/>
+                      <input type="date" disabled id = "{{$ps->id}}" class="date_ps"  value = "{{ $ps->bsas->sortByDesc('date_bsa')->first()->date_bsa }}"/>
                         <!-- avec la date du bsa correspondant -->
                     </td>
                     <td>
                       <a href="{{route('envoiPs',['troupeau_id'=>$troupeau->id, "bsa" => $bsa->id, "ps" => $ps->id])}}">
-                        <img class="pdf_ps" src="{{URL::asset(config('icones.path'))}}/PDF_send.svg" alt="">
+                        <img id="envoi_ps_{{$ps->id}}" class="pdf_ps" src="{{URL::asset(config('icones.path'))}}/PDF_send.svg" alt="">
                       </a>
                     </td>
+
                   @endif()
                 @endforeach()
               @endif()
@@ -48,7 +49,7 @@
                       <input type="date" id = "{{$ps->id}}" class="date_ps invisible" />
                     </td>
                     <td>
-                      <img class="pdf_ps pdf_ps_gris" src="{{URL::asset(config('icones.path'))}}/PDF_download.svg" alt="">
+                      <img id="envoi_ps_{{$ps->id}}"  class="pdf_ps pdf_ps_gris" src="{{URL::asset(config('icones.path'))}}/PDF_download.svg" alt="">
                     </td>
               @endif()
             </tr>

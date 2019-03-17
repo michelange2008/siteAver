@@ -15,6 +15,7 @@ use App\Models\Ps;
 use App\Models\Veto;
 use App\Models\User;
 use App\Models\Bsa;
+use App\Models\Bsa_ps;
 use Carbon\Carbon;
 // use Validator;
 
@@ -92,5 +93,33 @@ class PsController extends Controller
         $construitPdf = new PsConstruitPdf();
         $construitPdf->Header();
         $construitPdf->creePdf($ps, $user, $dateEntiere, $veto);
+    }
+
+    public function elimineDoublon($troupeau_id)
+    {
+      $liste_pss = collect();
+      $bsas = Bsa::where('troupeau_id', $troupeau_id)->get();
+      foreach ($bsas as $bsa) {
+        foreach ($bsa->pss as $ps) {
+          $liste_pss->push(["ps_id" => $ps->id, "bsa_id" => $bsa->id, "date_bsa" => $bsa->date_bsa]);
+        }
+      }
+      // dd($liste_pss->max("date"));
+      $liste = collect();
+      $grouped = $liste_pss->groupBy('ps_id');
+      foreach ($grouped as $key => $value) {
+        if($value->count() > 1) {
+          $valeur_unique = $value->sortBy("date_bsa")->first();
+          // dump($value);
+          Bsa_ps::where('ps_id', $valeur_unique['ps_id'])->delete();
+          $bsa_ps = new Bsa_ps();
+          $bsa_ps->bsa_id = $valeur_unique['bsa_id'];
+          $bsa_ps->ps_id = $valeur_unique['ps_id'];
+          $bsa_ps->save();
+
+        }
+
+      }
+
     }
 }

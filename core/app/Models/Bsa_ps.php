@@ -11,5 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Bsa_ps extends Model
 {
+    public $timestamps = false;
+
     protected $table = 'bsa_ps';
 }

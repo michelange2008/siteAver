@@ -63,9 +63,19 @@ $(function(){
     if($(this).is(':checked'))
     {
     $('#'+ps_id).removeClass('invisible');
+    $('#'+ps_id).removeAttr('disabled');
+    $('#'+ps_id).val(Date());
+    var src = $('#envoi_ps_'+ps_id).attr('src').replace("download", "send");
+    $('#envoi_ps_'+ps_id).attr('src', src);
     }
     else {
+      $.alert({
+        title : "attention",
+        content: "vous voulez supprimer un protocole de soin ?",
+      });
       $('#'+ps_id).addClass('invisible');
+      var src = $('#envoi_ps_'+ps_id).attr('src').replace("send", "download");
+      $('#envoi_ps_'+ps_id).attr('src', src);
     }
   })
   $('.date_ps').on('input', function(){

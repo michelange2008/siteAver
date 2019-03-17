@@ -11,6 +11,8 @@
 |
 */
 // ROUTES INITIALES ######################################################################################
+Route::get('/essai/{troupeau?}', ['uses' => 'Aver\Visites\PsController@elimineDoublon', 'as' => 'essai']);
+
 Route::get('/', ['uses' => 'MainController@index', 'as' => 'accueil']);
 
 Route::get('/phyto', 'MainController@phytotherapie');
