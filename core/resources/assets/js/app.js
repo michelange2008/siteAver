@@ -11,6 +11,7 @@ require("jquery-ui");
 // require('jquery-confirm');
 require("ajax");
 require("./aromaliste");
+require("./envoiPs");
 
 
 // window.Vue = require('vue');

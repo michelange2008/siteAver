@@ -137,9 +137,9 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::get('aver/visites/ps/affiche/{ps_id}', ['uses' => 'Aver\Visites\PsController@affichePs', 'as' => 'ps.affiche']);
 
-        Route::get('/visites/bsa/ps/{user_id}/{bsa_id}/{ps_id}', ['uses' => 'Aver\Visites\EnvoiPsController@envoiPs', 'as' => 'envoiPs']);
+        Route::get('/visites/bsa/ps/envoiMail/{user_id}/{bsa_id}/{ps_id}', ['uses' => 'Aver\Visites\EnvoiPsController@envoiPs', 'as' => 'envoiPs']);
 
-        Route::get('/modifieEmail/{user}', ['uses' => 'Aver\Visites\EnvoiPsController@modifEmailUser', 'as' => 'envoiPs.modifEmail']);
+        Route::get('/modifieEmail/{user_id}/{bsa_id}/{ps_id}', ['uses' => 'Aver\Visites\EnvoiPsController@modifEmailUser', 'as' => 'envoiPs.modifEmail']);
 
         Route::post('/modifieEmail/store', ['uses' => 'Aver\Visites\EnvoiPsController@storeEmailUser', 'as' => 'envoiPs.storeEmailUser']);        //################################# FEVEC #############################################################
 

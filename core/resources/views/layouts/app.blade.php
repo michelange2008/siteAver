@@ -16,7 +16,7 @@
       @foreach(config('styles') as $path)
         <link rel="stylesheet" href="{{ asset($path)}}">
       @endforeach
-
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     @stack('css')
     @stack('js')
 

@@ -13229,6 +13229,7 @@ __webpack_require__(8);
 // require('jquery-confirm');
 __webpack_require__(10);
 __webpack_require__(13);
+__webpack_require__(23);
 
 // window.Vue = require('vue');
 
@@ -20447,6 +20448,49 @@ $(function () {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */
+/***/ (function(module, exports) {
+
+$(function () {
+  // validation de l'email
+  $('#validEmailOk').on('click', function (e) {
+    var sEmail = $('#email').val();
+    // Checking Empty Fields
+    if ($.trim(sEmail).length == 0) {
+      alerte("N'oubliez-pas d'indiquer l'adresse mail !");
+      e.preventDefault();
+    } else if (!validateEmail(sEmail)) {
+      alerte("Désolé, mais l'adresse mail n'est pas valide");
+      e.preventDefault();
+    } else {
+      // alerte('Super !! on peut continuer');
+    }
+  });
+  // Function that validates email address through a regular expression.
+  function validateEmail(sEmail) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (regex.test(sEmail)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  function alerte(texte) {
+    $.alert({
+      title: 'Attention !',
+      content: texte,
+      type: 'red'
+    });
+  }
+});
 
 /***/ })
 /******/ ]);

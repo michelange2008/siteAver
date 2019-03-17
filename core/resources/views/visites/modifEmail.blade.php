@@ -9,9 +9,14 @@
   <div class="">
     <p>Il semble que cet éleveur n'ait pas d'email valide</p>
     <p>Merci d'en saisir un:</p>
-    <input type="mail" name="email" value="" placeholder="{{$user->email}}" required>
-    <input type="submit" class="btn btn-success" name="OK" value="Envoyer">
-    <input type="reset" class="btn btn-danger" name="OK" value="Annuler">
+    <input id="email" type="mail" name="email" value="" placeholder="{{$troupeau->user->email}}" required>
+    <div class="">
+      <input id="validEmailOk" type="submit" class="btn btn-success" name="OK" value="Envoyer">
+      <input type="hidden" name="troupeau" value="{{$troupeau->id}}">
+      <input type="hidden" name="bsa" value="{{$bsa->id}}">
+      <input type="hidden" name="ps" value="{{$ps->id}}">
+      <a href="{{route('bsa.ps', ['troupeau_id' => $troupeau->id, 'bsa_id' => $bsa->id])}}" class="btn btn-danger">Annuler</a>
+    </div>
   </div>
 {{Form::close()}}
 @endsection

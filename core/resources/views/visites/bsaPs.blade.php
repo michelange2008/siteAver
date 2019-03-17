@@ -5,6 +5,12 @@
 <div class="container-fluid bg-success">
   <h1 class="text-light titre-non-coupe">Protocoles de soins ({{$troupeau->user->name}})</h1>
 </div>
+@if (Session::has('message'))
+  <div class="container-fluid bg-success">
+    <h2 class="text-light">{{Session::get('message')}}</h2>
+  </div>
+@endif
+
 {{Form::open(['route' => 'bsa.saisie', "method" => "GET"])}}
       <input type = 'hidden' name = "{{$troupeau->id}}" id = 'troupeau_id' />
       <input type = 'hidden' name = "{{$bsa->id}}" id = 'bsa_id' />
@@ -27,7 +33,7 @@
                         <!-- avec la date du bsa correspondant -->
                     </td>
                     <td>
-                      <a href="{{route('envoiPs',['user_id'=>$troupeau->user->id, "bsa" => $bsa->id, "ps" => $ps->id])}}">
+                      <a href="{{route('envoiPs',['troupeau_id'=>$troupeau->id, "bsa" => $bsa->id, "ps" => $ps->id])}}">
                         <img class="pdf_ps" src="{{URL::asset(config('icones.path'))}}/PDF_send.svg" alt="">
                       </a>
                     </td>
