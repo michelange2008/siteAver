@@ -22,10 +22,12 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  flex-wrap: wrap;
 }
 .carte {
   background: lightgrey;
   width: 47.5%;
+  margin-bottom: 5px;
 }
 .carte-titre {
   display: -webkit-box;

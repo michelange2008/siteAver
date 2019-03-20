@@ -13,7 +13,6 @@ require("ajax");
 require("./aromaliste");
 require("./envoiPs");
 
-
 // window.Vue = require('vue');
 
 /**

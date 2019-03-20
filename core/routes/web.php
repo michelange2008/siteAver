@@ -113,6 +113,10 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::post('aver/visites/bsa/attribuePs', ['uses' => 'Aver\Visites\BsaController@attribuePsaBsaUnTroupeau', 'as' => 'bsa.attribuePs']);
 
+        Route::post('aver/visites/bsa/enlevePs', ['uses' => 'Aver\Visites\BsaController@enlevePsaBsaUnTroupeau', 'as' => 'bsa.enlevePs']);
+
+        Route::post('aver/visites/bsa/enleveBsa', ['uses' => 'Aver\Visites\BsaController@enleveBsaUnTroupeau', 'as' => 'bsa.enleveBsa']);
+
         //################################# VSO #############################################################
 
         Route::get('aver/visites/vso', ['uses' => 'Aver\Visites\VsoController@index', 'as' => 'vso.index']);

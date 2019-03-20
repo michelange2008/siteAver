@@ -20,7 +20,9 @@
       <div class="troupeau-infos">
         <div class="name-espece">
           <div class="user-name">
-            <h4>{{$troupeau->user->name}}</h4>
+            <a href="{{route('troupeau.bsa', [$troupeau->user->id, $troupeau->id])}}" class="text-dark" title="Voir les détails de cet éleveur">
+              <h4>{{$troupeau->user->name}}</h4>
+            </a>
           </div>
           <div class="troupeau-espece {{$troupeau->especes->abbreviation}}">
             <h6>{{$troupeau->especes->nom}}</h6>
@@ -34,34 +36,19 @@
           <div class="bsa-nom">
             BSA
           </div>
-            <?php
-            if($troupeau->bsas->count() >0) {
-              $bsa = $troupeau->bsas->sortByDesc('date_bsa')->first();
-              $bsa_id = $bsa->id;
-              $date = new DateTime($bsa->date_bsa);
-             ?>
              <div id = "dateetps_{{$troupeau->id}}" class="bsa-date">
-              {{ Form::date('date_bsa', $date, ['class' => 'input_date']) }}
+              {{ Form::date('date_bsa', "", ['class' => 'input_date']) }}
+            </div>
+            <div id="bsaok_{{$troupeau->id}}" class="bsaok">
+              <img src="{{URL::asset(config('fichiers.icones'))}}/ok.svg" alt="enregistrer" class="pdf_ps curseur">
             </div>
             <div class="icone-ps">
-              <a id = "ouvreps_{{$troupeau->id}}" class = "lien-bsa" bsa = "{{$bsa_id}}" href="{{route('bsa.ps', [$troupeau->id, $bsa_id])}}">
-                <img id = "icone_{{$troupeau->id}}" src="{{URL::asset(config('icones.path'))}}/ps_carre.svg" alt="ps" title="Ajouter un protocole de soin" />
-              </a>
+                <img id = "icone_{{$troupeau->id}}" class="icone_ps"
+                          troupeau = "{{$troupeau->id}}" bsa="" href="{{route('bsa.ps', [$troupeau->id, '0'])}}"
+                          src="{{URL::asset(config('icones.path'))}}/ps_carre_sans_bsa.svg"
+                          alt="ps" title="Ajouter un protocole de soin" />
+              <!-- </a> -->
             </div>
-            <?php } else {
-              $date = null;
-              $bsa_id = "zz";
-             ?>
-             <div id = "dateetps_{{$troupeau->id}}" class="bsa-date">
-              {{ Form::date('date_bsa', $date, ['class' => 'input_date']) }}
-            </div>
-
-            <div class="icone-ps">
-              <a id = "ouvreps_{{$troupeau->id}}" class = "lien-bsa lien-inactif" bsa = "{{$bsa_id}}" href="{{route('bsa.ps', [$troupeau->id, $bsa_id])}}">
-                <img id = "icone_{{$troupeau->id}}" src="{{URL::asset(config('icones.path'))}}/ps_carre_sans_bsa.svg" alt="ps" title="Il n'y a pas de protocole de soin sans bilan sanitaire" />
-              </a>
-            </div>
-            <?php } ?>
       </div>
       <div class="vso">
         <div class="vso-nom">
@@ -72,6 +59,12 @@
             {!! Form::date('date_vso','', ['class' => 'input_date']) !!}
           <?php }else{ ?>
             -
+          <?php } ?>
+        </div>
+        <div id="vsook_{{$troupeau->id}}" class="vsook">
+          <?php if($troupeau->vsoafaire->count() > 0 && $troupeau->vsoafaire->sortByDesc('annee')->first()->annee == $annee->year){?>
+            <img src="{{URL::asset(config('fichiers.icones'))}}/ok.svg" alt="enregistrer" class="pdf_ps curseur">
+          <?php }else{ ?>
           <?php } ?>
         </div>
         <div class="icone-remarque">

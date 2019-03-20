@@ -96,7 +96,7 @@ class BsaController extends Controller
         return view('visites.bsaPs', [
             'troupeau' => $troupeau,
             'pss' => $pss,
-            'bsa' => $bsa,
+            'bsa_encours' => $bsa,
         ]);
     }
 
@@ -110,9 +110,27 @@ class BsaController extends Controller
         $datas = $request->all();
         $bsa = Bsa::find($datas['bsa_id']);
         $bsa->pss()->attach($datas['ps_id']);
-        $title = $bsa->date_bsa;
-        $msg = $datas['ps_id'];
-        return response()->json(['title' => $title, 'msg'=> $msg], 200);
+        $title = "Ajout d'un protocole de soin";
+        $msg = "";
+        return response()->json(['title' => $title, 'msg' => $msg, 'bsa_date'=> $bsa->date_bsa], 200);
+    }
 
+    public function enlevePsaBsaUnTroupeau(Request $request)
+    {
+      $datas = $request->all();
+      $bsa = Bsa::find($datas['bsa_id']);
+      $bsa->pss()->detach($datas['ps_id']);
+      $title = "Suppression d'un protocole de soin";
+      $msg = "";
+      return response()->json(['title' => $title, 'msg'=> $msg], 200);
+    }
+
+    public function enleveBsaUnTroupeau(Request $request)
+    {
+      $datas = $request->all();
+      Bsa::destroy($datas['bsa_id']);
+      $title = "Le bilan sanitaire a été supprimé";
+      $msg = $datas['bsa_id'];
+      return response()->json(['title' => $title, 'msg'=> $msg], 200);
     }
 }

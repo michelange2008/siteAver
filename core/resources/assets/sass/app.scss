@@ -43,3 +43,10 @@
 @import "errors/error";
 
 // @import "parasitisme";
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
