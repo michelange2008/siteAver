@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@push('css')
-  <link href="{{ asset('css/bsaSaisie.css') }}" rel="stylesheet">
-@endpush
+@extends('aver.menuprincipal')
+
+@extends('aver.admin.menuAdmin')
 
 @section('content')
 <div class="container-fluid bg-success d-flex flex-row sous-ruban">
@@ -67,10 +67,8 @@
           <?php }else{ ?>
           <?php } ?>
         </div>
-        <div class="icone-remarque">
-          <a id = "rem_{{$troupeau->id}}" class="lien-bsa">
-            <img src="{{URL::asset(config('icones.path'))}}/remarques.svg" alt="remarque" title="Ajouter un commentaire" />
-          </a>
+        <div id = "rem_{{$troupeau->id}}" class="icone-remarque">
+          <img src="{{URL::asset(config('icones.path'))}}/remarques.svg" alt="remarque" title="Ajouter un commentaire" />
         </div>
       </div>
     </li>

@@ -22,4 +22,8 @@ class Bsa extends Model
     {
       return $this->belongsTo(Veto::class);
     }
+    public function commentaires()
+    {
+      return $this->hasMany(Commentaire::class);
+    }
 }

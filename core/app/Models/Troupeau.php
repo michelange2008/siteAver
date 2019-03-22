@@ -59,4 +59,9 @@ class Troupeau extends Model
     {
         return $this->hasMany(Vso::class);
     }
+
+    public function notes()
+    {
+      return $this->hasMany(Commentaire::class);
+    }
 }

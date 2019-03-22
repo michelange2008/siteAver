@@ -14,8 +14,8 @@ $(function(){
         $('ul>li').show();
       } else {
         $('li').each(function() {
-          if($(this).attr('id').toLowerCase().indexOf(saisie) == -1) {
-            $(this).hide();
+          if($(this).attr('class') == 'ligne' && $(this).attr('id').toLowerCase().indexOf(saisie) == -1) {
+              $(this).hide();
           }
         })
       }
@@ -205,5 +205,93 @@ $(function(){
       }
     });
   }
+  $('.vsook').on('click', function() {
+    var troupeau_id = $(this).attr('id').split('_')[1];
+    var date_vso = $('#vso_'+troupeau_id).children().val();
 
+    $.ajax({
+      type: 'POST',
+      url: '../../../aver/visites/vso/store',
+      data: {
+        'troupeau_id' : troupeau_id,
+        'date_vso' : date_vso
+      },
+      dataType: 'JSON',
+      success: function (data) {
+        $.alert({
+          theme: 'dark',
+          title : "Génial",
+          content: "vous avez ajouté une nouvelle visite",
+          type: 'green',
+        })
+      },
+      error: function (e) {
+            console.log(e.responseText);
+      }
+    });
+  })
+
+  ////////////////////////////////////////////////////////////////////
+  // Saisie d'une note
+  $('.icone-remarque').on('click', function() {
+    var troupeau_id = $(this).attr('id').split('_')[1];
+
+    $.confirm({
+    title: 'Ajouter une note',
+    columnClass : 'col-sm-10 col-md-8 col-xl-6',
+    content: '' +
+    '<form action="" class="formName">' +
+    '<div class="form-group">' +
+    '<label>Ecrire ici:</label>' +
+    '<input type="text" placeholder="remarque" class="name form-control" required />' +
+    '</div>' +
+    '</form>',
+    buttons: {
+        formSubmit: {
+            text: 'Enregistrer',
+            btnClass: 'btn-blue',
+            action: function () {
+                var note = this.$content.find('.name').val();
+                if(!note){
+                    $.alert('vous voulez annuler ?');
+                    return true;
+                }
+                $.ajaxSetup({
+                    headers: {
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                      }
+                  });
+
+                $.ajax({
+                  type: 'POST',
+                  url: '../../../aver/visites/bsa/ajoutNote',
+                  data: {
+                    'troupeau_id' : troupeau_id,
+                    'note' : note,
+                  },
+                  dataType: 'JSON',
+                  success: function (data) {
+                    console.log(data.title);
+                    },
+                  error: function (e) {
+                        console.log(e.responseText);
+                    }
+                });
+            }
+        },
+        cancel: function () {
+            //close
+        },
+    },
+    onContentReady: function () {
+        // bind to events
+        var jc = this;
+        this.$content.find('form').on('submit', function (e) {
+            // if the user submits the form by pressing enter in the field.
+            e.preventDefault();
+            jc.$$formSubmit.trigger('click'); // reference the button and click it
+        });
+    }
+});
+  })
 })

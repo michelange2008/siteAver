@@ -8,6 +8,7 @@ use App\Repositories\Visites\VisitesSousMenuRepository;
 use App\Repositories\Visites\VsoRepository;
 
 use App\Models\Troupeau;
+use App\Models\Vso;
 use App\Traits\SortTroupeaux;
 
 class VsoController extends Controller
@@ -56,4 +57,16 @@ class VsoController extends Controller
 
         return redirect()->back();
     }
+
+    public function store(Request $request)
+    {
+      $datas = $request->all();
+
+      $vso = new Vso();
+      $vso->troupeau_id = $datas['troupeau_id'];
+      $vso->date_vso = $datas['date_vso'];
+      $vso->save();
+      $title = "Ajout d'une visite obligatoire";
+      $msg = "";
+      return response()->json(['title' => $title, 'msg' => $msg, 'date_vso'=> $datas['date_vso']], 200);    }
 }

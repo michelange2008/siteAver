@@ -90,4 +90,14 @@ class ConstSceaux
     const ANA_TEXTE_USER_FAUX = "Pas d'analyses téléchargeables";
     const ANA_BOUTON = 'troupeau.analyses';
 
+    const NOTE_IDENTITE = 'commentaires';
+    const NOTE_TITRE = "Notes";
+    const NOTE_SOUSTITRE = "";
+    const NOTE_ICONE = SELF::PATH_ICONES.'commentaire_carre.svg';
+    const NOTE_TEXTE_ADMIN_VRAI = "Observation sur l'élevage";
+    const NOTE_TEXTE_ADMIN_FAUX = "Pas de notes";
+    const NOTE_TEXTE_USER_VRAI = "Observation sur l'élevage";
+    const NOTE_TEXTE_USER_FAUX = "Pas de notes";
+    const NOTE_BOUTON = 'troupeau.notes';
+
 }

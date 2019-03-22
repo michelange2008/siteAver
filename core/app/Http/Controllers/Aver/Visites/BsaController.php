@@ -13,6 +13,7 @@ use App\Models\Troupeau;
 use App\Models\Ps;
 use App\Traits\PeriodeProphylo;
 use App\Models\Bsa;
+use App\Models\Note;
 use App\Traits\SortTroupeaux;
 use App\Models\Veto;
 
@@ -132,5 +133,22 @@ class BsaController extends Controller
       $title = "Le bilan sanitaire a été supprimé";
       $msg = $datas['bsa_id'];
       return response()->json(['title' => $title, 'msg'=> $msg], 200);
+    }
+
+    public function ajoutNote(Request $request)
+    {
+      $datas = $request->all();
+      $note = new Note();
+      $note->troupeau_id = $datas['troupeau_id'];
+      $note->texte = $datas['note'];
+      $note->save();
+
+      return response()->json([
+        'title' => 'La nouvelle note  a été ajoutée',
+        'msg' => "",
+        'note_id' => $note->id,
+        'date' => $note->updated_at,
+        'texte' => $datas['note']
+      ]);
     }
 }

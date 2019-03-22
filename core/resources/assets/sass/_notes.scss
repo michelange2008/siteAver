@@ -1,0 +1,12 @@
+.float {
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+  box-shadow: 3px 3px 5px grey;
+	background: url('../medias/icones/plus_rond.svg') no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}

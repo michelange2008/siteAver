@@ -14,11 +14,12 @@ class SceauxListe extends Collection
     protected $sceauAnalyses;
     protected $sceauVso;
     protected $sceauBsaPs;
-    
+    protected $sceauNotes;
+
     public function __construct($id_troupeau) {
-    
+
         $this->sceauxListe = collect();
-        
+
         $this->sceauActivite = new SceauActivite($id_troupeau);
         $this->sceauVetsan = new SceauVetsan($id_troupeau);
         $this->sceauProphylo = new SceauProphylo($id_troupeau);
@@ -26,7 +27,7 @@ class SceauxListe extends Collection
         $this->sceauAnalyses = new SceauAnalyses($id_troupeau);
         $this->sceauVso = new SceauVso($id_troupeau);
         $this->sceauBsaPs = new SceauBsaPs($id_troupeau);
-        
+        $this->sceauNotes = new SceauNotes($id_troupeau);
         $this->liste = [
             $this->sceauActivite,
             $this->sceauVetsan,
@@ -35,10 +36,11 @@ class SceauxListe extends Collection
             $this->sceauVso,
             $this->sceauBsaPs,
             $this->sceauAnalyses,
+            $this->sceauNotes,
         ];
 
     }
-    
+
     public function construitListeComplete()
     {
         foreach ($this->liste as $sceau)
@@ -46,7 +48,7 @@ class SceauxListe extends Collection
             $this->sceauxListe->put($sceau->identite(), $sceau);
         }
     }
-    
+
     public function construitListeSpeciale($type)
     {
         foreach ($this->liste as $sceau)
@@ -57,7 +59,7 @@ class SceauxListe extends Collection
             }
         }
     }
-    
+
     public function cacheSceau($nom)
     {
         foreach ($this->liste as $sceau)
@@ -68,11 +70,10 @@ class SceauxListe extends Collection
             }
         }
     }
-    
+
     public function listeSceaux()
     {
-        return $this->sceauxListe;    
+        return $this->sceauxListe;
     }
-    
-}
 
+}

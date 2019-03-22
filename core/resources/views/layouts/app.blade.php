@@ -54,6 +54,7 @@
     <script src="{{ asset(config('scripts.path'))}}/psbsa.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/saisieBsaPs.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/splitAffichage.js"></script>
+    <script src="{{ asset(config('scripts.path'))}}/notes.js"></script>
     <script src="https://use.fontawesome.com/f8a7076b4b.js"></script>
     <!-- TODO vérifier s'il faut le téléchargement d'ajax ou si le npm suffit -->
     <!-- <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->

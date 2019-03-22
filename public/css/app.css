@@ -10213,6 +10213,10 @@ Personnalisation des boutons
   }
 }
 
+.hauteur-50 {
+  height: 50px;
+}
+
 .ligne-entete {
   height: 100px;
   display: -webkit-box;
@@ -10259,9 +10263,9 @@ Personnalisation des boutons
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   background: #b3b3b3;
 }
 
@@ -10279,7 +10283,15 @@ Personnalisation des boutons
 }
 
 .carte-titre-icone {
-  width: 50px;
+  height: 50px;
+}
+
+.carte-titre-icone img {
+  height: 50px;
+}
+
+.carte-titre-icone a img {
+  height: 50px;
 }
 
 .carte-main {
@@ -10905,6 +10917,20 @@ a:hover img {
 
 .img-error {
   width: 20vw;
+}
+
+.float {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  -webkit-box-shadow: 3px 3px 5px grey;
+          box-shadow: 3px 3px 5px grey;
+  background: url("../medias/icones/plus_rond.svg") no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
 }
 
 @media (max-width: 576px) {

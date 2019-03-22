@@ -75,6 +75,11 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route:: post('aver/analyses/important', ['uses' => 'Aver\Fichiers\Analyses\AnalysesController@changeImportant', 'as' => 'admin.analyses.changeImportant' ]);
 
+    Route:: get('aver/troupeau/notes/{id_user}/{id_troupeau}', ['uses' => 'Aver\Troupeaux\NotesController@index', 'as' => 'troupeau.notes']);
+
+    Route:: get('aver/troupeau/note/{id_note}', ['uses' => 'Aver\Troupeaux\NotesController@note', 'as' => 'note']);
+
+    Route:: get('aver/troupeau/note/supprime/{id_note}', ['uses' => 'Aver\Troupeaux\NotesController@delete', 'as' => 'note.delete']);
     //############################ Vétérinaire sanitaire ########################################################
 
         // AFFICHE LA PAGE AVEC LE FORMULAIRE PERMETTANT DE MODIFIER VET SAN OU NON
@@ -117,6 +122,8 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::post('aver/visites/bsa/enleveBsa', ['uses' => 'Aver\Visites\BsaController@enleveBsaUnTroupeau', 'as' => 'bsa.enleveBsa']);
 
+        Route::post('aver/visites/bsa/ajoutNote', ['uses' => 'Aver\Visites\BsaController@ajoutNote', 'as' => 'bsa.ajoutNote']);
+
         //################################# VSO #############################################################
 
         Route::get('aver/visites/vso', ['uses' => 'Aver\Visites\VsoController@index', 'as' => 'vso.index']);
@@ -126,6 +133,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('aver/visites/vso/remplitBv', ['uses' => 'Aver\Visites\VsoController@remplitBv', 'as' => 'vso.bv']);
 
         Route::get('aver/visites/vso/remplitPr', ['uses' => 'Aver\Visites\VsoController@remplitPr', 'as' => 'vso.pr']);
+
+        Route::post('aver/visites/vso/store', ['uses' => 'Aver\Visites\VsoController@store', 'as' => 'vso.store']);
 
     //################################### PS ##################################################################
 
