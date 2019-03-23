@@ -80,6 +80,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route:: get('aver/troupeau/note/{id_note}', ['uses' => 'Aver\Troupeaux\NotesController@note', 'as' => 'note']);
 
     Route:: get('aver/troupeau/note/supprime/{id_note}', ['uses' => 'Aver\Troupeaux\NotesController@delete', 'as' => 'note.delete']);
+
+    Route:: post('aver/troupeau/note/modifie', ['uses' => 'Aver\Troupeaux\NotesController@modifieNote', 'as' => 'note.modifie']);
+
     //############################ Vétérinaire sanitaire ########################################################
 
         // AFFICHE LA PAGE AVEC LE FORMULAIRE PERMETTANT DE MODIFIER VET SAN OU NON

@@ -1,4 +1,8 @@
 $(function(){
+  // Chargement du preloader avec l'envoi des Mails
+  $(".envoi").on('click' , function() {
+    $('.loader').toggleClass('invisible');
+  })
   $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

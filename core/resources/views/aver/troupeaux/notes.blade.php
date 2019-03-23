@@ -22,7 +22,7 @@
     </thead>
     @foreach($notes as $note)
     <tr id="ligne_{{$note->id}}">
-      <td>{{$note->updated_at->toFormattedDateString()}}</td>
+      <td>{{$note->updated_at->formatLocalized('%d %b %Y')}}</td>
       <td>{{$note->texte}}</td>
       <td><img id="modifie_{{$note->id}}" class="pdf_ps curseur modifie" src="{{URL::asset(config('fichiers.icones'))}}/modifie.svg" alt="Modifier"></td>
       <td><img id="supprime_{{$note->id}}" class="pdf_ps curseur supprime" src="{{URL::asset(config('fichiers.icones'))}}/moins.svg" alt="SUpprimer"></td>

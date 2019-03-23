@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Note;
 use App\Models\Troupeau;
+use Carbon\Carbon;
 
 class NotesController extends Controller
 {
@@ -15,6 +16,7 @@ class NotesController extends Controller
       $notes = Note::where('troupeau_id', $troupeau_id)
                       ->orderBy('updated_at', 'desc')
                       ->get();
+
       $troupeau = Troupeau::find($troupeau_id);
 
       return view('aver.troupeaux.notes', [
@@ -35,5 +37,20 @@ class NotesController extends Controller
     {
       Note::destroy($note_id);
       return response()->json(['reponse' => 'C OK']);
+    }
+    public function modifieNote(Request $request)
+    {
+      $datas = $request->all();
+
+      $note = Note::find($datas['note_id']);
+
+      $note->texte = $datas['texte'];
+
+      $note->save();
+
+      return response()->json([
+        "title" => $note->id
+      ]);
+
     }
 }

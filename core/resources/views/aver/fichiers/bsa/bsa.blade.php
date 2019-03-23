@@ -7,7 +7,7 @@
 
 @section('content')
 <div class="container-fluid bg-success d-flex flex-row sous-ruban">
-    <a href="{{URL::previous()}}" title="revenir à la liste des éleveurs">
+    <a href="{{route('troupeau.accueil', ['troupeau_id' => $troupeau->id])}}" title="revenir à la liste des éleveurs">
       <img class="image-h" src="{{URL::asset(config('icones.path'))}}/retour.svg" alt="retour" />
     </a>
     <h1>Bilans sanitaires annuels ({{$troupeau->user->name}})</h1>
