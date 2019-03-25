@@ -8,9 +8,15 @@ use App\Repositories\User\UserRep;
 use App\Repositories\User\UserSousMenuRep;
 use App\Repositories\Troupeaux\TroupeauAffichageRep;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Troupeau;
+use App\Models\Espece;
+use App\Models\Vsoafaire;
+use App\Models\Bsa;
 use App\Models\Ps;
+use App\Models\User;
 use App\Traits\PeriodeProphylo;
+use App\Traits\EdeFormat;
 use Illuminate\Support\Facades\Auth;
 use App\Factories\Sceaux\SceauxListe;
 use App\Constantes\ConstSceaux;
@@ -18,6 +24,7 @@ use App\Constantes\ConstSceaux;
 class UserAverController extends Controller
 {
     use PeriodeProphylo;
+    use EdeFormat;
 
     protected $userRep;
     protected $userSousMenuRep;
@@ -34,16 +41,7 @@ class UserAverController extends Controller
     {
         $sousmenu = $this->userSousMenuRep->userSousmenu();
         $troupeauxUser = Troupeau::where('user_id', Auth()->user()->id)->get();
-        // $listeCards = collect();
-        // foreach ($troupeauxUser as $troupeauUser)
-        // {
-        //     $listeCards->put($troupeauUser->id, $this->troupeauAffichageRep->listeCardsELeveur($troupeauUser->id));
-        // }
-        // $listeBlasons = collect();
-        // foreach ($troupeauxUser as $troupeauUser)
-        // {
-        //     $listeBlasons->put($troupeauUser->id, $this->troupeauAffichageRep->listeBlasonsEleveur($troupeauUser->id));
-        // }
+
         $groupeSceaux = collect();
         foreach ($troupeauxUser as $troupeauUser)
         {
@@ -52,7 +50,7 @@ class UserAverController extends Controller
             $listeSceaux->construitListeComplete();
             $groupeSceaux->put($troupeauUser->id, $listeSceaux);
         }
-//         dd($listeCards->get('721')->cardListe());
+
         return view('aver.user.user', [
             'troupeauxUser' => $troupeauxUser,
             'campagne' => $this->campagne(),
@@ -62,5 +60,41 @@ class UserAverController extends Controller
             'groupeSceaux' => $groupeSceaux,
             'sousmenu' => $sousmenu,
         ]);
+    }
+
+    public function getUser($saisie)
+    {
+      $users = User::where(function($query)use($saisie) {
+        $query->where('name', 'like', "%".$saisie."%");
+      });
+      // return response()->json_encode($users->get());
+      return json_encode($users->get());
+    }
+    public function getTroupeau($saisie)
+    {
+      $troupeaux = DB::table('troupeaux')
+        ->select('troupeaux.id', 'users.name', 'users.ede', 'especes.nom', 'especes.abbreviation', 'vsoafaire.annee as annee_vso', 'bsa.date_bsa')
+          ->join('users', function($join)use($saisie) {
+              $join->on('users.id', "=", 'troupeaux.user_id')
+              ->where('users.name', 'like', '%'.$saisie.'%');
+          })
+          ->join('especes', function($join2) {
+            $join2->on('troupeaux.especes_id', "=", 'especes.id');
+          })
+          ->join('vsoafaire', function($join3) {
+            $join3->on('vsoafaire.troupeau_id', '=', 'troupeaux.id');
+          })
+          ->join('bsa', function($join3) {
+            $join3->on('bsa.troupeau_id', '=', 'troupeaux.id');
+          })
+          ->orderBy('bsa.date_bsa', 'desc')
+          ->get();
+
+      foreach ($troupeaux as $troupeau) {
+        $troupeau->ede = $this->formatEde($troupeau->ede);
+      }
+      $grouped =  $troupeaux->groupBy('name');
+
+      return json_encode($grouped);
     }
 }

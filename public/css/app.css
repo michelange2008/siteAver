@@ -10881,6 +10881,13 @@ label {
   }
 }
 
+#chercher {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 50px;
+}
+
 .enveloppe {
   background-color: #ADEB7D;
   padding-left: 0;
@@ -10954,20 +10961,6 @@ a.lien-bsa > img, a.lien-vs > img {
 
 .lien-inactif {
   pointer-events: none;
-}
-
-.container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #ededed;
 }
 
 .loader {
@@ -11587,7 +11580,7 @@ a:hover img {
   background: #a9e592;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 33% 1fr;
+  grid-template-columns: 50%;
 }
 
 .bandeau {
@@ -11605,6 +11598,21 @@ a:hover img {
   color: #ab243a;
 }
 
+#info {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+}
+
+#liens {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+#eleveur {
+  grid-row: 1;
+  grid-column: 1;
+}
+
 #liens-contenu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11613,6 +11621,18 @@ a:hover img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.fiche_eleveur {
+  margin: 10px;
+}
+
+.ak-troupeau {
+  margin-bottom: 5px;
+}
+
+.ak-infos {
+  margin: 0 10px;
 }
 
 .etiquette {
@@ -11677,10 +11697,19 @@ a:hover img {
     grid-template-columns: 1fr;
   }
   #info {
-    grid-row: 2;
+    grid-row: 3;
+    grid-column: 1;
   }
   #liens {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  #eleveur {
     grid-row: 1;
+    grid-column: 1;
+  }
+  .fiche_eleveur h4 {
+    font-size: 1.2rem;
   }
 }
 

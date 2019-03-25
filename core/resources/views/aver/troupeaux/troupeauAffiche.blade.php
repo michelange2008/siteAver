@@ -4,6 +4,7 @@
 
 @extends('aver.admin.menuAdmin')
 
+<!-- affichage des caractéristiques de l'éleveur cad un sceau type = info -->
 @extends('aver.admin.rubanTroupeau', [
   'listeSceaux' => $listeSceaux,
   'troupeau' => $troupeau,
@@ -18,6 +19,7 @@
 @endif()
 
 <br />
+<!-- affichage des liens de l'éleveur cad un sceau type = lien (bsa, analyses, notes) -->
 <div class="analyse-bsps">
   @foreach($listeSceaux->listeSceaux() as $sceau)
   @if($sceau->type() === App\Constantes\ConstSceaux::TYPE_LIEN)
@@ -28,6 +30,13 @@
         </div>
         <div class="carte-titre-texte">
           <h5>{{ucfirst($sceau->titre())}}</h5>
+        </div>
+        <div class="carte-titre-icone">
+          @if ($sceau->plus())
+            <a href="{{route($sceau->plus_lien(), ['user_id' => $sceau->troupeau()->user->id, 'troupeau_id' => $sceau->troupeau()->id])}}">
+              <img src="{{URL::asset(config('fichiers.icones'))}}/plus_rond_petit.svg" class="pdf_ps" alt="Ajouter" title="Cliquer pour en ajouter">
+            </a>
+          @endif
         </div>
       </div>
       <div class="carte-main">

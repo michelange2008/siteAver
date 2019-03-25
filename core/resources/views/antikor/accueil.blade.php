@@ -7,6 +7,16 @@
 
 @section('content')
 <div class="fond">
+  <div class="eleveur">
+    <div class="alert bandeau">
+      <h3>Trouver un éleveur</h3>
+    </div>
+    <span id='lien_troupeau' class="invisible">{{route('troupeau.accueil')}}</a></span>
+    <input id="chercher_eleveur" class="form-control mr-sm-2" type="text" name="search" placeholder="chercher" value="">
+    <div class="ak_liste_eleveurs">
+
+    </div>
+  </div>
   <div id="info">
     <div class="alert bandeau">
       <h3>Informations</h3>

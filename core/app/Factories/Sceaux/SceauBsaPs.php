@@ -24,7 +24,7 @@ class SceauBsaPs extends Sceau
         $this->soustitre = ConstSceaux::BSAPS_SOUSTITRE.$this->nbPs($id_troupeau);
         $this->icone = ConstSceaux::BSAPS_ICONE;
         $this->type = ConstSceaux::TYPE_LIEN;
-        
+
         $this->setBouton(ConstSceaux::BSAPS_BOUTON);
 
         $this->parametre = $this->nbBsa($id_troupeau);
@@ -40,6 +40,8 @@ class SceauBsaPs extends Sceau
             $this->texteUser = ConstSceaux::BSAPS_TEXTE_USER_FAUX;
         }
         $this->setTexte();
+        $this->plus = ConstSceaux::BSAPS_PLUS;
+        $this->plus_lien = ConstSceaux::BSAPS_PLUS_LIEN;
 
     }
 

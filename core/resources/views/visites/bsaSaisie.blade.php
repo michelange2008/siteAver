@@ -1,9 +1,9 @@
 @extends('layouts.app')
-
+<!--
 @extends('aver.menuprincipal')
 
 @extends('aver.admin.menuAdmin')
-
+-->
 @section('content')
 <div class="container-fluid bg-success d-flex flex-row sous-ruban">
     <a href="{{route('home')}}" title="revenir à l'accueil">

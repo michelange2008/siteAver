@@ -19,7 +19,7 @@
         <div class="carte-titre">
           <div class="carte-titre-icone">
             <a href="{{route('bsa.saisie')}}">
-              <img src="{{URL::asset(config('icones.path'))}}/visites/bsa_carre.svg"/>
+              <img src="{{URL::asset(config('icones.path'))}}/visites/bsa_carre.svg"/ alt="bsa" title="Vers la page de saisie des bilans sanitaires annuels">
             </a>
           </div>
           <div class="carte-titre-texte">

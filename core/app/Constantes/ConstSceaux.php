@@ -19,7 +19,6 @@ class ConstSceaux
 {
     const TYPE_INFO = "info";
     const TYPE_LIEN = "lien";
-
     const PATH_ICONES = "/ruban/";
 
     const VETSAN_IDENTITE = "vetsan";
@@ -30,6 +29,8 @@ class ConstSceaux
     const VETSAN_TEXT_ADMIN_FAUX = "Antikor n'est pas vétérinaire sanitaire de ";
     const VETSAN_TEXT_USER_VRAI = "Antikor est votre vétérinaire sanitaire";
     const VETSAN_TEXT_USER_FAUX = "Antikor n'est pas votre vétérinaire sanitaire";
+    const VETSAN_PLUS = 'false';
+    const VETSAN_PLUS_LIEN = "";
 
     const PROPHYLO_IDENTITE = "prophylo";
     const PROPHYLO_TITRE = "prophylaxies";
@@ -39,6 +40,8 @@ class ConstSceaux
     const PROPHYLO_TEXT_ADMIN_FAUX = "Il n'y a pas de prophylaxie pour la campagne ";
     const PROPHYLO_TEXT_USER_VRAI = "Les prophylaxies sont à faire pour la campagne ";
     const PROPHYLO_TEXT_USER_FAUX = "Il n'y a pas de prophylaxie pour la campagne ";
+    const PROPHYLO_PLUS = 'false';
+    const PROPHYLO_PLUS_LIEN = "";
 
     const BSAIMP_IDENTITE = "bsaimportant";
     const BSAIMP_TITRE = "bilan sanitaire annuel";
@@ -48,6 +51,8 @@ class ConstSceaux
     const BSAIMP_TEXT_ADMIN_FAUX = "Bilan sanitaire annuel non obligatoire en ";
     const BSAIMP_TEXT_USER_VRAI = "Le bilan sanitaire est à faire en ";
     const BSAIMP_TEXT_USER_FAUX = "Il n'y a pas de bilan sanitaire à faire en ";
+    const BSA_IMP_PLUS = 'false';
+    const BSA_IMP_PLUS_LIEN = "";
 
     const ACTIVITE_IDENTITE = "activite";
     const ACTIVITE_TITRE = "type d'activité";
@@ -56,6 +61,8 @@ class ConstSceaux
     const ACTIVITE_ICONE_SANI = SELF::PATH_ICONES."SANI.svg";
     const ACTIVITE_TEXT_ADMIN = "Convention, suivi ou vétérinaire sanitaire";
     const ACTIVITE_TEXT_USER = "Convention, suivi ou vétérinaire sanitaire";
+    const ACTIVITE_PLUS = 'false';
+    const ACTIVITE_PLUS_LIEN = "";
 
     const VSO_IDENTITE = "vso";
     const VSO_TITRE = "visite sanitaire obligatoire";
@@ -65,6 +72,8 @@ class ConstSceaux
     const VSO_TEXT_ADMIN_FAUX = "pas de VSO à faire en ";
     const VSO_TEXT_USER_VRAI = "VSO à faire en ";
     const VSO_TEXT_USER_FAUX = "pas de VSO à faire en ";
+    const VSO_PLUS = 'false';
+    const VSO_PLUS_LIEN = "";
 
     const PATH_ICONE_PS = "/ps/";
 
@@ -77,6 +86,8 @@ class ConstSceaux
     const BSAPS_TEXTE_ADMIN_FAUX = "Il n'y a pas encore de protocole de soin téléchargeable";
     const BSAPS_TEXTE_USER_FAUX = "Il n'y a pas encore de protocole de soin téléchargeable";
     const BSAPS_BOUTON = 'troupeau.bsa';
+    const BSAPS_PLUS = 'true';
+    const BSAPS_PLUS_LIEN = 'troupeau.bsa';
 
     const PATH_ICONE_ANA = "/analyses/";
 
@@ -89,6 +100,8 @@ class ConstSceaux
     const ANA_TEXTE_USER_VRAI = "(toutes espèces)";
     const ANA_TEXTE_USER_FAUX = "Pas d'analyses téléchargeables";
     const ANA_BOUTON = 'troupeau.analyses';
+    const ANA_PLUS = 'false';
+    const ANA_PLUS_LIEN = '';
 
     const NOTE_IDENTITE = 'commentaires';
     const NOTE_TITRE = "Notes";
@@ -99,5 +112,7 @@ class ConstSceaux
     const NOTE_TEXTE_USER_VRAI = "Observation sur l'élevage";
     const NOTE_TEXTE_USER_FAUX = "Pas de notes";
     const NOTE_BOUTON = 'troupeau.notes';
+    const NOTE_PLUS = 'true';
+    const NOTE_PLUS_LIEN = 'troupeau.notes';
 
 }

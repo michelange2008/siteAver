@@ -11,7 +11,7 @@
 |
 */
 // ROUTES INITIALES ######################################################################################
-Route::get('/essai/{troupeau?}', ['uses' => 'Aver\Visites\PsController@elimineDoublon', 'as' => 'essai']);
+Route::get('/essai/{essai}', ['uses' => 'Aver\User\UserAverController@getTroupeau', 'as' => 'essai']);
 
 Route::get('/', ['uses' => 'MainController@index', 'as' => 'accueil']);
 
@@ -43,6 +43,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/antikor/aromaliste', ['uses' => 'Antikor\Aromaliste\AromalisteController@index', 'as' => 'aromaliste']);
 
     Route::post('/antikor/aromaliste/choix', ['uses' => 'Antikor\Aromaliste\AromalisteController@choix', 'as' => 'aromaliste.choix']);
+
+    Route::get('/antikor/recherche/{saisie}', ['uses' => 'Aver\User\UserAverController@getTroupeau', 'as' => 'antikor.recherche']);
+
   });
 
     Route::resource('aver/troupeau', 'Aver\TroupeauxController');

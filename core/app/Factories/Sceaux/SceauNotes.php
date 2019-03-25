@@ -34,6 +34,8 @@ class SceauNotes extends Sceau
         $this->icone = ConstSceaux::NOTE_ICONE;
         $this->parametre = $this->nbNotes($id_troupeau);
         $this->setBouton(ConstSceaux::NOTE_BOUTON);
+        $this->plus = ConstSceaux::NOTE_PLUS;
+        $this->plus_lien = ConstSceaux::NOTE_PLUS_LIEN;
     }
 
     public function nbNotes($id_troupeau)

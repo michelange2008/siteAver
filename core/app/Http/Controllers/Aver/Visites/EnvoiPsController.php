@@ -99,5 +99,7 @@ class EnvoiPsController extends Controller
     );
 
     $this->envoie($troupeau, $bsa, $ps);
+
+    return redirect()->back();
   }
 }

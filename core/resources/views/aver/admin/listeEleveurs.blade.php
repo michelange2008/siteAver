@@ -15,6 +15,7 @@
 
                 <tr id= "titres" class="bg-success">
                     <th >Eleveur</th>
+                    <th>EDE</th>
                     <th >Troupeau</th>
                     <th >Type</th>
                     <th  class="text-center">Vet. San.</th>
@@ -34,6 +35,7 @@
                         'title' => "afficher la situation de ".$troupeau->user->name
                         ]) !!}
                     </td>
+                    <td class="text-secondary">{{$troupeau->user->ede}}</td>
                     <td class="{{$troupeau->especes->abbreviation}}">{{$troupeau->especes->nom}}</td>
                     <td class="text-center {{$troupeau->user->activite->abbreviation}} ">{{strtolower($troupeau->user->activite->abbreviation)}}</td>
 

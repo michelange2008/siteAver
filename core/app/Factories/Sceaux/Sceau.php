@@ -25,11 +25,15 @@ abstract class Sceau
     protected $parametre; // information supplémentaire (nombre d'analyses ou de protocoles de soin par exemple)
     protected $type; // définit le type de sceau: informatif ou avec lien cliquable ou autre (?)
     protected $affichage; // booléen précisant si ce sceau doit être affiché ou non
+    protected $plus; // booléen qui précise s'il on affiche une icone plus pour ajouter un élément du sceau
+    protected $plus_lien; // route liée au bouton plus
 
     public function __construct($id_troupeau)
     {
         $this->troupeau = Troupeau::find($id_troupeau);
         $this->affichage = true;
+        $this->plus = false;
+        $this->plus_lien = "";
     }
 
     public function setBouton($route, $texteBouton = 'voir', $sousmenuCouleur = SousmenuCouleurs::VERT)
@@ -49,7 +53,7 @@ abstract class Sceau
             $this->texte = "";
         }
     }
-    
+
     public function setAffichage(bool $affiche)
     {
         $this->affichage = $affiche;
@@ -94,8 +98,8 @@ abstract class Sceau
     {
         return $this->parametre;
     }
-    
-    public function type() 
+
+    public function type()
     {
         return $this->type;
     }
@@ -103,5 +107,13 @@ abstract class Sceau
     public function affichage()
     {
         return $this->affichage;
+    }
+    public function plus()
+    {
+      return $this->plus;
+    }
+    public function plus_lien()
+    {
+      return $this->plus_lien;
     }
 }

@@ -2,7 +2,10 @@ $(function(){
   // Chargement du preloader avec l'envoi des Mails
   $(".envoi").on('click' , function() {
     $('.loader').toggleClass('invisible');
-  })
+  });
+  $("#validEmailOk").on('click' , function() {
+    $('.loader').toggleClass('invisible');
+  });
   $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -11,14 +14,14 @@ $(function(){
   // Met le focus sur le champs de recherche au démarrage
   $('#chercher').focus().val('');
   // Affiche en fonction de ce qui est taper dans le champs de recherche
-  $('#chercher').on('bind keyup', function(ev) {
-    var saisie = ($.trim($(this).val()));
+  $('#chercher').on('keyup', function(ev) {
+    var saisie = ($.trim($(this).val()).toUpperCase());
     if(saisie.length > 2) {
       if(!saisie) {
         $('ul>li').show();
       } else {
         $('li').each(function() {
-          if($(this).attr('class') == 'ligne' && $(this).attr('id').toLowerCase().indexOf(saisie) == -1) {
+          if($(this).attr('class') == 'ligne' && $(this).attr('id').toUpperCase().indexOf(saisie) == -1) {
               $(this).hide();
           }
         })

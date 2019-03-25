@@ -1,3 +1,8 @@
+#chercher {
+  position: sticky;
+  top: 0;
+  height: 50px;
+}
 .enveloppe {
   background-color: #ADEB7D;
   padding-left: 0;
@@ -61,20 +66,6 @@ a.lien-bsa > img, a.lien-vs >img {
 }
 
 // preloader
-.container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  min-height: 100vh;
-  background-color: #ededed;
-}
-
 .loader {
   position: fixed;
   top: 100px;
@@ -143,6 +134,8 @@ circle:nth-of-type(4) {
             transform: rotate(360deg);
   }
 }
+///// DEUXIEME preloader
+
 ////////////////////////////////////////////////////////////
 
 @media screen and (min-width: 991.98px) {
