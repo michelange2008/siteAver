@@ -10,3 +10,14 @@
   right: 5%;
   bottom: 5%;
 }
+.ajouter_note {
+	z-index: 10000;
+	position: absolute;
+	width: 400px;
+	left: calc(50% - 200px);
+	top: 40vh;
+	padding: 50px;
+	background: darkgreen;
+	color: white;
+	box-shadow: 5px 5px 10px black;
+}

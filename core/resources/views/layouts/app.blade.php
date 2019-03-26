@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>
       @if(null !== Auth::user() && Auth::user()->admin == 1)Antikor
       @else{{ config('app.name', 'Aver') }}
@@ -48,6 +48,7 @@
 
 
     <script src="{{ asset(config('scripts.path'))}}/jquery.confirm.min.js"></script>
+    <script src="{{ asset(config('scripts.path'))}}/moment.min.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/app.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/user_gestion.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/analyses.js"></script>

@@ -80,6 +80,8 @@ $(function() {
   });
 
   $('.supprime').on('click', function() {
+    var nb_notes = $('#notes tr').length - 1;
+    console.log(nb_notes);
     var note_id = $(this).attr('id').split('_')[1];
     $.ajaxSetup({
         headers: {
@@ -95,7 +97,12 @@ $(function() {
       },
       dataType: 'JSON',
       success: function () {
-        $('#ligne_'+note_id).fadeToggle();
+        $('#ligne_'+note_id).remove();
+
+        if($('#notes tr').length - 1 == 0){
+          $('.ajouter_note').removeClass('invisible');
+        }
+
       },
       error: function (e) {
             console.log(e.responseText);
@@ -106,8 +113,8 @@ $(function() {
 
   $('.ajoute').on('click', function() {
     var troupeau_id = $('.troupeau_id').attr('id');
-    var modifier =($('table tr').find('td').eq(2).html());
-    var supprimer =($('table tr').find('td').eq(3).html());
+    var modifier ='<img id="modifie_21" class="pdf_ps curseur modifie" src="http://localhost/siteAver/public/medias/icones/modifie.svg" alt="Modifier">';
+    var supprimer ='<img id="supprime_21" class="pdf_ps curseur supprime" src="http://localhost/siteAver/public/medias/icones/moins.svg" alt="SUpprimer">';
     $.confirm({
       type: 'green',
       theme: 'dark',
@@ -145,6 +152,7 @@ $(function() {
                     },
                     dataType: 'JSON',
                     success: function (data) {
+                      $('.ajouter_note').addClass('invisible');
                       var options = { year: 'numeric', month: 'long', day: 'numeric' };
                       var date = new Date();
                       console.log(date);

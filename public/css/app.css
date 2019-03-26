@@ -11625,14 +11625,26 @@ a:hover img {
 
 .fiche_eleveur {
   margin: 10px;
+  color: #870c1f;
 }
 
 .ak-troupeau {
-  margin-bottom: 5px;
+  padding: 10px;
+  color: #870c1f;
+  border-top: solid 1px green;
 }
 
 .ak-infos {
-  margin: 0 10px;
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .etiquette {
@@ -11918,6 +11930,19 @@ a:hover img {
   position: absolute;
   right: 5%;
   bottom: 5%;
+}
+
+.ajouter_note {
+  z-index: 10000;
+  position: absolute;
+  width: 400px;
+  left: calc(50% - 200px);
+  top: 40vh;
+  padding: 50px;
+  background: darkgreen;
+  color: white;
+  -webkit-box-shadow: 5px 5px 10px black;
+          box-shadow: 5px 5px 10px black;
 }
 
 @media (max-width: 576px) {

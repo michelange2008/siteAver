@@ -36,12 +36,22 @@
 }
 .fiche_eleveur {
   margin: 10px;
+  color: #870c1f;
 }
 .ak-troupeau {
-  margin-bottom: 5px;
+  padding: 10px;
+  color: #870c1f;
+  border-top: solid 1px green;
 }
 .ak-infos {
-  margin: 0 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.ak_liste_eleveurs{
+  li {
+  }
 }
 .etiquette {
   // border: solid 1px $vert-primaire-2;

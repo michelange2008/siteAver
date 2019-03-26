@@ -87,7 +87,7 @@ class ConstSceaux
     const BSAPS_TEXTE_USER_FAUX = "Il n'y a pas encore de protocole de soin téléchargeable";
     const BSAPS_BOUTON = 'troupeau.bsa';
     const BSAPS_PLUS = 'true';
-    const BSAPS_PLUS_LIEN = 'troupeau.bsa';
+    const BSAPS_PLUS_LIEN = 'bsa.saisie';
 
     const PATH_ICONE_ANA = "/analyses/";
 

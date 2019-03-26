@@ -1,0 +1,17 @@
+{
+  "name": "Site de l'AVER",
+  "short_name": "AVER",
+  "background_color": "red",
+  "description": "Ceci est le site de l'AVER et de la SCOP ANTIKOR",
+  "orientation": "portrait-primary",
+  "scope" : "/",
+  "display" : "standalone",
+  "theme_color" : "yellow",
+  "icons" : [
+    {
+      "src" : "medias/logo.png",
+      "sizes" : "48x48",
+      "type" : "image/png"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 $(function() {
+  moment.locale('fr');
   var lien_troupeau = $('#lien_troupeau').html();
   // Met le focus sur le champs de recherche au démarrage
   $('#chercher_eleveur').focus().val('');
@@ -23,24 +24,29 @@ $(function() {
                   $('.ak_liste_eleveurs').html(
                       "<div class=fiche_eleveur>"
                       +"<h4>"+eleveur+" ("+troupeaux[0].ede+")</h4>"
-                      +"</div><div class=''>"
+                      +"</div><ul class=''>"
                     );
                   var tp = ""
                   $.each(troupeaux, function(clef, troupeau) {
-                    if(tp != troupeau.abbreviation) {
+                    if(tp != troupeau.abbreviation) { // méthode pour ne pas avoir l'affichage d'un troupeau pas bsa présent
                       tp = troupeau.abbreviation
-                      var image = "public/medias/icones/ruban/"+troupeau.abbreviation+".svg";
+                      var image = "public/medias/icones/antikor/"+troupeau.abbreviation+".svg";
                       var lien = lien_troupeau+"/"+troupeau.id;
+                      troupeau.date_bsa = ("undefinided" ?
+                        "<span style='color:red; font-weight:bold'> à faire</span>" :
+                        moment(troupeau.date_bsa).format('LL'));
                       $('.ak_liste_eleveurs').append(
-                        '<div class="ak-troupeau d-flex flex-row"><div class="ak-icone"><a href ="'+lien+'" class="espece">'
+                        '<li class="ak-troupeau d-flex flex-row"><div class="ak-icone"><a href ="'+lien+'" class="espece">'
                         +'<img src = "'+image+'"></a></div>'
-                        +'<div class="ak-infos d-flex flex-column justify-content-around"><p>Dernier BSA: '+troupeau.date_bsa+'</p>'
-                        +'<p>VSO à faire: '+troupeau.annee_vso+'</div>'
-                        +'</div>'
+                        +'<div class="ak-infos"><p>Dernier BSA: '
+                        +troupeau.date_bsa+' '
+                        +'</p>'
+                        +'<p>VSO à faire: <span style="font-weight:bold">'+troupeau.annee_vso+'</span></div>'
+                        +'</li>'
                       );
                     }
                   });
-                  $('.ak_liste_eleveurs').append('</div>');
+                  $('.ak_liste_eleveurs').append('</ul>');
                 });
               }
           });

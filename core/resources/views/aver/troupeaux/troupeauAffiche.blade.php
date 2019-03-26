@@ -26,17 +26,14 @@
     <div class="carte">
       <div class="carte-titre">
         <div class="carte-titre-icone">
-          <img src="{{URL::asset(config('fichiers.icones')).$sceau->icone()}}" alt="{{$sceau->icone()}}"/>
+          @if ($sceau->plus())
+            <a href="{{route($sceau->plus_lien(), ['user_id' => $sceau->troupeau()->user->id, 'troupeau_id' => $sceau->troupeau()->id])}}">
+              <img src="{{URL::asset(config('fichiers.icones')).$sceau->icone()}}" alt="{{$sceau->icone()}}" title="ajoute {{$sceau->titre()}}"/>
+            </a>
+          @endif
         </div>
         <div class="carte-titre-texte">
           <h5>{{ucfirst($sceau->titre())}}</h5>
-        </div>
-        <div class="carte-titre-icone">
-          @if ($sceau->plus())
-            <a href="{{route($sceau->plus_lien(), ['user_id' => $sceau->troupeau()->user->id, 'troupeau_id' => $sceau->troupeau()->id])}}">
-              <img src="{{URL::asset(config('fichiers.icones'))}}/plus_rond_petit.svg" class="pdf_ps" alt="Ajouter" title="Cliquer pour en ajouter">
-            </a>
-          @endif
         </div>
       </div>
       <div class="carte-main">
@@ -47,7 +44,7 @@
             {{$sceau->parametre()}} {{$sceau->titre()}}
           </p>
           @if($sceau->parametre() == 0)
-            <div class = 'btn btn-secondary carte-bouton'>...</div>
+            <button class = 'btn btn-secondary carte-bouton' disabled>...</button>
           @else()
             {{ link_to_route($sceau->bouton()->route(), ucfirst($sceau->bouton()->texte()), ["user_id" => $troupeau->user_id, "troupeau_id" => $troupeau->id], ['class' => $sceau->bouton()->couleur().' btn carte-bouton'])}}
           @endif()

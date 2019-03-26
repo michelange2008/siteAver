@@ -13,13 +13,20 @@
       <h1>Notes ({{$troupeau->user->name}})</h1>
   </div>
   <br />
-  <table class="table table-striped table-hover">
+  <table id="notes" class="table table-striped table-hover">
     <thead class="table-dark">
       <th>Date</th>
       <th>Note</th>
       <th>Mod.</th>
       <th>Suppr.</th>
     </thead>
+      <div class="ajouter_note
+      @if ($notes->count() > 0)
+        invisible
+      @endif
+      ">
+        <h4>Pour ajouter une note</h4><h4>cliquer sur le + en bas de l'écran</h4>
+      </div>
     @foreach($notes as $note)
     <tr id="ligne_{{$note->id}}">
       <td>{{$note->updated_at->formatLocalized('%d %b %Y')}}</td>
