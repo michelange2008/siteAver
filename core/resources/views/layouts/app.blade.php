@@ -16,6 +16,7 @@
       @foreach(config('styles') as $path)
         <link rel="stylesheet" href="{{ asset($path)}}">
       @endforeach
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/fh-3.1.4/r-2.2.2/datatables.min.css"/>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     @stack('css')
     @stack('js')
@@ -41,11 +42,13 @@
     </div>
   </div>
 </div>
-    <script src="{{asset('/core/node_modules/jquery/dist/jquery.min.js')}}"></script>
-    <script src="{{asset('/core/node_modules/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('/core/node_modules/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js')}}"></script>
-    <script src="{{asset('/core/node_modules/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
-
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+    <script
+        type="text/javascript"
+        src="https://cdn.datatables.net/v/dt/dt-1.10.18/fh-3.1.4/r-2.2.2/datatables.min.js"></script>
 
     <script src="{{ asset(config('scripts.path'))}}/jquery.confirm.min.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/moment.min.js"></script>
