@@ -36,7 +36,7 @@ Route::get('/home', 'Aver\AverController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
 
-  Route::middleware(['isAdmin'])->group(function(){
+  Route::middleware(['isAdmin', 'web'])->group(function(){
 
     Route::get('/antikor', ['uses' => 'Antikor\AntikorController@index', 'as' => 'antikor.index']);
 
