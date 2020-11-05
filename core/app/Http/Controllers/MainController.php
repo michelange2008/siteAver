@@ -46,6 +46,7 @@ class MainController extends Controller
 
     public function parasitisme()
     {
-      return 'parasitisme';
+      // return 'parasitisme';
+      return redirect('games_of_strongles/public');
     }
   }
