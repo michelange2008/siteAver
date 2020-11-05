@@ -36,7 +36,7 @@ Route::get('/home', 'Aver\AverController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
 
-  Route::middleware(['isAdmin'])->group(function(){
+  Route::middleware(['isAdmin', 'web'])->group(function(){
 
     Route::get('/antikor', ['uses' => 'Antikor\AntikorController@index', 'as' => 'antikor.index']);
 
@@ -219,5 +219,3 @@ Route::get('/parasitisme/fiches', ['uses' => 'Parasitisme\ParasitismeController@
 Route::get('/technique/reproduction/animation', ['uses' => 'Technique\Reproduction\ReproductionController@animation', 'as' => 'technique.reproduction.animation']);
 
 Route::get('/technique/fiches/{id?}', ['uses' => 'Technique\TechniqueController@fiches', 'as' => 'technique.fiches']);
-
-Route::get('/technique/tarissement', ['uses' => 'Technique\TarissementController@index', 'as' => 'technique.tarissement']);

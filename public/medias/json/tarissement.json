@@ -1,0 +1,30 @@
+{
+  "FdL" :
+  {
+    "nom" : "FdL",
+    "libelle" : "Nombre de fièvres de lait",
+    "icone" : "FdL.svg",
+    "seuil" : 5
+  },
+  "ND" :
+  {
+    "nom" : "ND",
+    "libelle" : "Nombre de non-délivrance (hors jumeaux et vélages déclenchés)",
+    "icone" : "ND.svg",
+    "seuil" : 10
+  },
+  "couchee" :
+  {
+    "nom" : "couchee",
+    "libelle" : "Nombre de vaches couchées (hors fièvre de lait)",
+    "icone" :"couche.svg",
+    "seuil" : 10
+  },
+  "chuteTB" :
+  {
+    "nom" : "chuteTB",
+    "libelle" : "Nombre de vache avec une chute de TB en début de lactation",
+    "icone" : "chuteTB.svg",
+    "seuil" : 10
+  }
+}

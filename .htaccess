@@ -5,6 +5,12 @@
 
     RewriteEngine On
 
+  RewriteRule ^\.well-known/host-meta /nextcloud/public.php?service=host-meta [QSA,L]
+  RewriteRule ^\.well-known/host-meta\.json /nextcloud/public.php?service=host-meta-json [QSA,L]
+  RewriteRule ^\.well-known/webfinger /nextcloud/public.php?service=webfinger [QSA,L]
+  RewriteRule ^\.well-known/carddav /nextcloud/remote.php/dav/ [R=301,L]
+  RewriteRule ^\.well-known/caldav /nextcloud/remote.php/dav/ [R=301,L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -18,4 +24,16 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+</IfModule>
+
+<IfModule mod_env.c>
+  # Add security and privacy related headers
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set X-Robots-Tag "none"
+  Header set X-Download-Options "noopen"
+  Header set X-Permitted-Cross-Domain-Policies "none"
+  Header set Referrer-Policy "no-referrer"
+  SetEnv modHeadersAvailable true
 </IfModule>
