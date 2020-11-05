@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Antikor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controller\AverController;
-use App\Repositories\AntikorRep;
+use App\Repositories\Antikor\AntikorRep;
 
 class AntikorController extends Controller
 {
