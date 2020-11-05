@@ -13,7 +13,7 @@
       @else{{ config('app.name', 'Aver') }}
       @endif
     </title>
-        <link rel="stylesheet" href="{{ asset(config('styles.parasito'))}}">
+        <link rel="stylesheet" href="{{ url('public/css/parasito.css')}}">
 
     @stack('css')
 

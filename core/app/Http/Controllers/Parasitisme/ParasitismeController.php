@@ -11,20 +11,29 @@ class ParasitismeController extends Controller
 
     public function index()
     {
-      return view('parasitisme/parasitisme');
+      // return view('parasitisme.parasitisme');
+      return view('parasitisme.intro');
+
     }
 
     public function fiches()
     {
       $fiches = LitCsv::litJson('fiches');
 
-      return view('parasitisme/fiches', [
+      return view('parasitisme.fiches', [
         'fiches' => $fiches,
       ]);
     }
 
     public function formations()
     {
-      return view('parasitisme/formations');
+      return view('parasitisme.formations');
+    }
+
+    public function gos()
+    {
+
+      return redirect('../game_of_strongles/public/');
+
     }
 }
