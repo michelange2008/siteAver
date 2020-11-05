@@ -1,5 +1,5 @@
 <?php
-namespace App\Repositories;
+namespace App\Repositories\Antikor;
 
 use App\Repositories\Antikor\Liens;
 use App\Models\User;
