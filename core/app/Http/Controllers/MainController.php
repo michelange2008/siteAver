@@ -25,10 +25,10 @@ class MainController extends Controller
 //      return view('phytotherapie');
     }
 
-    public function plantes_libres()
-    {
-      return view('plantes_libres');
-    }
+    // public function plantes_libres()
+    // {
+    //   return view('plantes_libres');
+    // }
 
     public function aver()
     {

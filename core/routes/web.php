@@ -17,7 +17,10 @@ Route::get('/', ['uses' => 'MainController@index', 'as' => 'accueil']);
 
 Route::get('/phyto', 'MainController@phytotherapie');
 
-Route::get('/plantes_libres', 'MainController@plantes_libres');
+// Route::get('/plantes_libres', 'MainController@plantes_libres');
+
+Route::get('/prophylo', ['uses' => 'ProphyloController@index', 'as' => 'prophylo.index']);
+
 
 Route::get('/aver', ['uses' => 'Aver\AverController@index', 'as' => 'aver.accueil'])->middleware('delaiBSA');
 
@@ -39,6 +42,7 @@ Route::group(['middleware' => ['auth']], function () {
   Route::middleware(['isAdmin'])->group(function(){
 
     Route::get('/antikor', ['uses' => 'Antikor\AntikorController@index', 'as' => 'antikor.index']);
+
 
     Route::get('/antikor/aromaliste', ['uses' => 'Antikor\Aromaliste\AromalisteController@index', 'as' => 'aromaliste']);
 
