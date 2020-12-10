@@ -8,6 +8,8 @@ var colis = 4.95;
 
 $("#nombre").on('click', function() {
 
+  $(this).val('');
+
   $(".prix").empty();
 
 })
@@ -15,6 +17,9 @@ $("#nombre").on('click', function() {
 $(".espece").on('click', function() {
 
   var id = $(this).attr('id');
+
+  $('.espece').removeClass('assombri').addClass('noiretblanc');
+  $(this).addClass('assombri').removeClass('noiretblanc');
 
   var nombre = $("#nombre").val();
 
