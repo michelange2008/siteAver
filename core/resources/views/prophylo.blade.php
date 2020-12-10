@@ -109,7 +109,15 @@
 
   </div>
 
-</div>
+  <div class="row my-3">
+
+    <div class="col-10 offset-1">
+
+      <p>Saisir le nombre d'animaux puis choisir l'espèce pour obtenir le montant de la facture.</p>
+
+    </div>
+
+  </div>
 
 </div>
 
