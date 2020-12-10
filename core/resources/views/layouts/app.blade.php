@@ -61,6 +61,7 @@
     <script src="{{ asset(config('scripts.path'))}}/notes.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/antikor.js"></script>
     <script src="{{ asset(config('scripts.path'))}}/tarissement.js"></script>
+    <script src="{{ asset(config('scripts.path'))}}/prophylo.js"></script>
     <script src="https://use.fontawesome.com/f8a7076b4b.js"></script>
     <!-- TODO vérifier s'il faut le téléchargement d'ajax ou si le npm suffit -->
     <!-- <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
