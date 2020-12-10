@@ -25,7 +25,7 @@
 
       <div class="col-4 text-right">
 
-        <div id="ht" class="h4 prix">0</div>
+        <div id="ht" class="h4 prix"></div>
 
       </div>
 
@@ -41,7 +41,7 @@
 
       <div class="col-4 text-right">
 
-        <div id="tva" class="h4 prix">0</div>
+        <div id="tva" class="h4 prix"></div>
 
       </div>
 
@@ -59,7 +59,7 @@
 
     <div class="col-4 text-right">
 
-      <div id="ttc" class="h4 prix">O</div>
+      <div id="ttc" class="h4 prix"></div>
 
     </div>
 
@@ -87,19 +87,19 @@
 
     <div class="col-3">
 
-      <img id="bv" class="espece" src="{{ url('public/images/bv.svg')}}" alt="">
+      <img id="bv" class="espece noiretblanc" src="{{ url('public/images/bv.svg')}}" alt="">
 
     </div>
 
     <div class="col-3">
 
-      <img id="pr" class="espece" src="{{ url('public/images/pr.svg')}}" alt="">
+      <img id="pr" class="espece noiretblanc" src="{{ url('public/images/pr.svg')}}" alt="">
 
     </div>
 
     <div class="col-3">
 
-      <img id="pc" class="espece" src="{{ url('public/images/pc.svg')}}" alt="">
+      <img id="pc" class="espece noiretblanc" src="{{ url('public/images/pc.svg')}}" alt="">
 
     </div>
 
@@ -110,3 +110,10 @@
 </div>
 
 @endsection
+
+@push('css')
+
+  <link rel="stylesheet" href="{{ asset('public/css/prophylo.css')}}">
+
+
+@endpush
