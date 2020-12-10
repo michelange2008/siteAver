@@ -9,7 +9,49 @@
 
       <div class="col-11 offset-1">
 
-        <h1 class="lead">Calcul d'une facture de prophylaxie</h1>
+        <h1 class="h1">PROPHYLAXIE</h1>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-5 offset-1">
+
+        <p class="display-4">HT</p>
+
+      </div>
+
+      <div class="col-5">
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-5 offset-1">
+
+        <p class="display-4">TVA</p>
+
+      </div>
+
+      <div class="col-5">
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-5 offset-1">
+
+        <p class="display-4">TTC</p>
+
+      </div>
+
+      <div class="col-5">
 
       </div>
 
@@ -27,6 +69,7 @@
         </div>
 
       </div>
+
     </div>
 
       <div class="row justify-content-center">
@@ -50,7 +93,6 @@
         </div>
 
       </div>
-
 
   </div>
 
