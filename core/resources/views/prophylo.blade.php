@@ -13,27 +13,11 @@
 
       </div>
 
-      </div>
+    </div>
 
-      <div class="row">
+    <div class="row">
 
-        <div class="col-10 offset-1">
-
-        <div class="form-group">
-
-
-          <select id="espece" class="form-select" name="espece">
-
-            <option disabled selected>Choisir une espèce</option>
-            <option value="bovin">Bovins</option>
-            <option value="petitrum">Petits ruminants</option>
-            <option value="porcs">Porcs</option>
-
-          </select>
-
-
-
-        </div>
+      <div class="col-10 offset-1">
 
         <div class="form-group">
 
@@ -43,9 +27,33 @@
         </div>
 
       </div>
-</div>
     </div>
 
+      <div class="row justify-content-center">
+
+        <div class="col-3">
+
+          <img src="{{ url('public/images/bv.svg')}}" alt="">
+
+        </div>
+
+        <div class="col-3">
+
+          <img src="{{ url('public/images/pr.svg')}}" alt="">
+
+        </div>
+
+        <div class="col-3">
+
+          <img src="{{ url('public/images/pc.svg')}}" alt="">
+
+        </div>
+
+      </div>
+
+
   </div>
+
+</div>
 
 @endsection
