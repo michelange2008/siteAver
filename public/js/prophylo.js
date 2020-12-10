@@ -12,24 +12,31 @@ $("#nombre").on('click', function() {
 
   $(".prix").empty();
 
+  $('.espece').removeClass('assombri').addClass('noiretblanc');
+
 })
 
 $(".espece").on('click', function() {
 
-  var id = $(this).attr('id');
+  if($("#nombre").val() !== '') {
 
-  $('.espece').removeClass('assombri').addClass('noiretblanc');
-  $(this).addClass('assombri').removeClass('noiretblanc');
+    var id = $(this).attr('id');
 
-  var nombre = $("#nombre").val();
+    $('.espece').removeClass('assombri').addClass('noiretblanc');
 
-  $(".prix").empty();
+    $(this).addClass('assombri').removeClass('noiretblanc');
 
-  $("#ht").append( ht(calcul(nombre, id)) );
+    var nombre = $("#nombre").val();
 
-  $("#tva").append( tva( calcul(nombre, id) ) );
+    $(".prix").empty();
 
-  $("#ttc").append( ttc( calcul(nombre, id)) );
+    $("#ht").append( ht(calcul(nombre, id)) );
+
+    $("#tva").append( tva( calcul(nombre, id) ) );
+
+    $("#ttc").append( ttc( calcul(nombre, id)) );
+
+  }
 
 })
 
