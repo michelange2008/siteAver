@@ -35,13 +35,13 @@
 
       <div class="col-5 offset-1">
 
-        <p class="h4">TVA</p>
+        <p class="h5">TVA (20%)</p>
 
       </div>
 
       <div class="col-4 text-right">
 
-        <div id="tva" class="h4 prix"></div>
+        <div id="tva" class="h5 prix"></div>
 
       </div>
 
@@ -53,13 +53,17 @@
 
     <div class="col-5 offset-1">
 
+      <hr>
+
       <p class="h4">TTC</p>
 
     </div>
 
     <div class="col-4 text-right">
 
-      <div id="ttc" class="h4 prix"></div>
+      <hr class="divider">
+
+      <div id="ttc" class="h4 prix "></div>
 
     </div>
 

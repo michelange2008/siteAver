@@ -34,7 +34,7 @@ $(".espece").on('click', function() {
 
     $("#tva").append( tva( calcul(nombre, id) ) );
 
-    $("#ttc").append( ttc( calcul(nombre, id)) );
+    $("#ttc").append( '<strong>' + ttc( calcul(nombre, id)) + '</strong>' );
 
   }
 
