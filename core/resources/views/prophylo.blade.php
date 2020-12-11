@@ -7,15 +7,15 @@
 
     <div class="row my-3">
 
-      <div class="col-11 col-md-3 offset-1">
+      <div class="col-10 col-md-3 offset-1 alert-primary">
 
-        <h1 class="h1">PROPHYLAXIE</h1>
+        <h1 class="h1 py-2 px-1">PROPHYLAXIE</h1>
 
       </div>
 
     </div>
 
-    <div class="row">
+    <div class="row mt-3">
 
       <div class="col-5 col-md-2 offset-1">
 
