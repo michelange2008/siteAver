@@ -1,4 +1,5 @@
 nuage;https://antikor.fr/nextcloud;nuage.svg
 fichiers;https://antikor.fr/antikor/biblio;biblio.svg
 aromaliste;antikor/aromaliste;aromaliste.svg
+prophylaxie;prophylo;prophylo.svg
 tarissement;technique/tarissement;tarissement.svg

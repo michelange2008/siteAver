@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="nav navbar-nav">
 
-      <li class="nav-item"><a href="{{ URL::route('aver.accueil')}}" class = 'nav-link'>Accueil</a></li>
+      <li class="nav-item"><a href="{{ URL::route('antikor.index')}}" class = 'nav-link'>Accueil</a></li>
 
       <li class="nav-item"><a href = "{{URL::route('admin.analyses')}}"class="nav-link">Analyses</a></li>
 
@@ -52,7 +52,7 @@
 
         </ul>
       </li>
-      <li class="nav-item"><a href="{{ URL::route('antikor.index')}}" class = 'nav-link'>Antikor</a></li>
+      <li class="nav-item"><a href="{{ URL::route('aver.accueil')}}" class = 'nav-link'>AVER</a></li>
 
       <li class="nav-item"><a href="{{ URL::route('technique.index')}}" class = 'nav-link'>Technique</a></li>
 

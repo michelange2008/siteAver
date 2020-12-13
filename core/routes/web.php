@@ -11,7 +11,7 @@
 |
 */
 // ROUTES INITIALES ######################################################################################
-Route::get('/essai/{essai}', ['uses' => 'Aver\User\UserAverController@getTroupeau', 'as' => 'essai']);
+// Route::get('/essai/{essai}', ['uses' => 'Aver\User\UserAverController@getTroupeau', 'as' => 'essai']);
 
 Route::get('/', ['uses' => 'MainController@index', 'as' => 'accueil']);
 
@@ -19,7 +19,7 @@ Route::get('/phyto', 'MainController@phytotherapie');
 
 // Route::get('/plantes_libres', 'MainController@plantes_libres');
 
-Route::get('/prophylo', ['uses' => 'ProphyloController@index', 'as' => 'prophylo.index']);
+Route::get('/prophylo', ['uses' => 'ProphyloController@index', 'as' => 'calcul_prophylo.index']);
 
 
 Route::get('/aver', ['uses' => 'Aver\AverController@index', 'as' => 'aver.accueil'])->middleware('delaiBSA');
